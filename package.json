@@ -1,0 +1,10 @@
+{
+  "name": "任意",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "browser-sync start --proxy \"http://craftjob.local\" --files \"**/*.php\" \"**/*.css\" \"**/*.js\" --no-notify --no-open"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}
