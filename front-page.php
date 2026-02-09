@@ -44,11 +44,29 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header></header>
-  <main>
-    <h1>コーディングテンプレート</h1>
+  <header class="l-header">
+    <div class="l-header__inner l-container">
+      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/common/logo.svg' ); ?>" width="122"
+            height="25" alt="Craft Job" decoding="async" />
+        </a></h1>
+      <nav class="l-header__nav">
+        <ul class="l-header__nav-list">
+          <li><a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a></li>
+          <li><a
+              href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>">人気求人</a>
+          </li>
+          <li><a href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り</a>
+          </li>
+          <li><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="l-main">
+    <div>コーディングテンプレート</div>
   </main>
-  <footer></footer>
+  <footer class="l-footer"></footer>
 </body>
 
 </html>
