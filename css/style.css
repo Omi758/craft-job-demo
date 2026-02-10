@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 global > color
 ------------------------------
@@ -332,13 +333,14 @@ layout > header
   }
 }
 
+/* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 @media screen and (min-width: 768px) {
-  .l-header__nav-item {
+  [class*=l-header__nav-item] {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  .l-header__nav-item::before {
+  [class*=l-header__nav-item]::before {
     content: "";
     display: block;
     width: 20px;
@@ -347,6 +349,16 @@ layout > header
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+@media screen and (min-width: 1080px) {
+  [class*=l-header__nav-item]::before {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* モディファイアで各アイコンを指定 */
+@media screen and (min-width: 768px) {
   .l-header__nav-item--recruit::before {
     background-image: url("../img/common/icon-search.svg");
   }
@@ -360,13 +372,6 @@ layout > header
     background-image: url("../img/common/header/icon-column.svg");
   }
 }
-@media screen and (min-width: 1080px) {
-  .l-header__nav-item::before {
-    width: 30px;
-    height: 30px;
-  }
-}
-
 /*!
 layout > footer
 ------------------------------

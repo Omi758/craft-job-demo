@@ -52,14 +52,16 @@
         </a></h1>
       <nav class="l-header__nav">
         <ul class="l-header__nav-list">
-          <li class="l-header__nav-item l-header__nav-item--recruit"><a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a></li>
-          <li class="l-header__nav-item l-header__nav-item--popular"><a
+          <li class="l-header__nav-item--recruit"><a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
+          </li>
+          <li class="l-header__nav-item--popular"><a
               href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>">人気求人</a>
           </li>
-          <li class="l-header__nav-item l-header__nav-item--favorite"><a
+          <li class="l-header__nav-item--favorite"><a
               href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り</a>
           </li>
-          <li class="l-header__nav-item l-header__nav-item--column"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a></li>
+          <li class="l-header__nav-item--column"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a>
+          </li>
         </ul>
       </nav>
     </div>

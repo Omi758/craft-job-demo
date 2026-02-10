@@ -33,7 +33,8 @@ layout > header
   }
 }
 
-.l-header__nav-item {
+/* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
+[class*="l-header__nav-item"] {
   @include g.mq() {
     display: flex;
     align-items: center;
@@ -47,18 +48,6 @@ layout > header
       background-repeat: no-repeat;
       background-position: center;
     }
-    &--recruit::before {
-      background-image: url("../img/common/icon-search.svg");
-    }
-    &--popular::before {
-      background-image: url("../img/common/header/icon-new.svg");
-    }
-    &--favorite::before {
-      background-image: url("../img/common/header/icon-favorite.svg");
-    }
-    &--column::before {
-      background-image: url("../img/common/header/icon-column.svg");
-    }
   }
 
   @include g.mq(lg) {
@@ -66,5 +55,21 @@ layout > header
       width: 30px;
       height: 30px;
     }
+  }
+}
+
+/* モディファイアで各アイコンを指定 */
+@include g.mq() {
+  .l-header__nav-item--recruit::before {
+    background-image: url("../img/common/icon-search.svg");
+  }
+  .l-header__nav-item--popular::before {
+    background-image: url("../img/common/header/icon-new.svg");
+  }
+  .l-header__nav-item--favorite::before {
+    background-image: url("../img/common/header/icon-favorite.svg");
+  }
+  .l-header__nav-item--column::before {
+    background-image: url("../img/common/header/icon-column.svg");
   }
 }
