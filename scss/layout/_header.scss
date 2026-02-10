@@ -4,5 +4,67 @@
 layout > header
 ------------------------------
 */
-.header {
+.l-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  @include g.mq() {
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+}
+
+.l-header__logo {
+  width: 122px;
+  aspect-ratio: 122 / 25;
+}
+
+.l-header__nav-list {
+  display: none;
+  @include g.mq() {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+  }
+  @include g.mq(lg) {
+    gap: 40px;
+    font-size: 18px;
+  }
+}
+
+.l-header__nav-item {
+  @include g.mq() {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &--recruit::before {
+      background-image: url("../img/common/icon-search.svg");
+    }
+    &--popular::before {
+      background-image: url("../img/common/header/icon-new.svg");
+    }
+    &--favorite::before {
+      background-image: url("../img/common/header/icon-favorite.svg");
+    }
+    &--column::before {
+      background-image: url("../img/common/header/icon-column.svg");
+    }
+  }
+
+  @include g.mq(lg) {
+    &::before {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
