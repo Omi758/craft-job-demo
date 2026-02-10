@@ -297,6 +297,76 @@ layout > container
 layout > header
 ------------------------------
 */
+.l-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+}
+@media screen and (min-width: 768px) {
+  .l-header__inner {
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+}
+
+.l-header__logo {
+  width: 122px;
+  aspect-ratio: 122/25;
+}
+
+.l-header__nav-list {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .l-header__nav-list {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .l-header__nav-list {
+    gap: 40px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .l-header__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .l-header__nav-item::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .l-header__nav-item--recruit::before {
+    background-image: url("../img/common/icon-search.svg");
+  }
+  .l-header__nav-item--popular::before {
+    background-image: url("../img/common/header/icon-new.svg");
+  }
+  .l-header__nav-item--favorite::before {
+    background-image: url("../img/common/header/icon-favorite.svg");
+  }
+  .l-header__nav-item--column::before {
+    background-image: url("../img/common/header/icon-column.svg");
+  }
+}
+@media screen and (min-width: 1080px) {
+  .l-header__nav-item::before {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 /*!
 layout > footer
 ------------------------------
