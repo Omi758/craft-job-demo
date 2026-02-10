@@ -1,6 +1,4 @@
-import { initializeHamburgerMenu } from "./component/hamburger-menu.js";
-import { initializeHeaderBackgroundToggle } from "./component/header-background-toggle.js";
+import { initializeSwitchViewport } from "./component/switch-viewport.js";
 
 // 全ての初期化を実行
-initializeHamburgerMenu();
-initializeHeaderBackgroundToggle();
+initializeSwitchViewport();
