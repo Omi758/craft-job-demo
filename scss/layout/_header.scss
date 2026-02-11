@@ -4,6 +4,11 @@
 layout > header
 ------------------------------
 */
+// 仮で背景色_後ほど削除すること！！
+html {
+  background-color: #888;
+}
+
 .l-header-inner {
   display: flex;
   justify-content: center;
@@ -20,12 +25,36 @@ layout > header
   aspect-ratio: 122 / 25;
 }
 
-.l-header-nav-list {
-  display: none;
+.l-header-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--primary-green);
+  border-radius: 20px 20px 0 0;
+  width: 98%;
+  z-index: var(--z-index-header);
+
   @include g.mq() {
-    display: flex;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+    border-radius: 0;
+  }
+}
+
+.l-header-nav-list {
+  display: flex;
+  font-size: 12px;
+  color: var(--white);
+  width: 100%;
+  @include g.mq(sm) {
+    font-size: 14px;
+  }
+  @include g.mq() {
+    color: var(--font-base);
     gap: 30px;
-    font-size: 16px;
   }
   @include g.mq(lg) {
     gap: 40px;
@@ -35,23 +64,46 @@ layout > header
 
 /* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 .l-header-nav-item {
-  @include g.mq() {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    &::before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  padding: 12px 0 6px;
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--white);
+    @include g.mq() {
+      border-right: none;
     }
   }
 
-  @include g.mq(lg) {
-    &::before {
+  @include g.mq() {
+    flex-direction: row;
+    gap: 4px;
+    border-right: none;
+    width: auto;
+    padding: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--white);
+    @include g.mq(sm) {
+      width: 28px;
+      height: 28px;
+    }
+    @include g.mq() {
+      background-color: var(--font-base);
+    }
+
+    @include g.mq(lg) {
       width: 30px;
       height: 30px;
     }
@@ -59,22 +111,20 @@ layout > header
 }
 
 /* モディファイアで各アイコンを指定 */
-@include g.mq() {
-  .l-header-nav-item--recruit::before {
-    background-image: url("../img/common/icon-search.svg");
-  }
-  .l-header-nav-item--popular::before {
-    background-image: url("../img/common/header/icon-new.svg");
-  }
-  .l-header-nav-item--favorite::before {
-    background-image: url("../img/common/header/icon-favorite.svg");
-  }
-  .l-header-nav-item--column::before {
-    background-image: url("../img/common/header/icon-column.svg");
-  }
+.l-header-nav-item--recruit::before {
+  mask-image: url("../img/common/icon-search.svg");
+}
+.l-header-nav-item--popular::before {
+  mask-image: url("../img/common/header/icon-new.svg");
+}
+.l-header-nav-item--favorite::before {
+  mask-image: url("../img/common/header/icon-favorite.svg");
+}
+.l-header-nav-item--column::before {
+  mask-image: url("../img/common/header/icon-column.svg");
 }
 
-.l-header-nav-item--favorite {
+.l-header-nav-item--favorite a {
   position: relative;
 }
 
@@ -93,6 +143,8 @@ layout > header
   font-weight: 700;
   line-height: 1; /* フォントの余白を潰し、数字を中央に */
   position: absolute;
+  top: -34px;
+  right: -10px;
 
   @include g.mq() {
     top: -10px;
