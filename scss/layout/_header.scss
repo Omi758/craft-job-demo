@@ -46,20 +46,16 @@ html {
 
 .l-header-nav-list {
   display: flex;
-  font-size: 12px;
+  font-size: clamp(0.75rem, 0.616rem + 0.566vw, 1.125rem);
   color: var(--white);
   width: 100%;
-  @include g.mq(sm) {
-    font-size: 14px;
-  }
   @include g.mq() {
     color: var(--font-base);
-    gap: 30px;
+    gap: clamp(1.875rem, 0.71rem + 2.427vw, 2.5rem);
   }
-  @include g.mq(lg) {
-    gap: 40px;
-    font-size: 18px;
-  }
+  // @include g.mq(lg) {
+  //   gap: 40px;
+  // }
 }
 
 /* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */

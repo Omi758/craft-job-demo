@@ -342,25 +342,14 @@ html {
 
 .l-header-nav-list {
   display: flex;
-  font-size: 12px;
+  font-size: clamp(0.75rem, 0.616rem + 0.566vw, 1.125rem);
   color: var(--white);
   width: 100%;
-}
-@media screen and (min-width: 500px) {
-  .l-header-nav-list {
-    font-size: 14px;
-  }
 }
 @media screen and (min-width: 768px) {
   .l-header-nav-list {
     color: var(--font-base);
-    gap: 30px;
-  }
-}
-@media screen and (min-width: 1080px) {
-  .l-header-nav-list {
-    gap: 40px;
-    font-size: 18px;
+    gap: clamp(1.875rem, 0.71rem + 2.427vw, 2.5rem);
   }
 }
 
