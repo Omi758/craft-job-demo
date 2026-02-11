@@ -298,36 +298,36 @@ layout > container
 layout > header
 ------------------------------
 */
-.l-header__inner {
+.l-header-inner {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 18px 0;
 }
 @media screen and (min-width: 768px) {
-  .l-header__inner {
+  .l-header-inner {
     justify-content: space-between;
     padding: 22px 0;
   }
 }
 
-.l-header__logo {
+.l-header-logo {
   width: 122px;
   aspect-ratio: 122/25;
 }
 
-.l-header__nav-list {
+.l-header-nav-list {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .l-header__nav-list {
+  .l-header-nav-list {
     display: flex;
     gap: 30px;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 1080px) {
-  .l-header__nav-list {
+  .l-header-nav-list {
     gap: 40px;
     font-size: 18px;
   }
@@ -335,12 +335,12 @@ layout > header
 
 /* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 @media screen and (min-width: 768px) {
-  [class*=l-header__nav-item] {
+  .l-header-nav-item {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  [class*=l-header__nav-item]::before {
+  .l-header-nav-item::before {
     content: "";
     display: block;
     width: 20px;
@@ -351,7 +351,7 @@ layout > header
   }
 }
 @media screen and (min-width: 1080px) {
-  [class*=l-header__nav-item]::before {
+  .l-header-nav-item::before {
     width: 30px;
     height: 30px;
   }
@@ -359,19 +359,46 @@ layout > header
 
 /* モディファイアで各アイコンを指定 */
 @media screen and (min-width: 768px) {
-  .l-header__nav-item--recruit::before {
+  .l-header-nav-item--recruit::before {
     background-image: url("../img/common/icon-search.svg");
   }
-  .l-header__nav-item--popular::before {
+  .l-header-nav-item--popular::before {
     background-image: url("../img/common/header/icon-new.svg");
   }
-  .l-header__nav-item--favorite::before {
+  .l-header-nav-item--favorite::before {
     background-image: url("../img/common/header/icon-favorite.svg");
   }
-  .l-header__nav-item--column::before {
+  .l-header-nav-item--column::before {
     background-image: url("../img/common/header/icon-column.svg");
   }
 }
+.l-header-nav-item--favorite {
+  position: relative;
+}
+
+/* お気に入り登録用バッジ */
+.l-header-nav-item-badge {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--red);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1; /* フォントの余白を潰し、数字を中央に */
+  position: absolute;
+}
+@media screen and (min-width: 768px) {
+  .l-header-nav-item-badge {
+    top: -10px;
+    right: -23px;
+  }
+}
+
 /*!
 layout > footer
 ------------------------------
