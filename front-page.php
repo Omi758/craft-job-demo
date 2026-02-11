@@ -77,7 +77,26 @@
   </main>
   <!-- /main -->
   <!-- footer -->
-  <footer class="l-footer"></footer>
+  <footer class="l-footer">
+    <div class="l-footer-inner l-container">
+      <nav class="l-footer-nav">
+        <ul class="l-footer-nav-list">
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">ホーム</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">求人を探す</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">人気求人</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">お気に入り</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">就活コラム</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">お問い合わせ</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">プライバシーポリシー</a></li>
+          <li class="l-footer-nav-item l-footer-nav-item--company"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">運営会社</a></li>
+        </ul>
+      </nav>
+
+      <small class="l-footer-copyright">
+        &copy; <?php echo date( 'Y' ); ?> LIBERA inc.
+      </small>
+    </div>
+  </footer>
   <!-- /footer -->
 </body>
 
