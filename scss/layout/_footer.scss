@@ -14,14 +14,15 @@ layout > footer
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  @include g.mq() {
+
+  @include g.mq(lg) {
     flex-direction: row;
   }
 }
 
 .l-footer-nav {
   display: flex;
-  width: 100%;
+  // width: 100%;
 }
 
 .l-footer-nav-list {
@@ -30,22 +31,35 @@ layout > footer
   gap: 6px 12px;
   align-items: center;
   justify-content: center;
+  @include g.mq(lg) {
+    gap: 12px;
+  }
 }
 
 .l-footer-nav-item:not(:last-child)::after {
   content: "|";
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--white);
   padding-left: 12px;
+
+  @include g.mq() {
+    font-size: 14px;
+    padding-left: 12px;
+  }
 }
 
 .l-footer-nav-item a {
   color: var(--white);
+  font-size: 14px;
   font-weight: 700;
   opacity: 0.8;
   position: relative;
+}
+
+.l-footer-nav-item:last-child a {
+  padding-right: 20px;
 }
 
 .l-footer-copyright {
@@ -54,7 +68,7 @@ layout > footer
   opacity: 0.8;
   font-weight: 700;
   white-space: nowrap;
-  @include g.mq() {
+  @include g.mq(lg) {
     margin-top: 0;
   }
 }
