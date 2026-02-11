@@ -4,10 +4,10 @@
 layout > header
 ------------------------------
 */
-// 仮で背景色_後ほど削除すること！！
-html {
-  background-color: #888;
-}
+// // 仮で背景色_後ほど削除すること！！
+// html {
+//   background-color: #888;
+// }
 
 .l-header-inner {
   display: flex;
@@ -53,9 +53,6 @@ html {
     color: var(--font-base);
     gap: clamp(1.875rem, 0.71rem + 2.427vw, 2.5rem);
   }
-  // @include g.mq(lg) {
-  //   gap: 40px;
-  // }
 }
 
 /* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */

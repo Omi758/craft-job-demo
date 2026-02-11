@@ -298,10 +298,6 @@ layout > container
 layout > header
 ------------------------------
 */
-html {
-  background-color: #888;
-}
-
 .l-header-inner {
   display: flex;
   justify-content: center;
