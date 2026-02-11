@@ -45,22 +45,25 @@
 
 <body <?php body_class(); ?>>
   <header class="l-header">
-    <div class="l-header__inner l-container">
-      <h1 class="l-header__logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <div class="l-header-inner l-container">
+      <h1 class="l-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
           <img src="<?php echo esc_url( get_template_directory_uri() . '/img/common/logo.svg' ); ?>" width="122"
             height="25" alt="Craft Job" decoding="async" />
         </a></h1>
-      <nav class="l-header__nav">
-        <ul class="l-header__nav-list">
-          <li class="l-header__nav-item--recruit"><a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
+      <nav class="l-header-nav">
+        <ul class="l-header-nav-list">
+          <li class="l-header-nav-item l-header-nav-item--recruit"><a
+              href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
           </li>
-          <li class="l-header__nav-item--popular"><a
+          <li class="l-header-nav-item l-header-nav-item--popular"><a
               href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>">人気求人</a>
           </li>
-          <li class="l-header__nav-item--favorite"><a
-              href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り</a>
+          <li class="l-header-nav-item l-header-nav-item--favorite"><a
+              href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り
+              <span class="l-header-nav-item-badge">6</span></a>
           </li>
-          <li class="l-header__nav-item--column"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a>
+          <li class="l-header-nav-item l-header-nav-item--column"><a
+              href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a>
           </li>
         </ul>
       </nav>
