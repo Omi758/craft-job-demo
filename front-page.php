@@ -88,7 +88,7 @@
           <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">就活コラム</a></li>
           <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">お問い合わせ</a></li>
           <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">プライバシーポリシー</a></li>
-          <li class="l-footer-nav-item l-footer-nav-item--company"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">運営会社</a></li>
+          <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">運営会社</a></li>
         </ul>
       </nav>
 
