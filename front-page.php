@@ -44,6 +44,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <!-- header -->
   <header class="l-header">
     <div class="l-header-inner l-container">
       <h1 class="l-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -69,10 +70,15 @@
       </nav>
     </div>
   </header>
+  <!-- /header -->
+  <!-- main -->
   <main class="l-main">
     <div>コーディングテンプレート</div>
   </main>
+  <!-- /main -->
+  <!-- footer -->
   <footer class="l-footer"></footer>
+  <!-- /footer -->
 </body>
 
 </html>

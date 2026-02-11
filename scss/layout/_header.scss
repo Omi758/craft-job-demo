@@ -65,11 +65,7 @@ html {
 /* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 .l-header-nav-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 25%;
-  padding: 12px 0 6px;
 
   &:not(:last-child) {
     border-right: 1px solid var(--white);
@@ -79,48 +75,66 @@ html {
   }
 
   @include g.mq() {
-    flex-direction: row;
-    gap: 4px;
-    border-right: none;
     width: auto;
     padding: 0;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    width: 24px;
-    height: 24px;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--white);
-    @include g.mq(sm) {
-      width: 28px;
-      height: 28px;
-    }
+  /* a でリンク全体（アイコン＋テキスト＋余白）をクリック可能にする */
+  a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0 6px; /* li から移動：余白もリンク範囲に含める */
+    gap: 0;
+    text-decoration: none;
+    color: inherit;
+
     @include g.mq() {
-      background-color: var(--font-base);
+      flex-direction: row;
+      gap: 4px;
+      width: auto;
+      padding: 0;
     }
 
-    @include g.mq(lg) {
-      width: 30px;
-      height: 30px;
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: var(--white);
+      @include g.mq(sm) {
+        width: 28px;
+        height: 28px;
+      }
+      @include g.mq() {
+        background-color: var(--font-base);
+      }
+
+      @include g.mq(lg) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
 
-/* モディファイアで各アイコンを指定 */
-.l-header-nav-item--recruit::before {
+/* モディファイアで各アイコンを指定（a::before に指定してリンク範囲に含める） */
+.l-header-nav-item--recruit a::before {
   mask-image: url("../img/common/icon-search.svg");
 }
-.l-header-nav-item--popular::before {
+.l-header-nav-item--popular a::before {
   mask-image: url("../img/common/header/icon-new.svg");
 }
-.l-header-nav-item--favorite::before {
+.l-header-nav-item--favorite a::before {
   mask-image: url("../img/common/header/icon-favorite.svg");
 }
-.l-header-nav-item--column::before {
+.l-header-nav-item--column a::before {
   mask-image: url("../img/common/header/icon-column.svg");
 }
 
@@ -143,8 +157,12 @@ html {
   font-weight: 700;
   line-height: 1; /* フォントの余白を潰し、数字を中央に */
   position: absolute;
-  top: -34px;
-  right: -10px;
+  top: 4px;
+  right: 4px;
+  @include g.mq(sm) {
+    top: 10px;
+    right: 20px;
+  }
 
   @include g.mq() {
     top: -10px;
