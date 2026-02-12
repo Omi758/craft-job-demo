@@ -28,11 +28,6 @@
     content="制作会社のNo.1掲載数!Web制作会社への転職を、最短ルートで。CraftJobはリモート求人多数、未経験可の求人あり。今旬の求人検索サイトです。" />
   <meta name="twitter:image:src" content="<?php echo esc_url( get_template_directory_uri() . '/img/ogp.png' ); ?>" />
 
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-
   <!-- noindex_実案件では削除のこと！！ -->
   <meta name="robots" content="noindex" />
 

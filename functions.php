@@ -1,16 +1,43 @@
 <?php
 /**
+ *  * Craft Jobのテーマ用の関数
  * テーマのスタイルとスクリプトを読み込む
  */
+/**
+ * Google Fonts用のpreconnect（早期接続で読み込み最適化）
+ */
+function craftjob_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href'        => 'https://fonts.googleapis.com',
+			'crossorigin' => false,
+		);
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => true,
+		);
+	}
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'craftjob_resource_hints', 10, 2 );
+
 function craftjob_enqueue_assets() {
 	$theme_uri = get_template_directory_uri();
 	$theme_path = get_template_directory();
+
+	// Google Fonts（外部URLのためバージョンは固定）
+	wp_enqueue_style(
+		'craftjob-google-fonts',
+		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap',
+		array(),
+		null
+	);
 
 	// メインスタイルシート（キャッシュ対策のため filemtime でバージョン指定）
 	wp_enqueue_style(
 		'craftjob-style',
 		$theme_uri . '/css/style.css',
-		array(),
+		array( 'craftjob-google-fonts' ),
 		filemtime( $theme_path . '/css/style.css' )
 	);
 
@@ -23,6 +50,7 @@ function craftjob_enqueue_assets() {
 		true
 	);
 }
+// メインスクリプトにtype="module"を追加_ESModule専用
 add_filter( 'script_loader_tag', 'craftjob_add_module_to_script', 10, 3 );
 function craftjob_add_module_to_script( $tag, $handle, $src ) {
 	if ( 'craftjob-main' === $handle ) {
@@ -34,7 +62,6 @@ add_action( 'wp_enqueue_scripts', 'craftjob_enqueue_assets' );
 
 
 /**
- * Craft Jobのテーマ用の関数
  * カスタマイザーで運営会社のリンクを追加(変更を見据えて)
  * 管理画面→外観→カスタマイズ→連絡先・会社情報→運営会社URL
  * 運営会社URLを入力しない場合は、デフォルトのURLになります。
