@@ -312,6 +312,60 @@ component > title
 }
 
 /*!
+component > breadcrumb
+------------------------------
+*/
+.c-breadcrumb-container {
+  background-color: var(--font-base);
+  width: 100%;
+  padding: 8px 0;
+}
+.c-breadcrumb-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.c-breadcrumb-container li {
+  display: flex;
+  align-items: center;
+}
+.c-breadcrumb-container li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-image: url("../img/common/icon-arrow-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+}
+.c-breadcrumb-container li:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  -webkit-mask-image: url("../img/common/icon-home.svg");
+          mask-image: url("../img/common/icon-home.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--white);
+}
+.c-breadcrumb-container a {
+  color: var(--font-base);
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/*!
 layout > container
 ------------------------------
 */

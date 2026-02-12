@@ -1,0 +1,54 @@
+@use "../global" as g;
+
+/*!
+component > breadcrumb
+------------------------------
+*/
+.c-breadcrumb-container {
+  background-color: var(--font-base);
+  width: 100%;
+  padding: 8px 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  li {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background-image: url("../img/common/icon-arrow-right.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 10px;
+    }
+
+    &:first-child::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 3px;
+      mask-image: url("../img/common/icon-home.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: var(--white);
+    }
+  }
+  a {
+    color: var(--font-base);
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--white);
+  }
+}

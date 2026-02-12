@@ -54,6 +54,33 @@
       <h2 class="c-column-title">就活コラム</h2>
     </div>
     <!-- コラム一覧タイトル end -->
+    <!-- パンくず -->
+    <div class="c-breadcrumb-container">
+      <nav class="c-breadcrumb-nav l-container" aria-label="パンくずリスト">
+        <ul class="c-breadcrumb-list">
+          <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Web制作業界特化の求人サイトCraftJob</a>
+          </li>
+          <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- パンくず end -->
+    <!-- カード（トップページ用） -->
+    <article class="c-card-top-container">
+      <div class="c-card-top-image">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/common/top-thumbnail@2x.webp' ); ?>"
+          width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+      </div>
+      <div class="c-card-top-content">
+        <h3 class="c-card-top-company">合同会社LIBERA</h3>
+        <p class="c-card-top-copy">カードテキスト</p>
+        <ul class="c-card-top-tags">
+          <li><a href="/">#未経験歓迎</a></li>
+          <li><a href="/">#リモート可</a></li>
+        </ul>
+      </div>
+      <a href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>" class="c-card-top-link">詳細を見る</a>
+    </article>
   </div>
   <!-- コンポーネント仮作成 終わり -->
 
