@@ -448,18 +448,43 @@ component > card
 }
 
 .c-card-top-link-container {
-  padding: 15px 16px;
+  padding: 16px 16px;
+  border-top: 1px solid var(--border-light);
 }
 @media screen and (min-width: 768px) {
   .c-card-top-link-container {
-    margin-top: 16px;
+    padding: 15px 15px;
   }
 }
 
 .c-card-top-link {
-  display: block;
+  display: flex;
+  gap: 6px;
   width: 100%;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px 12px 12px;
+  border: 1px solid var(--primary-green);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+.c-card-top-link:before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/common/icon-detail.svg");
+          mask-image: url("../img/common/icon-detail.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--primary-green);
 }
 
 /*!
