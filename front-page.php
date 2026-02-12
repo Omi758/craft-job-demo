@@ -68,18 +68,31 @@
     <!-- カード（トップページ用） -->
     <article class="c-card-top-container">
       <div class="c-card-top-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/common/top-thumbnail@2x.webp' ); ?>"
-          width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>" width="767"
+          height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
       </div>
       <div class="c-card-top-content">
-        <h3 class="c-card-top-company">合同会社LIBERA</h3>
-        <p class="c-card-top-copy">カードテキスト</p>
+        <div class="c-card-top-header">
+          <img class='c-card-top-company-logo'
+            src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
+            width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
+          <h3 class="c-card-top-company">合同会社LIBERA</h3>
+        </div>
+        <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
         <ul class="c-card-top-tags">
           <li><a href="/">#未経験歓迎</a></li>
           <li><a href="/">#リモート可</a></li>
+          <li><a href="/">#副業OK</a></li>
+          <li><a href="/">#フレックス勤務</a></li>
+          <li><a href="/">#経験者優遇</a></li>
+          <li><a href="/">#服装自由</a></li>
+          <li><a href="/">#土日休み</a></li>
+          <li><a href="/">#PC至急</a></li>
         </ul>
       </div>
-      <a href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>" class="c-card-top-link">詳細を見る</a>
+      <div class="c-card-top-link-container">
+        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>">詳細を見る</a>
+      </div>
     </article>
   </div>
   <!-- コンポーネント仮作成 終わり -->

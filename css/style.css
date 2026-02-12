@@ -244,6 +244,7 @@ body {
   letter-spacing: 0.025em;
   color: var(--font-base);
   font-family: var(--font-family-base);
+  background-color: var(--primary-light-green);
 }
 @media screen and (min-width: 768px) {
   body {
@@ -363,6 +364,102 @@ component > breadcrumb
   text-align: center;
   font-size: 14px;
   color: var(--white);
+}
+
+/*!
+component > card
+------------------------------
+*/
+.c-card-top-container {
+  display: grid;
+  border-radius: 12px;
+  width: 340px;
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+}
+@media screen and (min-width: 768px) {
+  .c-card-top-container {
+    width: 383px;
+  }
+}
+
+.c-card-top-image {
+  width: 340px;
+  aspect-ratio: 340/183;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .c-card-top-image {
+    width: 383px;
+  }
+}
+
+.c-card-top-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.c-card-top-content {
+  padding: 24px;
+}
+
+.c-card-top-header {
+  display: flex;
+  place-items: center;
+  gap: 12px;
+}
+
+.c-card-top-company-logo {
+  width: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.c-card-top-company {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.c-card-top-copy {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+  .c-card-top-copy {
+    margin-top: 8px;
+  }
+}
+
+.c-card-top-tags {
+  margin-top: 8px;
+  display: flex;
+  gap: 2px 18px;
+  flex-wrap: wrap;
+}
+
+.c-card-top-tags li {
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.c-card-top-link-container {
+  padding: 15px 16px;
+}
+@media screen and (min-width: 768px) {
+  .c-card-top-link-container {
+    margin-top: 16px;
+  }
+}
+
+.c-card-top-link {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 /*!
