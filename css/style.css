@@ -277,6 +277,40 @@ component > button
 component > title
 ------------------------------
 */
+.c-page-title-container {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: var(--primary-green);
+  border-radius: 6px;
+}
+
+.c-page-title {
+  font-size: clamp(1.5rem, 1.41rem + 0.377vw, 1.75rem);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.c-column-title-container {
+  display: inline-block;
+}
+
+.c-column-title {
+  font-size: clamp(1.5rem, 1.321rem + 0.755vw, 2rem);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+}
+
+.c-column-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--primary-green) 50%, var(--accent) 50%);
+}
+
 /*!
 layout > container
 ------------------------------

@@ -41,6 +41,22 @@
     </div>
   </section>
   <!-- top-search end -->
+
+  <!-- 以下、コンポーネントを仮作成_先頭は仮レイアウト用div -->
+  <div class="l-container">
+    <!-- 共通_タイトル -->
+    <div class="c-page-title-container">
+      <h2 class="c-page-title">求人を探す</h2>
+    </div>
+    <!-- 共通_タイトル end -->
+    <!-- コラム一覧タイトル  -->
+    <div class="c-column-title-container">
+      <h2 class="c-column-title">就活コラム</h2>
+    </div>
+    <!-- コラム一覧タイトル end -->
+  </div>
+  <!-- コンポーネント仮作成 終わり -->
+
 </main>
 <!-- main end -->
 <?php get_footer(); ?>
