@@ -265,8 +265,7 @@ utility > utility
   border: 0 !important;
   padding: 0 !important;
   clip: rect(0 0 0 0) !important;
-  -webkit-clip-path: inset(50%) !important;
-          clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   margin: -1px !important;
 }
 
@@ -384,15 +383,10 @@ component > card
 }
 
 .c-card-top-image {
-  width: 340px;
+  width: 100%;
   aspect-ratio: 340/183;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  .c-card-top-image {
-    width: 383px;
-  }
 }
 
 .c-card-top-image img {
@@ -448,12 +442,12 @@ component > card
 }
 
 .c-card-top-link-container {
-  padding: 16px 16px;
+  padding: 16px 17px;
   border-top: 1px solid var(--border-light);
 }
 @media screen and (min-width: 768px) {
   .c-card-top-link-container {
-    padding: 15px 15px;
+    padding: 15px 16px 16px;
   }
 }
 
@@ -563,7 +557,6 @@ layout > header
 .l-header-nav-item {
   display: flex;
   width: 25%;
-  /* a でリンク全体（アイコン＋テキスト＋余白）をクリック可能にする */
 }
 .l-header-nav-item:not(:last-child) {
   border-right: 1px solid var(--white);
@@ -578,6 +571,9 @@ layout > header
     width: auto;
     padding: 0;
   }
+}
+.l-header-nav-item {
+  /* a でリンク全体（アイコン＋テキスト＋余白）をクリック可能にする */
 }
 .l-header-nav-item a {
   display: flex;

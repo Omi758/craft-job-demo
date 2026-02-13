@@ -91,7 +91,7 @@
         </ul>
       </div>
       <div class="c-card-top-link-container">
-        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>">詳細を見る</a>
+        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>">詳しく見る</a>
       </div>
     </article>
   </div>

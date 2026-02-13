@@ -16,13 +16,10 @@ component > card
 }
 
 .c-card-top-image {
-  width: 340px;
+  width: 100%;
   aspect-ratio: 340 / 183;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
-  @include g.mq() {
-    width: 383px;
-  }
 }
 
 .c-card-top-image img {
@@ -71,11 +68,12 @@ component > card
   font-weight: 700;
   color: var(--primary-green);
 }
+
 .c-card-top-link-container {
-  padding: 16px 16px;
+  padding: 16px 17px;
   border-top: 1px solid var(--border-light);
   @include g.mq() {
-    padding: 15px 15px;
+    padding: 15px 16px 16px;
   }
 }
 .c-card-top-link {
