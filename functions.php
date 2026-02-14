@@ -50,15 +50,17 @@ function craftjob_enqueue_assets() {
 		true
 	);
 }
+add_action( 'wp_enqueue_scripts', 'craftjob_enqueue_assets' );
+
 // メインスクリプトにtype="module"を追加_ESModule専用
-add_filter( 'script_loader_tag', 'craftjob_add_module_to_script', 10, 3 );
 function craftjob_add_module_to_script( $tag, $handle, $src ) {
 	if ( 'craftjob-main' === $handle ) {
 		$tag = str_replace( '<script ', '<script type="module" ', $tag );
 	}
 	return $tag;
 }
-add_action( 'wp_enqueue_scripts', 'craftjob_enqueue_assets' );
+add_filter( 'script_loader_tag', 'craftjob_add_module_to_script', 10, 3 );
+
 
 
 /**
