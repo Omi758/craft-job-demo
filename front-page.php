@@ -91,7 +91,8 @@
         </ul>
       </div>
       <div class="c-card-top-link-container">
-        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>">詳しく見る</a>
+        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+          aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る">詳しく見る</a>
       </div>
     </article>
   </div>

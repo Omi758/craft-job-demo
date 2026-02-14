@@ -4,11 +4,6 @@
 layout > header
 ------------------------------
 */
-// // 仮で背景色_後ほど削除すること！！
-// html {
-//   background-color: #888;
-// }
-
 .l-header-inner {
   display: flex;
   justify-content: center;
@@ -30,6 +25,8 @@ layout > header
   justify-content: center;
   position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--primary-green);
   border-radius: 20px 20px 0 0;
   width: 98%;
@@ -55,7 +52,6 @@ layout > header
   }
 }
 
-/* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 .l-header-nav-item {
   display: flex;
   width: 25%;
@@ -138,7 +134,6 @@ layout > header
 /* お気に入り登録用バッジ */
 .l-header-nav-item-badge {
   display: inline-flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
   width: 24px;

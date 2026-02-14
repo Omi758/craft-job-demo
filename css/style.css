@@ -371,6 +371,7 @@ component > card
 */
 .c-card-top-container {
   display: grid;
+  grid-template-rows: auto 1fr auto;
   border-radius: 12px;
   width: 340px;
   background-color: var(--white);
@@ -436,7 +437,7 @@ component > card
   flex-wrap: wrap;
 }
 
-.c-card-top-tags li {
+.c-card-top-tags li a {
   font-weight: 700;
   color: var(--primary-green);
 }
@@ -465,6 +466,12 @@ component > card
   color: var(--primary-green);
   transition: all 0.3s ease;
 }
+@media screen and (min-width: 768px) {
+  .c-card-top-link {
+    font-size: 18px;
+  }
+}
+
 .c-card-top-link:before {
   content: "";
   display: block;
@@ -525,6 +532,8 @@ layout > header
   justify-content: center;
   position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--primary-green);
   border-radius: 20px 20px 0 0;
   width: 98%;
@@ -553,7 +562,6 @@ layout > header
   }
 }
 
-/* クラス名に l-header__nav-item を含む要素にベーススタイルを適用 */
 .l-header-nav-item {
   display: flex;
   width: 25%;
@@ -654,7 +662,6 @@ layout > header
 /* お気に入り登録用バッジ */
 .l-header-nav-item-badge {
   display: inline-flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
   width: 24px;
