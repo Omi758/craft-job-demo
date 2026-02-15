@@ -98,8 +98,14 @@
     <!-- カード（トップページ用） end -->
     <!-- 絞り込み検索_サイドバー用 -->
     <form class="c-search-form" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
-      <details>
-        <summary class="c-search-form-summary">絞り込み検索</summary>
+      <details class="c-search-form-details js-search-form-details">
+        <summary class="c-search-form-summary js-search-form-summary">
+          絞り込み検索
+          <span class="c-search-form-summary-icon">
+            <span></span>
+            <span></span>
+          </span>
+        </summary>
         <div class="c-search-form-body">
           <!-- 地域プルダウン -->
           <div class="c-search-form-item">
@@ -208,7 +214,8 @@
             <input type="number" name="salary_max" id="salary_max" placeholder="例：500">
           </div>
           <!-- ボタン -->
-          <button class="c-search-form-button" type="submit">検索</button>
+          <div class="c-search-form-button-container"><button class="c-search-form-button" type="submit">検索する</button>
+          </div>
         </div>
       </details>
     </form>
