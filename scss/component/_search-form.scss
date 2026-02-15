@@ -1,0 +1,128 @@
+@use "../global" as g;
+
+/*!
+component > search-form
+------------------------------
+*/
+.c-search-form {
+  display: grid;
+  max-width: 342px;
+  background-color: var(--white);
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 4px 0 rgba(149, 165, 163, 0.05);
+  @include g.mq() {
+    max-width: 340px;
+  }
+}
+
+.c-search-form-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px;
+  cursor: pointer;
+  @include g.mq() {
+    gap: 12px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    mask-image: url("../img/common/icon-filter.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--primary-green);
+  }
+}
+
+// アコーディオン_開閉アイコン
+.c-search-form-summary-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+}
+
+.c-search-form-summary-icon span {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--font-light);
+}
+
+.c-search-form-summary-icon span:nth-child(1) {
+  width: 14px;
+  height: 2px;
+}
+
+.c-search-form-summary-icon span:nth-child(2) {
+  width: 2px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.c-search-form-details[open] .c-search-form-summary-icon span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.c-search-form-body {
+}
+.c-search-form-item {
+}
+.c-search-form-label {
+}
+.c-search-form-label--area {
+}
+.c-search-form-label--employment-type {
+}
+.c-search-form-label--job-category {
+}
+.c-search-form-label--salary {
+}
+.c-search-form-label-separator {
+}
+
+// フォーム内_検索ボタン
+.c-search-form-button-container {
+  padding: 16px;
+  @include g.mq() {
+    padding: 15px;
+  }
+}
+.c-search-form-button {
+  width: 100%;
+  padding: 16px 12px;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  ::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    mask-image: url("../img/common/icon-search.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--white);
+  }
+}
