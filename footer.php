@@ -22,7 +22,8 @@
     </nav>
 
     <small class="l-footer-copyright">
-      &copy; <?php echo esc_html( date( 'Y' ) ); ?> LIBERA inc.
+      &copy; <?php echo esc_html( date( 'Y' ) ); ?>
+      <?php echo esc_html(get_theme_mod("craftjob_company_name","LIBERA inc.")); ?>
     </small>
   </div>
 </footer>

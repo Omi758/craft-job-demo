@@ -17,12 +17,12 @@ layout > footer
 
   @include g.mq(lg) {
     flex-direction: row;
+    gap: 20px;
   }
 }
 
 .l-footer-nav {
   display: flex;
-  // width: 100%;
 }
 
 .l-footer-nav-list {
@@ -43,11 +43,6 @@ layout > footer
   font-weight: 500;
   color: var(--white);
   padding-left: 12px;
-
-  @include g.mq() {
-    font-size: 14px;
-    padding-left: 12px;
-  }
 }
 
 .l-footer-nav-item a {
@@ -58,9 +53,9 @@ layout > footer
   position: relative;
 }
 
-.l-footer-nav-item:last-child a {
-  padding-right: 20px;
-}
+// .l-footer-nav-item:last-child a {
+//   padding-right: 20px;
+// }
 
 .l-footer-copyright {
   margin-top: 12px;

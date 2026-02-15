@@ -85,6 +85,18 @@ function craftjob_customize_register( $wp_customize ) {
       'section' => 'craftjob_contact_section',
       'type'    => 'url',
   ) );
+
+	// 運営会社名
+	$wp_customize->add_setting( 'craftjob_company_name', array(
+		'default' => 'LIBERA inc.',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'craftjob_company_name', array(
+		'label' => '運営会社名',
+		'section' => 'craftjob_contact_section',
+		'type' => 'text',
+	) );
 }
 add_action( 'customize_register', 'craftjob_customize_register' );
 
