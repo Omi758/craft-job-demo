@@ -5,7 +5,6 @@ component > search-form
 ------------------------------
 */
 .c-search-form {
-  display: grid;
   max-width: 342px;
   background-color: var(--white);
   border-radius: 6px;
@@ -28,6 +27,7 @@ component > search-form
   cursor: pointer;
   @include g.mq() {
     gap: 12px;
+    font-size: 20px;
   }
 
   &::before {
@@ -78,21 +78,149 @@ component > search-form
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
+// アコーディオンの中身
 .c-search-form-body {
+  display: grid;
 }
 .c-search-form-item {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  min-width: 0; /* グリッド子要素のオーバーフロー防止 */
 }
 .c-search-form-label {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @include g.mq() {
+    font-size: 18px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--primary-green);
+  }
 }
 .c-search-form-label--area {
+  &::before {
+    mask-image: url("../img/common/icon-area.svg");
+  }
 }
+
 .c-search-form-label--employment-type {
+  &::before {
+    mask-image: url("../img/common/icon-employment.svg");
+  }
 }
 .c-search-form-label--job-category {
+  &::before {
+    mask-image: url("../img/common/icon-role.svg");
+  }
 }
 .c-search-form-label--salary {
+  &::before {
+    mask-image: url("../img/common/icon-salary.svg");
+  }
 }
+
+.c-search-form-label-salary-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-search-form-select-wrapper {
+  position: relative;
+}
+
+// プルダウンの矢印
+.c-search-form-select-wrapper::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-right: 2px solid var(--font-light);
+  border-bottom: 2px solid var(--font-light);
+  rotate: 45deg;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; //矢印(擬似要素)の上もpointerになる
+}
+
+.c-search-form-item select {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: var(--gray);
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--border);
+  outline: none;
+}
+
+// フォーカス時_スタイル
+.c-search-form-item select:focus {
+  box-shadow:
+    0 0 0 1px var(--focus-shadow),
+    0 0 0 4px var(--border);
+}
+
+// 年収（単位：万円）のみ12px、「年収」は親のフォントサイズを継承
+.c-search-form-label-salary-inner > span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.c-search-form-salary-wrapper {
+  width: 100%;
+  min-width: 0; /* グリッド子要素の縮小を許可 */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-search-form-salary-wrapper .c-search-form-salary--min,
+.c-search-form-salary-wrapper .c-search-form-salary--max {
+  flex: 1 1 0;
+  min-width: 0; /* flexで縮小可能にする */
+  width: 0; /* 均等幅のため（flex: 1 1 0 と併用） */
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: var(--gray);
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--border);
+  outline: none;
+  &:focus {
+    box-shadow:
+      0 0 0 1px var(--focus-shadow),
+      0 0 0 4px var(--border);
+  }
+}
+
+.c-search-form-salary-wrapper .c-search-form-label-separator {
+  flex-shrink: 0;
+}
+
 .c-search-form-label-separator {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+[class^="c-search-form-salary--"]::placeholder {
+  opacity: 0.54;
 }
 
 // フォーム内_検索ボタン
@@ -114,6 +242,7 @@ component > search-form
   align-items: center;
   justify-content: center;
   gap: 6px;
+
   ::before {
     content: "";
     display: block;
