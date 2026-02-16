@@ -231,6 +231,22 @@
       </details>
     </form>
     <!-- 絞り込み検索_サイドバー用 end -->
+    <!-- トップページ用コラムカード -->
+    <article class="c-card-top-column-container">
+      <div class="c-card-top-column-image">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-thumbnail@2x.webp' ); ?>"
+          width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+      </div>
+      <div class="c-card-top-column-content">
+        <span class="c-card-column-badge">スキルアップ</span>
+        <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！</h3>
+        <div class="c-card-column-date-container">
+          <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
+          <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+        </div>
+      </div>
+    </article>
+    <!-- トップページ用コラムカード end -->
   </div>
   <!-- コンポーネント仮作成 終わり -->
 
