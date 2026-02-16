@@ -5,26 +5,27 @@ global > color
 */
 :root {
   --font-base: #333835;
-  --primary-green: #46B06B;
+  --primary-green: #46b06b;
   --black: #313331;
-  --white: #FFFFFF;
-  --gray: #F7F7F7;
-  --border-light: #EBEEF4;
-  --border: #D8DADE;
-  --dummy-image: #A0A0A0;
-  --font-light: #6B6C6C;
-  --accent: #ED8F41;
-  --primary-light-green: #E2F6E9;
-  --favorite: #E2BD43;
-  --red: #E74848;
-  --slider-dot: #C7C7C7;
-  --primary-extra-light: #F2F8F4;
-  --link: #398AE1;
-  --rank-1: #E2BD43;
-  --rank-2: #A7A9AC;
-  --rank-3: #CD7F32;
+  --white: #ffffff;
+  --gray: #f7f7f7;
+  --border-light: #ebeef4;
+  --border: #d8dade;
+  --dummy-image: #a0a0a0;
+  --font-light: #6b6c6c;
+  --accent: #ed8f41;
+  --primary-light-green: #e2f6e9;
+  --favorite: #e2bd43;
+  --red: #e74848;
+  --slider-dot: #c7c7c7;
+  --primary-extra-light: #f2f8f4;
+  --link: #398ae1;
+  --rank-1: #e2bd43;
+  --rank-2: #a7a9ac;
+  --rank-3: #cd7f32;
   --rank-other: #313331;
-  --bg-component: #D0D0D0;
+  --bg-component: #d0d0d0;
+  --focus-shadow: rgba(11, 170, 125, 0.5);
 }
 
 /*!
@@ -497,7 +498,6 @@ component > search-form
 ------------------------------
 */
 .c-search-form {
-  display: grid;
   max-width: 342px;
   background-color: var(--white);
   border-radius: 6px;
@@ -524,6 +524,7 @@ component > search-form
 @media screen and (min-width: 768px) {
   .c-search-form-summary {
     gap: 12px;
+    font-size: 20px;
   }
 }
 .c-search-form-summary::before {
@@ -574,6 +575,153 @@ component > search-form
 
 .c-search-form-details[open] .c-search-form-summary-icon span:nth-child(2) {
   transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.c-search-form-body {
+  display: grid;
+}
+
+.c-search-form-item {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  min-width: 0; /* グリッド子要素のオーバーフロー防止 */
+}
+
+.c-search-form-label {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .c-search-form-label {
+    font-size: 18px;
+  }
+}
+.c-search-form-label::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--primary-green);
+}
+
+.c-search-form-label--area::before {
+  -webkit-mask-image: url("../img/common/icon-area.svg");
+          mask-image: url("../img/common/icon-area.svg");
+}
+
+.c-search-form-label--employment-type::before {
+  -webkit-mask-image: url("../img/common/icon-employment.svg");
+          mask-image: url("../img/common/icon-employment.svg");
+}
+
+.c-search-form-label--job-category::before {
+  -webkit-mask-image: url("../img/common/icon-role.svg");
+          mask-image: url("../img/common/icon-role.svg");
+}
+
+.c-search-form-label--salary::before {
+  -webkit-mask-image: url("../img/common/icon-salary.svg");
+          mask-image: url("../img/common/icon-salary.svg");
+}
+
+.c-search-form-label-salary-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-search-form-select-wrapper {
+  position: relative;
+}
+
+.c-search-form-select-wrapper::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-right: 2px solid var(--font-light);
+  border-bottom: 2px solid var(--font-light);
+  rotate: 45deg;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.c-search-form-item select {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: var(--gray);
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--border);
+  outline: none;
+}
+
+.c-search-form-item select:focus {
+  box-shadow: 0 0 0 1px var(--focus-shadow), 0 0 0 4px var(--border);
+}
+
+.c-search-form-label-salary-inner > span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.c-search-form-salary-wrapper {
+  width: 100%;
+  min-width: 0; /* グリッド子要素の縮小を許可 */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-search-form-salary-wrapper .c-search-form-salary--min,
+.c-search-form-salary-wrapper .c-search-form-salary--max {
+  flex: 1 1 0;
+  min-width: 0; /* flexで縮小可能にする */
+  width: 0; /* 均等幅のため（flex: 1 1 0 と併用） */
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: var(--gray);
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--border);
+  outline: none;
+}
+.c-search-form-salary-wrapper .c-search-form-salary--min:focus,
+.c-search-form-salary-wrapper .c-search-form-salary--max:focus {
+  box-shadow: 0 0 0 1px var(--focus-shadow), 0 0 0 4px var(--border);
+}
+
+.c-search-form-salary-wrapper .c-search-form-label-separator {
+  flex-shrink: 0;
+}
+
+.c-search-form-label-separator {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+[class^=c-search-form-salary--]::-moz-placeholder {
+  opacity: 0.54;
+}
+
+[class^=c-search-form-salary--]::placeholder {
+  opacity: 0.54;
 }
 
 .c-search-form-button-container {
