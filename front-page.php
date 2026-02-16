@@ -111,7 +111,7 @@
           <div class="c-search-form-item">
             <label class="c-search-form-label c-search-form-label--area" for="area">地域</label>
             <div class="c-search-form-select-wrapper">
-              <select name="area" id="area">
+              <select class="c-search-form-input" name="area" id="area">
                 <option value="" disabled selected>選択してください</option>
                 <optgroup label="北海道・東北">
                   <option value="hokkaido">北海道</option>
@@ -181,7 +181,7 @@
           <div class="c-search-form-item">
             <label class="c-search-form-label c-search-form-label--employment-type" for="employment_type">雇用形態</label>
             <div class="c-search-form-select-wrapper">
-              <select name="employment_type" id="employment_type">
+              <select class="c-search-form-input" name="employment_type" id="employment_type">
                 <option value="" disabled selected>選択してください</option>
                 <option value="full-time">正社員</option>
                 <option value="contract">契約社員</option>
@@ -197,7 +197,7 @@
           <div class="c-search-form-item">
             <label class="c-search-form-label c-search-form-label--job-category" for="job_category">職種</label>
             <div class="c-search-form-select-wrapper">
-              <select name="job_category" id="job_category">
+              <select class="c-search-form-input" name="job_category" id="job_category">
                 <option value="" disabled selected>選択してください</option>
                 <option value="web-writer">Webライター</option>
                 <option value="photographer">フォトグラファー</option>
@@ -217,11 +217,11 @@
             <span class="c-search-form-label c-search-form-label--salary"><span
                 class="c-search-form-label-salary-inner">年収<span>（単位：万円）</span></span></span>
             <div class="c-search-form-salary-wrapper">
-              <input class="c-search-form-salary--min" type="number" name="salary_min" id="salary_min"
-                placeholder="例：300">
+              <input class="c-search-form-input c-search-form-salary--min" type="number" name="salary_min"
+                id="salary_min" placeholder="例：300">
               <span class="c-search-form-label-separator">~</span>
-              <input class="c-search-form-salary--max" type="number" name="salary_max" id="salary_max"
-                placeholder="例：500">
+              <input class="c-search-form-input c-search-form-salary--max" type="number" name="salary_max"
+                id="salary_max" placeholder="例：500">
             </div>
           </div>
           <!-- ボタン -->

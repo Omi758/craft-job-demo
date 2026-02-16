@@ -89,6 +89,7 @@ component > card
   font-size: 16px;
   font-weight: 700;
   color: var(--primary-green);
+  padding-left: 0.025em;
   transition: all 0.3s ease;
   @include g.mq() {
     font-size: 18px;
