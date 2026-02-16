@@ -494,6 +494,21 @@ component > card
   background-color: var(--primary-green);
 }
 
+/*
+ * カード用_タイムスタンプ
+ */
+/*
+  * カード用_カテゴリバッジ
+ */
+.c-card-column-badge {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--primary-green);
+  padding: 2px 12px;
+  border-radius: 4px;
+}
+
 /*!
 component > search-form
 ------------------------------
