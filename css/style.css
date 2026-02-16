@@ -469,6 +469,7 @@ component > card
   font-size: 16px;
   font-weight: 700;
   color: var(--primary-green);
+  padding-left: 0.025em;
   transition: all 0.3s ease;
 }
 @media screen and (min-width: 768px) {
@@ -520,6 +521,10 @@ component > search-form
   border-bottom: 1px solid var(--border-light);
   padding: 16px;
   cursor: pointer;
+  list-style: none;
+}
+.c-search-form-summary::-webkit-details-marker {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .c-search-form-summary {
@@ -638,7 +643,7 @@ component > search-form
 
 .c-search-form-label-salary-inner {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 4px;
 }
 
@@ -661,7 +666,7 @@ component > search-form
   pointer-events: none;
 }
 
-.c-search-form-item select {
+.c-search-form-input {
   width: 100%;
   font-size: 16px;
   border-radius: 4px;
@@ -672,7 +677,7 @@ component > search-form
   outline: none;
 }
 
-.c-search-form-item select:focus {
+.c-search-form-input:focus {
   box-shadow: 0 0 0 1px var(--focus-shadow), 0 0 0 4px var(--border);
 }
 
@@ -689,22 +694,10 @@ component > search-form
   gap: 4px;
 }
 
-.c-search-form-salary-wrapper .c-search-form-salary--min,
-.c-search-form-salary-wrapper .c-search-form-salary--max {
-  flex: 1 1 0;
-  min-width: 0; /* flexで縮小可能にする */
-  width: 0; /* 均等幅のため（flex: 1 1 0 と併用） */
-  font-size: 16px;
-  border-radius: 4px;
-  background-color: var(--gray);
+.c-search-form-salary--min,
+.c-search-form-salary--max {
   padding: 10px 12px;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px var(--border);
-  outline: none;
-}
-.c-search-form-salary-wrapper .c-search-form-salary--min:focus,
-.c-search-form-salary-wrapper .c-search-form-salary--max:focus {
-  box-shadow: 0 0 0 1px var(--focus-shadow), 0 0 0 4px var(--border);
+  opacity: 0.54;
 }
 
 .c-search-form-salary-wrapper .c-search-form-label-separator {
@@ -745,8 +738,9 @@ component > search-form
   align-items: center;
   justify-content: center;
   gap: 6px;
+  padding-left: 0.025em;
 }
-.c-search-form-button ::before {
+.c-search-form-button::before {
   content: "";
   display: block;
   width: 24px;

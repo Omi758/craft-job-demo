@@ -25,6 +25,11 @@ component > search-form
   border-bottom: 1px solid var(--border-light);
   padding: 16px;
   cursor: pointer;
+  list-style: none; // ブラウザのデフォルトスタイルを削除
+  &::-webkit-details-marker {
+    display: none;
+  }
+
   @include g.mq() {
     gap: 12px;
     font-size: 20px;
@@ -135,7 +140,7 @@ component > search-form
 
 .c-search-form-label-salary-inner {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 4px;
 }
 
@@ -159,7 +164,7 @@ component > search-form
   pointer-events: none; //矢印(擬似要素)の上もpointerになる
 }
 
-.c-search-form-item select {
+.c-search-form-input {
   width: 100%;
   font-size: 16px;
   border-radius: 4px;
@@ -171,7 +176,7 @@ component > search-form
 }
 
 // フォーカス時_スタイル
-.c-search-form-item select:focus {
+.c-search-form-input:focus {
   box-shadow:
     0 0 0 1px var(--focus-shadow),
     0 0 0 4px var(--border);
@@ -191,23 +196,10 @@ component > search-form
   gap: 4px;
 }
 
-.c-search-form-salary-wrapper .c-search-form-salary--min,
-.c-search-form-salary-wrapper .c-search-form-salary--max {
-  flex: 1 1 0;
-  min-width: 0; /* flexで縮小可能にする */
-  width: 0; /* 均等幅のため（flex: 1 1 0 と併用） */
-  font-size: 16px;
-  border-radius: 4px;
-  background-color: var(--gray);
+.c-search-form-salary--min,
+.c-search-form-salary--max {
   padding: 10px 12px;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px var(--border);
-  outline: none;
-  &:focus {
-    box-shadow:
-      0 0 0 1px var(--focus-shadow),
-      0 0 0 4px var(--border);
-  }
+  opacity: 0.54;
 }
 
 .c-search-form-salary-wrapper .c-search-form-label-separator {
@@ -242,8 +234,9 @@ component > search-form
   align-items: center;
   justify-content: center;
   gap: 6px;
+  padding-left: 0.025em;
 
-  ::before {
+  &::before {
     content: "";
     display: block;
     width: 24px;
