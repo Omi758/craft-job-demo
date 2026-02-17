@@ -101,6 +101,13 @@ function craftjob_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'craftjob_customize_register' );
 
 
+/**
+ * アイキャッチ画像の設定
+ */
+add_theme_support( 'post-thumbnails' );
+
+
+
 
 /**
  * セキュリティ対策

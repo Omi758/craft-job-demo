@@ -234,12 +234,17 @@
     <!-- トップページ用コラムカード -->
     <article class="c-card-top-column-container">
       <div class="c-card-top-column-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-thumbnail@2x.webp' ); ?>"
-          width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+        <picture>
+          <source media="(max-width: 767px)"
+            srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
+            type="image/webp">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>" width="767"
+            height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+        </picture>
       </div>
       <div class="c-card-top-column-content">
         <span class="c-card-column-badge">スキルアップ</span>
-        <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！</h3>
+        <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
         <div class="c-card-column-date-container">
           <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
           <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
