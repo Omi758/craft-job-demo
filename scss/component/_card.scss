@@ -112,6 +112,36 @@ component > card
  * カード用_タイムスタンプ
  */
 .c-card-column-date-container {
+  display: flex;
+  gap: 16px;
+}
+.c-card-column-date,
+.c-card-column-update {
+  font-weight: 500;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-card-column-date::before,
+.c-card-column-update::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+
+.c-card-column-date::before {
+  background-image: url("../img/common/icon-publish.svg");
+}
+
+.c-card-column-update::before {
+  background-image: url("../img/common/icon-update.svg");
 }
 
 /*
@@ -124,4 +154,47 @@ component > card
   background-color: var(--primary-green);
   padding: 2px 12px;
   border-radius: 4px;
+}
+
+/**
+* トップページ用_コラムカード
+*/
+.c-card-top-column-container {
+  display: grid;
+  background-color: var(--white);
+  border-radius: 12px;
+  width: 100%;
+  @include g.mq() {
+    grid-template-columns: auto 1fr;
+  }
+}
+.c-card-top-column-image {
+  width: 100%;
+  aspect-ratio: 342 / 192;
+  border-radius: 12px 12px 0 12px;
+  overflow: hidden;
+  @include g.mq() {
+    max-height: 153px;
+    width: auto;
+    aspect-ratio: 160 / 153;
+    border-radius: 12px 0 0 12px;
+  }
+}
+.c-card-top-column-content {
+  padding: 24px 16px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.c-card-top-column-title {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: normal;
+  margin: 8px 0 12px;
+  @include g.mq() {
+    font-size: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
