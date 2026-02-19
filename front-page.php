@@ -90,8 +90,8 @@
           <li><a href="/">#PC至急</a></li>
         </ul>
       </div>
-      <div class="c-card-top-link-container">
-        <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+      <div class="c-card-link-container">
+        <a class="c-card-link c-card-link-view-more" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
           aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る">詳しく見る</a>
       </div>
     </article>
@@ -297,12 +297,12 @@
           </dl>
         </div>
       </div>
-      <div class="c-card-archive-link-container">
-        <a class="c-card-archive-link-entry" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+      <div class="c-card-link-container c-card-link-recruit-container">
+        <a class="c-card-link c-card-link-apply" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
           aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る">応募する</a>
-        <a class="c-card-archive-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+        <a class="c-card-link c-card-link-view-more" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
           aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る">詳しく見る</a>
-        <a class="c-card-archive-favorite" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+        <a class="c-card-link c-card-link-favorite" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
           aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る">お気に入り</a>
 
       </div>

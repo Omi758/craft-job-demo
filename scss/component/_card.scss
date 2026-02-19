@@ -74,42 +74,110 @@ component > card
   color: var(--primary-green);
 }
 
-.c-card-top-link-container {
+// カードリンク_ベース
+.c-card-link-container {
   padding: 16px 17px;
   border-top: 1px solid var(--border-light);
   @include g.mq() {
     padding: 15px 16px 16px;
   }
 }
-.c-card-top-link {
+.c-card-link {
   display: flex;
   gap: 6px;
   width: 100%;
   justify-content: center;
   align-items: center;
   padding: 12px 18px 12px 12px;
-  border: 1px solid var(--primary-green);
   border-radius: 6px;
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary-green);
   padding-left: 0.025em;
-  transition: all 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
   @include g.mq() {
     font-size: 18px;
   }
 }
 
-.c-card-top-link:before {
+.c-card-link:before {
   content: "";
   display: block;
   width: 24px;
   height: 24px;
-  mask-image: url("../img/common/icon-detail.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+// カードリンク_view-more
+.c-card-link-view-more {
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+
+  &::before {
+    mask-image: url("../img/common/icon-detail.svg");
+    background-color: var(--primary-green);
+  }
+
+  &:hover {
+    background-color: var(--hover-light-green);
+    border-color: var(--hover-light-green);
+    color: var(--white);
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+    &::before {
+      background-color: var(--white);
+    }
+  }
+}
+
+// カードリンク_apply
+.c-card-link-apply {
+  border: 1px solid var(--primary-green);
   background-color: var(--primary-green);
+  color: var(--white);
+
+  &::before {
+    mask-image: url("../img/common/icon-apply.svg");
+    background-color: var(--white);
+  }
+
+  &:hover {
+    background-color: var(--primary-light-green);
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+    &::before {
+      background-color: var(--primary-green);
+    }
+  }
+}
+
+// カードリンク_favorite
+.c-card-link-favorite {
+  border: 1px solid var(--favorite);
+  color: var(--favorite);
+
+  &::before {
+    mask-image: url("../img/common/header/icon-favorite.svg");
+    background-color: var(--favorite);
+  }
+
+  &:hover {
+    background-color: var(--favorite);
+    color: var(--white);
+    &::before {
+      background-color: var(--white);
+    }
+  }
 }
 
 /*
@@ -279,40 +347,13 @@ component > card
   color: var(--primary-green);
 }
 
-.c-card-archive-link-container {
-  padding: 16px;
-  border-top: 1px solid var(--border-light);
-  @include g.mq() {
-    padding: 15px 16px;
-  }
-}
-.c-card-archive-link {
+// カードリンク_recruitコンテナ
+.c-card-link-recruit-container {
   display: flex;
-  gap: 6px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 13px 19px 13px 13px;
-  border: 1px solid var(--primary-green);
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary-green);
-  padding-left: 0.025em;
-  transition: all 0.3s ease;
-  @include g.mq() {
-    font-size: 18px;
-  }
-}
+  flex-direction: column;
+  gap: 8px;
 
-.c-card-archive-link::before {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  mask-image: url("../img/common/icon-detail.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  background-color: var(--primary-green);
+  @include g.mq() {
+    flex-direction: row;
+  }
 }
