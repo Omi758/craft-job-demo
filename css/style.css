@@ -26,6 +26,8 @@ global > color
   --rank-other: #313331;
   --bg-component: #d0d0d0;
   --focus-shadow: rgba(11, 170, 125, 0.5);
+  --hover-light-green: #80daa0;
+  --hover-dark-green: #3f8859;
 }
 
 /*!
@@ -450,51 +452,103 @@ component > card
   color: var(--primary-green);
 }
 
-.c-card-top-link-container {
+.c-card-link-container {
   padding: 16px 17px;
   border-top: 1px solid var(--border-light);
 }
 @media screen and (min-width: 768px) {
-  .c-card-top-link-container {
+  .c-card-link-container {
     padding: 15px 16px 16px;
   }
 }
 
-.c-card-top-link {
+.c-card-link {
   display: flex;
   gap: 6px;
   width: 100%;
   justify-content: center;
   align-items: center;
   padding: 12px 18px 12px 12px;
-  border: 1px solid var(--primary-green);
   border-radius: 6px;
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary-green);
   padding-left: 0.025em;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
-  .c-card-top-link {
+  .c-card-link {
     font-size: 18px;
   }
 }
 
-.c-card-top-link:before {
+.c-card-link:before {
   content: "";
   display: block;
   width: 24px;
   height: 24px;
-  -webkit-mask-image: url("../img/common/icon-detail.svg");
-          mask-image: url("../img/common/icon-detail.svg");
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.c-card-link-view-more {
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+}
+.c-card-link-view-more::before {
+  -webkit-mask-image: url("../img/common/icon-detail.svg");
+          mask-image: url("../img/common/icon-detail.svg");
   background-color: var(--primary-green);
+}
+.c-card-link-view-more:hover {
+  background-color: var(--hover-light-green);
+  border-color: var(--hover-light-green);
+  color: var(--white);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.c-card-link-view-more:hover::before {
+  background-color: var(--white);
+}
+
+.c-card-link-apply {
+  border: 1px solid var(--primary-green);
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+.c-card-link-apply::before {
+  -webkit-mask-image: url("../img/common/icon-apply.svg");
+          mask-image: url("../img/common/icon-apply.svg");
+  background-color: var(--white);
+}
+.c-card-link-apply:hover {
+  background-color: var(--primary-light-green);
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.c-card-link-apply:hover::before {
+  background-color: var(--primary-green);
+}
+
+.c-card-link-favorite {
+  border: 1px solid var(--favorite);
+  color: var(--favorite);
+}
+.c-card-link-favorite::before {
+  -webkit-mask-image: url("../img/common/header/icon-favorite.svg");
+          mask-image: url("../img/common/header/icon-favorite.svg");
+  background-color: var(--favorite);
+}
+.c-card-link-favorite:hover {
+  background-color: var(--favorite);
+  color: var(--white);
+}
+.c-card-link-favorite:hover::before {
+  background-color: var(--white);
 }
 
 /*
@@ -685,51 +739,15 @@ component > card
   color: var(--primary-green);
 }
 
-.c-card-archive-link-container {
-  padding: 16px;
-  border-top: 1px solid var(--border-light);
-}
-@media screen and (min-width: 768px) {
-  .c-card-archive-link-container {
-    padding: 15px 16px;
-  }
-}
-
-.c-card-archive-link {
+.c-card-link-recruit-container {
   display: flex;
-  gap: 6px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 13px 19px 13px 13px;
-  border: 1px solid var(--primary-green);
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary-green);
-  padding-left: 0.025em;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  gap: 8px;
 }
 @media screen and (min-width: 768px) {
-  .c-card-archive-link {
-    font-size: 18px;
+  .c-card-link-recruit-container {
+    flex-direction: row;
   }
-}
-
-.c-card-archive-link::before {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  -webkit-mask-image: url("../img/common/icon-detail.svg");
-          mask-image: url("../img/common/icon-detail.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
-  background-color: var(--primary-green);
 }
 
 /*!
