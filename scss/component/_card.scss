@@ -4,6 +4,10 @@
 component > card
 ------------------------------
 */
+/*
+ * トップページ用求人カード
+ */
+
 .c-card-top-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -197,4 +201,118 @@ component > card
     white-space: nowrap;
     overflow: hidden;
   }
+}
+
+/*
+ * 下層ページ用求人カード
+ */
+.c-card-archive-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border-radius: 11px;
+  width: 340px;
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  @include g.mq() {
+    max-width: 774px;
+  }
+}
+
+.c-card-archive-image {
+  width: 100%;
+  aspect-ratio: 340 / 132;
+  border-radius: 11px 11px 0 0;
+  overflow: hidden;
+}
+
+.c-card-archive-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-card-archive-content {
+  padding: 24px 16px;
+}
+.c-card-archive-header {
+  display: flex;
+  place-items: center;
+  gap: 12px;
+}
+
+.c-card-archive-company-logo {
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+}
+.c-card-archive-company {
+  font-size: 16px;
+  font-weight: 700;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.c-card-archive-copy {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 16px;
+  @include g.mq() {
+    margin-top: 8px;
+    font-size: 28px;
+  }
+}
+
+.c-card-archive-tags {
+  margin-top: 16px;
+  display: flex;
+  gap: 2px 20px;
+  flex-wrap: wrap;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.c-card-archive-tags li a {
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.c-card-archive-link-container {
+  padding: 16px;
+  border-top: 1px solid var(--border-light);
+  @include g.mq() {
+    padding: 15px 16px;
+  }
+}
+.c-card-archive-link {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 19px 13px 13px;
+  border: 1px solid var(--primary-green);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-green);
+  padding-left: 0.025em;
+  transition: all 0.3s ease;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.c-card-archive-link::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  mask-image: url("../img/common/icon-detail.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--primary-green);
 }
