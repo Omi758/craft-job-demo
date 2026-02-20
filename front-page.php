@@ -278,22 +278,14 @@
         </ul>
         <div class="c-card-archive-list-container">
           <dl class="c-card-archive-list">
-            <div class="c-card-archive-list-item">
-              <dt class="c-card-archive-list-title">雇用形態</dt>
-              <dd class="c-card-archive-list-value">正社員</dd>
-            </div>
-            <div class="c-card-archive-list-item">
-              <dt class="c-card-archive-list-title">職種</dt>
-              <dd class="c-card-archive-list-value">コーダー・エンジニア</dd>
-            </div>
-            <div class="c-card-archive-list-item">
-              <dt class="c-card-archive-list-title">地域</dt>
-              <dd class="c-card-archive-list-value">福岡</dd>
-            </div>
-            <div class="c-card-archive-list-item">
-              <dt class="c-card-archive-list-title">年収</dt>
-              <dd class="c-card-archive-list-value">300万円</dd>
-            </div>
+            <dt class="c-card-archive-list-title">雇用形態ああああああああ</dt>
+            <dd class="c-card-archive-list-value">正社員</dd>
+            <dt class="c-card-archive-list-title">職種</dt>
+            <dd class="c-card-archive-list-value">コーダー・エンジニア</dd>
+            <dt class="c-card-archive-list-title">地域</dt>
+            <dd class="c-card-archive-list-value">福岡</dd>
+            <dt class="c-card-archive-list-title">年収</dt>
+            <dd class="c-card-archive-list-value">300万円</dd>
           </dl>
         </div>
       </div>
