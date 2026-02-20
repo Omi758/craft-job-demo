@@ -659,7 +659,7 @@ component > card
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 11px;
-  width: 340px;
+  max-width: 340px;
   background-color: var(--white);
   border: 1px solid var(--border-light);
 }
@@ -685,6 +685,11 @@ component > card
 
 .c-card-archive-content {
   padding: 24px 16px;
+}
+@media screen and (min-width: 768px) {
+  .c-card-archive-content {
+    padding: 32px 24px 40px;
+  }
 }
 
 .c-card-archive-header {
@@ -717,8 +722,8 @@ component > card
 }
 @media screen and (min-width: 768px) {
   .c-card-archive-copy {
-    margin-top: 8px;
     font-size: 28px;
+    margin-top: 8px;
   }
 }
 
@@ -728,15 +733,39 @@ component > card
   gap: 2px 20px;
   flex-wrap: wrap;
 }
+
+.c-card-archive-tags li a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-green);
+}
 @media screen and (min-width: 768px) {
-  .c-card-archive-tags {
+  .c-card-archive-tags li a {
     font-size: 18px;
   }
 }
 
-.c-card-archive-tags li a {
-  font-weight: 700;
-  color: var(--primary-green);
+.c-card-archive-list {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.c-card-archive-list-title {
+  padding: 8px 20px;
+  background-color: var(--gray);
+  border-right: 1px solid var(--border-light);
+}
+.c-card-archive-list-title:not(:first-child) {
+  border-top: 1px solid var(--border);
+}
+
+.c-card-archive-list-value {
+  padding: 8px 20px;
+}
+.c-card-archive-list-value:not(:first-child) {
+  border-top: 1px solid var(--border);
 }
 
 .c-card-link-recruit-container {
