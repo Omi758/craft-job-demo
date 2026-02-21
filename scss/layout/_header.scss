@@ -4,6 +4,10 @@
 layout > header
 ------------------------------
 */
+.l-header {
+  background-color: var(--white);
+}
+
 .l-header-inner {
   display: flex;
   justify-content: center;
@@ -38,6 +42,7 @@ layout > header
     padding: 0;
     width: auto;
     border-radius: 0;
+    transform: none;
   }
 }
 
@@ -113,7 +118,7 @@ layout > header
   }
 }
 
-/* モディファイアで各アイコンを指定（a::before に指定してリンク範囲に含める） */
+/* 各アイコンを指定（a::before に指定してリンク範囲に含める） */
 .l-header-nav-item--recruit a::before {
   mask-image: url("../img/common/icon-search.svg");
 }
