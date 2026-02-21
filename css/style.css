@@ -1504,6 +1504,63 @@ page > top > top-common
 page > top > top-kv
 ------------------------------
 */
+.top-kv {
+  background-image: url("../img/top/top-kv-bg-sp@2x.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .top-kv {
+    background-image: url("../img/top/top-kv-bg@2x.webp");
+  }
+}
+
+.top-kv-container {
+  padding-top: 44px;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-container {
+    padding-top: 80px;
+  }
+}
+
+.top-kv-text-content {
+  display: grid;
+  gap: 12px;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-text-content {
+    gap: 19px;
+  }
+}
+
+.top-kv-emblem {
+  width: 199px;
+  aspect-ratio: 199/59;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-emblem {
+    width: 232px;
+  }
+}
+
+.top-kv-image {
+  width: 211px;
+  aspect-ratio: 211/413;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-image {
+    width: 458px;
+    aspect-ratio: 1/1;
+    right: 159px;
+  }
+}
+
 /*!
 page > about > about-common
 ------------------------------

@@ -3,26 +3,27 @@
 <main class="top">
   <!-- top-kv -->
   <section class="top-kv">
-    <div class="top-kv-container">
+    <div class="top-kv-container l-container">
       <div class="top-kv-text-content">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem.webp' ); ?>" width="465"
+        <img class="top-kv-emblem" src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem.webp' ); ?>" width="465"
           height="151" alt="制作会社の掲載数ナンバーワン" decoding="async" />
         <h2 class="top-kv-title">
-          <span class="top-kv-title-main">Web制作会社への転職を、</span>
-          <span>最短ルートで。</span>
+          <span class="top-kv-title--green"><span>Web</span>制作会社</span><span class="top-kv-title--black">への転職<span
+              class="top-kv-title-sp-hidden">を、</span></span>
+          <span class="top-kv-title--black">最短ルートで。</span>
         </h2>
-        <div class="top-kv-text-item">
-          <p>リモート</p>
-          <p>求人多数</p>
-        </div>
-        <div class="top-kv-text-item">
-          <p>未経験可</p>
-          <p>の求人あり</p>
+        <div class="top-kv-text-items">
+          <div class="top-kv-text-item">
+            <p><span class="top-kv-text--green">リモート</span>求人多数</p>
+          </div>
+          <div class="top-kv-text-item">
+            <p><span class="top-kv-text--green">未経験可</span>の求人あり</p>
+          </div>
         </div>
       </div>
 
-      <div class="top-kv-image">
-        <picture>
+      <div class="top-kv-image-container">
+        <picture class="top-kv-image">
           <source media="(max-width: 767px)"
             srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-peason-sp@2x.webp' ); ?>"
             type="image/webp">
@@ -31,128 +32,129 @@
         </picture>
       </div>
     </div>
-    <!-- top-kv-search -->
-    <div class="top-kv-search-container">
-      <form class="c-search-form" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
-        <p class="top-kv-search-form-title">
-          絞り込み検索
-        </p>
-        <div class="top-kv-search-form-body">
-          <!-- 地域プルダウン -->
-          <div class="c-search-form-item">
-            <label class="c-search-form-label c-search-form-label--area" for="area">地域</label>
-            <div class="c-search-form-select-wrapper">
-              <select class="c-search-form-input" name="area" id="area">
-                <option value="" disabled selected>選択してください</option>
-                <optgroup label="北海道・東北">
-                  <option value="hokkaido">北海道</option>
-                  <option value="aomori">青森</option>
-                  <option value="iwate">岩手</option>
-                  <option value="miyagi">宮城</option>
-                  <option value="akita">秋田</option>
-                  <option value="yamagata">山形</option>
-                  <option value="fukushima">福島</option>
-                </optgroup>
-                <optgroup label="関東">
-                  <option value="tokyo">東京</option>
-                  <option value="kanagawa">神奈川</option>
-                  <option value="saitama">埼玉</option>
-                  <option value="chiba">千葉</option>
-                  <option value="ibaraki">茨城</option>
-                  <option value="gunma">群馬</option>
-                  <option value="tochigi">栃木</option>
-                </optgroup>
-                <optgroup label="中部">
-                  <option value="niigata">新潟</option>
-                  <option value="toyama">富山</option>
-                  <option value="ishikawa">石川</option>
-                  <option value="fukui">福井</option>
-                  <option value="yamanashi">山梨</option>
-                  <option value="nagano">長野</option>
-                  <option value="gifu">岐阜</option>
-                  <option value="shizuoka">静岡</option>
-                  <option value="aichi">愛知</option>
-                </optgroup>
-                <optgroup label="近畿">
-                  <option value="mie">三重</option>
-                  <option value="shiga">滋賀</option>
-                  <option value="kyoto">京都</option>
-                  <option value="osaka">大阪</option>
-                  <option value="hyogo">兵庫</option>
-                  <option value="nara">奈良</option>
-                  <option value="wakayama">和歌山</option>
-                </optgroup>
-                <optgroup label="中国">
-                  <option value="tottori">鳥取</option>
-                  <option value="shimane">島根</option>
-                  <option value="okayama">岡山</option>
-                  <option value="hiroshima">広島</option>
-                  <option value="yamaguchi">山口</option>
-                </optgroup>
-                <optgroup label="四国">
-                  <option value="tokushima">徳島</option>
-                  <option value="kagawa">香川</option>
-                  <option value="ehime">愛媛</option>
-                  <option value="kochi">高知</option>
-                </optgroup>
-                <optgroup label="九州・沖縄">
-                  <option value="fukuoka">福岡</option>
-                  <option value="saga">佐賀</option>
-                  <option value="nagasaki">長崎</option>
-                  <option value="kumamoto">熊本</option>
-                  <option value="oita">大分</option>
-                  <option value="miyazaki">宮崎</option>
-                  <option value="kagoshima">鹿児島</option>
-                  <option value="okinawa">沖縄</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-          <!-- 雇用形態プルダウン -->
-          <div class="c-search-form-item">
-            <label class="c-search-form-label c-search-form-label--employment-type" for="employment_type">雇用形態</label>
-            <div class="c-search-form-select-wrapper">
-              <select class="c-search-form-input" name="employment_type" id="employment_type">
-                <option value="" disabled selected>選択してください</option>
-                <option value="full-time">正社員</option>
-                <option value="contract">契約社員</option>
-                <option value="temporary">派遣社員</option>
-                <option value="freelance">フリーランス</option>
-                <option value="side-job">副業</option>
-                <option value="part-time">アルバイト</option>
-                <option value="intern">インターン</option>
-              </select>
-            </div>
-          </div>
-          <!-- 職種プルダウン -->
-          <div class="c-search-form-item">
-            <label class="c-search-form-label c-search-form-label--job-category" for="job_category">職種</label>
-            <div class="c-search-form-select-wrapper">
-              <select class="c-search-form-input" name="job_category" id="job_category">
-                <option value="" disabled selected>選択してください</option>
-                <option value="web-writer">Webライター</option>
-                <option value="photographer">フォトグラファー</option>
-                <option value="graphic-designer">グラフィックデザイナー</option>
-                <option value="illustrator">イラストレーター</option>
-                <option value="ui-ux-designer">UI/UXデザイナー</option>
-                <option value="web-designer">Webデザイナー</option>
-                <option value="coder-engineer">コーダー・エンジニア</option>
-                <option value="director">ディレクター</option>
-                <option value="art-director">アートディレクター</option>
-                <option value="marketer">マーケター</option>
-              </select>
-            </div>
-          </div>
-          <!-- ボタン -->
-          <div class="c-search-form-button-container"><button class="c-search-form-button" type="submit">検索する</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <!-- top-kv-search end -->
-
   </section>
   <!-- top-kv end -->
+
+  <!-- top-search -->
+  <div class="top-search-container">
+    <form class="c-search-form" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
+      <p class="top-search-form-title">
+        絞り込み検索
+      </p>
+      <div class="top-kv-search-form-body">
+        <!-- 地域プルダウン -->
+        <div class="c-search-form-item">
+          <label class="c-search-form-label c-search-form-label--area" for="area">地域</label>
+          <div class="c-search-form-select-wrapper">
+            <select class="c-search-form-input" name="area" id="area">
+              <option value="" disabled selected>選択してください</option>
+              <optgroup label="北海道・東北">
+                <option value="hokkaido">北海道</option>
+                <option value="aomori">青森</option>
+                <option value="iwate">岩手</option>
+                <option value="miyagi">宮城</option>
+                <option value="akita">秋田</option>
+                <option value="yamagata">山形</option>
+                <option value="fukushima">福島</option>
+              </optgroup>
+              <optgroup label="関東">
+                <option value="tokyo">東京</option>
+                <option value="kanagawa">神奈川</option>
+                <option value="saitama">埼玉</option>
+                <option value="chiba">千葉</option>
+                <option value="ibaraki">茨城</option>
+                <option value="gunma">群馬</option>
+                <option value="tochigi">栃木</option>
+              </optgroup>
+              <optgroup label="中部">
+                <option value="niigata">新潟</option>
+                <option value="toyama">富山</option>
+                <option value="ishikawa">石川</option>
+                <option value="fukui">福井</option>
+                <option value="yamanashi">山梨</option>
+                <option value="nagano">長野</option>
+                <option value="gifu">岐阜</option>
+                <option value="shizuoka">静岡</option>
+                <option value="aichi">愛知</option>
+              </optgroup>
+              <optgroup label="近畿">
+                <option value="mie">三重</option>
+                <option value="shiga">滋賀</option>
+                <option value="kyoto">京都</option>
+                <option value="osaka">大阪</option>
+                <option value="hyogo">兵庫</option>
+                <option value="nara">奈良</option>
+                <option value="wakayama">和歌山</option>
+              </optgroup>
+              <optgroup label="中国">
+                <option value="tottori">鳥取</option>
+                <option value="shimane">島根</option>
+                <option value="okayama">岡山</option>
+                <option value="hiroshima">広島</option>
+                <option value="yamaguchi">山口</option>
+              </optgroup>
+              <optgroup label="四国">
+                <option value="tokushima">徳島</option>
+                <option value="kagawa">香川</option>
+                <option value="ehime">愛媛</option>
+                <option value="kochi">高知</option>
+              </optgroup>
+              <optgroup label="九州・沖縄">
+                <option value="fukuoka">福岡</option>
+                <option value="saga">佐賀</option>
+                <option value="nagasaki">長崎</option>
+                <option value="kumamoto">熊本</option>
+                <option value="oita">大分</option>
+                <option value="miyazaki">宮崎</option>
+                <option value="kagoshima">鹿児島</option>
+                <option value="okinawa">沖縄</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <!-- 雇用形態プルダウン -->
+        <div class="c-search-form-item">
+          <label class="c-search-form-label c-search-form-label--employment-type" for="employment_type">雇用形態</label>
+          <div class="c-search-form-select-wrapper">
+            <select class="c-search-form-input" name="employment_type" id="employment_type">
+              <option value="" disabled selected>選択してください</option>
+              <option value="full-time">正社員</option>
+              <option value="contract">契約社員</option>
+              <option value="temporary">派遣社員</option>
+              <option value="freelance">フリーランス</option>
+              <option value="side-job">副業</option>
+              <option value="part-time">アルバイト</option>
+              <option value="intern">インターン</option>
+            </select>
+          </div>
+        </div>
+        <!-- 職種プルダウン -->
+        <div class="c-search-form-item">
+          <label class="c-search-form-label c-search-form-label--job-category" for="job_category">職種</label>
+          <div class="c-search-form-select-wrapper">
+            <select class="c-search-form-input" name="job_category" id="job_category">
+              <option value="" disabled selected>選択してください</option>
+              <option value="web-writer">Webライター</option>
+              <option value="photographer">フォトグラファー</option>
+              <option value="graphic-designer">グラフィックデザイナー</option>
+              <option value="illustrator">イラストレーター</option>
+              <option value="ui-ux-designer">UI/UXデザイナー</option>
+              <option value="web-designer">Webデザイナー</option>
+              <option value="coder-engineer">コーダー・エンジニア</option>
+              <option value="director">ディレクター</option>
+              <option value="art-director">アートディレクター</option>
+              <option value="marketer">マーケター</option>
+            </select>
+          </div>
+        </div>
+        <!-- ボタン -->
+        <div class="c-search-form-button-container"><button class="c-search-form-button" type="submit">検索する</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- top-search end -->
+
 
 
   <!-- 以下、コンポーネントを仮作成_先頭は仮レイアウト用div -->
