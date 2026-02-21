@@ -348,11 +348,26 @@
           aria-label="求人の詳細を見る">詳しく見る</a>
         <a class="c-card-link c-card-link-favorite" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
           aria-label="求人募集記事をお気に入り登録する">お気に入り</a>
-
+      </div>
+    </article>
+    <!-- 求人一覧カード_お気に入り登録 end -->
+    <!-- 下層ページ用コラム一覧カード -->
+    <article class="c-card-column-container">
+      <div class="c-card-column-image">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/column-single-thumbnail@2x.webp' ); ?>"
+          width="1600" height="900" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+      </div>
+      <div class="c-card-column-content">
+        <span class="c-card-column-badge">スキルアップ</span>
+        <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+        <div class="c-card-column-date-container">
+          <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
+          <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+        </div>
       </div>
     </article>
 
-    <!-- 求人一覧カード_お気に入り登録 end -->
+    <!-- 下層ページ用コラム一覧カード end -->
   </div>
   <!-- コンポーネント仮作成 終わり -->
 

@@ -864,6 +864,9 @@ component > card
   grid-row: 1/3;
 }
 
+/**
+* 下層ページ用コラム一覧カード
+**/
 /*!
 component > search-form
 ------------------------------
