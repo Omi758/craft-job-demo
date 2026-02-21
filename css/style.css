@@ -550,6 +550,14 @@ component > card
   background-color: var(--white);
 }
 
+.is-active--favorite {
+  background-color: var(--favorite);
+  color: var(--white);
+}
+.is-active--favorite::before {
+  background-color: var(--white);
+}
+
 /*
  * カード用_タイムスタンプ
  */

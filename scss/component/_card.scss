@@ -176,6 +176,15 @@ component > card
   }
 }
 
+// カード_リンク_お気に入り登録_アクティブ時
+.is-active--favorite {
+  background-color: var(--favorite);
+  color: var(--white);
+  &::before {
+    background-color: var(--white);
+  }
+}
+
 /*
  * カード用_タイムスタンプ
  */
