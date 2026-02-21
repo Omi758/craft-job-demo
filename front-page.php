@@ -17,7 +17,8 @@
             <p><span class="top-kv-text--green">リモート</span>求人多数</p>
           </div>
           <div class="top-kv-text-item">
-            <p><span class="top-kv-text--green">未経験可</span>の求人あり</p>
+            <p><span class="top-kv-text--green">未経験可</span><span class="top-kv-text-item--black">の</span></p>
+            <p class="top-kv-text-item--black">求人あり</p>
           </div>
         </div>
       </div>
