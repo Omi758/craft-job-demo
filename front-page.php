@@ -233,23 +233,25 @@
     <!-- 絞り込み検索_サイドバー用 end -->
     <!-- トップページ用コラムカード -->
     <article class="c-card-top-column-container">
-      <div class="c-card-top-column-image">
-        <picture>
-          <source media="(max-width: 767px)"
-            srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
-            type="image/webp">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>" width="767"
-            height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-        </picture>
-      </div>
-      <div class="c-card-top-column-content">
-        <span class="c-card-column-badge">スキルアップ</span>
-        <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
-        <div class="c-card-column-date-container">
-          <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
-          <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+      <a href="<?php echo esc_url( home_url( '/column/001/' ) ); ?>">
+        <div class="c-card-top-column-image">
+          <picture>
+            <source media="(max-width: 767px)"
+              srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
+              type="image/webp">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>"
+              width="767" height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+          </picture>
         </div>
-      </div>
+        <div class="c-card-top-column-content">
+          <span class="c-card-column-badge">スキルアップ</span>
+          <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+          <div class="c-card-column-date-container">
+            <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
+            <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+          </div>
+        </div>
+      </a>
     </article>
     <!-- トップページ用コラムカード end -->
     <!-- 求人一覧カード_ベース -->
@@ -353,18 +355,20 @@
     <!-- 求人一覧カード_お気に入り登録 end -->
     <!-- 下層ページ用コラム一覧カード -->
     <article class="c-card-column-container">
-      <div class="c-card-column-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/column-single-thumbnail@2x.webp' ); ?>"
-          width="1600" height="900" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-      </div>
-      <div class="c-card-column-content">
-        <span class="c-card-column-badge">スキルアップ</span>
-        <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
-        <div class="c-card-column-date-container">
-          <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
-          <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+      <a href="<?php echo esc_url( home_url( '/column/001/' ) ); ?>">
+        <div class="c-card-column-image">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/column-single-thumbnail@2x.webp' ); ?>"
+            width="1600" height="900" alt="Web制作会社が面接で見るポイントを徹底解説の記事サムネイル" loading="lazy" decoding="async" />
         </div>
-      </div>
+        <div class="c-card-column-content">
+          <span class="c-card-column-badge">スキルアップ</span>
+          <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+          <div class="c-card-column-date-container">
+            <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
+            <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
+          </div>
+        </div>
+      </a>
     </article>
 
     <!-- 下層ページ用コラム一覧カード end -->

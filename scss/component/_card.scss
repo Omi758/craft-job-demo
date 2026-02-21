@@ -225,7 +225,7 @@ component > card
 }
 
 /**
-* トップページ用_コラムカード
+* トップページ_コラムカード
 */
 .c-card-top-column-container {
   display: grid;
@@ -268,7 +268,7 @@ component > card
 }
 
 /*
- * 求人カード（下層ページ）
+ * 下層ページ_求人カード
  */
 .c-card-archive-container {
   display: grid;
@@ -347,7 +347,7 @@ component > card
   }
 }
 
-// 求人カード（下層ページ）_リスト
+// 下層ページ_求人カード_リスト
 .c-card-archive-list-container {
   margin-top: 24px;
 }
@@ -369,7 +369,7 @@ component > card
 .c-card-archive-list-title,
 .c-card-archive-list-value {
   padding: 8px 20px;
-  word-break: break-word;
+  overflow-wrap: anywhere;
   @include g.mq() {
     padding: 7px 20px;
   }
@@ -380,7 +380,7 @@ component > card
   border-top: 1px solid var(--border);
 }
 
-// 求人カード（下層ページ）_リンク_recruitコンテナ
+// 下層ページ_求人カード_リンク_recruitコンテナ
 .c-card-link-recruit-container {
   display: grid;
   gap: 8px;
@@ -458,14 +458,39 @@ component > card
   grid-row: 1 / 3;
 }
 
-/**
-* 下層ページ用コラム一覧カード
-**/
+/* 
+ * 下層ページ用コラム一覧カード
+ */
 .c-card-column-container {
+  display: grid;
+  background-color: var(--white);
+  border-radius: 12px;
+  width: 100%;
 }
 .c-card-column-image {
+  width: 100%;
+  aspect-ratio: 344 / 192;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.c-card-top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .c-card-column-content {
+  padding: 24px 16px;
+  width: 100%;
+  min-width: 0;
 }
 .c-card-column-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 4px 0 16px;
+  overflow-wrap: anywhere;
+  @include g.mq() {
+    font-size: 22px;
+    margin: 6px 0 16px;
+  }
 }
