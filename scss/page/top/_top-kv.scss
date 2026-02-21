@@ -40,7 +40,29 @@ page > top > top-kv
 }
 .top-kv-title-main {
 }
+
+.top-kv-text-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @include g.mq() {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
 .top-kv-text-item {
+  background-color: var(--white);
+  border: 2px solid var(--primary-green);
+  border-radius: 6px;
+  padding: 8px 18px 8px 10px;
+  width: 160px;
+  @include g.mq() {
+    padding: 10px 18px 10px 14px;
+    width: fit-content;
+  }
+}
+.top-kv-text--green {
+  color: var(--primary-green);
 }
 .top-kv-image {
   width: 211px;
