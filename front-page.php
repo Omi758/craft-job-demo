@@ -162,6 +162,13 @@
       <h2 class="c-page-title">求人を探す</h2>
     </div>
     <!-- 共通_タイトル end -->
+    <!-- トップ用カードタイトル -->
+    <div class="c-slider-title-container">
+      <h2 class="c-slider-title">人気求人</h2>
+      <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
+    </div>
+    <!-- トップ用カードタイトル end -->
+
     <!-- コラム一覧タイトル  -->
     <div class="c-column-title-container">
       <h2 class="c-column-title">就活コラム</h2>
