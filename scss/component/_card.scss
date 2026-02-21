@@ -116,20 +116,21 @@ component > card
 .c-card-link-view-more {
   border: 1px solid var(--primary-green);
   color: var(--primary-green);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 
   &::before {
     mask-image: url("../img/common/icon-detail.svg");
     background-color: var(--primary-green);
+    transition: background-color 0.3s ease;
   }
 
   &:hover {
-    background-color: var(--hover-light-green);
-    border-color: var(--hover-light-green);
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
     color: var(--white);
-    transition:
-      color 0.3s ease,
-      background-color 0.3s ease,
-      border-color 0.3s ease;
     &::before {
       background-color: var(--white);
     }
@@ -141,6 +142,7 @@ component > card
   border: 1px solid var(--primary-green);
   background-color: var(--primary-green);
   color: var(--white);
+  transition: opacity 0.3s ease;
 
   &::before {
     mask-image: url("../img/common/icon-apply.svg");
@@ -148,15 +150,9 @@ component > card
   }
 
   &:hover {
-    background-color: var(--primary-light-green);
-    color: var(--primary-green);
-    border-color: var(--primary-green);
-    transition:
-      color 0.3s ease,
-      background-color 0.3s ease,
-      border-color 0.3s ease;
+    opacity: 0.7;
     &::before {
-      background-color: var(--primary-green);
+      opacity: 0.7;
     }
   }
 }
@@ -217,7 +213,7 @@ component > card
 }
 
 /*
-  * カード用_カテゴリバッジ
+  * カード用_コラム_カテゴリバッジ
  */
 .c-card-column-badge {
   font-size: 14px;
@@ -272,7 +268,7 @@ component > card
 }
 
 /*
- * 下層ページ用求人カード
+ * 求人カード（下層ページ）
  */
 .c-card-archive-container {
   display: grid;
@@ -351,37 +347,113 @@ component > card
   }
 }
 
+// 求人カード（下層ページ）_リスト
 .c-card-archive-list-container {
+  margin-top: 24px;
 }
 .c-card-archive-list {
   border: 1px solid var(--border-light);
   border-radius: 8px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 101px 1fr;
+  @include g.mq() {
+    grid-template-columns: 141px 1fr;
+  }
 }
 
 .c-card-archive-list-title {
-  padding: 8px 20px;
   background-color: var(--gray);
   border-right: 1px solid var(--border-light);
-  &:not(:first-child) {
-    border-top: 1px solid var(--border);
-  }
 }
+
+.c-card-archive-list-title,
 .c-card-archive-list-value {
   padding: 8px 20px;
-  &:not(:first-child) {
-    border-top: 1px solid var(--border);
+  word-break: break-word;
+  @include g.mq() {
+    padding: 7px 20px;
   }
 }
 
-// カードリンク_recruitコンテナ
+.c-card-archive-list-title ~ .c-card-archive-list-title,
+.c-card-archive-list-value ~ .c-card-archive-list-value {
+  border-top: 1px solid var(--border);
+}
+
+// 求人カード（下層ページ）_リンク_recruitコンテナ
 .c-card-link-recruit-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 8px;
 
   @include g.mq() {
-    flex-direction: row;
+    grid-template-columns: 49% 1fr 1fr;
   }
+}
+
+/**
+* 求人カード（下層ページ）_人気ランキング
+*/
+.c-card-archive-rank-view-container {
+  display: grid;
+  grid-template-columns: 60px 1fr 72px;
+  grid-template-rows: auto 1fr;
+}
+.c-card-archive-rank {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--rank-other);
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 11px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative;
+  z-index: 5;
+}
+
+.c-card-archive-rank--top {
+  background-color: var(--rank-1);
+}
+
+.c-card-archive-rank--second {
+  background-color: var(--rank-2);
+}
+.c-card-archive-rank--third {
+  background-color: var(--rank-3);
+}
+
+.c-card-archive-views {
+  width: 72px;
+  aspect-ratio: 72 / 30;
+  background-color: var(--white);
+  border-radius: 0 11px 0 11px;
+  display: flex;
+  gap: 2px;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-green);
+  padding-left: 0.025em;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  position: relative;
+  z-index: 4;
+}
+
+.c-card-archive-views-number {
+  font-size: 16px;
+  font-weight: 700;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.c-card-archive-rank-view-container .c-card-archive-image {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
 }
