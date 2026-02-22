@@ -1567,11 +1567,12 @@ page > top > top-kv
   font-weight: 700;
   line-height: 1.4;
 }
+
 .top-kv-title strong {
   display: block;
   padding-bottom: 2px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-title strong {
     display: inline;
     padding-right: 8px;
@@ -1583,7 +1584,7 @@ page > top > top-kv
   font-size: clamp(2.125rem, 1.632rem + 2.075vw, 3.5rem);
   padding-right: 4px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-title-accent {
     padding-right: 5px;
   }
@@ -1592,7 +1593,7 @@ page > top > top-kv
 .top-kv-title-sp-hidden {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-title-sp-hidden {
     display: inline;
   }
@@ -1602,7 +1603,7 @@ page > top > top-kv
   display: block;
   padding-top: 2px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-title-sub {
     padding-top: 8px;
     padding-bottom: 7px;
@@ -1616,7 +1617,7 @@ page > top > top-kv
   flex-direction: column;
   gap: 4px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-text-items {
     flex-direction: row;
     gap: 12px;
@@ -1634,7 +1635,7 @@ page > top > top-kv
   display: flex;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-text-item {
     padding: 6px 18px 6px 14px;
     width: -moz-fit-content;
@@ -1669,7 +1670,7 @@ page > top > top-kv
 .top-kv-text-item--remote strong {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-text-item--remote strong {
     display: inline;
   }
@@ -1678,23 +1679,33 @@ page > top > top-kv
 .top-kv-text-item--beginner span {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .top-kv-text-item--beginner span {
     display: inline;
   }
 }
 
 .top-kv-image {
-  width: 211px;
+  width: clamp(13.188rem, 8.42rem + 20.074vw, 16.563rem);
   aspect-ratio: 211/413;
   position: absolute;
   bottom: 0;
   right: 0;
 }
+@media screen and (min-width: 650px) {
+  .top-kv-image {
+    width: 200px;
+  }
+}
 @media screen and (min-width: 768px) {
   .top-kv-image {
-    width: 458px;
+    width: clamp(26.25rem, 23.536rem + 5.655vw, 28.625rem);
     aspect-ratio: 1/1;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .top-kv-image {
     right: 159px;
   }
 }

@@ -27,10 +27,8 @@ page > top > top-kv
   gap: 12px;
   position: relative;
   z-index: var(--z-index-contents);
-  // @include g.mq() {
-  //   // gap: 19px;
-  // }
 }
+
 // エンブレム
 .top-kv-emblem {
   width: 199px;
@@ -47,20 +45,16 @@ page > top > top-kv
   font-size: clamp(2rem, 1.529rem + 1.981vw, 3.313rem);
   font-weight: 700;
   line-height: 1.4;
-  @include g.mq() {
-    // font-size: 53px;
-  }
 }
 
 .top-kv-title strong {
   display: block;
   padding-bottom: 2px;
 
-  @include g.mq() {
+  @include g.mq(sm-md) {
     display: inline;
     padding-right: 8px;
     padding-bottom: 0;
-    // vertical-align: middle;
   }
 }
 
@@ -68,7 +62,7 @@ page > top > top-kv
   // font-size: 34px;
   font-size: clamp(2.125rem, 1.632rem + 2.075vw, 3.5rem);
   padding-right: 4px;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     // font-size: 56px;
     padding-right: 5px;
   }
@@ -76,14 +70,14 @@ page > top > top-kv
 
 .top-kv-title-sp-hidden {
   display: none;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     display: inline;
   }
 }
 .top-kv-title-sub {
   display: block;
   padding-top: 2px;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     padding-top: 8px;
     padding-bottom: 7px;
   }
@@ -95,7 +89,7 @@ page > top > top-kv
   display: flex;
   flex-direction: column;
   gap: 4px;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     flex-direction: row;
     gap: 12px;
   }
@@ -111,7 +105,7 @@ page > top > top-kv
   display: flex;
   align-items: center;
 
-  @include g.mq() {
+  @include g.mq(sm-md) {
     padding: 6px 18px 6px 14px;
     width: fit-content;
     font-size: 18px;
@@ -145,27 +139,38 @@ page > top > top-kv
 
 .top-kv-text-item--remote strong {
   display: block;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     display: inline;
   }
 }
 
 .top-kv-text-item--beginner span {
   display: block;
-  @include g.mq() {
+  @include g.mq(sm-md) {
     display: inline;
   }
 }
 
+// 人物イメージ
 .top-kv-image {
-  width: 211px;
+  // width: 211px;
+  width: clamp(13.188rem, 8.42rem + 20.074vw, 16.563rem);
   aspect-ratio: 211 / 413;
   position: absolute;
   bottom: 0;
   right: 0;
+
+  @include g.mq(sm-md) {
+    width: 200px;
+  }
+
   @include g.mq() {
-    width: 458px;
+    width: clamp(26.25rem, 23.536rem + 5.655vw, 28.625rem);
     aspect-ratio: 1 / 1;
+    right: 30px;
+  }
+
+  @include g.mq(xl) {
     right: 159px;
   }
 }
