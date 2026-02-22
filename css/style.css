@@ -55,6 +55,7 @@ global > z-index
   --z-index-modal: 100;
   --z-index-header: 30;
   --z-index-menu: 10;
+  --z-index-contents: 5;
   --z-index-default: 1;
 }
 
@@ -1530,17 +1531,19 @@ page > top > top-kv
 }
 
 .top-kv-container {
-  padding-top: 44px;
+  padding: 44px 0 108px;
 }
 @media screen and (min-width: 768px) {
   .top-kv-container {
-    padding-top: 80px;
+    padding: 80px 0;
   }
 }
 
 .top-kv-text-content {
   display: grid;
   gap: 12px;
+  position: relative;
+  z-index: var(--z-index-contents);
 }
 @media screen and (min-width: 768px) {
   .top-kv-text-content {
@@ -1559,6 +1562,8 @@ page > top > top-kv
 }
 
 .top-kv-text-items {
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -1575,7 +1580,11 @@ page > top > top-kv
   border: 2px solid var(--primary-green);
   border-radius: 6px;
   padding: 8px 18px 8px 10px;
-  width: 160px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .top-kv-text-item {
@@ -1584,9 +1593,49 @@ page > top > top-kv
     width: fit-content;
   }
 }
+.top-kv-text-item::before {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary-light-green);
+  background-size: 21px 19px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 9px;
+}
+.top-kv-text-item--remote::before {
+  background-image: url("../img/top/icon-pc.svg");
+}
+.top-kv-text-item--beginner::before {
+  background-image: url("../img/top/icon-beginner.svg");
+}
+.top-kv-text-item p {
+  flex: 1;
+}
 
 .top-kv-text--green {
   color: var(--primary-green);
+  font-weight: 700;
+}
+
+.top-kv-text-item--remote strong {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-text-item--remote strong {
+    display: inline;
+  }
+}
+
+.top-kv-text-item--beginner span {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-text-item--beginner span {
+    display: inline;
+  }
 }
 
 .top-kv-image {

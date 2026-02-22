@@ -17,14 +17,16 @@ page > top > top-kv
 }
 
 .top-kv-container {
-  padding-top: 44px;
+  padding: 44px 0 108px;
   @include g.mq() {
-    padding-top: 80px;
+    padding: 80px 0;
   }
 }
 .top-kv-text-content {
   display: grid;
   gap: 12px;
+  position: relative;
+  z-index: var(--z-index-contents);
   @include g.mq() {
     gap: 19px;
   }
@@ -42,6 +44,7 @@ page > top > top-kv
 }
 
 .top-kv-text-items {
+  width: fit-content; // バッチの幅を合わせる
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -55,15 +58,60 @@ page > top > top-kv
   border: 2px solid var(--primary-green);
   border-radius: 6px;
   padding: 8px 18px 8px 10px;
-  width: 160px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+
   @include g.mq() {
     padding: 10px 18px 10px 14px;
     width: fit-content;
   }
+  &::before {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--primary-light-green);
+    background-size: 21px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 9px;
+  }
+  &--remote::before {
+    background-image: url("../img/top/icon-pc.svg");
+  }
+
+  &--beginner::before {
+    background-image: url("../img/top/icon-beginner.svg");
+  }
+
+  p {
+    flex: 1;
+  }
 }
+
 .top-kv-text--green {
   color: var(--primary-green);
+  font-weight: 700;
 }
+
+.top-kv-text-item--remote strong {
+  display: block;
+  @include g.mq() {
+    display: inline;
+  }
+}
+
+.top-kv-text-item--beginner span {
+  display: block;
+  @include g.mq() {
+    display: inline;
+  }
+}
+
 .top-kv-image {
   width: 211px;
   aspect-ratio: 211 / 413;

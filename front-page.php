@@ -10,16 +10,14 @@
           height="151" alt="制作会社の掲載数ナンバーワン" decoding="async" />
         <h2 class="top-kv-title">
           <span class="top-kv-title--green"><span>Web</span>制作会社</span><span class="top-kv-title--black">への転職<span
-              class="top-kv-title-sp-hidden">を、</span></span>
-          <span class="top-kv-title--black">最短ルートで。</span>
+              class="top-kv-title-sp-hidden">を、</span></span><span class="top-kv-title--black">最短ルートで。</span>
         </h2>
         <div class="top-kv-text-items">
-          <div class="top-kv-text-item">
-            <p><span class="top-kv-text--green">リモート</span>求人多数</p>
+          <div class="top-kv-text-item top-kv-text-item--remote">
+            <p><strong class="top-kv-text--green">リモート</strong>求人多数</p>
           </div>
-          <div class="top-kv-text-item">
-            <p><span class="top-kv-text--green">未経験可</span><span class="top-kv-text-item--black">の</span></p>
-            <p class="top-kv-text-item--black">求人あり</p>
+          <div class="top-kv-text-item top-kv-text-item--beginner">
+            <p><strong class="top-kv-text--green">未経験可</strong>の<span>求人あり</span></p>
           </div>
         </div>
       </div>
