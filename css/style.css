@@ -273,6 +273,11 @@ utility > utility
   margin: -1px !important;
 }
 
+.u-text--green {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
 /*!
 utility > hover
 ------------------------------
@@ -1531,7 +1536,7 @@ page > top > top-kv
 }
 
 .top-kv-container {
-  padding: 44px 0 108px;
+  padding: 44px 0 93px;
 }
 @media screen and (min-width: 768px) {
   .top-kv-container {
@@ -1545,11 +1550,6 @@ page > top > top-kv
   position: relative;
   z-index: var(--z-index-contents);
 }
-@media screen and (min-width: 768px) {
-  .top-kv-text-content {
-    gap: 19px;
-  }
-}
 
 .top-kv-emblem {
   width: 199px;
@@ -1558,6 +1558,54 @@ page > top > top-kv
 @media screen and (min-width: 768px) {
   .top-kv-emblem {
     width: 232px;
+    aspect-ratio: 233/76;
+  }
+}
+
+.top-kv-title {
+  font-size: clamp(2rem, 1.529rem + 1.981vw, 3.313rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+.top-kv-title strong {
+  display: block;
+  padding-bottom: 2px;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-title strong {
+    display: inline;
+    padding-right: 8px;
+    padding-bottom: 0;
+  }
+}
+
+.top-kv-title-accent {
+  font-size: clamp(2.125rem, 1.632rem + 2.075vw, 3.5rem);
+  padding-right: 4px;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-title-accent {
+    padding-right: 5px;
+  }
+}
+
+.top-kv-title-sp-hidden {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-title-sp-hidden {
+    display: inline;
+  }
+}
+
+.top-kv-title-sub {
+  display: block;
+  padding-top: 2px;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-title-sub {
+    padding-top: 8px;
+    padding-bottom: 7px;
   }
 }
 
@@ -1588,9 +1636,10 @@ page > top > top-kv
 }
 @media screen and (min-width: 768px) {
   .top-kv-text-item {
-    padding: 10px 18px 10px 14px;
+    padding: 6px 18px 6px 14px;
     width: -moz-fit-content;
     width: fit-content;
+    font-size: 18px;
   }
 }
 .top-kv-text-item::before {
@@ -1600,7 +1649,7 @@ page > top > top-kv
   height: 38px;
   border-radius: 50%;
   background-color: var(--primary-light-green);
-  background-size: 21px 19px;
+  background-size: 22px 22px;
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 9px;
@@ -1613,11 +1662,8 @@ page > top > top-kv
 }
 .top-kv-text-item p {
   flex: 1;
-}
-
-.top-kv-text--green {
-  color: var(--primary-green);
-  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0;
 }
 
 .top-kv-text-item--remote strong {

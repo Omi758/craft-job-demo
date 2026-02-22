@@ -6,18 +6,19 @@
     <div class="top-kv-container l-container">
       <div class="top-kv-text-content">
         <img class="top-kv-emblem"
-          src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem.webp' ); ?>" width="465"
+          src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem.svg' ); ?>" width="465"
           height="151" alt="制作会社の掲載数ナンバーワン" decoding="async" />
         <h2 class="top-kv-title">
-          <span class="top-kv-title--green"><span>Web</span>制作会社</span><span class="top-kv-title--black">への転職<span
-              class="top-kv-title-sp-hidden">を、</span></span><span class="top-kv-title--black">最短ルートで。</span>
+          <strong class="u-text--green"><span class="top-kv-title-accent">Web</span>制作会社</strong>への転職<span
+            class="top-kv-title-sp-hidden">を、</span>
+          <span class="top-kv-title-sub">最短ルートで。</span>
         </h2>
         <div class="top-kv-text-items">
           <div class="top-kv-text-item top-kv-text-item--remote">
-            <p><strong class="top-kv-text--green">リモート</strong>求人多数</p>
+            <p><strong class="u-text--green">リモート</strong>求人多数</p>
           </div>
           <div class="top-kv-text-item top-kv-text-item--beginner">
-            <p><strong class="top-kv-text--green">未経験可</strong>の<span>求人あり</span></p>
+            <p><strong class="u-text--green">未経験可</strong>の<span>求人あり</span></p>
           </div>
         </div>
       </div>
