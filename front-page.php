@@ -36,19 +36,16 @@
   </section>
   <!-- top-kv end -->
 
-  <!-- top-search -->
-  <div class="top-search-container">
-    <form class="c-search-form" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
-      <p class="top-search-form-title">
-        絞り込み検索
-      </p>
-      <div class="top-kv-search-form-body">
+  <!-- top-search-bar -->
+  <div class="top-kv-search-bar">
+    <form class="c-search-bar" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
+      <p class="c-search-bar-form-title">絞り込み検索</p>
+      <div class="c-search-bar-form-body">
         <!-- 地域プルダウン -->
         <div class="c-search-form-item">
-          <label class="c-search-form-label c-search-form-label--area" for="area">地域</label>
           <div class="c-search-form-select-wrapper">
-            <select class="c-search-form-input" name="area" id="area">
-              <option value="" disabled selected>選択してください</option>
+            <select class="c-search-form-input" name="area" id="kv-area" aria-label="地域">
+              <option value="" disabled selected>地域を選択</option>
               <optgroup label="北海道・東北">
                 <option value="hokkaido">北海道</option>
                 <option value="aomori">青森</option>
@@ -115,10 +112,9 @@
         </div>
         <!-- 雇用形態プルダウン -->
         <div class="c-search-form-item">
-          <label class="c-search-form-label c-search-form-label--employment-type" for="employment_type">雇用形態</label>
           <div class="c-search-form-select-wrapper">
-            <select class="c-search-form-input" name="employment_type" id="employment_type">
-              <option value="" disabled selected>選択してください</option>
+            <select class="c-search-form-input" name="employment_type" id="kv-employment_type" aria-label="雇用形態">
+              <option value="" disabled selected>雇用形態を選択</option>
               <option value="full-time">正社員</option>
               <option value="contract">契約社員</option>
               <option value="temporary">派遣社員</option>
@@ -131,10 +127,9 @@
         </div>
         <!-- 職種プルダウン -->
         <div class="c-search-form-item">
-          <label class="c-search-form-label c-search-form-label--job-category" for="job_category">職種</label>
           <div class="c-search-form-select-wrapper">
-            <select class="c-search-form-input" name="job_category" id="job_category">
-              <option value="" disabled selected>選択してください</option>
+            <select class="c-search-form-input" name="job_category" id="kv-job_category" aria-label="職種">
+              <option value="" disabled selected>職種を選択</option>
               <option value="web-writer">Webライター</option>
               <option value="photographer">フォトグラファー</option>
               <option value="graphic-designer">グラフィックデザイナー</option>
@@ -154,7 +149,7 @@
       </div>
     </form>
   </div>
-  <!-- top-search end -->
+  <!-- top-search-bar end -->
 
 
 
