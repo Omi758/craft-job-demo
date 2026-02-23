@@ -4,7 +4,7 @@
   <nav class="c-breadcrumb-nav l-container" aria-label="パンくずリスト">
     <ul class="c-breadcrumb-list">
       <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Web制作業界特化の求人サイトCraftJob</a></li>
-      <li class="c-breadcrumb-item">404</li>
+      <li class="c-breadcrumb-item">404 Not Found</li>
     </ul>
   </nav>
 </div>
