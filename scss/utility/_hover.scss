@@ -4,3 +4,14 @@
 utility > hover
 ------------------------------
 */
+
+.u-hover-white {
+  &:hover {
+    background-color: var(--white);
+    color: var(--primary-green);
+
+    &::before {
+      background-color: var(--primary-green);
+    }
+  }
+}

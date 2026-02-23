@@ -26,8 +26,9 @@
       </p>
     </div>
 
-    <div class="page-404-button">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="page-404-button-link">トップページへ戻る</a>
+    <div class="c-button-link-container">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+        class="c-button-link c-button-link--home u-hover-white">トップページへ戻る</a>
     </div>
   </div>
 </main>
