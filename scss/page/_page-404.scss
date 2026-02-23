@@ -1,0 +1,30 @@
+@use "../global" as g;
+
+/*!
+page > page-404
+------------------------------
+*/
+.page-404-text-container {
+  margin-top: 40px;
+}
+.page-404-text {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  @include g.mq() {
+    font-size: 20px;
+  }
+}
+.page-404-subtext {
+  margin-top: 24px;
+  margin-bottom: 80px;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+}
+.page-404-button {
+}
+.page-404-button-link {
+}

@@ -278,6 +278,19 @@ utility > utility
   font-weight: 700;
 }
 
+.u-mtb-archive {
+  margin: 24px 0 64px;
+}
+
+.u-mtb-page {
+  margin: 64px 0;
+}
+@media screen and (min-width: 768px) {
+  .u-mtb-page {
+    margin: 80px 0;
+  }
+}
+
 /*!
 utility > hover
 ------------------------------
@@ -287,27 +300,33 @@ component > button
 ------------------------------
 */
 /*!
-component > title
+component > archive-title
 ------------------------------
 */
-.c-page-title-container {
+.c-archive-title-container {
   width: 100%;
   padding: 12px 24px;
   background-color: var(--primary-green);
   border-radius: 6px;
 }
 
-.c-page-title {
+.c-archive-title {
   font-size: clamp(1.5rem, 1.41rem + 0.377vw, 1.75rem);
   font-weight: 700;
   color: var(--white);
 }
 
-.c-column-title-container {
-  display: inline-block;
+/*!
+component > page-title_(column/privacy/404)
+------------------------------
+*/
+.c-page-title-container {
+  display: block;
+  text-align: center;
+  margin-inline: auto;
 }
 
-.c-column-title {
+.c-page-title {
   font-size: clamp(1.5rem, 1.321rem + 0.755vw, 2rem);
   font-weight: 700;
   display: grid;
@@ -315,7 +334,7 @@ component > title
   gap: 12px;
 }
 
-.c-column-title::after {
+.c-page-title::after {
   content: "";
   display: block;
   width: 60px;
@@ -1829,10 +1848,29 @@ page > top > top-kv
 }
 
 /*!
-page > about > about-common
+page > page-404
 ------------------------------
 */
-/*!
-page > about > about-kv
-------------------------------
-*//*# sourceMappingURL=style.css.map */
+.page-404-text-container {
+  margin-top: 40px;
+}
+
+.page-404-text {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .page-404-text {
+    font-size: 20px;
+  }
+}
+
+.page-404-subtext {
+  margin-top: 24px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.page-404-subtext span {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
