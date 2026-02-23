@@ -4,7 +4,7 @@
 utility > hover
 ------------------------------
 */
-
+// リンクボタン_緑→白
 .u-hover-white {
   &:hover {
     background-color: var(--white);
@@ -14,4 +14,9 @@ utility > hover
       background-color: var(--primary-green);
     }
   }
+}
+
+// 下線ホバー（左→右）
+.u-hover-underline {
+  @include g.hover-underline(var(--white));
 }
