@@ -256,6 +256,7 @@ component > search-form
 
 .c-search-bar {
   width: clamp(21.375rem, 4.84rem + 69.623vw, 67.5rem);
+  margin-inline: auto;
 }
 .c-search-bar-form-title {
   width: 100%;

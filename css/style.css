@@ -1245,6 +1245,7 @@ component > search-form
  */
 .c-search-bar {
   width: clamp(21.375rem, 4.84rem + 69.623vw, 67.5rem);
+  margin-inline: auto;
 }
 
 .c-search-bar-form-title {
@@ -1807,6 +1808,23 @@ page > top > top-kv
 @media screen and (min-width: 1200px) {
   .top-kv-image {
     right: 159px;
+  }
+}
+
+.top-kv-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.top-kv-search-bar {
+  margin-top: -80px;
+  z-index: var(--z-index-contents);
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .top-kv-search-bar {
+    margin-top: -49px;
   }
 }
 
