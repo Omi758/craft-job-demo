@@ -153,7 +153,6 @@ page > top > top-kv
 
 // 人物イメージ
 .top-kv-image {
-  // width: 211px;
   width: clamp(13.188rem, 8.42rem + 20.074vw, 16.563rem);
   aspect-ratio: 211 / 413;
   position: absolute;
@@ -172,5 +171,20 @@ page > top > top-kv
 
   @include g.mq(xl) {
     right: 159px;
+  }
+}
+
+.top-kv-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+// トップページ用検索バー_コンテナ
+.top-kv-search-bar {
+  margin-top: -80px;
+  z-index: var(--z-index-contents);
+  position: relative;
+  @include g.mq() {
+    margin-top: -49px;
   }
 }
