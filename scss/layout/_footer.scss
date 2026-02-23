@@ -5,6 +5,8 @@ layout > footer
 ------------------------------
 */
 .l-footer {
+  position: sticky; // ページの最下部に固定（スティッキーフッター）
+  top: 100vh; // ページの最下部に固定（スティッキーフッター）
   background-color: var(--black);
 }
 

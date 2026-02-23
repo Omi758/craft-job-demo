@@ -241,6 +241,11 @@ svg {
 foundation > base
 ------------------------------
 */
+html,
+body {
+  height: 100%;
+}
+
 body {
   line-height: 1.6;
   font-size: 14px;
@@ -295,10 +300,65 @@ utility > utility
 utility > hover
 ------------------------------
 */
+.u-hover-white:hover {
+  background-color: var(--white);
+  color: var(--primary-green);
+}
+.u-hover-white:hover::before {
+  background-color: var(--primary-green);
+}
+
 /*!
 component > button
 ------------------------------
 */
+.c-button-link-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.c-button-link {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .c-button-link {
+    font-size: 18px;
+  }
+}
+
+.c-button-link::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.c-button-link--home::before {
+  -webkit-mask-image: url("../img/common/icon-home.svg");
+          mask-image: url("../img/common/icon-home.svg");
+}
+
 /*!
 component > archive-title
 ------------------------------
@@ -1570,6 +1630,8 @@ layout > footer
 ------------------------------
 */
 .l-footer {
+  position: sticky;
+  top: 100vh;
   background-color: var(--black);
 }
 

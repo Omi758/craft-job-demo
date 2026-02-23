@@ -4,5 +4,46 @@
 component > button
 ------------------------------
 */
-.c-button {
+// カードリンク_view-more
+
+.c-button-link-container {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.c-button-link {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.c-button-link::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.c-button-link--home::before {
+  mask-image: url("../img/common/icon-home.svg");
 }

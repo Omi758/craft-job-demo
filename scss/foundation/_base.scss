@@ -4,6 +4,11 @@
 foundation > base
 ------------------------------
 */
+html,
+body {
+  height: 100%; // ページの高さを100%にする(スティッキーフッター用)
+}
+
 body {
   line-height: 1.6;
   font-size: 14px;
