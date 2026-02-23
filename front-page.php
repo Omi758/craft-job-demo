@@ -37,12 +37,12 @@
   <!-- top-kv end -->
 
   <!-- top-search-bar -->
-  <div class="top-kv-search-bar">
+  <div class="top-kv-search-bar l-container">
     <form class="c-search-bar" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
       <p class="c-search-bar-form-title">絞り込み検索</p>
-      <div class="c-search-bar-form-body">
+      <div class="c-search-bar-body">
         <!-- 地域プルダウン -->
-        <div class="c-search-form-item">
+        <div class="c-search-bar-item">
           <div class="c-search-form-select-wrapper">
             <select class="c-search-form-input" name="area" id="kv-area" aria-label="地域">
               <option value="" disabled selected>地域を選択</option>
@@ -111,7 +111,7 @@
           </div>
         </div>
         <!-- 雇用形態プルダウン -->
-        <div class="c-search-form-item">
+        <div class="c-search-bar-item">
           <div class="c-search-form-select-wrapper">
             <select class="c-search-form-input" name="employment_type" id="kv-employment_type" aria-label="雇用形態">
               <option value="" disabled selected>雇用形態を選択</option>
@@ -126,7 +126,7 @@
           </div>
         </div>
         <!-- 職種プルダウン -->
-        <div class="c-search-form-item">
+        <div class="c-search-bar-item">
           <div class="c-search-form-select-wrapper">
             <select class="c-search-form-input" name="job_category" id="kv-job_category" aria-label="職種">
               <option value="" disabled selected>職種を選択</option>
@@ -144,8 +144,7 @@
           </div>
         </div>
         <!-- ボタン -->
-        <div class="c-search-form-button-container"><button class="c-search-form-button" type="submit">検索する</button>
-        </div>
+        <button class="c-search-bar-button" type="submit">検索する</button>
       </div>
     </form>
   </div>
