@@ -1563,7 +1563,7 @@ layout > header
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 12px 0 6px; /* li から移動：余白もリンク範囲に含める */
+  padding: 12px 0 6px;
   gap: 0;
   text-decoration: none;
   color: inherit;
@@ -1574,6 +1574,30 @@ layout > header
     gap: 4px;
     width: auto;
     padding: 0;
+  }
+}
+.l-header-nav-item a {
+  /* バッジを除くa内のspanに下線ホバーを適用 */
+}
+@media screen and (min-width: 768px) {
+  .l-header-nav-item a span:not(.l-header-nav-item-badge) {
+    position: relative;
+    overflow: hidden;
+  }
+  .l-header-nav-item a span:not(.l-header-nav-item-badge)::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--font-base);
+    opacity: 0.8;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .l-header-nav-item a span:not(.l-header-nav-item-badge):hover::after {
+    transform: translateX(0);
   }
 }
 .l-header-nav-item a::before {

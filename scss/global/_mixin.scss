@@ -1,5 +1,6 @@
 // global > mixin
 // ------------------------------
+// 下線ホバー（左→右）_defaultは白、引数で色を指定可能
 @mixin hover-underline($color: var(--white)) {
   position: relative;
   overflow: hidden;

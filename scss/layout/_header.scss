@@ -81,7 +81,7 @@ layout > header
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 12px 0 6px; /* li から移動：余白もリンク範囲に含める */
+    padding: 12px 0 6px;
     gap: 0;
     text-decoration: none;
     color: inherit;
@@ -91,6 +91,13 @@ layout > header
       gap: 4px;
       width: auto;
       padding: 0;
+    }
+
+    /* バッジを除くa内のspanに下線ホバーを適用 */
+    span:not(.l-header-nav-item-badge) {
+      @include g.mq() {
+        @include g.hover-underline(var(--font-base));
+      }
     }
 
     &::before {

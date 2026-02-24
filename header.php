@@ -40,17 +40,17 @@
       <nav class="l-header-nav">
         <ul class="l-header-nav-list">
           <li class="l-header-nav-item l-header-nav-item--recruit"><a
-              href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
+              href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>"><span>求人を探す</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--popular"><a
-              href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>">人気求人</a>
+              href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>"><span>人気求人</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--favorite"><a
-              href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り
-              <span class="l-header-nav-item-badge">6</span></a>
+              href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>"><span>お気に入り</span><span
+                class="l-header-nav-item-badge">6</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--column"><a
-              href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a>
+              href="<?php echo esc_url( home_url( '/column/' ) ); ?>"><span>就活コラム</span></a>
           </li>
         </ul>
       </nav>
