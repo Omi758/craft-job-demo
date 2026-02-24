@@ -16,7 +16,7 @@ utility > hover
   }
 }
 
-// 下線ホバー（左→右）
+// 下線ホバー（左→右）_クラスが付けられる場合に使用
 .u-hover-underline {
   @include g.hover-underline(var(--white));
 }
