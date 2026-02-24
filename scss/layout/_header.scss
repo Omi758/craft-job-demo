@@ -93,11 +93,16 @@ layout > header
       padding: 0;
     }
 
-    /* バッジを除くa内のspanに下線ホバーを適用 */
-    span:not(.l-header-nav-item-badge) {
-      @include g.mq() {
-        @include g.hover-underline(var(--font-base));
-      }
+    @include g.hover-underline-child(
+      var(--white),
+      "span:not(.l-header-nav-item-badge)"
+    );
+
+    @include g.mq() {
+      @include g.hover-underline-child(
+        var(--font-base),
+        "span:not(.l-header-nav-item-badge)"
+      );
     }
 
     &::before {
