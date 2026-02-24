@@ -2,10 +2,9 @@
 <!-- パンくず -->
 <div class="c-breadcrumb-container">
   <nav class="c-breadcrumb-nav l-container" aria-label="パンくずリスト">
-    <ul class="c-breadcrumb-list">
-      <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Web制作業界特化の求人サイトCraftJob</a></li>
-      <li class="c-breadcrumb-item">404 Not Found</li>
-    </ul>
+    <?php if ( function_exists( 'bcn_display' ) ) : ?>
+    <?php bcn_display(); ?>
+    <?php endif; ?>
   </nav>
 </div>
 <!-- パンくず end -->
