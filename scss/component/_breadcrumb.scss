@@ -8,16 +8,20 @@ component > breadcrumb
   background-color: var(--font-base);
   width: 100%;
   padding: 8px 0;
+}
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px 10px;
-  }
-  li {
-    display: flex;
+.c-breadcrumb-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 10px;
+  color: var(--white);
+  font-size: 14px;
+
+  // 各パンくず項目
+  span[property="itemListElement"] {
+    display: inline-flex;
     align-items: center;
-    color: var(--white);
 
     &:not(:last-child)::after {
       content: "";
@@ -30,26 +34,36 @@ component > breadcrumb
       background-position: center;
       margin-left: 10px;
     }
-
-    &:first-child::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin-right: 3px;
-      mask-image: url("../img/common/icon-home.svg");
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      mask-position: center;
-      background-color: var(--white);
-    }
   }
+
+  // リンク
   a {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    font-size: 14px;
     color: var(--white);
     @include g.hover-underline(var(--white));
+  }
+
+  // 現在のページ
+  .current-item {
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  // ホームアイコン
+  .home {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .home::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    mask-image: url("../img/common/icon-home.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--white);
   }
 }
