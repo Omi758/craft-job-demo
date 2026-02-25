@@ -6,7 +6,7 @@ foundation > base
 */
 html,
 body {
-  height: 100%; // ページの高さを100%にする(スティッキーフッター用)
+  min-height: 100%; // ページの高さを100%にする(スティッキーフッター用)
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   letter-spacing: 0.025em;
   color: var(--font-base);
   font-family: var(--font-family-base);
-  background-color: var(--primary-light-green);
+  background-color: var(--primary-extra-light);
 
   @include g.mq() {
     font-size: 16px;
