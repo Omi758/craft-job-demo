@@ -2150,17 +2150,22 @@ page > contact
 .page-contact-content .wpcf7-submit {
   width: 100%;
   margin-top: 0;
-  padding: 16px 12px;
+  padding: 15px 11px;
   padding-left: 0.025em;
   border-radius: 6px;
   background-color: var(--primary-green);
-  border: none;
+  border: 1px solid var(--primary-green);
   color: var(--white);
   font-size: 16px;
   font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .page-contact-content .wpcf7-submit {
     font-size: 18px;
   }
+}
+.page-contact-content .wpcf7-submit:hover {
+  background-color: var(--white);
+  color: var(--primary-green);
 }/*# sourceMappingURL=style.css.map */

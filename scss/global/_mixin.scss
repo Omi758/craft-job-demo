@@ -48,3 +48,22 @@
     transform: scaleX(1);
   }
 }
+
+// リンクボタン_緑→白
+@mixin hover-white-swap-green(
+  $bg: var(--white),
+  $text: var(--primary-green),
+  $before-bg: var(--primary-green),
+  $before-selector: "::before"
+) {
+  &:hover {
+    background-color: $bg;
+    color: $text;
+
+    @if $before-selector != null {
+      &#{$before-selector} {
+        background-color: $before-bg;
+      }
+    }
+  }
+}
