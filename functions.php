@@ -66,8 +66,8 @@ add_filter( 'script_loader_tag', 'craftjob_add_module_to_script', 10, 3 );
 /**
  * カスタマイザーで運営会社のリンクを追加(変更を見据えて)
  * 管理画面→外観→カスタマイズ→連絡先・会社情報→運営会社URL
- * 運営会社URLを入力しない場合は、デフォルトのURLになります。
- * 運営会社URLを入力すると、フッターの運営会社リンクがそのURLになります。
+ * 運営会社URLを入力しない場合は、デフォルトのURL
+ * 運営会社URLを入力すると、フッターの運営会社リンクがそのURL。
  */
 
 function craftjob_customize_register( $wp_customize ) {
@@ -106,7 +106,13 @@ add_action( 'customize_register', 'craftjob_customize_register' );
  */
 add_theme_support( 'post-thumbnails' );
 
-
+/**
+ * Contact Form 7の整形機能を無効化
+ */
+add_filter( 'wpcf7_autop_or_not', 'my_wpcf7_autop' );
+	function my_wpcf7_autop() {
+		return false;
+	}
 
 
 /**
