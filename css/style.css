@@ -2224,7 +2224,7 @@ page > contact
   border-color: var(--error-red-text);
 }
 
-/* スパム判定（赤） */
+/* スパム判定（赤）_CF7 APPS対応 */
 .wpcf7 form.spam .wpcf7-response-output {
   background: var(--error-red);
   color: var(--error-red-text);
