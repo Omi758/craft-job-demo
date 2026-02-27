@@ -2224,6 +2224,13 @@ page > contact
   border-color: var(--error-red-text);
 }
 
+/* スパム判定（赤） */
+.wpcf7 form.spam .wpcf7-response-output {
+  background: var(--error-red);
+  color: var(--error-red-text);
+  border-color: var(--error-red-text);
+}
+
 /* バリデーションエラー(橙) */
 .wpcf7 form.invalid .wpcf7-response-output,
 .wpcf7 form.unaccepted .wpcf7-response-output,
