@@ -24,12 +24,10 @@ component > button
   justify-content: center;
   align-items: center;
   gap: 6px;
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
   @include g.mq() {
     font-size: 18px;
   }
+  @include g.hover-white-swap-green();
 }
 
 .c-button-link::before {

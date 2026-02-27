@@ -49,13 +49,17 @@
   }
 }
 
-// リンクボタン_緑→白
+// ボタンホバー_緑→白（リンクボタン・送信ボタン用）
 @mixin hover-white-swap-green(
   $bg: var(--white),
   $text: var(--primary-green),
   $before-bg: var(--primary-green),
   $before-selector: "::before"
 ) {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
   &:hover {
     background-color: $bg;
     color: $text;
