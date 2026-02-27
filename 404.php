@@ -21,7 +21,7 @@
 
     <div class="c-button-link-container">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-        class="c-button-link c-button-link--home u-hover-white">トップページへ戻る</a>
+        class="c-button-link c-button-link--home">トップページへ戻る</a>
     </div>
   </div>
 </main>

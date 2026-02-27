@@ -300,6 +300,9 @@ utility > utility
 utility > hover
 ------------------------------
 */
+.u-hover-white {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 .u-hover-white:hover {
   background-color: var(--white);
   color: var(--primary-green);
@@ -351,12 +354,21 @@ component > button
   justify-content: center;
   align-items: center;
   gap: 6px;
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .c-button-link {
     font-size: 18px;
   }
+}
+.c-button-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.c-button-link:hover {
+  background-color: var(--white);
+  color: var(--primary-green);
+}
+.c-button-link:hover::before {
+  background-color: var(--primary-green);
 }
 
 .c-button-link::before {
@@ -2158,12 +2170,14 @@ page > contact
   color: var(--white);
   font-size: 16px;
   font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .page-contact-content .wpcf7-submit {
     font-size: 18px;
   }
+}
+.page-contact-content .wpcf7-submit {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .page-contact-content .wpcf7-submit:hover {
   background-color: var(--white);

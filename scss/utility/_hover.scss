@@ -4,16 +4,9 @@
 utility > hover
 ------------------------------
 */
-// リンクボタン_緑→白
+// ボタンホバー_緑→白_クラスが付けられる場合に使用
 .u-hover-white {
-  &:hover {
-    background-color: var(--white);
-    color: var(--primary-green);
-
-    &::before {
-      background-color: var(--primary-green);
-    }
-  }
+  @include g.hover-white-swap-green();
 }
 
 // 下線ホバー（左→右）_クラスが付けられる場合に使用
