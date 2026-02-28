@@ -6,6 +6,10 @@ component > pagenation
 */
 
 .c-pagination-container {
+  margin-top: 64px;
+  @include g.mq() {
+    margin-top: 80px;
+  }
 }
 
 .c-pagination-nav {

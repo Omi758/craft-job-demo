@@ -4,8 +4,6 @@
 page > column > column-archive
 ------------------------------
 */
-.column-archive {
-}
 .column-category-nav {
   margin-top: 40px;
   @include g.mq() {
@@ -22,9 +20,12 @@ page > column > column-archive
   &::-webkit-scrollbar {
     display: none;
   }
-  @include g.mq() {
+  @include g.mq(sm) {
+    max-width: 800px;
+    margin-inline: auto;
+    justify-content: center;
     flex-wrap: wrap;
-    padding-left: 0;
+    padding: 0 3%;
   }
 }
 
@@ -81,8 +82,16 @@ page > column > column-archive
     }
   }
 }
+
+// コラムカード一覧
 .column-archive-container {
   margin-top: 40px;
 }
 .column-archive-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  @include g.mq() {
+    gap: 48px 24px;
+  }
 }
