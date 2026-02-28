@@ -1085,6 +1085,13 @@ component > card
   width: 100%;
 }
 
+.c-card-column-container a {
+  display: block;
+}
+.c-card-column-container a:hover .c-card-column-image img {
+  transform: scale(1.05);
+}
+
 .c-card-column-image {
   width: 100%;
   aspect-ratio: 344/192;
@@ -1092,11 +1099,12 @@ component > card
   overflow: hidden;
 }
 
-.c-card-top-image img {
+.c-card-column-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .c-card-column-content {
@@ -1485,6 +1493,15 @@ component > search-form
 component > pagenation
 ------------------------------
 */
+.c-pagination-container {
+  margin-top: 64px;
+}
+@media screen and (min-width: 768px) {
+  .c-pagination-container {
+    margin-top: 80px;
+  }
+}
+
 /*!
 layout > container
 ------------------------------
@@ -2057,10 +2074,13 @@ page > column > column-archive
 .column-category-list::-webkit-scrollbar {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   .column-category-list {
+    max-width: 800px;
+    margin-inline: auto;
+    justify-content: center;
     flex-wrap: wrap;
-    padding-left: 0;
+    padding: 0 3%;
   }
 }
 
@@ -2113,6 +2133,17 @@ page > column > column-archive
 
 .column-archive-container {
   margin-top: 40px;
+}
+
+.column-archive-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .column-archive-cards {
+    gap: 48px 24px;
+  }
 }
 
 /*!

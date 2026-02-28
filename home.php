@@ -29,7 +29,7 @@
     </ul>
   </nav>
   <!-- カテゴリ絞り込みボタン end -->
-   
+
   <div class="l-container">
     <div class="column-archive-container">
       <!-- 下層ページ用コラム一覧カード -->
@@ -177,7 +177,7 @@
                 src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/column-single-thumbnail@2x.webp' ); ?>"
                 width="1600" height="900" alt="Web制作会社が面接で見るポイントを徹底解説の記事サムネイル" loading="lazy" decoding="async" />
             </div>
-            <div class="c-card-column-content">http://craftjob.local/column/?category=job-guide
+            <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
               <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">

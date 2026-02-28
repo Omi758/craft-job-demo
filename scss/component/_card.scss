@@ -494,6 +494,17 @@ component > card
   border-radius: 12px;
   width: 100%;
 }
+
+.c-card-column-container a {
+  display: block;
+
+  &:hover {
+    .c-card-column-image img {
+      transform: scale(1.05);
+    }
+  }
+}
+
 .c-card-column-image {
   width: 100%;
   aspect-ratio: 344 / 192;
@@ -501,10 +512,11 @@ component > card
   overflow: hidden;
 }
 
-.c-card-top-image img {
+.c-card-column-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 .c-card-column-content {
   padding: 24px 16px;
