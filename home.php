@@ -9,27 +9,28 @@
     <div class="c-page-title-container">
       <h1 class="c-page-title"><?php echo esc_html( get_the_title( get_option( 'page_for_posts' ) ) ); ?></h1>
     </div>
-
-    <nav class="column-category-nav" aria-label="コラムカテゴリ絞り込み">
-      <ul class="column-category-list">
-        <li><a class="column-category-btn is-active" href="<?php echo esc_url( home_url( '/column/' ) ); ?>">すべて</a>
-        </li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=career-change' ) ); ?>">転職ノウハウ</a></li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=skill-up' ) ); ?>">スキルアップ</a></li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=job-guide' ) ); ?>">職種ガイド</a></li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=industry-trend' ) ); ?>">業界トレンド</a></li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=side-job-freelance' ) ); ?>">副業・フリーランス</a></li>
-        <li><a class="column-category-btn"
-            href="<?php echo esc_url( home_url( '/column/?category=lifestyle' ) ); ?>">ライフスタイル</a></li>
-      </ul>
-    </nav>
-
-
+  </div>
+  <!-- カテゴリ絞り込みボタン -->
+  <nav class="column-category-nav" aria-label="コラムカテゴリ絞り込み">
+    <ul class="column-category-list">
+      <li class="column-category-btn is-active"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">すべて</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=career-change' ) ); ?>">転職ノウハウ</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=skill-up' ) ); ?>">スキルアップ</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=job-guide' ) ); ?>">職種ガイド</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=industry-trend' ) ); ?>">業界トレンド</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=side-job-freelance' ) ); ?>">副業・フリーランス</a></li>
+      <li class="column-category-btn"><a
+          href="<?php echo esc_url( home_url( '/column/?category=lifestyle' ) ); ?>">ライフスタイル</a></li>
+    </ul>
+  </nav>
+  <!-- カテゴリ絞り込みボタン end -->
+   
+  <div class="l-container">
     <div class="column-archive-container">
       <!-- 下層ページ用コラム一覧カード -->
       <div class="column-archive-cards">
@@ -42,7 +43,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -59,7 +60,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -76,7 +77,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -93,7 +94,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -110,7 +111,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -127,7 +128,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -144,7 +145,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -161,7 +162,7 @@
             </div>
             <div class="c-card-column-content">
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -176,9 +177,9 @@
                 src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/column-single-thumbnail@2x.webp' ); ?>"
                 width="1600" height="900" alt="Web制作会社が面接で見るポイントを徹底解説の記事サムネイル" loading="lazy" decoding="async" />
             </div>
-            <div class="c-card-column-content">
+            <div class="c-card-column-content">http://craftjob.local/column/?category=job-guide
               <span class="c-card-column-badge">スキルアップ</span>
-              <h3 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
+              <h2 class="c-card-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h2>
               <div class="c-card-column-date-container">
                 <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
                 <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
@@ -201,14 +202,14 @@
               <a href="#" class="c-pagination-link">1<span class="u-visually-hidden">ページ目</span></a>
             </li>
             <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link is-active"><span class="u-visually-hidden">現在のページ：</span>2<span
-                  class="u-visually-hidden">ページ目</span></a>
+              <a href="#" class="c-pagination-link is-active" aria-current="page"><span
+                  class="u-visually-hidden">現在のページ：</span>2<span class="u-visually-hidden">ページ目</span></a>
             </li>
             <li class="c-pagination-item">
               <a href="#" class="c-pagination-link">3<span class="u-visually-hidden">ページ目</span></a>
             </li>
             <li class="c-pagination-item">
-              <span class="c-pagination-dots">
+              <span class="c-pagination-dots" aria-hidden="true">
                 <span class="c-pagination-dots-icon"></span>
               </span>
             </li>
