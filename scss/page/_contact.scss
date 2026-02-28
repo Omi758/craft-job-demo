@@ -4,10 +4,17 @@
 page > contact
 ------------------------------
 */
+.page-contact {
+  margin-top: 64px;
+  margin-bottom: 16px;
+  @include g.mq() {
+    margin-top: 80px;
+    margin-bottom: 32px;
+  }
+}
 .page-contact-content {
   margin-top: 40px;
   display: grid;
-  gap: 24px;
   @include g.mq() {
     margin-top: 48px;
   }

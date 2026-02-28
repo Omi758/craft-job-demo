@@ -2097,10 +2097,20 @@ page > privacy
 page > contact
 ------------------------------
 */
+.page-contact {
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .page-contact {
+    margin-top: 80px;
+    margin-bottom: 32px;
+  }
+}
+
 .page-contact-content {
   margin-top: 40px;
   display: grid;
-  gap: 24px;
 }
 @media screen and (min-width: 768px) {
   .page-contact-content {
