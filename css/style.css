@@ -1482,6 +1482,10 @@ component > search-form
 }
 
 /*!
+component > pagenation
+------------------------------
+*/
+/*!
 layout > container
 ------------------------------
 */
@@ -2029,6 +2033,10 @@ page > top > top-kv
   }
 }
 
+/*!
+page > column > column-archive
+------------------------------
+*/
 /*!
 page > page-404
 ------------------------------
