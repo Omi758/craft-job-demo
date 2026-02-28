@@ -4,7 +4,7 @@
 <!-- パンくず end -->
 
 <!-- main -->
-<main class="page-contact u-mtb-page">
+<main class="page-contact">
   <div class="l-container-s">
     <div class="c-page-title-container">
       <h1 class="c-page-title"><?php the_title(); ?></h1>
