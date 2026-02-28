@@ -29,12 +29,12 @@
             height="25" alt="Craft Job" decoding="async" />
         </a></h1>
       <?php else : ?>
-      <p class="l-header-logo">
+      <div class="l-header-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
           <img src="<?php echo esc_url( get_template_directory_uri() . '/img/common/logo.svg' ); ?>" width="122"
             height="25" alt="Craft Job" decoding="async" />
         </a>
-      </p>
+      </div>
       <?php endif; ?>
 
       <nav class="l-header-nav">
