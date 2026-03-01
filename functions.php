@@ -135,6 +135,12 @@ function craftjob_validate_kana( $result, $tag ) {
 function craftjob_posts_per_page( $query ) {
 	if (! is_admin() && $query->is_main_query() && $query->is_home()) {
 		$query->set( 'posts_per_page', 9 );
+
+		// カテゴリパラメータで記事を絞り込む
+		if ( isset( $_GET['category'] )  && '' !== $_GET['category']) {
+			$category_slug = sanitize_text_field( wp_unslash( $_GET['category'] ));
+			$query->set( 'category_name', $category_slug );
+		}
 	}
 }
 add_action( 'pre_get_posts', 'craftjob_posts_per_page' );

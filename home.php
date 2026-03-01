@@ -11,21 +11,27 @@
     </div>
   </div>
   <!-- カテゴリ絞り込みボタン -->
+  <?php
+   $current_category = isset($_GET['category']) ? sanitize_text_field( wp_unslash( $_GET['category'] ) ) : '';
+   $categories = get_categories( array(
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+    'hide_empty' => true,
+    'parent' => 0,
+   ));
+   ?>
   <nav class="column-category-nav" aria-label="コラムカテゴリ絞り込み">
     <ul class="column-category-list">
-      <li class="column-category-btn is-active"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">すべて</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=career-change' ) ); ?>">転職ノウハウ</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=skill-up' ) ); ?>">スキルアップ</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=job-guide' ) ); ?>">職種ガイド</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=industry-trend' ) ); ?>">業界トレンド</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=side-job-freelance' ) ); ?>">副業・フリーランス</a></li>
-      <li class="column-category-btn"><a
-          href="<?php echo esc_url( home_url( '/column/?category=lifestyle' ) ); ?>">ライフスタイル</a></li>
+      <li class="column-category-btn<?php echo ('' === $current_category) ? ' is-active' : ''; ?>">
+        <a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">すべて</a>
+      </li>
+      <?php foreach ( $categories as $term ) : ?>
+      <li class="column-category-btn<?php echo ($current_category === $term->slug ) ? ' is-active ' : '';?>">
+        <a href="<?php echo esc_url( home_url( '/column/?category=' . $term->slug ) ); ?>">
+          <?php echo esc_html( $term->name ); ?>
+        </a>
+      </li>
+      <?php endforeach; ?>
     </ul>
   </nav>
   <!-- カテゴリ絞り込みボタン end -->
