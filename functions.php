@@ -130,6 +130,16 @@ function craftjob_validate_kana( $result, $tag ) {
 }
 
 /**
+ * コラム一覧_表示件数9件に制限
+ */
+function craftjob_posts_per_page( $query ) {
+	if (! is_admin() && $query->is_main_query() && $query->is_home()) {
+		$query->set( 'posts_per_page', 9 );
+	}
+}
+add_action( 'pre_get_posts', 'craftjob_posts_per_page' );
+
+/**
  * セキュリティ対策
  * 参考記事：https://baigie.me/officialblog/2020/01/28/wordpress-security/
  */
