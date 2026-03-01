@@ -44,40 +44,7 @@
       </div>
 
       <!-- ページネーション -->
-      <div class="c-pagination-container">
-        <nav class="c-pagination-nav" aria-label="コラム一覧ページネーション">
-          <ul class="c-pagination-list">
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link c-pagination-link--prev"><span
-                  class="u-visually-hidden">前のページ</span></a>
-            </li>
-
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link">1<span class="u-visually-hidden">ページ目</span></a>
-            </li>
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link is-active" aria-current="page"><span
-                  class="u-visually-hidden">現在のページ：</span>2<span class="u-visually-hidden">ページ目</span></a>
-            </li>
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link">3<span class="u-visually-hidden">ページ目</span></a>
-            </li>
-            <li class="c-pagination-item">
-              <span class="c-pagination-dots" aria-hidden="true">
-                <span class="c-pagination-dots-icon"></span>
-              </span>
-            </li>
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link">10<span class="u-visually-hidden">ページ目</span></a>
-            </li>
-            <li class="c-pagination-item">
-              <a href="#" class="c-pagination-link c-pagination-link--next"><span
-                  class="u-visually-hidden">次のページ</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+      <?php craftjob_pagination(); ?>
     </div>
   </div>
 </main>
