@@ -139,7 +139,10 @@ function craftjob_posts_per_page( $query ) {
 		// カテゴリパラメータで記事を絞り込む
 		if ( isset( $_GET['category'] )  && '' !== $_GET['category']) {
 			$category_slug = sanitize_text_field( wp_unslash( $_GET['category'] ));
-			$query->set( 'category_name', $category_slug );
+			$category = get_category_by_slug($category_slug);
+			if ( $category ) {
+			    $query->set( 'category_name', $category_slug );
+			}
 		}
 	}
 }
