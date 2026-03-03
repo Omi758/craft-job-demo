@@ -233,6 +233,21 @@ function craftjob_pagination() {
 }
 
 
+	/**
+ * パンくずリストのカテゴリーURLを/column/?category={slug}に変更
+ */
+function craftjob_breadcrumb_category_url( $url, $type, $id ) {
+	if ($type[0] === 'taxonomy' && $type[1] === 'category') {
+		$term = get_term( $id, 'category' );
+		if ($term && ! is_wp_error( $term )) {
+			$url = home_url( '/column/?category=' . $term->slug );
+		}
+	}
+	return $url;
+}
+add_filter( 'bcn_breadcrumb_url', 'craftjob_breadcrumb_category_url', 10, 3 );
+
+
 /**
  * セキュリティ対策
  * 参考記事：https://baigie.me/officialblog/2020/01/28/wordpress-security/
