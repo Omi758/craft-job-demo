@@ -1,0 +1,86 @@
+@use "../../global" as g;
+
+/*!
+page > column > column-single
+------------------------------
+*/
+.entry-content {
+  margin-top: 24px; // 本文コンテナ上部の余白
+
+  > :first-child {
+    margin-top: 0; // 最初の子要素の上部余白をリセット
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--white);
+    background-color: var(--primary-green);
+    border-radius: 8px;
+    margin-top: 48px;
+    padding: 10px 16px;
+    @include g.mq() {
+      font-size: 26px;
+    }
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 24px 16px 0 0;
+    padding: 4px 0;
+    display: flex;
+    gap: 18px;
+    @include g.mq() {
+      font-size: 24px;
+    }
+    &::before {
+      content: "";
+      display: block;
+      flex-shrink: 0; // 縮み防止
+      align-self: stretch;
+      width: 6px;
+      background-color: var(--primary-green);
+      border-radius: 50vw;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-top: 24px;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    @include g.mq() {
+      font-size: 20px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      flex-shrink: 0; // 縮み防止
+      align-self: stretch;
+      height: 4px;
+      background-color: var(--primary-green);
+      border-radius: 50vh;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+    margin-top: 24px;
+    @include g.mq() {
+      font-size: 18px;
+    }
+  }
+}
+
+.column-single-content {
+}
