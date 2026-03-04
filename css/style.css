@@ -2342,7 +2342,7 @@ page > column > column-single
   margin-top: 24px;
   list-style-position: outside;
   list-style-type: decimal-leading-zero;
-  padding-left: 1.6em;
+  padding-left: 1.8em;
 }
 @media screen and (min-width: 768px) {
   .entry-content ol {
@@ -2351,6 +2351,75 @@ page > column > column-single
 }
 .entry-content ol li::marker {
   color: var(--primary-green);
+}
+.entry-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 24px;
+}
+.entry-content .smb-box {
+  --smb-box--border-width: 0px !important;
+  --smb-box--padding: 0;
+  margin-top: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--primary-light-green);
+}
+.entry-content .smb-box h3 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--primary-green);
+  line-height: 1.5;
+  padding: 12px 24px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .smb-box h3 {
+    font-size: 20px;
+  }
+}
+.entry-content .smb-box h3::before {
+  width: 0;
+}
+.entry-content .smb-box ul {
+  margin-top: 0;
+  padding: 16px 16px 16px 38px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .smb-box ul {
+    padding: 16px 20px 16px 48px;
+  }
+}
+.entry-content .smb-box.is-style-toc {
+  border: 2px solid var(--primary-green);
+}
+.entry-content .smb-box.is-style-toc h3 {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 12px;
+}
+.entry-content .smb-box.is-style-toc h3::before {
+  content: "";
+  display: block;
+  -webkit-mask-image: url(../img/common/icon-toc.svg);
+          mask-image: url(../img/common/icon-toc.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background-color: var(--white);
+  width: 27px;
+  height: 27px;
 }
 
 /*!
