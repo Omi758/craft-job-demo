@@ -2322,6 +2322,36 @@ page > column > column-single
     font-size: 18px;
   }
 }
+.entry-content ul {
+  font-size: 16px;
+  margin-top: 24px;
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 1.6em;
+}
+@media screen and (min-width: 768px) {
+  .entry-content ul {
+    font-size: 18px;
+  }
+}
+.entry-content ul li::marker {
+  color: var(--primary-green);
+}
+.entry-content ol {
+  font-size: 16px;
+  margin-top: 24px;
+  list-style-position: outside;
+  list-style-type: decimal-leading-zero;
+  padding-left: 1.6em;
+}
+@media screen and (min-width: 768px) {
+  .entry-content ol {
+    font-size: 18px;
+  }
+}
+.entry-content ol li::marker {
+  color: var(--primary-green);
+}
 
 /*!
 page > page-404

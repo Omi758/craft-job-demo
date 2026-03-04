@@ -80,6 +80,34 @@ page > column > column-single
       font-size: 18px;
     }
   }
+
+  ul {
+    font-size: 16px;
+    margin-top: 24px;
+    list-style-position: outside;
+    list-style-type: disc;
+    padding-left: 1.6em;
+    @include g.mq() {
+      font-size: 18px;
+    }
+    li::marker {
+      color: var(--primary-green);
+    }
+  }
+
+  ol {
+    font-size: 16px;
+    margin-top: 24px;
+    list-style-position: outside;
+    list-style-type: decimal-leading-zero;
+    padding-left: 1.6em;
+    @include g.mq() {
+      font-size: 18px;
+    }
+    li::marker {
+      color: var(--primary-green);
+    }
+  }
 }
 
 .column-single-content {
