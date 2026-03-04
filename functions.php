@@ -247,6 +247,21 @@ function craftjob_breadcrumb_category_url( $url, $type, $id ) {
 }
 add_filter( 'bcn_breadcrumb_url', 'craftjob_breadcrumb_category_url', 10, 3 );
 
+	/**
+ * ブロックエディタ_カスタムブロックスタイル（もくじ）
+ */
+function craftjob_register_block_styles() {
+	register_block_style(
+		'snow-monkey-blocks/box', // ブロック名
+		array(
+			'name' => 'toc',
+			'label' => 'もくじ',
+		)
+	);
+}
+add_action( 'init', 'craftjob_register_block_styles' );
+
+
 
 /**
  * セキュリティ対策
