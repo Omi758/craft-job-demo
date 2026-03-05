@@ -2461,12 +2461,60 @@ page > column > column-single
   font-style: italic;
   font-weight: 500;
 }
-.entry-content table {
-  width: 100%;
+.entry-content .wp-block-table {
   margin-top: 24px;
-  border-collapse: collapse;
-  border: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.entry-content .wp-block-table::-webkit-scrollbar {
+  display: none;
+}
+.entry-content .wp-block-table thead {
+  border-bottom: none;
+}
+.entry-content .wp-block-table tfoot {
+  border-top: none;
+}
+.entry-content .wp-block-table table {
+  min-width: 500px;
+}
+.entry-content .wp-block-table table th {
+  background-color: var(--gray);
+  font-weight: 700;
+}
+.entry-content .wp-block-table table td {
+  background-color: var(--white);
+}
+.entry-content .wp-block-table table th,
+.entry-content .wp-block-table table td {
+  border: 1px solid var(--border);
+  padding: 8px;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .wp-block-table table th,
+  .entry-content .wp-block-table table td {
+    padding: 9px;
+    font-size: 18px;
+  }
+}
+.entry-content .wp-block-table .wp-element-caption {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 4px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .wp-block-table .wp-element-caption {
+    font-size: 18px;
+  }
+}
+.entry-content strong {
+  font-weight: 700;
+}
+
 /*!
 page > page-404
 ------------------------------

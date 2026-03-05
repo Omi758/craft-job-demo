@@ -216,13 +216,62 @@ page > column > column-single
   }
 
   //表
-  table {
-    width: 100%;
+  .wp-block-table {
     margin-top: 24px;
-    border-collapse: collapse;
-    border: 1px solid var(--border);
-    @include g.mq() {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
     }
+
+    thead {
+      border-bottom: none;
+    }
+
+    tfoot {
+      border-top: none;
+    }
+
+    table {
+      min-width: 500px;
+
+      th {
+        background-color: var(--gray);
+        font-weight: 700;
+      }
+
+      td {
+        background-color: var(--white);
+      }
+
+      th,
+      td {
+        border: 1px solid var(--border);
+        padding: 8px;
+        font-size: 16px;
+        @include g.mq() {
+          padding: 9px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .wp-element-caption {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 500;
+      opacity: 0.6;
+      text-align: center;
+      margin-top: 4px;
+      @include g.mq() {
+        font-size: 18px;
+      }
+    }
+  }
+
+  strong {
+    font-weight: 700;
   }
 }
 
