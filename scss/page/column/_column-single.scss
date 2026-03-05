@@ -116,6 +116,7 @@ page > column > column-single
     margin-top: 24px;
   }
 
+  // ボックスコンテナ
   .smb-box {
     --smb-box--border-width: 0px !important;
     --smb-box--padding: 0;
@@ -152,6 +153,7 @@ page > column > column-single
     }
   }
 
+  // 目次ボックスコンテナ
   .smb-box.is-style-toc {
     border: 2px solid var(--primary-green);
 
@@ -173,6 +175,53 @@ page > column > column-single
       background-color: var(--white);
       width: 27px;
       height: 27px;
+    }
+  }
+
+  // 引用
+  blockquote {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 9px;
+      right: 6px;
+      width: 60px;
+      height: 42px;
+      mask-image: url("../img/common/css_icon-blockquote.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: var(--black);
+    }
+    .has-background {
+      padding: 16px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background-color: var(--gray);
+    }
+    p {
+      line-height: 1.65;
+      font-size: 16px;
+      @include g.mq() {
+        font-size: 18px;
+      }
+    }
+    em {
+      font-style: italic;
+      font-weight: 500;
+    }
+  }
+
+  //表
+  table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    @include g.mq() {
     }
   }
 }

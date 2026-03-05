@@ -2421,7 +2421,52 @@ page > column > column-single
   width: 27px;
   height: 27px;
 }
-
+.entry-content blockquote {
+  position: relative;
+}
+.entry-content blockquote::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 9px;
+  right: 6px;
+  width: 60px;
+  height: 42px;
+  -webkit-mask-image: url("../img/common/css_icon-blockquote.svg");
+          mask-image: url("../img/common/css_icon-blockquote.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--black);
+}
+.entry-content blockquote .has-background {
+  padding: 16px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background-color: var(--gray);
+}
+.entry-content blockquote p {
+  line-height: 1.65;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content blockquote p {
+    font-size: 18px;
+  }
+}
+.entry-content blockquote em {
+  font-style: italic;
+  font-weight: 500;
+}
+.entry-content table {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+}
 /*!
 page > page-404
 ------------------------------
