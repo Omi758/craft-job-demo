@@ -2395,6 +2395,9 @@ page > column > column-single
     padding: 16px 20px 16px 48px;
   }
 }
+.entry-content strong {
+  font-weight: 700;
+}
 .entry-content .smb-box.is-style-toc {
   border: 2px solid var(--primary-green);
 }
@@ -2511,8 +2514,82 @@ page > column > column-single
     font-size: 18px;
   }
 }
-.entry-content strong {
+.entry-content details {
+  margin-top: 28px;
+}
+.entry-content details summary {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
   font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--primary-green);
+  color: var(--white);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.entry-content details summary::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 12px;
+  background-image: url("../img/common/icon-arrow-summary.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+.entry-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+.entry-content details p {
+  margin: 12px 10px 0;
+}
+.entry-content .wp-block-button {
+  margin-top: 24px;
+}
+.entry-content .wp-block-button .wp-block-button__link {
+  background-color: var(--accent);
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .wp-block-button .wp-block-button__link {
+    font-size: 20px;
+  }
+}
+.entry-content .wp-block-button .wp-block-button__link::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-image: url("../img/common/icon-arrow-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.entry-content .wp-block-embed {
+  margin-top: 24px;
+}
+.entry-content .wp-block-embed.is-provider-twitter {
+  max-width: 500px;
+  margin-inline: auto;
+}
+.entry-content .wp-block-embed.is-provider-youtube {
+  width: 100%;
+  margin-inline: auto;
+}
+.entry-content .wp-block-embed.is-provider-youtube iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
 /*!
