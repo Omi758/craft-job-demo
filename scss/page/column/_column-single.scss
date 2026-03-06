@@ -4,6 +4,52 @@
 page > column > column-single
 ------------------------------
 */
+.column-single {
+  .c-card-column-badge {
+    font-size: 16px;
+    @include g.mq() {
+      font-size: 18px;
+    }
+  }
+
+  .c-card-column-title {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    @include g.mq() {
+      font-size: 34px;
+    }
+  }
+
+  .column-single-image img {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .c-card-column-date-container {
+    margin-top: 16px;
+    gap: 18px;
+  }
+
+  .c-card-column-date,
+  .c-card-column-update {
+    font-size: 16px;
+    @include g.mq() {
+      font-size: 18px;
+    }
+  }
+
+  .c-card-column-date::before,
+  .c-card-column-update::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* --------------------------------
+  * 本文コンテナ
+  * --------------------------------
+*/
 .entry-content {
   margin-top: 24px; // 本文コンテナ上部の余白
 
@@ -81,6 +127,14 @@ page > column > column-single
     }
   }
 
+  a {
+    color: var(--link);
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   ul {
     font-size: 16px;
     margin-top: 24px;
@@ -114,6 +168,11 @@ page > column > column-single
     height: 100%;
     object-fit: cover;
     margin-top: 24px;
+  }
+
+  strong {
+    font-weight: 700;
+    color: var(--primary-green);
   }
 
   // ボックスコンテナ
@@ -151,10 +210,6 @@ page > column > column-single
         padding: 16px 20px 16px 48px;
       }
     }
-  }
-
-  strong {
-    font-weight: 700;
   }
 
   // 目次ボックスコンテナ
@@ -273,6 +328,7 @@ page > column > column-single
       }
     }
   }
+
   // サマリー_アコーディオン
   details {
     margin-top: 28px;
@@ -316,6 +372,7 @@ page > column > column-single
     margin-top: 24px;
     .wp-block-button__link {
       background-color: var(--accent);
+      color: var(--white);
       padding: 12px 24px;
       font-size: 18px;
       font-weight: 700;

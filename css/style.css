@@ -2242,6 +2242,52 @@ page > column > column-archive
 page > column > column-single
 ------------------------------
 */
+.column-single .c-card-column-badge {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .column-single .c-card-column-badge {
+    font-size: 18px;
+  }
+}
+.column-single .c-card-column-title {
+  font-size: 26px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .column-single .c-card-column-title {
+    font-size: 34px;
+  }
+}
+.column-single .column-single-image img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.column-single .c-card-column-date-container {
+  margin-top: 16px;
+  gap: 18px;
+}
+.column-single .c-card-column-date,
+.column-single .c-card-column-update {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .column-single .c-card-column-date,
+  .column-single .c-card-column-update {
+    font-size: 18px;
+  }
+}
+.column-single .c-card-column-date::before,
+.column-single .c-card-column-update::before {
+  width: 20px;
+  height: 20px;
+}
+
+/* --------------------------------
+  * 本文コンテナ
+  * --------------------------------
+*/
 .entry-content {
   margin-top: 24px;
 }
@@ -2322,6 +2368,13 @@ page > column > column-single
     font-size: 18px;
   }
 }
+.entry-content a {
+  color: var(--link);
+  transition: opacity 0.3s ease;
+}
+.entry-content a:hover {
+  opacity: 0.7;
+}
 .entry-content ul {
   font-size: 16px;
   margin-top: 24px;
@@ -2359,6 +2412,10 @@ page > column > column-single
      object-fit: cover;
   margin-top: 24px;
 }
+.entry-content strong {
+  font-weight: 700;
+  color: var(--primary-green);
+}
 .entry-content .smb-box {
   --smb-box--border-width: 0px !important;
   --smb-box--padding: 0;
@@ -2394,9 +2451,6 @@ page > column > column-single
   .entry-content .smb-box ul {
     padding: 16px 20px 16px 48px;
   }
-}
-.entry-content strong {
-  font-weight: 700;
 }
 .entry-content .smb-box.is-style-toc {
   border: 2px solid var(--primary-green);
@@ -2553,6 +2607,7 @@ page > column > column-single
 }
 .entry-content .wp-block-button .wp-block-button__link {
   background-color: var(--accent);
+  color: var(--white);
   padding: 12px 24px;
   font-size: 18px;
   font-weight: 700;
