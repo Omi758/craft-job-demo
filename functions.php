@@ -262,6 +262,14 @@ function craftjob_register_block_styles() {
 add_action( 'init', 'craftjob_register_block_styles' );
 
 
+/**
+ * エディタスタイルの読み込み
+ */
+function craftjob_editor_styles() {
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'editor-style.css' );
+}
+add_action( 'after_setup_theme', 'craftjob_editor_styles' );
 
 /**
  * セキュリティ対策

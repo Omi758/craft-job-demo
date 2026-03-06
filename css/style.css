@@ -2302,7 +2302,7 @@ page > column > column-single
   background-color: var(--primary-green);
   border-radius: 8px;
   margin-top: 48px;
-  padding: 10px 16px;
+  padding: 10px 18px;
 }
 @media screen and (min-width: 768px) {
   .entry-content h2 {
@@ -2536,6 +2536,10 @@ page > column > column-single
   min-width: 500px;
 }
 .entry-content .wp-block-table table th {
+  background-color: var(--gray);
+  font-weight: 700;
+}
+.entry-content .wp-block-table table tfoot {
   background-color: var(--gray);
   font-weight: 700;
 }

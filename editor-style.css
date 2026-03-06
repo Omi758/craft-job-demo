@@ -1,0 +1,573 @@
+/* --------------------------------
+  * カラー変数
+  * --------------------------------
+*/
+:root {
+  --font-family-base: "Noto Sans JP", sans-serif;
+  --font-base: #333835;
+  --primary-green: #46b06b;
+  --black: #313331;
+  --white: #ffffff;
+  --gray: #f7f7f7;
+  --border-light: #ebeef4;
+  --border: #d8dade;
+  --dummy-image: #a0a0a0;
+  --font-light: #6b6c6c;
+  --accent: #ed8f41;
+  --primary-light-green: #e2f6e9;
+  --favorite: #e2bd43;
+  --red: #e74848;
+  --slider-dot: #c7c7c7;
+  --primary-extra-light: #f2f8f4;
+  --link: #398ae1;
+  --bg-component: #d0d0d0;
+  --focus-shadow: rgba(11, 170, 125, 0.5);
+  --hover-light-green: #80daa0;
+  --hover-dark-green: #3f8859;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--font-base);
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* --------------------------------
+  * 管理画面コンテナ幅設定
+  * --------------------------------
+*/
+.wp-block {
+  max-width: 800px;
+}
+
+/* --------------------------------
+  * 本文コンテナ
+  * --------------------------------
+*/
+.entry-content {
+  margin-top: 24px;
+}
+.entry-content > :first-child {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--primary-green);
+  border-radius: 8px;
+  margin-top: 48px;
+  padding: 10px 18px;
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 26px;
+  }
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 24px 16px 0 0;
+  padding: 4px 0;
+  display: flex;
+  gap: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+h3::before {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 6px;
+  background-color: var(--primary-green);
+  border-radius: 50vw;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-top: 24px;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+h4::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  align-self: stretch;
+  height: 4px;
+  background-color: var(--primary-green);
+  border-radius: 50vh;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+a {
+  color: var(--link);
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul {
+  font-size: 16px;
+  margin-top: 24px;
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 1.6em;
+}
+
+@media screen and (min-width: 768px) {
+  ul {
+    font-size: 18px;
+  }
+}
+
+ul li::marker {
+  color: var(--primary-green);
+}
+
+ol {
+  font-size: 16px;
+  margin-top: 24px;
+  list-style-position: outside;
+  list-style-type: decimal-leading-zero;
+  padding-left: 1.8em;
+}
+
+@media screen and (min-width: 768px) {
+  ol {
+    font-size: 18px;
+  }
+}
+
+ol li::marker {
+  color: var(--primary-green);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 24px;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+/* --------------------------------
+  * ボックスコンテナ
+  * --------------------------------
+*/
+.smb-box {
+  --smb-box--border-width: 0px !important;
+  --smb-box--padding: 0;
+  margin-top: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--primary-light-green);
+}
+
+.smb-box h3 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--primary-green);
+  line-height: 1.5;
+  padding: 12px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .smb-box h3 {
+    font-size: 20px;
+  }
+}
+
+.smb-box h3::before {
+  width: 0;
+}
+
+.smb-box ul {
+  margin-top: 0;
+  padding: 16px 16px 16px 38px;
+}
+
+@media screen and (min-width: 768px) {
+  .smb-box ul {
+    padding: 16px 20px 16px 48px;
+  }
+}
+
+/* --------------------------------
+  * 目次ボックスコンテナ
+  * --------------------------------
+*/
+.smb-box.is-style-toc {
+  border: 2px solid var(--primary-green);
+}
+
+.smb-box.is-style-toc h3 {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 12px;
+}
+
+.smb-box.is-style-toc h3::before {
+  content: "";
+  display: block;
+  -webkit-mask-image: url(img/common/icon-toc.svg);
+  mask-image: url(img/common/icon-toc.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: var(--white);
+  width: 27px;
+  height: 27px;
+}
+
+/* --------------------------------
+  * 引用
+  * --------------------------------
+*/
+blockquote {
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 9px;
+  right: 6px;
+  width: 60px;
+  height: 42px;
+  -webkit-mask-image: url("img/common/css_icon-blockquote.svg");
+  mask-image: url("img/common/css_icon-blockquote.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background-color: var(--black);
+  z-index: 1;
+  pointer-events: none;
+}
+
+blockquote .has-background {
+  padding: 16px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background-color: var(--gray);
+}
+
+blockquote p {
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  blockquote p {
+    font-size: 18px;
+  }
+}
+
+blockquote em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* --------------------------------
+  * 表
+  * --------------------------------
+*/
+.wp-block-table {
+  margin-top: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wp-block-table::-webkit-scrollbar {
+  display: none;
+}
+
+.wp-block-table thead {
+  border-bottom: none;
+}
+
+.wp-block-table tfoot {
+  border-top: none;
+}
+
+.wp-block-table table {
+  min-width: 500px;
+}
+
+.wp-block-table table th {
+  background-color: var(--gray);
+  font-weight: 700;
+}
+
+.wp-block-table table td {
+  background-color: var(--white);
+}
+
+.wp-block-table table th,
+.wp-block-table table td {
+  border: 1px solid var(--border);
+  padding: 8px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-table table th,
+  .wp-block-table table td {
+    padding: 9px;
+    font-size: 18px;
+  }
+}
+
+.wp-block-table .wp-element-caption {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-table .wp-element-caption {
+    font-size: 18px;
+  }
+}
+
+/* --------------------------------
+  * サマリー_アコーディオン
+  * --------------------------------
+*/
+details {
+  margin-top: 28px;
+}
+
+details summary {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--primary-green);
+  color: var(--white);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+details summary::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 12px;
+  background-image: url("img/common/icon-arrow-summary.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details p {
+  margin: 12px 10px 0;
+}
+/* --------------------------------
+  * 外部リンクボタン
+  * --------------------------------
+*/
+.wp-block-button {
+  margin-top: 24px;
+}
+
+.wp-block-button .wp-block-button__link {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-button .wp-block-button__link {
+    font-size: 20px;
+  }
+}
+
+.wp-block-button .wp-block-button__link::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-image: url("img/common/icon-arrow-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --------------------------------
+  * 埋め込みコンテンツ
+  * --------------------------------
+*/
+.wp-block-embed {
+  margin-top: 24px;
+}
+
+.wp-block-embed.is-provider-twitter {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.wp-block-embed.is-provider-youtube {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.wp-block-embed.is-provider-youtube iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+/* --------------------------------
+  * 吹き出し_Snow Monkey Blocks_balloon
+  * --------------------------------
+*/
+.smb-balloon {
+  --smb-balloon--border-color: var(--border) !important;
+  --smb-balloon--border-width: 1px !important;
+  --smb-balloon--gap: 32px !important;
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .smb-balloon {
+    --smb-balloon--gap: 40px !important;
+  }
+}
+
+.smb-balloon {
+  align-items: center !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+.smb-balloon .smb-balloon__person {
+  flex-direction: column;
+  margin: 0 var(--smb-balloon--gap) 0 0 !important;
+}
+
+.smb-balloon .smb-balloon__person .smb-balloon__name {
+  margin: 5px 0 0;
+}
+
+.smb-balloon .smb-balloon__body {
+  padding: 22px 21px 21px 17px;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .smb-balloon .smb-balloon__body {
+    padding: 21px 29px 18px 23px;
+  }
+}
+
+.smb-balloon .smb-balloon__body::before,
+.smb-balloon .smb-balloon__body::after {
+  border-color: transparent !important;
+}
+
+.smb-balloon .smb-balloon__body::before {
+  border-right-color: var(--smb-balloon--border-color) !important;
+  border-width: calc(11px + var(--smb-balloon--border-width))
+    calc(20px + var(--smb-balloon--border-width) * 2)
+    calc(11px + var(--smb-balloon--border-width)) 0 !important;
+  left: calc(-20px - var(--smb-balloon--border-width) * 2) !important;
+  top: calc(50% - 11px - var(--smb-balloon--border-width)) !important;
+}
+
+.smb-balloon .smb-balloon__body::after {
+  border-right-color: var(--smb-balloon--background-color) !important;
+  border-width: 11px 20px 11px 0 !important;
+  left: -20px !important;
+  top: calc(50% - 11px) !important;
+}
+
+.smb-balloon img {
+  margin-top: 0;
+}
+
+.smb-balloon p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+@media screen and (min-width: 768px) {
+  .smb-balloon p {
+    font-size: 18px;
+  }
+}
