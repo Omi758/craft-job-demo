@@ -355,6 +355,11 @@ blockquote em {
   font-weight: 700;
 }
 
+.wp-block-table table tfoot td {
+  background-color: var(--gray);
+  font-weight: 700;
+}
+
 .wp-block-table table td {
   background-color: var(--white);
 }
@@ -521,6 +526,7 @@ details p {
 
 .smb-balloon .smb-balloon__person .smb-balloon__name {
   margin: 5px 0 0;
+  display: none !important;
 }
 
 .smb-balloon .smb-balloon__body {
