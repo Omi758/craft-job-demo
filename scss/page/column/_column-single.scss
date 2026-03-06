@@ -360,7 +360,69 @@ page > column > column-single
       aspect-ratio: 16 / 9;
     }
   }
-}
 
-.column-single-content {
+  // 吹き出し_Snow Monkey Blocks_balloon
+  .smb-balloon {
+    --smb-balloon--border-color: var(--border) !important;
+    --smb-balloon--border-width: 1px !important;
+    --smb-balloon--gap: 32px !important;
+    margin-top: 24px;
+    @include g.mq() {
+      --smb-balloon--gap: 40px !important;
+    }
+    align-items: center !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    .smb-balloon__person {
+      flex-direction: column;
+      margin: 0 var(--smb-balloon--gap) 0 0 !important;
+
+      .smb-balloon__name {
+        margin: 5px 0 0;
+      }
+    }
+    .smb-balloon__body {
+      padding: 22px 21px 21px 17px;
+      border-radius: 8px;
+      @include g.mq() {
+        padding: 21px 29px 18px 23px;
+      }
+    }
+
+    .smb-balloon__body::before,
+    .smb-balloon__body::after {
+      border-color: transparent !important;
+    }
+
+    .smb-balloon__body::before {
+      border-right-color: var(--smb-balloon--border-color) !important;
+      border-width: calc(11px + var(--smb-balloon--border-width))
+        calc(20px + var(--smb-balloon--border-width) * 2)
+        calc(11px + var(--smb-balloon--border-width)) 0 !important;
+      left: calc(-20px - var(--smb-balloon--border-width) * 2) !important;
+      top: calc(50% - 11px - var(--smb-balloon--border-width)) !important;
+    }
+
+    .smb-balloon__body::after {
+      border-right-color: var(--smb-balloon--background-color) !important;
+      border-width: 11px 20px 11px 0 !important;
+      left: -20px !important;
+      top: calc(50% - 11px) !important;
+    }
+
+    img {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.65;
+      @include g.mq() {
+        font-size: 18px;
+      }
+    }
+  }
 }

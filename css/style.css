@@ -2591,6 +2591,68 @@ page > column > column-single
   height: auto;
   aspect-ratio: 16/9;
 }
+.entry-content .smb-balloon {
+  --smb-balloon--border-color: var(--border) !important;
+  --smb-balloon--border-width: 1px !important;
+  --smb-balloon--gap: 32px !important;
+  margin-top: 24px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .smb-balloon {
+    --smb-balloon--gap: 40px !important;
+  }
+}
+.entry-content .smb-balloon {
+  align-items: center !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+.entry-content .smb-balloon .smb-balloon__person {
+  flex-direction: column;
+  margin: 0 var(--smb-balloon--gap) 0 0 !important;
+}
+.entry-content .smb-balloon .smb-balloon__person .smb-balloon__name {
+  margin: 5px 0 0;
+}
+.entry-content .smb-balloon .smb-balloon__body {
+  padding: 22px 21px 21px 17px;
+  border-radius: 8px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .smb-balloon .smb-balloon__body {
+    padding: 21px 29px 18px 23px;
+  }
+}
+.entry-content .smb-balloon .smb-balloon__body::before,
+.entry-content .smb-balloon .smb-balloon__body::after {
+  border-color: transparent !important;
+}
+.entry-content .smb-balloon .smb-balloon__body::before {
+  border-right-color: var(--smb-balloon--border-color) !important;
+  border-width: calc(11px + var(--smb-balloon--border-width)) calc(20px + var(--smb-balloon--border-width) * 2) calc(11px + var(--smb-balloon--border-width)) 0 !important;
+  left: calc(-20px - var(--smb-balloon--border-width) * 2) !important;
+  top: calc(50% - 11px - var(--smb-balloon--border-width)) !important;
+}
+.entry-content .smb-balloon .smb-balloon__body::after {
+  border-right-color: var(--smb-balloon--background-color) !important;
+  border-width: 11px 20px 11px 0 !important;
+  left: -20px !important;
+  top: calc(50% - 11px) !important;
+}
+.entry-content .smb-balloon img {
+  margin-top: 0;
+}
+.entry-content .smb-balloon p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+@media screen and (min-width: 768px) {
+  .entry-content .smb-balloon p {
+    font-size: 18px;
+  }
+}
 
 /*!
 page > page-404
