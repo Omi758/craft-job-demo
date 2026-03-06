@@ -2539,7 +2539,7 @@ page > column > column-single
   background-color: var(--gray);
   font-weight: 700;
 }
-.entry-content .wp-block-table table tfoot {
+.entry-content .wp-block-table table tfoot td {
   background-color: var(--gray);
   font-weight: 700;
 }
