@@ -22,11 +22,11 @@
    ?>
   <nav class="column-category-nav" aria-label="コラムカテゴリ絞り込み">
     <ul class="column-category-list">
-      <li class="column-category-btn<?php echo ('' === $current_category) ? ' is-active' : ''; ?>">
+      <li class="c-pill-link<?php echo ('' === $current_category) ? ' is-active' : ''; ?>">
         <a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">すべて</a>
       </li>
       <?php foreach ( $categories as $term ) : ?>
-      <li class="column-category-btn<?php echo ($current_category === $term->slug ) ? ' is-active ' : '';?>">
+      <li class="c-pill-link<?php echo ($current_category === $term->slug ) ? ' is-active ' : '';?>">
         <a href="<?php echo esc_url( home_url( '/column/?category=' . $term->slug ) ); ?>">
           <?php echo esc_html( $term->name ); ?>
         </a>

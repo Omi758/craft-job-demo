@@ -29,60 +29,6 @@ page > column > column-archive
   }
 }
 
-.column-category-btn {
-  width: auto;
-  flex-shrink: 0; // 縮み防止
-
-  /* アクティブ時のスタイル */
-  &.is-active a {
-    background-color: var(--primary-green);
-    color: var(--white);
-    border-color: var(--primary-green);
-
-    &::after {
-      border-color: var(--white);
-    }
-  }
-}
-
-.column-category-btn a {
-  display: block;
-  white-space: nowrap;
-  width: 100%;
-  font-weight: 700;
-  color: var(--primary-green);
-  padding: 4px 16px 4px 20px;
-  border-radius: 50vh;
-  border: 2px solid var(--primary-green);
-  background-color: var(--primary-light-green);
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-left: 2px solid var(--primary-green);
-    border-bottom: 2px solid var(--primary-green);
-    transform: rotate(-45deg);
-    transition: border-color 0.3s ease;
-  }
-
-  &:hover {
-    color: var(--white);
-    background-color: var(--primary-green);
-
-    &::after {
-      border-color: var(--white);
-    }
-  }
-}
-
 // コラムカード一覧
 .column-archive-container {
   margin-top: 40px;

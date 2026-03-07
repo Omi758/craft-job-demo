@@ -16,9 +16,9 @@
         <div class="recruit-single-header-nav-container">
           <nav class="recruit-single-header-nav" aria-label="求人詳細ナビゲーション">
             <ul class="recruit-single-header-nav-list">
-              <li><a class="c-scroll-link" href="#recruit-single-detail">募集要項</a></li>
-              <li><a class="c-scroll-link" href="#recruit-single-company-info">会社概要</a></li>
-              <li><a class="c-scroll-link" href="#recruit-single-entry-form">エントリーフォーム</a></li>
+              <li class="c-pill-link c-pill-link--green"><a href="#recruit-single-detail">募集要項</a></li>
+              <li class="c-pill-link c-pill-link--green"><a href="#recruit-single-company-info">会社概要</a></li>
+              <li class="c-pill-link c-pill-link--orange"><a href="#recruit-single-entry-form">エントリーフォーム</a></li>
             </ul>
           </nav>
 
@@ -102,7 +102,7 @@
       </section>
       <!-- 会社概要 end -->
       <!-- エントリーフォーム -->
-      <section id="recruit-single-entry-form" class="recruit-single-entry-form">
+      <section id="recruit-single-entry-form" class="recruit-single-section">
         <div class="recruit-single-section-container">
           <h2 class="recruit-single-section-title">エントリーする</h2>
           <div class="c-cf7-form">
