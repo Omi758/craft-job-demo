@@ -1663,10 +1663,14 @@ component > cf7-form
 .c-cf7-form .privacy-agree {
   display: flex;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 500;
 }
 .c-cf7-form .privacy-agree a {
   text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.c-cf7-form .privacy-agree a:hover {
+  color: var(--primary-green);
 }
 .c-cf7-form .wpcf7-submit {
   width: 100%;
@@ -2292,6 +2296,10 @@ page > top > top-kv
   }
 }
 
+/*!
+page > recruit-single > recruit-single-form
+------------------------------
+*/
 /*!
 page > column > column-archive
 ------------------------------

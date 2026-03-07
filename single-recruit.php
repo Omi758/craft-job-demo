@@ -16,7 +16,7 @@
       <section class="recruit-single-company-info"></section>
       <section class="recruit-single-entry-form">
         <div class="c-cf7-form">
-          <?php echo do_shortcode('[contact-form-7 id="応募フォームのid" title="応募"]'); ?>
+          <?php echo do_shortcode('[contact-form-7 id="a0bb085" title="エントリーフォーム"]'); ?>
         </div>
       </section>
     </main>
