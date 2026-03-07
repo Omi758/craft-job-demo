@@ -71,9 +71,14 @@ component > cf7-form
   .privacy-agree {
     display: flex;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 500;
     a {
       text-decoration: underline;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--primary-green);
+      }
     }
   }
 
