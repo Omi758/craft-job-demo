@@ -10,7 +10,7 @@
       <h1 class="c-page-title"><?php the_title(); ?></h1>
     </div>
 
-    <div class="page-contact-content">
+    <div class="page-contact-content c-cf7-form">
       <?php the_content(); ?>
     </div>
   </div>

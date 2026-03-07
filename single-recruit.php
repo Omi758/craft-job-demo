@@ -14,7 +14,11 @@
       </div>
       <section class="recruit-single-detail"></section>
       <section class="recruit-single-company-info"></section>
-      <section class="recruit-single-entry-form"></section>
+      <section class="recruit-single-entry-form">
+        <div class="c-cf7-form">
+          <?php echo do_shortcode('[contact-form-7 id="応募フォームのid" title="応募"]'); ?>
+        </div>
+      </section>
     </main>
     <!-- main _メインコンテンツ end -->
     <!-- aside _サイドバー -->
