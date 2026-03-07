@@ -45,3 +45,81 @@ component > button
 .c-button-link--home::before {
   mask-image: url("../img/common/icon-home.svg");
 }
+
+/*!
+component > pill-link
+ピル型枠線リンク（コラムカテゴリ・求人詳細ナビ等）
+------------------------------
+*/
+.c-pill-link {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.c-pill-link a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  white-space: nowrap;
+  width: 100%;
+  font-weight: 700;
+  padding: 4px 16px 4px 20px;
+  border-radius: 50vh;
+  border: 2px solid var(--primary-green);
+  background-color: var(--primary-light-green);
+  color: var(--primary-green);
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid var(--primary-green);
+    border-bottom: 2px solid var(--primary-green);
+    transform: rotate(-45deg);
+    transition: border-color 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--primary-green);
+
+    &::after {
+      border-color: var(--white);
+    }
+  }
+}
+
+/* is-active 付与時 */
+.c-pill-link.is-active a {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border-color: var(--primary-green);
+
+  &::after {
+    border-color: var(--white);
+  }
+}
+
+/* オレンジバリアント付与時 */
+.c-pill-link--orange a {
+  border-color: var(--accent, #ed8f41);
+  background-color: var(--accent-light, #fef0e4);
+  color: var(--accent, #ed8f41);
+
+  &::after {
+    border-color: var(--accent, #ed8f41);
+  }
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--accent, #ed8f41);
+
+    &::after {
+      border-color: var(--white);
+    }
+  }
+}

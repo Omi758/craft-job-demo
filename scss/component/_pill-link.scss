@@ -1,0 +1,81 @@
+// /*!
+// component > pill-link
+// ピル型枠線リンク（コラムカテゴリ・求人詳細ナビ等）
+// ------------------------------
+// */
+
+// // ラッパー（li）に付与した場合のレイアウト用（ページ側で .column-category-list .c-pill-link などで付与可）
+// .c-pill-link {
+//   width: auto;
+//   flex-shrink: 0;
+// }
+
+// /* リンク見た目：.c-pill-link a（ラッパー内）または a.c-pill-link（直付け） */
+// .c-pill-link a,
+// a.c-pill-link {
+//   display: flex;
+//   align-items: center;
+//   gap: 11px;
+//   white-space: nowrap;
+//   width: 100%;
+//   font-weight: 700;
+//   padding: 4px 16px 4px 20px;
+//   border-radius: 50vh;
+//   border: 2px solid var(--primary-green);
+//   background-color: var(--primary-light-green);
+//   color: var(--primary-green);
+//   transition:
+//     color 0.3s ease,
+//     background-color 0.3s ease;
+
+//   &::after {
+//     content: "";
+//     display: block;
+//     width: 8px;
+//     height: 8px;
+//     border-left: 2px solid var(--primary-green);
+//     border-bottom: 2px solid var(--primary-green);
+//     transform: rotate(-45deg);
+//     transition: border-color 0.3s ease;
+//   }
+
+//   &:hover {
+//     color: var(--white);
+//     background-color: var(--primary-green);
+
+//     &::after {
+//       border-color: var(--white);
+//     }
+//   }
+// }
+
+// /* ラッパーに is-active が付いているとき（コラムカテゴリなど） */
+// .c-pill-link.is-active a {
+//   background-color: var(--primary-green);
+//   color: var(--white);
+//   border-color: var(--primary-green);
+
+//   &::after {
+//     border-color: var(--white);
+//   }
+// }
+
+// /* オレンジバリアント（求人詳細ナビのエントリー等） */
+// a.c-pill-link--orange {
+//   border-color: var(--warning-orange, #ed8f41);
+//   background-color: var(--warning-orange-bg, #fff4e6);
+//   color: var(--warning-orange, #ed8f41);
+
+//   &::after {
+//     border-color: var(--warning-orange, #ed8f41);
+//   }
+
+//   &:hover {
+//     color: var(--white);
+//     background-color: var(--warning-orange, #ed8f41);
+
+//     &::after {
+//       border-color: var(--white);
+//     }
+//   }
+// }
