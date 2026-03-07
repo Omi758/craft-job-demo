@@ -11,6 +11,7 @@
         <div class="recruit-single-title">
           <h1 class="c-page-title"><?php the_title(); ?></h1>
         </div>
+
       </div>
       <section class="recruit-single-detail"></section>
       <section class="recruit-single-company-info"></section>
