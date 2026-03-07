@@ -1595,6 +1595,156 @@ component > pagenation
 }
 
 /*!
+component > cf7-form
+------------------------------
+*/
+/*
+ * CF7フォーム_共通項目
+ * 名前、ふりがな、メールアドレスはお問い合わせページと求人詳細ページで
+ * スタイルが同じのため共通の項目としてコンポーネント化
+ */
+.c-cf7-form {
+  display: grid;
+}
+.c-cf7-form .wpcf7-form {
+  display: grid;
+  gap: 24px;
+}
+.c-cf7-form label {
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .c-cf7-form label {
+    font-size: 18px;
+  }
+}
+.c-cf7-form .required {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  background-color: var(--red);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+.c-cf7-form .wpcf7-form-control {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  outline: 0; /* focus時のデフォルトスタイルを解除 */
+}
+@media screen and (min-width: 768px) {
+  .c-cf7-form .wpcf7-form-control {
+    font-size: 18px;
+  }
+}
+.c-cf7-form .wpcf7-form-control::-moz-placeholder {
+  color: var(--font-light);
+  opacity: 0.6;
+}
+.c-cf7-form .wpcf7-form-control::placeholder {
+  color: var(--font-light);
+  opacity: 0.6;
+}
+.c-cf7-form .wpcf7-form-control:focus {
+  box-shadow: 0 0 0 1px var(--focus-shadow) inset, 0 0 0 3px var(--border);
+}
+.c-cf7-form .wpcf7-textarea {
+  width: 100%;
+  min-height: 200px;
+  field-sizing: content;
+}
+.c-cf7-form .privacy-agree {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+.c-cf7-form .privacy-agree a {
+  text-decoration: underline;
+}
+.c-cf7-form .wpcf7-submit {
+  width: 100%;
+  margin-top: 0;
+  padding: 15px 11px;
+  padding-left: 0.025em;
+  border-radius: 6px;
+  background-color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .c-cf7-form .wpcf7-submit {
+    font-size: 18px;
+  }
+}
+.c-cf7-form .wpcf7-submit {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.c-cf7-form .wpcf7-submit:hover {
+  background-color: var(--white);
+  color: var(--primary-green);
+}
+.c-cf7-form .wpcf7-submit:focus {
+  box-shadow: none;
+}
+.c-cf7-form .wpcf7-submit:focus-visible {
+  box-shadow: 0 0 0 1px var(--focus-shadow) inset, 0 0 0 3px var(--border);
+}
+.c-cf7-form {
+  /* --------- エラーメッセージ -------- */
+}
+.c-cf7-form .wpcf7 .wpcf7-response-output {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+.c-cf7-form {
+  /* 送信成功（緑） */
+}
+.c-cf7-form .wpcf7 form.sent .wpcf7-response-output {
+  background: var(--success-green);
+  color: var(--success-green-text);
+  border-color: var(--success-green-text);
+}
+.c-cf7-form {
+  /* 送信失敗（赤） */
+}
+.c-cf7-form .wpcf7 form.failed .wpcf7-response-output,
+.c-cf7-form .wpcf7 form.aborted .wpcf7-response-output {
+  background: var(--error-red);
+  color: var(--error-red-text);
+  border-color: var(--error-red-text);
+}
+.c-cf7-form {
+  /* スパム判定（赤）_CF7 APPS対応 */
+}
+.c-cf7-form .wpcf7 form.spam .wpcf7-response-output {
+  background: var(--error-red);
+  color: var(--error-red-text);
+  border-color: var(--error-red-text);
+}
+.c-cf7-form {
+  /* バリデーションエラー(橙) */
+}
+.c-cf7-form .wpcf7 form.invalid .wpcf7-response-output,
+.c-cf7-form .wpcf7 form.unaccepted .wpcf7-response-output,
+.c-cf7-form .wpcf7 form.payment-required .wpcf7-response-output {
+  background: var(--warning-orange);
+  color: var(--warning-orange-text);
+  border-color: var(--warning-orange-text);
+}
+
+/*!
 layout > container
 ------------------------------
 */
@@ -2794,142 +2944,9 @@ page > contact
 
 .page-contact-content {
   margin-top: 40px;
-  display: grid;
 }
 @media screen and (min-width: 768px) {
   .page-contact-content {
     margin-top: 48px;
   }
-}
-.page-contact-content .wpcf7-form {
-  display: grid;
-  gap: 24px;
-}
-.page-contact-content label {
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  .page-contact-content label {
-    font-size: 18px;
-  }
-}
-.page-contact-content .required {
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 700;
-  background-color: var(--red);
-  padding: 1px 6px;
-  border-radius: 4px;
-  margin-left: 6px;
-}
-.page-contact-content .wpcf7-form-control {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background-color: var(--white);
-  font-size: 16px;
-  font-weight: 500;
-  outline: 0; /* focus時のデフォルトスタイルを解除 */
-}
-@media screen and (min-width: 768px) {
-  .page-contact-content .wpcf7-form-control {
-    font-size: 18px;
-  }
-}
-.page-contact-content .wpcf7-form-control::-moz-placeholder {
-  color: var(--font-light);
-  opacity: 0.6;
-}
-.page-contact-content .wpcf7-form-control::placeholder {
-  color: var(--font-light);
-  opacity: 0.6;
-}
-.page-contact-content .wpcf7-form-control:focus {
-  box-shadow: 0 0 0 1px var(--focus-shadow) inset, 0 0 0 3px var(--border);
-}
-.page-contact-content .wpcf7-textarea {
-  width: 100%;
-  min-height: 200px;
-  field-sizing: content;
-}
-.page-contact-content .privacy-agree {
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
-}
-.page-contact-content .privacy-agree a {
-  text-decoration: underline;
-}
-.page-contact-content .wpcf7-submit {
-  width: 100%;
-  margin-top: 0;
-  padding: 15px 11px;
-  padding-left: 0.025em;
-  border-radius: 6px;
-  background-color: var(--primary-green);
-  border: 1px solid var(--primary-green);
-  color: var(--white);
-  font-size: 16px;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  .page-contact-content .wpcf7-submit {
-    font-size: 18px;
-  }
-}
-.page-contact-content .wpcf7-submit {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.page-contact-content .wpcf7-submit:hover {
-  background-color: var(--white);
-  color: var(--primary-green);
-}
-.page-contact-content .wpcf7-submit:focus {
-  box-shadow: none;
-}
-.page-contact-content .wpcf7-submit:focus-visible {
-  box-shadow: 0 0 0 1px var(--focus-shadow) inset, 0 0 0 3px var(--border);
-}
-
-/* --------- エラーメッセージ -------- */
-.wpcf7 .wpcf7-response-output {
-  margin-top: 24px;
-  padding: 16px 20px;
-  border-radius: 8px;
-  text-align: center;
-  border: 2px solid transparent;
-}
-
-/* 送信成功（緑） */
-.wpcf7 form.sent .wpcf7-response-output {
-  background: var(--success-green);
-  color: var(--success-green-text);
-  border-color: var(--success-green-text);
-}
-
-/* 送信失敗（赤） */
-.wpcf7 form.failed .wpcf7-response-output,
-.wpcf7 form.aborted .wpcf7-response-output {
-  background: var(--error-red);
-  color: var(--error-red-text);
-  border-color: var(--error-red-text);
-}
-
-/* スパム判定（赤）_CF7 APPS対応 */
-.wpcf7 form.spam .wpcf7-response-output {
-  background: var(--error-red);
-  color: var(--error-red-text);
-  border-color: var(--error-red-text);
-}
-
-/* バリデーションエラー(橙) */
-.wpcf7 form.invalid .wpcf7-response-output,
-.wpcf7 form.unaccepted .wpcf7-response-output,
-.wpcf7 form.payment-required .wpcf7-response-output {
-  background: var(--warning-orange);
-  color: var(--warning-orange-text);
-  border-color: var(--warning-orange-text);
 }/*# sourceMappingURL=style.css.map */
