@@ -6,24 +6,53 @@
 <div class="recruit-single l-container u-mtb-page">
   <div class="recruit-single-2column">
     <!-- main _メインコンテンツ -->
-    <main>
-      <div>
+    <!-- ヘッダー -->
+    <main class="recruit-single-main">
+      <div class="recruit-single-header">
         <div class="recruit-single-title">
           <h1 class="c-page-title"><?php the_title(); ?></h1>
         </div>
+        <div class="recruit-single-header-nav-container">
+          <nav class="recruit-single-header-nav" aria-label="求人詳細ナビゲーション">
+            <ul class="recruit-single-header-nav-list">
+              <li><a class="c-scroll-link" href="#recruit-single-detail">募集要項</a></li>
+              <li><a class="c-scroll-link" href="#recruit-single-company-info">会社概要</a></li>
+              <li><a class="c-scroll-link" href="#recruit-single-entry-form">エントリーフォーム</a></li>
+            </ul>
+          </nav>
 
+          <?php
+          $is_favorited = true;
+          $aria_label = $is_favorited ? "お気に入りを解除" : "お気に入りに登録";
+          $aria_pressed = $is_favorited ? "true" : "false";
+          ?>
+          <button type="button" class="c-favorite-button-icon<?php echo $is_favorited ? "is-active" : ""; ?>"
+            aria-label="<?php echo esc_attr( $aria_label ); ?>" aria-pressed="<?php echo esc_attr( $aria_pressed ); ?>">
+          </button>
+        </div>
       </div>
-      <section class="recruit-single-detail"></section>
-      <section class="recruit-single-company-info"></section>
-      <section class="recruit-single-entry-form">
+      <!-- ヘッダー end -->
+
+      <!-- 募集要項 -->
+      <section id="recruit-single-detail" class="recruit-single-detail">
+        <div class="recruit-single-detail-container">
+        </div>
+      </section>
+      <!-- 募集要項 end -->
+      <!-- 会社概要 -->
+      <section id="recruit-single-company-info" class="recruit-single-company-info"></section>
+      <!-- 会社概要 end -->
+      <!-- エントリーフォーム -->
+      <section id="recruit-single-entry-form" class="recruit-single-entry-form">
         <div class="c-cf7-form">
           <?php echo do_shortcode('[contact-form-7 id="a0bb085" title="エントリーフォーム"]'); ?>
         </div>
       </section>
+      <!-- エントリーフォーム end -->
     </main>
     <!-- main _メインコンテンツ end -->
     <!-- aside _サイドバー -->
-    <aside>
+    <aside class="recruit-single-sidebar">
       <!-- 絞り込み検索 -->
       <form class="c-search-form" action="<?php echo esc_url( home_url( '/recruit/search/' ) ); ?>" method="get">
         <details class="c-search-form-details js-search-form-details">
@@ -159,7 +188,6 @@
         </details>
       </form>
       <!-- 絞り込み検索 end -->
-
     </aside>
     <!-- aside _サイドバー end -->
   </div>
