@@ -88,14 +88,6 @@ page > recruit-single > recruit-single
   @include g.hover-fill-swap(var(--favorite));
 }
 
-.is_favorited {
-  background-color: var(--favorite);
-  color: var(--white);
-  &::before {
-    background-color: var(--white);
-  }
-}
-
 .recruit-single-section {
 }
 .recruit-single-section-container {
