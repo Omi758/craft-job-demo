@@ -29,5 +29,8 @@ layout > recruit-container
 .l-recruit-sidebar {
   @include g.mq(lg) {
     grid-area: aside;
+    align-self: start;
+    position: sticky;
+    top: 100px;
   }
 }
