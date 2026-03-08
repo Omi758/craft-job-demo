@@ -819,11 +819,11 @@ component > card
   background-color: var(--white);
 }
 
-.is-active--favorite {
+.is-favorite {
   background-color: var(--favorite);
   color: var(--white);
 }
-.is-active--favorite::before {
+.is-favorite::before {
   background-color: var(--white);
 }
 
@@ -1153,7 +1153,7 @@ component > card
   grid-row: 1/3;
 }
 
-/* 
+/*
  * 下層ページ用コラム一覧カード
  */
 .c-card-column-container {
@@ -2482,14 +2482,6 @@ page > recruit-single > recruit-single
   color: var(--white);
 }
 .c-favorite-button-icon:hover::before {
-  background-color: var(--white);
-}
-
-.is_favorited {
-  background-color: var(--favorite);
-  color: var(--white);
-}
-.is_favorited::before {
   background-color: var(--white);
 }
 

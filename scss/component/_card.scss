@@ -163,7 +163,7 @@ component > card
 }
 
 // カード_リンク_お気に入り登録_アクティブ時
-.is-active--favorite {
+.is-favorite {
   background-color: var(--favorite);
   color: var(--white);
   &::before {
@@ -471,7 +471,7 @@ component > card
   grid-row: 1 / 3;
 }
 
-/* 
+/*
  * 下層ページ用コラム一覧カード
  */
 .c-card-column-container {
