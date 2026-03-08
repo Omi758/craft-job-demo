@@ -71,3 +71,31 @@
     }
   }
 }
+
+// お気に入りボタン共通_hoverスタイル_アクセント色＋白
+// $favorite: 枠・文字・アイコンの色（hover時は背景になる）
+// $include-border-color: view-more のように border-color も変える場合 true
+@mixin hover-fill-swap(
+  $favorite: var(--favorite),
+  $include-border-color: false
+) {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  @if $include-border-color {
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+  &:hover {
+    background-color: $favorite;
+    color: var(--white);
+    &::before {
+      background-color: var(--white);
+    }
+    @if $include-border-color {
+      border-color: $favorite;
+    }
+  }
+}

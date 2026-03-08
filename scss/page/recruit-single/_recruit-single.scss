@@ -4,46 +4,114 @@
 page > recruit-single > recruit-single
 ------------------------------
 */
-.recruit-single-main {
+.l-recruit {
+  margin-top: 24px;
+}
+
+.l-recruit-2column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  @include g.mq(lg) {
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "aside main";
+    gap: 64px;
+  }
+}
+.l-recruit-main {
+  @include g.mq(lg) {
+    grid-area: main;
+  }
 }
 
 .recruit-single-header {
+  width: 100%;
 }
 
 .recruit-single-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.55;
+  @include g.mq() {
+    font-size: 32px;
+  }
 }
 
 .recruit-single-header-nav-container {
-}
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 24px;
 
+  @include g.mq(lg) {
+    align-items: center;
+    gap: 0;
+    margin-top: 28px;
+  }
+}
 .recruit-single-header-nav {
 }
-
 .recruit-single-header-nav-list {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  @include g.mq() {
+    gap: 14px;
+  }
+}
+
+.c-favorite-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 50vh;
+  border: 1px solid var(--favorite);
+  width: 45px;
+  aspect-ratio: 1 / 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 23px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--favorite);
+    mask-image: url("../img/common/header/icon-favorite.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+  @include g.hover-fill-swap(var(--favorite));
 }
 
 .is_favorited {
+  background-color: var(--favorite);
+  color: var(--white);
+  &::before {
+    background-color: var(--white);
+  }
 }
 
 .recruit-single-section {
 }
-
 .recruit-single-section-container {
 }
-
 .recruit-single-section-title {
 }
-
 .recruit-single-contents {
 }
-
 .recruit-single-content-item {
 }
-
 .recruit-single-content-title {
 }
-
 .recruit-single-content-value {
 }
-.recruit-single-sidebar {
+.l-recruit-sidebar {
+  @include g.mq(lg) {
+    grid-area: aside;
+  }
 }

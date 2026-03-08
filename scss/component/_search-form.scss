@@ -5,14 +5,11 @@ component > search-form
 ------------------------------
 */
 .c-search-form {
-  max-width: 342px;
+  width: 100%;
   background-color: var(--white);
   border-radius: 6px;
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 4px 0 rgba(149, 165, 163, 0.05);
-  @include g.mq() {
-    max-width: 340px;
-  }
 }
 
 .c-search-form-summary {

@@ -3,11 +3,11 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 <!-- パンくず end -->
 <!-- single-recruit_body -->
-<div class="recruit-single l-container u-mtb-page">
-  <div class="recruit-single-2column">
+<div class="l-recruit l-container">
+  <div class="l-recruit-2column">
     <!-- main _メインコンテンツ -->
     <!-- ヘッダー -->
-    <main class="recruit-single-main">
+    <main class="l-recruit-main">
       <?php if ( have_posts() ) : ?>
       <?php while ( have_posts() ) : the_post();?>
       <div class="recruit-single-header">
@@ -118,7 +118,7 @@
     </main>
     <!-- main _メインコンテンツ end -->
     <!-- aside _サイドバー -->
-    <aside class="recruit-single-sidebar">
+    <aside class="l-recruit-sidebar">
       <?php get_template_part('template-parts/search-form'); ?>
     </aside>
     <!-- aside _サイドバー end -->
