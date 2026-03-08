@@ -2231,6 +2231,9 @@ layout > recruit-container
 @media screen and (min-width: 1080px) {
   .l-recruit-sidebar {
     grid-area: aside;
+    align-self: start;
+    position: sticky;
+    top: 100px;
   }
 }
 
