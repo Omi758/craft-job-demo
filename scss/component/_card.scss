@@ -116,10 +116,6 @@ component > card
 .c-card-link-view-more {
   border: 1px solid var(--primary-green);
   color: var(--primary-green);
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
 
   &::before {
     mask-image: url("../img/common/icon-detail.svg");
@@ -127,14 +123,10 @@ component > card
     transition: background-color 0.3s ease;
   }
 
-  &:hover {
-    background-color: var(--primary-green);
-    border-color: var(--primary-green);
-    color: var(--white);
-    &::before {
-      background-color: var(--white);
-    }
-  }
+  @include g.hover-fill-swap(
+    $favorite: var(--primary-green),
+    $include-border-color: true
+  );
 }
 
 // カードリンク_apply
@@ -167,13 +159,7 @@ component > card
     background-color: var(--favorite);
   }
 
-  &:hover {
-    background-color: var(--favorite);
-    color: var(--white);
-    &::before {
-      background-color: var(--white);
-    }
-  }
+  @include g.hover-fill-swap(var(--favorite));
 }
 
 // カード_リンク_お気に入り登録_アクティブ時
