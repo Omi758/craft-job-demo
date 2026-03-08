@@ -42,33 +42,125 @@
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">業務内容</dt>
               <dd class="recruit-single-content-value">
-                WebサイトのHTML/CSS/JavaScriptによるコーディングを中心に、CMS実装やパフォーマンス最適化などの業務を担当していただきます。<br>
-                デザイナーやディレクターと連携しながら、UI/UXを意識した実装を行っていただきます。
+                <?php echo nl2br( esc_html( get_field('job_description') ) ); ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">リモート</dt>
-              <dd class="recruit-single-content-value">リモート可</dd>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field( 'remote_status' ) ? 'リモート可' : 'リモート不可' ); ?>
+              </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">リモート補足</dt>
-              <dd class="recruit-single-content-value">基本はリモート勤務ですが、出社を希望される方はオフィス勤務も可能です。業務内容やチーム体制に応じて柔軟に対応しています。
+              <dd class="recruit-single-content-value">
+                <?php echo nl2br( esc_html( get_field('remote_note') ) ); ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">応募条件（必須）</dt>
               <dd class="recruit-single-content-value">
+                <?php
+                $skills = get_field( "required_skills" );
+                if ($skills) :
+                  $items = explode("\n", $skills);
+                ?>
                 <ul>
-                  <li>HTML/CSSの基礎知識</li>
-                  <li>レスポンシブ対応の経験</li>
-                  <li>コミュニケーションを取りながら作業できる方</li>
+                  <?php foreach ($items as $item) : ?>
+                  <?php if (trim($item) !== "") : ?>
+                  <li><?php echo esc_html( trim($item) ); ?></li>
+                  <?php endif; ?>
+                  <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
-              <dt class="recruit-single-content-title">給与</dt>
-              <dd class="recruit-single-content-value">350万円</dd>
+              <dt class="recruit-single-content-title">応募条件（歓迎）</dt>
+              <dd class="recruit-single-content-value">
+                <?php
+                $preferred_skills = get_field( "preferred_skills" );
+                if ( $preferred_skills ) :
+                  $preferred_items = explode( "\n", $preferred_skills );
+                ?>
+                <ul>
+                  <?php foreach ( $preferred_items as $preferred_item ) : ?>
+                  <?php if ( trim( $preferred_item ) !== '' ) : ?>
+                  <li><?php echo esc_html( trim( $preferred_item ) ); ?></li>
+                  <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+              </dd>
             </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">勤務地</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('work_location') ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">勤務時間</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('work_hours') ); ?>
+              </dd>
+            </div>
+
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">給与</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('salary') ); ?>万円
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">給与形態</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('salary_type') ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">給与補足</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo nl2br( esc_html( get_field('salary_note') ) ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">休日</dt>
+              <dd class="recruit-single-content-value">
+                <?php
+                $holidays = get_field( "holidays" );
+                if ( $holidays ) :
+                  $holidays_items = explode( "\n", $holidays );
+                ?>
+                <ul>
+                  <?php foreach ( $holidays_items as $holidays_item ) : ?>
+                  <?php if ( trim( $holidays_item ) !== '' ) : ?>
+                  <li><?php echo esc_html( trim( $holidays_item ) ); ?></li>
+                  <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">福利厚生</dt>
+              <dd class="recruit-single-content-value">
+                <?php
+                $welfares = get_field( "welfare" );
+                if ( $welfares ) :
+                  $welfares_items = explode( "\n", $welfares );
+                ?>
+                <ul>
+                  <?php foreach ( $welfares_items as $welfare_item ) : ?>
+                  <?php if ( trim( $welfare_item ) !== '' ) : ?>
+                  <li><?php echo esc_html( trim( $welfare_item ) ); ?></li>
+                  <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+              </dd>
+            </div>
+
           </dl>
         </div>
       </section>
@@ -80,20 +172,75 @@
           <dl class="recruit-single-contents">
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">会社名</dt>
-              <dd class="recruit-single-content-value">合同会社LIBERA</dd>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('company_name') ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">事業内容</dt>
+              <dd class="recruit-single-content-value">
+                <?php
+                $business_contents = get_field( "business_content" );
+                if ( $business_contents ) :
+                  $business_contents_items = explode( "\n", $business_contents );
+                ?>
+                <ul>
+                  <?php foreach ( $business_contents_items as $business_content_item ) : ?>
+                  <?php if ( trim( $business_content_item ) !== '' ) : ?>
+                  <li><?php echo esc_html( trim( $business_content_item ) ); ?></li>
+                  <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+              </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">所在地</dt>
               <dd class="recruit-single-content-value">
-                <p>〒812-0011<br>
-                  福岡県福岡市博多区博多駅前3-7-35</p>
+                <?php
+                $company_zip     = get_field( 'company_zip' );
+                $company_address = get_field( 'company_address' );
+                if ( $company_zip || $company_address ) :
+                  $parts = array();
+                  if ( $company_zip ) {
+                    $parts[] = '〒' . esc_html( $company_zip );
+                  }
+                  if ( $company_address ) {
+                    $parts[] = esc_html( $company_address );
+                  }
+                  ?>
+                <p><?php echo implode( '<br>', $parts ); ?></p>
+                <?php endif; ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">設立</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('established') ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">従業員数</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('employee_count') ); ?>
+              </dd>
+            </div>
+            <div class="recruit-single-content-item">
+              <dt class="recruit-single-content-title">資本金</dt>
+              <dd class="recruit-single-content-value">
+                <?php echo esc_html( get_field('capital') ); ?>万円
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">URL</dt>
               <dd class="recruit-single-content-value">
-                <a href="https://libera-inc.co.jp" target="_blank"
-                  rel="noopener noreferrer">https://libera-inc.co.jp</a>
+                <?php
+                $company_url = get_field( 'company_url' );
+                if ( $company_url ) :
+                  ?>
+                <a href="<?php echo esc_url( $company_url ); ?>" target="_blank"
+                  rel="noopener noreferrer"><?php echo esc_html( $company_url ); ?></a>
+                <?php endif; ?>
               </dd>
             </div>
           </dl>

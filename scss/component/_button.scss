@@ -130,8 +130,8 @@ component > pill-link
   align-items: center;
   background-color: var(--white);
   border-radius: 50vh;
-  border: 1px solid var(--favorite);
-  width: 45px;
+  border: 2px solid var(--favorite);
+  width: 46px;
   aspect-ratio: 1 / 1;
 
   &::before {

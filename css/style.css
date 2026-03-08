@@ -475,8 +475,8 @@ component > pill-link
   align-items: center;
   background-color: var(--white);
   border-radius: 50vh;
-  border: 1px solid var(--favorite);
-  width: 45px;
+  border: 2px solid var(--favorite);
+  width: 46px;
   aspect-ratio: 1/1;
 }
 .c-favorite-button-icon::before {
@@ -2591,6 +2591,9 @@ page > recruit-single > recruit-single
   list-style-position: outside;
   list-style-type: disc;
   padding-left: 1.6em;
+}
+.recruit-single-content-value a {
+  text-decoration: underline;
 }
 
 /*!
