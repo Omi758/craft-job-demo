@@ -4,3 +4,30 @@
 layout > recruit-container
 ------------------------------
 */
+.l-recruit {
+  margin-top: 24px;
+  margin-bottom: 64px;
+}
+
+.l-recruit-2column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  @include g.mq(lg) {
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "aside main";
+    gap: 64px;
+  }
+}
+
+.l-recruit-main {
+  @include g.mq(lg) {
+    grid-area: main;
+  }
+}
+
+.l-recruit-sidebar {
+  @include g.mq(lg) {
+    grid-area: aside;
+  }
+}

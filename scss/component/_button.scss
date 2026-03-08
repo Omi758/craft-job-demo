@@ -4,7 +4,7 @@
 component > button
 ------------------------------
 */
-// カードリンク_view-more
+/* カードリンク_view-more */
 .c-button-link-container {
   width: fit-content;
   margin-inline: auto;
@@ -121,4 +121,29 @@ component > pill-link
       border-color: var(--white);
     }
   }
+}
+
+/* お気に入りボタン_アイコン_single-recruit */
+.c-favorite-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 50vh;
+  border: 1px solid var(--favorite);
+  width: 45px;
+  aspect-ratio: 1 / 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 23px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--favorite);
+    mask-image: url("../img/common/header/icon-favorite.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+  @include g.hover-fill-swap(var(--favorite));
 }
