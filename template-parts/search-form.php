@@ -15,67 +15,37 @@
               <div class="c-search-form-select-wrapper">
                 <select class="c-search-form-input" name="area" id="area">
                   <option value="" disabled selected>選択してください</option>
-                  <optgroup label="北海道・東北">
-                    <option value="hokkaido">北海道</option>
-                    <option value="aomori">青森</option>
-                    <option value="iwate">岩手</option>
-                    <option value="miyagi">宮城</option>
-                    <option value="akita">秋田</option>
-                    <option value="yamagata">山形</option>
-                    <option value="fukushima">福島</option>
-                  </optgroup>
-                  <optgroup label="関東">
-                    <option value="tokyo">東京</option>
-                    <option value="kanagawa">神奈川</option>
-                    <option value="saitama">埼玉</option>
-                    <option value="chiba">千葉</option>
-                    <option value="ibaraki">茨城</option>
-                    <option value="gunma">群馬</option>
-                    <option value="tochigi">栃木</option>
-                  </optgroup>
-                  <optgroup label="中部">
-                    <option value="niigata">新潟</option>
-                    <option value="toyama">富山</option>
-                    <option value="ishikawa">石川</option>
-                    <option value="fukui">福井</option>
-                    <option value="yamanashi">山梨</option>
-                    <option value="nagano">長野</option>
-                    <option value="gifu">岐阜</option>
-                    <option value="shizuoka">静岡</option>
-                    <option value="aichi">愛知</option>
-                  </optgroup>
-                  <optgroup label="近畿">
-                    <option value="mie">三重</option>
-                    <option value="shiga">滋賀</option>
-                    <option value="kyoto">京都</option>
-                    <option value="osaka">大阪</option>
-                    <option value="hyogo">兵庫</option>
-                    <option value="nara">奈良</option>
-                    <option value="wakayama">和歌山</option>
-                  </optgroup>
-                  <optgroup label="中国">
-                    <option value="tottori">鳥取</option>
-                    <option value="shimane">島根</option>
-                    <option value="okayama">岡山</option>
-                    <option value="hiroshima">広島</option>
-                    <option value="yamaguchi">山口</option>
-                  </optgroup>
-                  <optgroup label="四国">
-                    <option value="tokushima">徳島</option>
-                    <option value="kagawa">香川</option>
-                    <option value="ehime">愛媛</option>
-                    <option value="kochi">高知</option>
-                  </optgroup>
-                  <optgroup label="九州・沖縄">
-                    <option value="fukuoka">福岡</option>
-                    <option value="saga">佐賀</option>
-                    <option value="nagasaki">長崎</option>
-                    <option value="kumamoto">熊本</option>
-                    <option value="oita">大分</option>
-                    <option value="miyazaki">宮崎</option>
-                    <option value="kagoshima">鹿児島</option>
-                    <option value="okinawa">沖縄</option>
-                  </optgroup>
+                  <?php 
+                  $parent_areas = get_terms( array(
+                    "taxonomy" => "area",
+                    "parent" => 0, // 親がいない（=最上位）ものだけ取得
+                    "hide_empty" => false,
+                  ));
+                  
+                  if ( ! is_wp_error( $parent_areas ) && ! empty( $parent_areas )) {
+                    $selected = isset( $_GET['area'] ) ? sanitize_text_field( wp_unslash( $_GET['area'] ) ) : '';
+                    foreach ( $parent_areas as $parent_term ) :
+                    // 親のoption(地方)を表示
+                    $selected_attr =  ( $selected === $parent_term->slug ) ? 'selected' : '';
+                    echo '<option value="' .esc_attr( $parent_term->slug ) .'" ' . $selected_attr . '>' . esc_html( $parent_term->name ) . '</option>';
+
+                    // その親に紐づく「子（都道府県）」を取得
+                    $child_areas = get_terms(array(
+                      "taxonomy" => "area",
+                      "parent" => $parent_term->term_id, // 現在の親のIDを指定
+                      "hide_empty" => false,
+                    ));
+                    if ( ! is_wp_error( $child_areas ) && ! empty( $child_areas )) :
+                      foreach ( $child_areas as $child_term ) :
+                        // 子のoption(都道府県)を表示_親と子でインデントをずらす（全角スペース）ことで階層を表現
+                        $selected_attr =  ( $selected === $child_term->slug ) ? 'selected' : '';
+                        echo '<option value="' .esc_attr( $child_term->slug ) .'"' . $selected_attr . '>　' . esc_html( $child_term->name ) . '</option>';
+                      endforeach;
+                      endif;
+                    
+                    endforeach;
+                  }
+                  ?>
                 </select>
               </div>
             </div>
@@ -85,13 +55,22 @@
               <div class="c-search-form-select-wrapper">
                 <select class="c-search-form-input" name="employment_type" id="employment_type">
                   <option value="" disabled selected>選択してください</option>
-                  <option value="full-time">正社員</option>
-                  <option value="contract">契約社員</option>
-                  <option value="temporary">派遣社員</option>
-                  <option value="freelance">フリーランス</option>
-                  <option value="side-job">副業</option>
-                  <option value="part-time">アルバイト</option>
-                  <option value="intern">インターン</option>
+                  <?php
+                  $employment_terms = get_terms( array(
+                    "taxonomy" => "employment_type",
+                    "hide_empty" => false,
+                  ));
+                  if ( ! is_wp_error( $employment_terms ) && ! empty( $employment_terms )) {
+                    $selected = isset( $_GET['employment_type'] ) ? sanitize_text_field( wp_unslash( $_GET['employment_type'] ) ) : '';
+                    foreach ( $employment_terms as $term ) {
+                      $is_selected = ( $selected === $term->slug ) ? ' selected ' : '';
+                      ?>
+                  <option value="<?php echo esc_attr( $term->slug ); ?>" <?php echo $is_selected; ?>>
+                    <?php echo esc_html( $term->name ); ?></option>
+                  <?php
+                  }
+                  }
+                  ?>
                 </select>
               </div>
             </div>
@@ -101,16 +80,22 @@
               <div class="c-search-form-select-wrapper">
                 <select class="c-search-form-input" name="job_category" id="job_category">
                   <option value="" disabled selected>選択してください</option>
-                  <option value="web-writer">Webライター</option>
-                  <option value="photographer">フォトグラファー</option>
-                  <option value="graphic-designer">グラフィックデザイナー</option>
-                  <option value="illustrator">イラストレーター</option>
-                  <option value="ui-ux-designer">UI/UXデザイナー</option>
-                  <option value="web-designer">Webデザイナー</option>
-                  <option value="coder-engineer">コーダー・エンジニア</option>
-                  <option value="director">ディレクター</option>
-                  <option value="art-director">アートディレクター</option>
-                  <option value="marketer">マーケター</option>
+                  <?php
+                  $job_categories = get_terms( array(
+                    "taxonomy" => "job_category",
+                    "hide_empty" => false, // 求人が0件のタームも含めて取得(表示)
+                  ));
+                  if ( ! is_wp_error( $job_categories ) && ! empty( $job_categories )) {
+                    $selected = isset( $_GET['job_category'] ) ? sanitize_text_field( wp_unslash( $_GET['job_category'] ) ) : '';
+                    foreach ( $job_categories as $term ) {
+                      $is_selected = ( $selected === $term->slug ) ? ' selected ' : '';
+                      ?>
+                  <option value="<?php echo esc_attr( $term->slug ); ?>" <?php echo $is_selected; ?>>
+                    <?php echo esc_html( $term->name ); ?></option>
+                  <?php
+                    }
+                  }
+                  ?>
                 </select>
               </div>
             </div>
