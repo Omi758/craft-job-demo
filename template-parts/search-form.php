@@ -15,7 +15,7 @@
               <div class="c-search-form-select-wrapper">
                 <select class="c-search-form-input" name="area" id="area">
                   <option value="" disabled selected>選択してください</option>
-                  <?php 
+                  <?php
                   $parent_areas = get_terms( array(
                     "taxonomy" => "area",
                     "parent" => 0, // 親がいない（=最上位）ものだけ取得
