@@ -9,39 +9,71 @@
       <img class='c-card-archive-company-logo'
         src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>' width='120'
         height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-      <h3 class="c-card-archive-company">合同会社LIBERA</h3>
+      <h3 class="c-card-archive-company"><?php the_field('company_name'); ?></h3>
     </div>
-    <p class="c-card-archive-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
+
+    <p class="c-card-archive-copy"><?php the_title(); ?></p>
+
     <ul class="c-card-archive-tags">
-      <li><a href="/">#未経験歓迎</a></li>
-      <li><a href="/">#リモート可</a></li>
-      <li><a href="/">#副業OK</a></li>
-      <li><a href="/">#フレックス勤務</a></li>
-      <li><a href="/">#経験者優遇</a></li>
-      <li><a href="/">#服装自由</a></li>
-      <li><a href="/">#土日休み</a></li>
-      <li><a href="/">#PC支給</a></li>
+      <?php $tags = get_the_terms( get_the_ID(), 'job_tag' ); ?>
+      <?php if( $tags ) : ?>
+      <?php foreach( $tags as $tag ) : ?>
+      <li><a
+          href="<?php echo esc_url( home_url( '/recruit/?job_tag=' . $tag->slug ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+      </li>
+      <?php endforeach; ?>
+      <?php endif; ?>
     </ul>
+
+    <?php
+    $post_id = get_the_ID();
+
+    // 雇用形態（タクソノミー  employment_type 1件目を表示）
+    $employment_terms = get_the_terms( $post_id, 'employment_type' );
+    $employment_label = ( $employment_terms && ! is_wp_error( $employment_terms ) && ! empty( $employment_terms ) )
+      ? esc_html( $employment_terms[0]->name )
+      : '—';
+    
+      // 職種（タクソノミー job_category）
+      $job_terms = get_the_terms( $post_id, 'job_category' );
+      $job_label = ($job_terms && ! is_wp_error( $job_terms ) && ! empty( $job_terms ) )
+        ? esc_html( $job_terms[0]->name )
+        : '—';
+
+      // 地域（タクソノミー areaを優先、無ければACF work_locationを表示）
+      $area_terms = get_the_terms( $post_id, 'area' );
+      if ( $area_terms && ! is_wp_error( $area_terms ) && !empty( $area_terms ) ) {
+        $area_label = esc_html( $area_terms[0]->name );
+      } else {
+        $work_location = get_field( 'work_location', $post_id );
+        $area_label = $work_location ? esc_html( $work_location ) : '—';
+      }
+
+      // 年収（ACF salary、単位は万円）
+      $salary_value = get_field( 'salary', $post_id );
+      $salary_label = ( $salary_value !== '' && $salary_value !== null ) ? esc_html( $salary_value ) . '万円' : '—';
+    ?>
+
     <div class="c-card-archive-list-container">
       <dl class="c-card-archive-list">
         <dt class="c-card-archive-list-title">雇用形態</dt>
-        <dd class="c-card-archive-list-value">正社員</dd>
+        <dd class="c-card-archive-list-value"><?php echo $employment_label; ?></dd>
         <dt class="c-card-archive-list-title">職種</dt>
-        <dd class="c-card-archive-list-value">コーダー・エンジニア</dd>
+        <dd class="c-card-archive-list-value"><?php echo $job_label; ?></dd>
         <dt class="c-card-archive-list-title">地域</dt>
-        <dd class="c-card-archive-list-value">福岡</dd>
+        <dd class="c-card-archive-list-value"><?php echo $area_label; ?></dd>
         <dt class="c-card-archive-list-title">年収</dt>
-        <dd class="c-card-archive-list-value">300万円</dd>
+        <dd class="c-card-archive-list-value"><?php echo $salary_label; ?></dd>
       </dl>
     </div>
   </div>
   <div class="c-card-link-container c-card-link-recruit-container">
-    <a class="c-card-link c-card-link-apply" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+    <a class="c-card-link c-card-link-apply" href="<?php the_permalink(); ?>#recruit-single-entry-form"
       aria-label="求人に応募する">応募する</a>
-    <a class="c-card-link c-card-link-view-more" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+    <a class="c-card-link c-card-link-view-more" href="<?php the_permalink(); ?>#recruit-single-detail"
       aria-label="求人の詳細を見る">詳しく見る</a>
-    <a class="c-card-link c-card-link-favorite" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-      aria-label="求人募集記事をお気に入り登録する">お気に入り</a>
+    <button class="c-card-link c-card-link-favorite" type="button"
+      data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" aria-label="求人募集記事をお気に入り登録する">お気に入り</button>
 
   </div>
 </article>

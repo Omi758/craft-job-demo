@@ -250,7 +250,7 @@ foundation > base
 */
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -2220,6 +2220,10 @@ layout > recruit-container
     grid-template-areas: "aside main";
     gap: 64px;
   }
+}
+
+.c-archive-title-container + .l-recruit-2column {
+  margin-top: 40px;
 }
 
 @media screen and (min-width: 1080px) {
