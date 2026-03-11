@@ -130,10 +130,15 @@ function craftjob_validate_kana( $result, $tag ) {
 }
 
 /**
- * コラム一覧_表示件数9件に制限
+ * コラム一覧_カード表示件数9件に制限
+ * タクソノミー（taxonomy.php）_カード表示件数12件に制限
  */
 function craftjob_posts_per_page( $query ) {
-	if (! is_admin() && $query->is_main_query() && $query->is_home()) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	// コラム一覧_表示件数9件
+	if ( $query->is_home() ) {
 		$query->set( 'posts_per_page', 9 );
 
 		// カテゴリパラメータで記事を絞り込む
@@ -144,10 +149,13 @@ function craftjob_posts_per_page( $query ) {
 			    $query->set( 'category_name', $category_slug );
 			}
 		}
+}
+// タクソノミー一覧_表示件数12件
+	if ( $query->is_tax() ) {
+		$query->set( 'posts_per_page', 12 );
 	}
 }
-add_action( 'pre_get_posts', 'craftjob_posts_per_page' );
-
+add_action( 'pre_get_posts', 'craftjob_taxonomy_posts_per_page' );
 
 /**
  * ページネーション
