@@ -20,6 +20,10 @@ layout > recruit-container
   }
 }
 
+.c-archive-title-container + .l-recruit-2column {
+  margin-top: 40px;
+}
+
 .l-recruit-main {
   @include g.mq(lg) {
     grid-area: main;
