@@ -973,14 +973,9 @@ component > card
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 11px;
-  max-width: 340px;
+  width: 100%;
   background-color: var(--white);
   border: 1px solid var(--border-light);
-}
-@media screen and (min-width: 768px) {
-  .c-card-archive-container {
-    max-width: 774px;
-  }
 }
 
 .c-card-archive-image {
@@ -2216,7 +2211,7 @@ layout > recruit-container
 }
 @media screen and (min-width: 1080px) {
   .l-recruit-2column {
-    grid-template-columns: 29% 1fr;
+    grid-template-columns: 340px 1fr;
     grid-template-areas: "aside main";
     gap: 64px;
   }
@@ -2230,6 +2225,11 @@ layout > recruit-container
   .l-recruit-main {
     grid-area: main;
   }
+}
+
+.l-recruit-archive-cards {
+  display: grid;
+  gap: 40px;
 }
 
 @media screen and (min-width: 1080px) {
