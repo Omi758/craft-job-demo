@@ -269,12 +269,9 @@ component > card
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 11px;
-  max-width: 340px;
+  width: 100%;
   background-color: var(--white);
   border: 1px solid var(--border-light);
-  @include g.mq() {
-    max-width: 774px;
-  }
 }
 
 .c-card-archive-image {

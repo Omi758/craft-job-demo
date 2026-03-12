@@ -10,11 +10,15 @@
   </div>
 
   <div class="l-recruit-2column">
+    <!-- aside _サイドバー（SP版では上部に表示） -->
+    <aside class="l-recruit-sidebar">
+      <?php get_template_part('template-parts/search-form'); ?>
+    </aside>
+    <!-- aside _サイドバー end -->
     <!-- main _メインコンテンツ -->
-    <!-- ヘッダー -->
     <main class="l-recruit-main">
       <!-- 求人一覧カード_ベース -->
-      <div class="recruit-archive-cards">
+      <div class="l-recruit-archive-cards">
         <?php if ( have_posts()) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part('template-parts/card-recruit'); ?>
@@ -29,11 +33,6 @@
       <!-- ページネーション end -->
     </main>
     <!-- main _メインコンテンツ end -->
-    <!-- aside _サイドバー -->
-    <aside class="l-recruit-sidebar">
-      <?php get_template_part('template-parts/search-form'); ?>
-    </aside>
-    <!-- aside _サイドバー end -->
   </div>
 </div>
 <!-- single-recruit_body end -->

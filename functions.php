@@ -151,7 +151,7 @@ function craftjob_posts_per_page( $query ) {
 			}
 		}
 }
-// タクソノミー一覧&求人一覧_表示件数12件
+// タクソノミー一覧 & 求人一覧_表示件数12件
 	if ( $query->is_tax() || $query->is_post_type_archive( 'recruit' ) ) {
 		$query->set( 'posts_per_page', 12 );
 	}

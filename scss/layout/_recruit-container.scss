@@ -14,7 +14,7 @@ layout > recruit-container
   grid-template-columns: 1fr;
   gap: 40px;
   @include g.mq(lg) {
-    grid-template-columns: 29% 1fr;
+    grid-template-columns: 340px 1fr;
     grid-template-areas: "aside main";
     gap: 64px;
   }
@@ -28,6 +28,11 @@ layout > recruit-container
   @include g.mq(lg) {
     grid-area: main;
   }
+}
+
+.l-recruit-archive-cards {
+  display: grid;
+  gap: 40px;
 }
 
 .l-recruit-sidebar {
