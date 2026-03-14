@@ -251,11 +251,11 @@ component > search-form
  * ------------------------------
  */
 
-.c-search-bar {
+.c-search-form-top {
   width: clamp(21.375rem, 4.84rem + 69.623vw, 67.5rem);
   margin-inline: auto;
 }
-.c-search-bar-form-title {
+.c-search-form-top-form-title {
   width: 100%;
   border-radius: 6px 6px 0 0;
   background-color: var(--primary-green);
@@ -280,7 +280,7 @@ component > search-form
     mask-repeat: no-repeat;
   }
 }
-.c-search-bar-body {
+.c-search-form-top-body {
   background-color: var(--white);
   border-radius: 0 0 6px 6px;
   display: grid;
@@ -292,7 +292,7 @@ component > search-form
   }
 }
 
-.c-search-bar-item {
+.c-search-form-top-item {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -307,7 +307,7 @@ component > search-form
   }
 }
 
-.c-search-bar-button {
+.c-search-form-top-button {
   width: 100%;
   padding: 16px 36px 16px 12px;
   background-color: var(--accent);
