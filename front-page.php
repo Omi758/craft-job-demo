@@ -48,7 +48,7 @@
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
       </div>
       <div class="c-slider-container">
-        <div class="splide">
+        <div class="splide js-top-slider">
           <div class="splide__track">
             <div class="splide__list">
               <!-- 人気求人カード -->
@@ -166,7 +166,7 @@
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/remote/' ) ); ?>">もっと見る</a>
       </div>
       <div class="c-slider-container">
-        <div class="splide">
+        <div class="splide js-top-slider">
           <div class="splide__track">
             <div class="splide__list">
               <!-- リモート可の求人カード -->
@@ -284,7 +284,7 @@
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/side-job/' ) ); ?>">もっと見る</a>
       </div>
       <div class="c-slider-container">
-        <div class="splide">
+        <div class="splide js-top-slider">
           <div class="splide__track">
             <div class="splide__list">
               <!-- 副業OKの求人カード -->
