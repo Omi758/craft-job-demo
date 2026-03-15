@@ -1,0 +1,11 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-column
+------------------------------
+*/
+.top-column-cards-wrapper {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}

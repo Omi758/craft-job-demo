@@ -922,13 +922,16 @@ component > card
 * トップページ_コラムカード
 */
 .c-card-top-column-container {
-  display: grid;
   background-color: var(--white);
   border-radius: 12px;
   width: 100%;
 }
+
+.c-card-top-column-container a {
+  display: grid;
+}
 @media screen and (min-width: 768px) {
-  .c-card-top-column-container {
+  .c-card-top-column-container a {
     grid-template-columns: auto 1fr;
   }
 }
@@ -2225,6 +2228,9 @@ layout > recruit-container
   margin-top: 40px;
 }
 
+.l-recruit-main {
+  min-width: 0;
+}
 @media screen and (min-width: 1080px) {
   .l-recruit-main {
     grid-area: main;
@@ -2246,9 +2252,15 @@ layout > recruit-container
 }
 
 /*!
-page > top > top-common
+page > top > top-column
 ------------------------------
 */
+.top-column-cards-wrapper {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
 /*!
 page > top > top-kv
 ------------------------------

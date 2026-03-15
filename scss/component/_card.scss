@@ -223,10 +223,13 @@ component > card
 * トップページ_コラムカード
 */
 .c-card-top-column-container {
-  display: grid;
   background-color: var(--white);
   border-radius: 12px;
   width: 100%;
+}
+
+.c-card-top-column-container a {
+  display: grid;
   @include g.mq() {
     grid-template-columns: auto 1fr;
   }
