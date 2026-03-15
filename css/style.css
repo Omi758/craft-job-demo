@@ -509,14 +509,16 @@ component > pill-link
 component > archive-title
 ------------------------------
 */
-.c-archive-title-container {
+.c-archive-title-container,
+.c-top-taxonomy-title-container {
   width: 100%;
   padding: 12px 24px;
   background-color: var(--primary-green);
   border-radius: 6px;
 }
 
-.c-archive-title {
+.c-archive-title,
+.c-top-taxonomy-title {
   font-size: clamp(1.5rem, 1.41rem + 0.377vw, 1.75rem);
   font-weight: 700;
   color: var(--white);

@@ -394,7 +394,165 @@
     </section>
   </div>
   <!-- カードスライダ― 副業OKの求人 end -->
+  <!-- 2カラムセクション -->
+  <div class="l-container">
+    <section class="l-recruit-2column">
+      <!-- aside _サイドバー（SP版では上部に表示） -->
+      <aside class="l-recruit-sidebar">
+        <?php get_template_part('template-parts/search-form'); ?>
+      </aside>
+      <!-- aside _サイドバー end -->
+      <!-- main _メインコンテンツ -->
+      <div class="l-recruit-main ">
 
+        <div class="top-search-job-category-container">
+          <div class="c-top-taxonomy-title-container">
+            <h2 class="c-top-taxonomy-title">職種から探す</h2>
+          </div>
+          <nav class="top-search-job-category-nav" aria-label="職種から探す">
+            <ul class="top-search-job-category-list">
+              <li><a href="">Webライター</a></li>
+              <li><a href="">フォトグラファー</a></li>
+              <li><a href="">グラフィックデザイナー</a></li>
+              <li><a href="">イラストレーター</a></li>
+              <li><a href="">UI/UXデザイナー</a></li>
+              <li><a href="">Webデザイナー</a></li>
+              <li><a href="">コーダー・エンジニア</a></li>
+              <li><a href="">ディレクター</a></li>
+              <li><a href="">アートディレクター</a></li>
+              <li><a href="">マーケター</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="top-search-job-category-container">
+          <div class="c-top-taxonomy-title-container">
+            <h2 class="c-top-taxonomy-title">地域から探す</h2>
+          </div>
+          <nav class="top-search-area-nav" aria-label="地域から探す">
+            <ul class="top-search-area-list">
+              <li class="top-search-area-region">
+                <a href="">北海道・東北</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">北海道</a></li>
+                  <li><a href="">青森</a></li>
+                  <li><a href="">岩手</a></li>
+                  <li><a href="">宮城</a></li>
+                  <li><a href="">秋田</a></li>
+                  <li><a href="">山形</a></li>
+                  <li><a href="">福島</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">関東</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">東京</a></li>
+                  <li><a href="">神奈川</a></li>
+                  <li><a href="">埼玉</a></li>
+                  <li><a href="">千葉</a></li>
+                  <li><a href="">茨城</a></li>
+                  <li><a href="">栃木</a></li>
+                  <li><a href="">群馬</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">中部</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">新潟</a></li>
+                  <li><a href="">富山</a></li>
+                  <li><a href="">石川</a></li>
+                  <li><a href="">福井</a></li>
+                  <li><a href="">山梨</a></li>
+                  <li><a href="">長野</a></li>
+                  <li><a href="">岐阜</a></li>
+                  <li><a href="">静岡</a></li>
+                  <li><a href="">愛知</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">近畿</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">三重</a></li>
+                  <li><a href="">滋賀</a></li>
+                  <li><a href="">京都</a></li>
+                  <li><a href="">大阪</a></li>
+                  <li><a href="">兵庫</a></li>
+                  <li><a href="">奈良</a></li>
+                  <li><a href="">和歌山</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">中国</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">鳥取</a></li>
+                  <li><a href="">島根</a></li>
+                  <li><a href="">岡山</a></li>
+                  <li><a href="">広島</a></li>
+                  <li><a href="">山口</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">四国</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">徳島</a></li>
+                  <li><a href="">香川</a></li>
+                  <li><a href="">愛媛</a></li>
+                  <li><a href="">高知</a></li>
+                </ul>
+              </li>
+              <li class="top-search-area-region">
+                <a href="">九州・沖縄</a>
+                <ul class="top-search-area-prefectures">
+                  <li><a href="">福岡</a></li>
+                  <li><a href="">佐賀</a></li>
+                  <li><a href="">長崎</a></li>
+                  <li><a href="">熊本</a></li>
+                  <li><a href="">大分</a></li>
+                  <li><a href="">宮崎</a></li>
+                  <li><a href="">鹿児島</a></li>
+                  <li><a href="">沖縄</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="top-search-job-tag-container">
+          <div class="c-top-taxonomy-title-container">
+            <h2 class="c-top-taxonomy-title">雇用形態/タグから探す</h2>
+          </div>
+          <h3 class="top-search-employment-type-text">雇用形態から探す</h3>
+          <nav class="top-search-employment-type-nav" aria-label="雇用形態から探す">
+            <ul class="top-search-employment-type-list">
+              <li><a href="">正社員</a></li>
+              <li><a href="">契約社員</a></li>
+              <li><a href="">派遣社員</a></li>
+              <li><a href="">フリーランス</a></li>
+              <li><a href="">副業</a></li>
+              <li><a href="">アルバイト</a></li>
+              <li><a href="">インターン</a></li>
+            </ul>
+          </nav>
+          <h3 class="top-search-tag-text">タグから探す</h3>
+          <nav class="top-search-tag-nav" aria-label="タグから探す">
+            <ul class="top-search-tag-list">
+              <li><a href=""># 未経験歓迎</a></li>
+              <li><a href=""># リモート可</a></li>
+              <li><a href=""># 副業OK</a></li>
+              <li><a href=""># フレックス勤務</a></li>
+              <li><a href=""># 土日休み</a></li>
+              <li><a href=""># 学歴不問</a></li>
+              <li><a href=""># 服装自由</a></li>
+              <li><a href=""># 経験者優遇</a></li>
+              <li><a href=""># PC支給</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- main _メインコンテンツ end -->
+    </section>
+  </div>
+  <!-- 2カラムセクション end -->
 
 
   <!-- コンポーネント仮作成 -->
