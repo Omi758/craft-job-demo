@@ -33,19 +33,37 @@ function craftjob_enqueue_assets() {
 		null
 	);
 
+	// Splide CSS
+	wp_enqueue_style(
+		'splide-css',
+		$theme_uri . '/css/vendor/splide-core.min.css',
+		array(),
+		null
+	);
+
 	// メインスタイルシート（キャッシュ対策のため filemtime でバージョン指定）
 	wp_enqueue_style(
 		'craftjob-style',
 		$theme_uri . '/css/style.css',
-		array( 'craftjob-google-fonts' ),
+		array( 'craftjob-google-fonts', 'splide-css' ),
 		filemtime( $theme_path . '/css/style.css' )
 	);
+
+// Splide JS
+wp_enqueue_script(
+	'splide-js',
+	$theme_uri . '/js/vendor/splide.min.js',
+	array(),
+	null,
+	true
+);
+
 
 	// メインスクリプト（type="module" を付与）
 	wp_enqueue_script(
 		'craftjob-main',
 		$theme_uri . '/js/main.js',
-		array(),
+		array( 'splide-js' ),
 		filemtime( $theme_path . '/js/main.js' ),
 		true
 	);
