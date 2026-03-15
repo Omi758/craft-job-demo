@@ -25,6 +25,7 @@ layout > recruit-container
 }
 
 .l-recruit-main {
+  min-width: 0; // gridのはみ出し防止
   @include g.mq(lg) {
     grid-area: main;
   }
