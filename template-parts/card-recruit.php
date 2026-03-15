@@ -1,14 +1,19 @@
 <!-- 求人カード_ベース -->
 <article class="c-card-archive-container">
   <div class="c-card-archive-image">
-    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/sub/recruite-card-thumbnail@2x.webp' ); ?>"
-      width="1548" height="602" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+    <?php if ( has_post_thumbnail() ) : ?>
+    <?php the_post_thumbnail( 'medium_large', array(
+        'decoding' => 'async',
+      ) ); ?>
+    <?php endif; ?>
   </div>
   <div class="c-card-archive-content">
     <div class="c-card-archive-header">
-      <img class='c-card-archive-company-logo'
-        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>' width='120'
-        height='120' alt='合同会社LIBERAロゴ' decoding='async' />
+      <?php $company_logo = get_field( 'company_logo' ); ?>
+      <?php if ( $company_logo ) : ?>
+      <img class="c-card-archive-company-logo" src='<?php echo esc_url( $company_logo['url'] ); ?>' width='120'
+        height='120' alt='<?php echo esc_attr( $company_logo['alt'] ); ?>' decoding='async' />
+      <?php endif; ?>
       <h3 class="c-card-archive-company"><?php the_field('company_name'); ?></h3>
     </div>
 

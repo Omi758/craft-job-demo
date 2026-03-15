@@ -63,17 +63,6 @@
       <h2 class="c-page-title">就活コラム</h2>
     </div>
     <!-- コラム一覧タイトル end -->
-    <!-- パンくず -->
-    <div class="c-breadcrumb-container">
-      <nav class="c-breadcrumb-nav l-container" aria-label="パンくずリスト">
-        <ul class="c-breadcrumb-list">
-          <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Web制作業界特化の求人サイトCraftJob</a>
-          </li>
-          <li class="c-breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">プライバシーポリシー</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- パンくず end -->
     <!-- カード（トップページ用） -->
     <article class="c-card-top-container">
       <div class="c-card-top-image">
