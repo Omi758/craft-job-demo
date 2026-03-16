@@ -2534,6 +2534,44 @@ page > top > top-search
   color: var(--font-base);
 }
 
+.top-search-employment-tag-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-top: 24px;
+}
+
+.top-search-employment-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin-top: 8px;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .top-search-employment-tag-list {
+    font-size: 18px;
+  }
+}
+
+.top-search-tag-list li a {
+  width: 100%;
+}
+.top-search-tag-list li a::before {
+  content: "#";
+  display: inline-block;
+  width: 10px;
+  height: 26px;
+  margin-right: 3px;
+}
+@media screen and (min-width: 768px) {
+  .top-search-tag-list li a::before {
+    width: 11px;
+    height: 29px;
+    margin-right: 4px;
+  }
+}
+
 /*!
 page > top > top-column
 ------------------------------

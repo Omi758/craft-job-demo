@@ -521,30 +521,30 @@
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">雇用形態/タグから探す</h2>
           </div>
-          <h3 class="top-search-employment-type-text">雇用形態から探す</h3>
-          <nav class="top-search-employment-type-nav" aria-label="雇用形態から探す">
-            <ul class="top-search-employment-type-list">
+          <h3 class="top-search-employment-tag-text">雇用形態から探す</h3>
+          <nav class="top-search-employment-tag-nav" aria-label="雇用形態から探す">
+            <ul class="top-search-employment-tag-list">
               <li><a href="">正社員</a></li>
               <li><a href="">契約社員</a></li>
               <li><a href="">派遣社員</a></li>
               <li><a href="">フリーランス</a></li>
-              <li><a href="">副業</a></li>
+              <li><a href="">副業OK</a></li>
               <li><a href="">アルバイト</a></li>
               <li><a href="">インターン</a></li>
             </ul>
           </nav>
-          <h3 class="top-search-tag-text">タグから探す</h3>
-          <nav class="top-search-tag-nav" aria-label="タグから探す">
-            <ul class="top-search-tag-list">
-              <li><a href=""># 未経験歓迎</a></li>
-              <li><a href=""># リモート可</a></li>
-              <li><a href=""># 副業OK</a></li>
-              <li><a href=""># フレックス勤務</a></li>
-              <li><a href=""># 土日休み</a></li>
-              <li><a href=""># 学歴不問</a></li>
-              <li><a href=""># 服装自由</a></li>
-              <li><a href=""># 経験者優遇</a></li>
-              <li><a href=""># PC支給</a></li>
+          <h3 class="top-search-employment-tag-text">タグから探す</h3>
+          <nav class="top-search-employment-tag-nav" aria-label="タグから探す">
+            <ul class="top-search-employment-tag-list top-search-tag-list">
+              <li><a href="">未経験歓迎</a></li>
+              <li><a href="">リモート可</a></li>
+              <li><a href="">副業OK</a></li>
+              <li><a href="">フレックス勤務</a></li>
+              <li><a href="">土日休み</a></li>
+              <li><a href="">学歴不問</a></li>
+              <li><a href="">服装自由</a></li>
+              <li><a href="">経験者優遇</a></li>
+              <li><a href="">PC支給</a></li>
             </ul>
           </nav>
         </div>
