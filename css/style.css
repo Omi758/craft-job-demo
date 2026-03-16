@@ -2252,16 +2252,6 @@ layout > recruit-container
 }
 
 /*!
-page > top > top-column
-------------------------------
-*/
-.top-column-cards-wrapper {
-  display: grid;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-/*!
 page > top > top-kv
 ------------------------------
 */
@@ -2468,6 +2458,90 @@ page > top > top-kv
   .top-kv-search-bar {
     margin-top: -49px;
   }
+}
+
+/*!
+page > top > top-search
+------------------------------
+*/
+.top-search-container {
+  margin-bottom: 64px;
+}
+
+.top-search-job-category-nav,
+.top-search-area-nav {
+  margin-top: 24px;
+}
+@media screen and (min-width: 768px) {
+  .top-search-job-category-nav,
+  .top-search-area-nav {
+    margin-top: 32px;
+  }
+}
+
+.top-search-job-category-list {
+  display: grid;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .top-search-job-category-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.top-search-job-category-list li {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.top-search-job-category-list li a {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.top-search-area-nav {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.top-search-area-list {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  gap: 40px;
+}
+
+.top-search-area-region {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 40px;
+}
+
+.top-search-area-prefectures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-base);
+}
+
+/*!
+page > top > top-column
+------------------------------
+*/
+.top-column-cards-wrapper {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 /*!

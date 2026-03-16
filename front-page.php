@@ -405,7 +405,7 @@
       <!-- main _メインコンテンツ -->
       <div class="l-recruit-main ">
 
-        <div class="top-search-job-category-container">
+        <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">職種から探す</h2>
           </div>
@@ -425,7 +425,7 @@
           </nav>
         </div>
 
-        <div class="top-search-job-category-container">
+        <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">地域から探す</h2>
           </div>
@@ -517,7 +517,7 @@
           </nav>
         </div>
 
-        <div class="top-search-employment-tag-container">
+        <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">雇用形態/タグから探す</h2>
           </div>
