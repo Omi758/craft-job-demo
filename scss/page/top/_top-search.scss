@@ -47,7 +47,7 @@ page > top > top-search
 
 .top-search-area-list {
   display: grid;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(4, auto); // 4行指定
   grid-auto-flow: column; // 縦方向(列)に配置
   gap: 40px;
 }
@@ -67,4 +67,41 @@ page > top > top-search
   font-size: 14px;
   font-weight: 500;
   color: var(--font-base);
+}
+
+// 雇用・タグ
+.top-search-employment-tag-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-top: 24px;
+}
+.top-search-employment-tag-nav {
+}
+.top-search-employment-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin-top: 8px;
+  font-size: 16px;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.top-search-tag-list li a {
+  width: 100%;
+
+  &::before {
+    content: "#";
+    display: inline-block;
+    width: 10px;
+    height: 26px;
+    margin-right: 3px;
+    @include g.mq() {
+      width: 11px;
+      height: 29px;
+      margin-right: 4px;
+    }
+  }
 }
