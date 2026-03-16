@@ -7,6 +7,7 @@ page > top > top-search
 .top-search-container {
   margin-bottom: 64px;
 }
+
 .top-search-job-category-nav,
 .top-search-area-nav {
   margin-top: 24px;
@@ -30,6 +31,7 @@ page > top > top-search
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+
 .top-search-job-category-list li a {
   display: block;
   width: 100%;
@@ -57,6 +59,10 @@ page > top > top-search
   font-weight: 700;
   color: var(--primary-green);
   margin-bottom: 40px;
+
+  > a {
+    @include g.hover-underline-scale(var(--primary-green));
+  }
 }
 
 .top-search-area-prefectures {
@@ -67,6 +73,13 @@ page > top > top-search
   font-size: 14px;
   font-weight: 500;
   color: var(--font-base);
+  @include g.mq() {
+    font-size: 16px;
+  }
+
+  li {
+    @include g.hover-underline-child(var(--font-base), "a");
+  }
 }
 
 // 雇用・タグ
@@ -76,8 +89,7 @@ page > top > top-search
   color: var(--primary-green);
   margin-top: 24px;
 }
-.top-search-employment-tag-nav {
-}
+
 .top-search-employment-tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -86,6 +98,10 @@ page > top > top-search
   font-size: 16px;
   @include g.mq() {
     font-size: 18px;
+  }
+
+  li {
+    @include g.hover-underline-child(var(--font-base), "a");
   }
 }
 
