@@ -23,6 +23,31 @@
   }
 }
 
+// 下線ホバー（左→右）_自身のhoverで下線を表示（scaleX方式・インライン要素向け）
+// translateX方式で左に線が出る場合はこちらを使用
+@mixin hover-underline-scale($color: var(--white)) {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $color;
+    opacity: 0.8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
 // 下線ホバー（左→右）_親のhoverで子要素に下線を表示（ヘッダー用）
 // $child: 下線を表示する子要素のセレクタ
 @mixin hover-underline-child($color: var(--white), $child: "span") {
