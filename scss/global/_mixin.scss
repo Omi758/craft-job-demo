@@ -74,6 +74,16 @@
   }
 }
 
+// ホバーで文字色を変更（リンク・リスト項目用）
+// $color: hover時の文字色
+@mixin hover-color($color: var(--primary-green), $duration: 0.3s) {
+  transition: color $duration ease;
+
+  &:hover {
+    color: $color;
+  }
+}
+
 // ボタンホバー_緑→白（リンクボタン・送信ボタン用）
 @mixin hover-white-swap-green(
   $bg: var(--white),

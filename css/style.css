@@ -935,6 +935,12 @@ component > card
     grid-template-columns: auto 1fr;
   }
 }
+.c-card-top-column-container a:hover .c-card-top-column-image img {
+  transform: scale(1.05);
+}
+.c-card-top-column-container a:hover .c-card-top-column-title {
+  color: var(--primary-green);
+}
 
 .c-card-top-column-image {
   width: 100%;
@@ -951,6 +957,10 @@ component > card
   }
 }
 
+.c-card-top-column-image img {
+  transition: transform 0.3s ease;
+}
+
 .c-card-top-column-content {
   padding: 24px 16px;
   width: 100%;
@@ -963,6 +973,7 @@ component > card
   font-weight: 700;
   white-space: normal;
   margin: 8px 0 12px;
+  transition: color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .c-card-top-column-title {
@@ -2491,6 +2502,7 @@ page > top > top-search
 
 .top-search-job-category-list li {
   width: 100%;
+  min-width: 0; /* グリッド子要素の縮小を許可 */
   background-color: var(--white);
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -2502,6 +2514,18 @@ page > top > top-search
   padding: 16px 24px;
   font-size: 16px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+.top-search-job-category-list li a:hover {
+  color: var(--primary-green);
+}
+@media screen and (min-width: 768px) {
+  .top-search-job-category-list li a {
+    font-size: 18px;
+  }
 }
 
 .top-search-area-nav {
@@ -2522,6 +2546,11 @@ page > top > top-search
   font-weight: 700;
   color: var(--primary-green);
   margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .top-search-area-region {
+    font-size: 18px;
+  }
 }
 .top-search-area-region > a {
   position: relative;

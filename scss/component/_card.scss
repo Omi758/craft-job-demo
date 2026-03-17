@@ -233,7 +233,15 @@ component > card
   @include g.mq() {
     grid-template-columns: auto 1fr;
   }
+
+  &:hover .c-card-top-column-image img {
+    transform: scale(1.05);
+  }
+  &:hover .c-card-top-column-title {
+    color: var(--primary-green);
+  }
 }
+
 .c-card-top-column-image {
   width: 100%;
   aspect-ratio: 342 / 192;
@@ -246,6 +254,11 @@ component > card
     border-radius: 12px 0 0 12px;
   }
 }
+
+.c-card-top-column-image img {
+  transition: transform 0.3s ease;
+}
+
 .c-card-top-column-content {
   padding: 24px 16px;
   width: 100%;
@@ -257,6 +270,7 @@ component > card
   font-weight: 700;
   white-space: normal;
   margin: 8px 0 12px;
+  transition: color 0.3s ease;
   @include g.mq() {
     font-size: 22px;
     text-overflow: ellipsis;
