@@ -42,13 +42,17 @@
   <!-- top-search-bar end -->
   <!-- カードスライダ―_人気求人 -->
   <div class="l-container">
-    <section class="top-popular">
+    <section class="top-slider-popular">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">人気求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
       </div>
       <div class="c-slider-container">
         <div class="splide js-top-slider">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="前のスライド"></button>
+            <button class="splide__arrow splide__arrow--next" type="button" aria-label="次のスライド"></button>
+          </div>
           <div class="splide__track">
             <div class="splide__list">
               <!-- 人気求人カード -->
@@ -160,7 +164,7 @@
   <!-- カードスライダ― 人気求人 end -->
   <!-- カードスライダ―_リモート可の求人 -->
   <div class="l-container">
-    <section class="top-remote">
+    <section class="top-slider-remote">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">リモート可の求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/remote/' ) ); ?>">もっと見る</a>
@@ -278,7 +282,7 @@
   <!-- カードスライダ― リモート可の求人 end -->
   <!-- カードスライダ―_副業OKの求人 -->
   <div class="l-container">
-    <section class="top-side-job">
+    <section class="top-slider-side-job">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">副業OKの求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/side-job/' ) ); ?>">もっと見る</a>
