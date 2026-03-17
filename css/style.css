@@ -686,14 +686,14 @@ component > card
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 12px;
-  width: 340px;
   background-color: var(--white);
   border: 1px solid var(--border-light);
+  /* スライダー内ではスライド幅に合わせる（重なり防止） */
 }
-@media screen and (min-width: 768px) {
-  .c-card-top-container {
-    width: 383px;
-  }
+.splide__slide .c-card-top-container {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .c-card-top-image {
@@ -2471,6 +2471,10 @@ page > top > top-kv
   }
 }
 
+/*!
+page > top > top-slider
+------------------------------
+*/
 /*!
 page > top > top-search
 ------------------------------

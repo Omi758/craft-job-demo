@@ -18,6 +18,10 @@ export const initializeTopSlider = () => {
       pagination: true,
       arrows: true,
       breakpoints: {
+        1023: {
+          perPage: 2,
+          gap: "12px",
+        },
         767: {
           perPage: 1,
           gap: "20px",

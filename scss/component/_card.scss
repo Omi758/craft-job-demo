@@ -12,11 +12,14 @@ component > card
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 12px;
-  width: 340px;
   background-color: var(--white);
   border: 1px solid var(--border-light);
-  @include g.mq() {
-    width: 383px;
+
+  /* スライダー内ではスライド幅に合わせる（重なり防止） */
+  .splide__slide & {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
