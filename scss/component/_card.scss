@@ -16,11 +16,12 @@ component > card
   background-color: var(--white);
   border: 1px solid var(--border-light);
 
-  /* スライダー内ではスライド幅に合わせる（重なり防止） */
+  /* スライダー内ではスライド幅・高さに合わせる（重なり防止・高さ統一） */
   .splide__slide & {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    height: 100%;
   }
 
   /* カードホバー時のアニメーション */
