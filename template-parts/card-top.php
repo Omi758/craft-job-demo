@@ -1,5 +1,7 @@
     <!-- カード（トップページ用） -->
     <article class="c-card-top-container">
+      <a class="c-card-top-link" href="<?php the_permalink(); ?>"
+        aria-label="<?php echo esc_attr( get_the_title() . 'の詳細を見る' ); ?>"></a>
       <div class="c-card-top-image">
         <?php if ( has_post_thumbnail() ): ?>
         <?php the_post_thumbnail('medium_large', array(
@@ -36,8 +38,7 @@
         <?php endif; ?>
       </div>
       <div class="c-card-link-container">
-        <a class="c-card-link c-card-link-view-more" href="<?php the_permalink(); ?>"
-          aria-label="<?php echo esc_attr( get_the_title() . 'の詳細を見る' ); ?>"></a>
+        <span class="c-card-link c-card-link-view-more">詳しく見る</span>
       </div>
     </article>
     <!-- カード（トップページ用） end -->
