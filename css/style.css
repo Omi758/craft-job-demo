@@ -689,12 +689,13 @@ component > card
   border-radius: 12px;
   background-color: var(--white);
   border: 1px solid var(--border-light);
-  /* スライダー内ではスライド幅に合わせる（重なり防止） */
+  /* スライダー内ではスライド幅・高さに合わせる（重なり防止・高さ統一） */
 }
 .splide__slide .c-card-top-container {
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  height: 100%;
 }
 .c-card-top-container {
   /* カードホバー時のアニメーション */
@@ -2624,6 +2625,18 @@ page > top > top-slider
 */
 .top-slider-section {
   margin-top: 64px;
+  /* スライドの高さを揃える（内容量が異なるカードでも統一） */
+}
+.top-slider-section .splide__list {
+  align-items: stretch;
+}
+.top-slider-section .splide__slide {
+  display: flex;
+  height: auto;
+}
+.top-slider-section .splide__slide .c-card-top-container {
+  flex: 1;
+  min-height: 0;
 }
 
 .top-slider-title-container {

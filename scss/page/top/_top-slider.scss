@@ -6,6 +6,21 @@ page > top > top-slider
 */
 .top-slider-section {
   margin-top: 64px;
+
+  /* スライドの高さを揃える（内容量が異なるカードでも統一） */
+  .splide__list {
+    align-items: stretch;
+  }
+
+  .splide__slide {
+    display: flex;
+    height: auto;
+  }
+
+  .splide__slide .c-card-top-container {
+    flex: 1;
+    min-height: 0;
+  }
 }
 
 .top-slider-title-container {
