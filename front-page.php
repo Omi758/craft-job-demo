@@ -41,8 +41,9 @@
   </div>
   <!-- top-search-bar end -->
   <!-- カードスライダ―_人気求人 -->
+  <!-- <div class="top-slider"> -->
   <div class="l-container">
-    <section class="top-slider-popular">
+    <section class="top-slider-section top-slider-popular">
       <div class="top-slider-title-container c-slider-title-container">
         <h2 class="c-slider-title">人気求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
@@ -88,40 +89,6 @@
                   </div>
                 </article>
               </div>
-
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-
               <div class="splide__slide">
                 <article class="c-card-top-container">
                   <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
@@ -184,11 +151,40 @@
                   <div class="c-card-link-container">
                     <span class="c-card-link c-card-link-view-more">詳しく見る</span>
                   </div>
-
                 </article>
               </div>
-
-
+              <div class="splide__slide">
+                <article class="c-card-top-container">
+                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
+                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
+                  <div class="c-card-top-image">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
+                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
+                  </div>
+                  <div class="c-card-top-content">
+                    <div class="c-card-top-header">
+                      <img class='c-card-top-company-logo'
+                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
+                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
+                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
+                    </div>
+                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
+                    <ul class="c-card-top-tags">
+                      <li><a href="/">#未経験歓迎</a></li>
+                      <li><a href="/">#リモート可</a></li>
+                      <li><a href="/">#副業OK</a></li>
+                      <li><a href="/">#フレックス勤務</a></li>
+                      <li><a href="/">#経験者優遇</a></li>
+                      <li><a href="/">#服装自由</a></li>
+                      <li><a href="/">#土日休み</a></li>
+                      <li><a href="/">#PC至急</a></li>
+                    </ul>
+                  </div>
+                  <div class="c-card-link-container">
+                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
+                  </div>
+                </article>
+              </div>
               <!-- 人気求人カード end -->
             </div>
           </div>
@@ -199,7 +195,7 @@
   <!-- カードスライダ― 人気求人 end -->
   <!-- カードスライダ―_リモート可の求人 -->
   <div class="l-container">
-    <section class="top-slider-remote">
+    <section class="top-slider-section top-slider-remote">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">リモート可の求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/remote/' ) ); ?>">もっと見る</a>
@@ -245,7 +241,6 @@
                   </div>
                 </article>
               </div>
-
               <div class="splide__slide">
                 <article class="c-card-top-container">
                   <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
@@ -278,7 +273,6 @@
                   </div>
                 </article>
               </div>
-
               <div class="splide__slide">
                 <article class="c-card-top-container">
                   <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
@@ -321,7 +315,7 @@
   <!-- カードスライダ― リモート可の求人 end -->
   <!-- カードスライダ―_副業OKの求人 -->
   <div class="l-container">
-    <section class="top-slider-side-job">
+    <section class="top-slider-section top-slider-side-job">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">副業OKの求人</h2>
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/side-job/' ) ); ?>">もっと見る</a>
@@ -367,7 +361,6 @@
                   </div>
                 </article>
               </div>
-
               <div class="splide__slide">
                 <article class="c-card-top-container">
                   <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
@@ -400,7 +393,6 @@
                   </div>
                 </article>
               </div>
-
               <div class="splide__slide">
                 <article class="c-card-top-container">
                   <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
@@ -440,6 +432,7 @@
       </div>
     </section>
   </div>
+  <!-- </div> -->
   <!-- カードスライダ― 副業OKの求人 end -->
   <!-- 2カラムセクション -->
   <div class="l-container">
@@ -669,9 +662,9 @@
 
           <!-- 就活コラム end -->
         </div>
-      </div>
-      <!-- main _メインコンテンツ end -->
+        <!-- main _メインコンテンツ end -->
     </section>
+  </div>
   </div>
   <!-- 2カラムセクション end -->
 

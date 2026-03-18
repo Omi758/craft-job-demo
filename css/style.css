@@ -2622,6 +2622,10 @@ page > top > top-kv
 page > top > top-slider
 ------------------------------
 */
+.top-slider-section {
+  margin-top: 64px;
+}
+
 .top-slider-title-container {
   margin-top: 64px;
 }
