@@ -4,3 +4,13 @@
 page > top > top-slider
 ------------------------------
 */
+.top-slider-title-container {
+  margin-top: 64px;
+  @include g.mq() {
+    margin-top: 49px;
+  }
+}
+
+.top-slider-container {
+  margin-top: 24px;
+}

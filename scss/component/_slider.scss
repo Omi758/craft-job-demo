@@ -1,0 +1,116 @@
+@use "../global" as g;
+
+/*!
+component > slider
+------------------------------
+*/
+.c-slider-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  @include g.mq() {
+    display: block; // flexを解除
+  }
+
+  .splide__arrows {
+    display: contents; // ラッパーを消して子要素を直接配置
+    @include g.mq() {
+      display: block; // contentsを解除
+    }
+  }
+
+  .splide__arrow {
+    width: 46px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--primary-green);
+    border-radius: 50vh;
+    border: 1px solid var(--primary-green);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: grid;
+    place-items: center;
+    align-self: center;
+    @include g.mq() {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: var(--z-index-default);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask-image: url("../img/common/icon-arrow-slider.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: var(--white);
+      transition: background-color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: var(--white);
+
+      &::before {
+        background-color: var(--primary-green);
+      }
+    }
+  }
+  .splide__arrow--prev {
+    order: 2;
+    @include g.mq() {
+      left: -28px;
+    }
+  }
+  .splide__arrow--next {
+    order: 4;
+    &::before {
+      transform: rotate(180deg);
+    }
+    @include g.mq() {
+      right: -28px;
+    }
+  }
+
+  .splide__track {
+    order: 1;
+    width: 100%;
+    margin-bottom: 24px;
+    @include g.mq() {
+      margin-bottom: 16px;
+    }
+  }
+
+  /* ページネーションを常に表示（is-overflow に依存しない） */
+  .splide__pagination {
+    display: flex !important;
+    gap: 6px;
+    order: 3;
+    flex: 1;
+    align-self: center;
+    @include g.mq() {
+      gap: 8px;
+    }
+  }
+
+  .splide__pagination__page {
+    width: 8px;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border-radius: 50vh;
+    background-color: var(--slider-dot);
+    transition: background-color 0.3s ease;
+    @include g.mq() {
+      width: 10px;
+    }
+
+    &.is-active {
+      background-color: var(--primary-green);
+      border-color: var(--primary-green);
+      opacity: 1;
+    }
+  }
+}
