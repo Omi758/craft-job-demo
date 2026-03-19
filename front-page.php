@@ -41,7 +41,6 @@
   </div>
   <!-- top-search-bar end -->
   <!-- カードスライダ―_人気求人 -->
-  <!-- <div class="top-slider"> -->
   <div class="l-container">
     <section class="top-slider-section top-slider-popular">
       <div class="top-slider-title-container c-slider-title-container">
@@ -49,6 +48,18 @@
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
       </div>
       <div class="top-slider-container">
+
+        <?php
+      // TODO: アクセス数順に変更予定（閲覧数カウント機能の実装後）
+      $popular_query =new WP_Query( array(
+        'post_type'     => 'recruit',
+        'posts_per_page' => 10,
+        'orderby'       => 'date',
+        'order'         => 'DESC',
+      ) );
+      ?>
+
+        <?php if ( $popular_query->have_posts() ) : ?>
         <div class="splide c-slider-container js-top-slider">
           <div class="c-slider-arrows splide__arrows">
             <button class="splide__arrow splide__arrow--prev" type="button" aria-label="前のスライド"></button>
@@ -57,138 +68,19 @@
           <div class="splide__track">
             <div class="splide__list">
               <!-- 人気求人カード -->
+              <?php while ( $popular_query->have_posts() ) : $popular_query->the_post(); ?>
               <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
+                <?php get_template_part('template-parts/card-top'); ?>
               </div>
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-              <!-- 人気求人カード end -->
+              <?php endwhile; ?>
             </div>
           </div>
         </div>
+        <?php else : ?>
+        <p>現在、人気求人はありません。</p>
+        <?php endif; ?>
+
+        <?php wp_reset_postdata(); ?>
       </div>
     </section>
   </div>
@@ -205,7 +97,7 @@
         <?php
         $remote_query = new WP_Query( array(
           'post_type' => 'recruit',
-          'posts_per_page' => 3,
+          'posts_per_page' => 10,
           'tax_query'      => array(
             array(
               'taxonomy' => 'job_tag',
@@ -216,31 +108,29 @@
         ) );
         ?>
 
-        <div>
-          <?php if ( $remote_query->have_posts() ) : ?>
-          <div class="splide c-slider-container js-top-slider">
-            <div class="c-slider-arrows splide__arrows">
-              <button class="splide__arrow splide__arrow--prev" type="button" aria-label="前のスライド"></button>
-              <button class="splide__arrow splide__arrow--next" type="button" aria-label="次のスライド"></button>
-            </div>
-            <div class="splide__track">
-              <div class="splide__list">
-                <!-- リモート可の求人カード -->
-                <?php while ( $remote_query->have_posts() ) : $remote_query->the_post(); ?>
-                <div class="splide__slide">
-                  <?php get_template_part( 'template-parts/card-top' ); ?>
-                </div>
-                <!-- リモート可の求人カード end -->
-                <?php endwhile; ?>
+        <?php if ( $remote_query->have_posts() ) : ?>
+        <div class="splide c-slider-container js-top-slider">
+          <div class="c-slider-arrows splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="前のスライド"></button>
+            <button class="splide__arrow splide__arrow--next" type="button" aria-label="次のスライド"></button>
+          </div>
+          <div class="splide__track">
+            <div class="splide__list">
+              <!-- リモート可の求人カード -->
+              <?php while ( $remote_query->have_posts() ) : $remote_query->the_post(); ?>
+              <div class="splide__slide">
+                <?php get_template_part( 'template-parts/card-top' ); ?>
               </div>
+              <!-- リモート可の求人カード end -->
+              <?php endwhile; ?>
             </div>
           </div>
-          <?php else : ?>
-          <p>現在、リモート可の求人はありません。</p>
-          <?php endif; ?>
-
-          <?php wp_reset_postdata(); ?>
         </div>
+        <?php else : ?>
+        <p>現在、リモート可の求人はありません。</p>
+        <?php endif; ?>
+
+        <?php wp_reset_postdata(); ?>
     </section>
   </div>
   <!-- カードスライダ― リモート可の求人 end -->
@@ -252,6 +142,21 @@
         <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/side-job/' ) ); ?>">もっと見る</a>
       </div>
       <div class="top-slider-container">
+        <?php
+        $side_job_query = new WP_Query( array(
+          'post_type' => 'recruit',
+          'posts_per_page' => 10,
+          'tax_query'      => array(
+            array(
+              'taxonomy' => 'job_tag',
+              'field' => 'slug',
+              'terms' => 'side-job',
+            ),
+          ),
+        ) );
+        ?>
+
+        <?php if ( $side_job_query->have_posts() ) : ?>
         <div class="splide c-slider-container js-top-slider">
           <div class="c-slider-arrows splide__arrows">
             <button class="splide__arrow splide__arrow--prev" type="button" aria-label="前のスライド"></button>
@@ -260,110 +165,22 @@
           <div class="splide__track">
             <div class="splide__list">
               <!-- 副業OKの求人カード -->
+              <?php while ( $side_job_query->have_posts() ) : $side_job_query->the_post(); ?>
               <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
+                <?php get_template_part( 'template-parts/card-top' ); ?>
               </div>
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-              <div class="splide__slide">
-                <article class="c-card-top-container">
-                  <a class="c-card-top-link" href="<?php echo esc_url( home_url( '/recruit/1/' ) ); ?>"
-                    aria-label="【未経験OK】Web制作会社のコーダー募集の詳細を見る"></a>
-                  <div class="c-card-top-image">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-thumbnail@2x.webp' ); ?>"
-                      width="767" height="414" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </div>
-                  <div class="c-card-top-content">
-                    <div class="c-card-top-header">
-                      <img class='c-card-top-company-logo'
-                        src='<?php echo esc_url( get_template_directory_uri() . '/img/common/company-logo@2x.webp' ); ?>'
-                        width='120' height='120' alt='合同会社LIBERAロゴ' decoding='async' />
-                      <h3 class="c-card-top-company">合同会社LIBERA</h3>
-                    </div>
-                    <p class="c-card-top-copy">【未経験OK】Web制作会社のコーダー募集｜デザインの意図を形にする仕事</p>
-                    <ul class="c-card-top-tags">
-                      <li><a href="/">#未経験歓迎</a></li>
-                      <li><a href="/">#リモート可</a></li>
-                      <li><a href="/">#副業OK</a></li>
-                      <li><a href="/">#フレックス勤務</a></li>
-                      <li><a href="/">#経験者優遇</a></li>
-                      <li><a href="/">#服装自由</a></li>
-                      <li><a href="/">#土日休み</a></li>
-                      <li><a href="/">#PC至急</a></li>
-                    </ul>
-                  </div>
-                  <div class="c-card-link-container">
-                    <span class="c-card-link c-card-link-view-more">詳しく見る</span>
-                  </div>
-                </article>
-              </div>
-              <!-- 副業OKの求人カード end -->
+              <?php endwhile; ?>
             </div>
           </div>
         </div>
+        <?php else : ?>
+        <p>現在、副業OKの求人はありません。</p>
+        <?php endif; ?>
+
+        <?php wp_reset_postdata(); ?>
       </div>
     </section>
   </div>
-  <!-- </div> -->
   <!-- カードスライダ― 副業OKの求人 end -->
   <!-- 2カラムセクション -->
   <div class="l-container">
