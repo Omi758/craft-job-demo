@@ -54,8 +54,8 @@
       $popular_query =new WP_Query( array(
         'post_type'     => 'recruit',
         'posts_per_page' => 10,
-        'orderby'       => 'date',
-        'order'         => 'DESC',
+        'orderby'       => 'date', // 投稿日で並び替え
+        'order'         => 'DESC', // 新しい順（降順）
       ) );
       ?>
 
@@ -192,23 +192,28 @@
       <!-- aside _サイドバー end -->
       <!-- main _メインコンテンツ -->
       <div class="l-recruit-main ">
-
         <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">職種から探す</h2>
           </div>
           <nav class="top-search-job-category-nav" aria-label="職種から探す">
             <ul class="top-search-job-category-list">
-              <li><a href="">Webライター</a></li>
-              <li><a href="">フォトグラファー</a></li>
-              <li><a href="">グラフィックデザイナー</a></li>
-              <li><a href="">イラストレーター</a></li>
-              <li><a href="">UI/UXデザイナー</a></li>
-              <li><a href="">Webデザイナー</a></li>
-              <li><a href="">コーダー・エンジニア</a></li>
-              <li><a href="">ディレクター</a></li>
-              <li><a href="">アートディレクター</a></li>
-              <li><a href="">マーケター</a></li>
+              <?php
+              $job_categories = get_terms( array(
+                'taxonomy'   => 'job_category',
+                'hide_empty' => false,
+              ) );
+              if ( ! is_wp_error( $job_categories ) && ! empty( $job_categories )) :
+                foreach ( $job_categories as $term ) :
+              ?>
+              <li>
+                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                  <?php echo esc_html( $term->name ); ?>
+                </a>
+              </li>
+              <?php endforeach;
+            endif;
+             ?>
             </ul>
           </nav>
         </div>
