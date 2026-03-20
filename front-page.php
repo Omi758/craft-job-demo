@@ -317,27 +317,44 @@
           <h3 class="top-search-employment-tag-text">雇用形態から探す</h3>
           <nav class="top-search-employment-tag-nav" aria-label="雇用形態から探す">
             <ul class="top-search-employment-tag-list">
-              <li><a href="">正社員</a></li>
-              <li><a href="">契約社員</a></li>
-              <li><a href="">派遣社員</a></li>
-              <li><a href="">フリーランス</a></li>
-              <li><a href="">副業OK</a></li>
-              <li><a href="">アルバイト</a></li>
-              <li><a href="">インターン</a></li>
+              <?php
+              $employment_terms = get_terms( array(
+                'taxonomy'   => 'employment_type',
+                'hide_empty' => false,
+              ) );
+              if ( ! is_wp_error( $employment_terms ) && ! empty( $employment_terms ) ) :
+                foreach ( $employment_terms as $term ) :
+              ?>
+              <li>
+                <a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
+                  <?php echo esc_html( $term->name ); ?>
+                </a>
+              </li>
+              <?php
+                  endforeach;
+                endif;
+                ?>
             </ul>
           </nav>
           <h3 class="top-search-employment-tag-text">タグから探す</h3>
           <nav class="top-search-employment-tag-nav" aria-label="タグから探す">
             <ul class="top-search-employment-tag-list top-search-tag-list">
-              <li><a href="">未経験歓迎</a></li>
-              <li><a href="">リモート可</a></li>
-              <li><a href="">副業OK</a></li>
-              <li><a href="">フレックス勤務</a></li>
-              <li><a href="">土日休み</a></li>
-              <li><a href="">学歴不問</a></li>
-              <li><a href="">服装自由</a></li>
-              <li><a href="">経験者優遇</a></li>
-              <li><a href="">PC支給</a></li>
+              <?php
+              $job_tags = get_terms( array(
+                'taxonomy'   => 'job_tag',
+                'hide_empty' => false,
+              ) );
+              if (! is_wp_error( $job_tags ) && ! empty( $job_tags )) :
+                foreach ( $job_tags as $term ) :
+              ?>
+              <li><a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                  <?php echo esc_html( $term->name ); ?>
+                </a>
+              </li>
+              <?php
+               endforeach;
+                endif;
+                ?>
             </ul>
           </nav>
         </div>
