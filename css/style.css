@@ -604,7 +604,12 @@ component > breadcrumb
 .c-breadcrumb-container {
   background-color: var(--font-base);
   width: 100%;
-  padding: 8px 0;
+  padding: 69px 0 8px;
+}
+@media screen and (min-width: 768px) {
+  .c-breadcrumb-container {
+    padding-top: 82px;
+  }
 }
 
 .c-breadcrumb-nav {
@@ -2917,6 +2922,22 @@ page > recruit-single > recruit-single
 @media screen and (min-width: 768px) {
   .recruit-single-header-nav-list {
     gap: 14px;
+  }
+}
+
+/* ------------------------------
+# セクション
+------------------------------ */
+#recruit-single-detail,
+#recruit-single-company-info,
+#recruit-single-entry-form {
+  scroll-margin-top: 80px;
+}
+@media screen and (min-width: 768px) {
+  #recruit-single-detail,
+  #recruit-single-company-info,
+  #recruit-single-entry-form {
+    scroll-margin-top: 90px;
   }
 }
 
