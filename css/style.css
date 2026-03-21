@@ -970,14 +970,19 @@ component > card
 }
 @media screen and (min-width: 768px) {
   .c-card-top-column-image {
-    max-height: 153px;
-    width: auto;
+    width: 160px;
     aspect-ratio: 160/153;
+    flex-shrink: 0;
     border-radius: 12px 0 0 12px;
   }
 }
 
 .c-card-top-column-image img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 
