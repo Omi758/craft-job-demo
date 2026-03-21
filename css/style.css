@@ -2056,6 +2056,11 @@ layout > header
 */
 .l-header {
   background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-index-header);
 }
 
 .l-header-inner {
@@ -2427,10 +2432,12 @@ page > top > top-kv
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  padding-top: 61px;
 }
 @media screen and (min-width: 768px) {
   .top-kv {
     background-image: url("../img/top/top-kv-bg@2x.webp");
+    padding-top: 74px;
   }
 }
 
