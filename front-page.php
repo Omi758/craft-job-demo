@@ -192,6 +192,7 @@
       <!-- aside _サイドバー end -->
       <!-- main _メインコンテンツ -->
       <div class="l-recruit-main ">
+        <!-- 職種から探す -->
         <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">職種から探す</h2>
@@ -218,98 +219,52 @@
           </nav>
         </div>
 
+        <!-- 地域から探す -->
         <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">地域から探す</h2>
           </div>
           <nav class="top-search-area-nav" aria-label="地域から探す">
             <ul class="top-search-area-list">
+              <?php
+              $parent_areas = get_terms( array(
+                'taxonomy'   => 'area',
+                'parent'     => 0,
+                'hide_empty' => false,
+              ) );
+              if  ( ! is_wp_error( $parent_areas ) && ! empty( $parent_areas ) ) :
+                foreach ( $parent_areas as $parent_term ) :
+              ?>
               <li class="top-search-area-region">
-                <a href="">北海道・東北</a>
+                <a href="<?php echo esc_url( get_term_link( $parent_term ) ); ?>">
+                  <?php echo esc_html( $parent_term->name ); ?>
+                </a>
+                <?php
+                $child_areas = get_terms(array(
+                  'taxonomy'   => 'area',
+                  'parent'     => $parent_term->term_id,
+                  'hide_empty' => false,
+                ) );
+                if ( ! is_wp_error( $child_areas ) && ! empty( $child_areas )) :
+                ?>
                 <ul class="top-search-area-prefectures">
-                  <li><a href="">北海道</a></li>
-                  <li><a href="">青森</a></li>
-                  <li><a href="">岩手</a></li>
-                  <li><a href="">宮城</a></li>
-                  <li><a href="">秋田</a></li>
-                  <li><a href="">山形</a></li>
-                  <li><a href="">福島</a></li>
+                  <?php foreach ( $child_areas as $child_term ) : ?>
+                  <li>
+                    <a href="<?php echo esc_url( get_term_link( $child_term ) ); ?>">
+                      <?php echo esc_html( $child_term->name ); ?>
+                    </a>
+                  </li>
+                  <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
               </li>
-              <li class="top-search-area-region">
-                <a href="">関東</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">東京</a></li>
-                  <li><a href="">神奈川</a></li>
-                  <li><a href="">埼玉</a></li>
-                  <li><a href="">千葉</a></li>
-                  <li><a href="">茨城</a></li>
-                  <li><a href="">栃木</a></li>
-                  <li><a href="">群馬</a></li>
-                </ul>
-              </li>
-              <li class="top-search-area-region">
-                <a href="">中部</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">新潟</a></li>
-                  <li><a href="">富山</a></li>
-                  <li><a href="">石川</a></li>
-                  <li><a href="">福井</a></li>
-                  <li><a href="">山梨</a></li>
-                  <li><a href="">長野</a></li>
-                  <li><a href="">岐阜</a></li>
-                  <li><a href="">静岡</a></li>
-                  <li><a href="">愛知</a></li>
-                </ul>
-              </li>
-              <li class="top-search-area-region">
-                <a href="">近畿</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">三重</a></li>
-                  <li><a href="">滋賀</a></li>
-                  <li><a href="">京都</a></li>
-                  <li><a href="">大阪</a></li>
-                  <li><a href="">兵庫</a></li>
-                  <li><a href="">奈良</a></li>
-                  <li><a href="">和歌山</a></li>
-                </ul>
-              </li>
-              <li class="top-search-area-region">
-                <a href="">中国</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">鳥取</a></li>
-                  <li><a href="">島根</a></li>
-                  <li><a href="">岡山</a></li>
-                  <li><a href="">広島</a></li>
-                  <li><a href="">山口</a></li>
-                </ul>
-              </li>
-              <li class="top-search-area-region">
-                <a href="">四国</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">徳島</a></li>
-                  <li><a href="">香川</a></li>
-                  <li><a href="">愛媛</a></li>
-                  <li><a href="">高知</a></li>
-                </ul>
-              </li>
-              <li class="top-search-area-region">
-                <a href="">九州・沖縄</a>
-                <ul class="top-search-area-prefectures">
-                  <li><a href="">福岡</a></li>
-                  <li><a href="">佐賀</a></li>
-                  <li><a href="">長崎</a></li>
-                  <li><a href="">熊本</a></li>
-                  <li><a href="">大分</a></li>
-                  <li><a href="">宮崎</a></li>
-                  <li><a href="">鹿児島</a></li>
-                  <li><a href="">沖縄</a></li>
-                </ul>
-              </li>
+              <?php endforeach;
+              endif; ?>
             </ul>
           </nav>
         </div>
 
+        <!-- 雇用形態/タグから探す -->
         <div class="top-search-container">
           <div class="c-top-taxonomy-title-container">
             <h2 class="c-top-taxonomy-title">雇用形態/タグから探す</h2>
@@ -364,72 +319,56 @@
             <h2 class="c-top-column-title">就活コラム</h2>
           </div>
 
-          <div class="top-column-cards-wrapper">
-            <article class="c-card-top-column-container">
-              <a href="<?php echo esc_url( home_url( '/column/001/' ) ); ?>">
-                <div class="c-card-top-column-image">
-                  <picture>
-                    <source media="(max-width: 767px)"
-                      srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
-                      type="image/webp">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>"
-                      width="767" height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </picture>
-                </div>
-                <div class="c-card-top-column-content">
-                  <span class="c-card-column-badge">スキルアップ</span>
-                  <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
-                  <div class="c-card-column-date-container">
-                    <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
-                    <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="c-card-top-column-container">
-              <a href="<?php echo esc_url( home_url( '/column/001/' ) ); ?>">
-                <div class="c-card-top-column-image">
-                  <picture>
-                    <source media="(max-width: 767px)"
-                      srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
-                      type="image/webp">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>"
-                      width="767" height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </picture>
-                </div>
-                <div class="c-card-top-column-content">
-                  <span class="c-card-column-badge">スキルアップ</span>
-                  <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
-                  <div class="c-card-column-date-container">
-                    <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
-                    <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="c-card-top-column-container">
-              <a href="<?php echo esc_url( home_url( '/column/001/' ) ); ?>">
-                <div class="c-card-top-column-image">
-                  <picture>
-                    <source media="(max-width: 767px)"
-                      srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column-sp@2x.webp' ); ?>"
-                      type="image/webp">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-column@2x.webp' ); ?>"
-                      width="767" height="306" alt="合同会社LIBERA_求人用サムネイル" decoding="async" />
-                  </picture>
-                </div>
-                <div class="c-card-top-column-content">
-                  <span class="c-card-column-badge">スキルアップ</span>
-                  <h3 class="c-card-top-column-title">Web制作会社が面接で見るポイントを徹底解説！（スタイル確認用）</h3>
-                  <div class="c-card-column-date-container">
-                    <time class="c-card-column-date" datetime="2025-10-28">2025.10.28</time>
-                    <time class="c-card-column-update" datetime="2026-02-17">2026.02.17</time>
-                  </div>
-                </div>
-              </a>
-            </article>
-          </div>
+          <?php
+          $column_query = new WP_Query( array(
+            'post_type'      => 'post',
+            'posts_per_page' => 3,
+            'orderby'        => 'date',
+            'order'          => 'DESC', 
+          ) );
+          ?>
 
+          <?php if ( $column_query->have_posts() ) : ?>
+          <div class="top-column-cards-wrapper">
+            <?php while ( $column_query->have_posts() ): $column_query->the_post(); ?>
+            <article class="c-card-top-column-container">
+              <a href="<?php the_permalink(); ?>">
+                <div class="c-card-top-column-image">
+                  <?php if ( has_post_thumbnail() ) : ?>
+                  <?php the_post_thumbnail( 'medium_large', array(
+                    'decoding' => 'async',
+                  ) ); ?>
+                  <?php endif; ?>
+                </div>
+                <div class="c-card-top-column-content">
+                  <?php
+                  $categories = get_the_category();
+                  if ( ! empty( $categories ) ) :
+                  ?>
+                  <span class="c-card-column-badge">
+                    <?php echo esc_html( $categories[0]->name ); ?>
+                  </span>
+                  <?php endif; ?>
+                  <h3 class="c-card-top-column-title"><?php the_title(); ?></h3>
+                  <div class="c-card-column-date-container">
+                    <time class="c-card-column-date" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>">
+                      <?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?>
+                    </time>
+                    <time class="c-card-column-update"
+                      datetime="<?php echo esc_attr( get_the_modified_date( 'Y-m-d' ) ); ?>">
+                      <?php echo esc_html( get_the_modified_date( 'Y.m.d' ) ); ?>
+                    </time>
+                  </div>
+                </div>
+              </a>
+            </article>
+            <?php endwhile; ?>
+          </div>
+          <?php else : ?>
+          <p>現在、就活コラムはありません。</p>
+          <?php endif; ?>
+
+          <?php wp_reset_postdata(); ?>
           <!-- 就活コラム end -->
         </div>
         <!-- main _メインコンテンツ end -->
