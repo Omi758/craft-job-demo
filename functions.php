@@ -434,10 +434,44 @@ function craftjob_update_7days_total( $post_id ) {
 	}
 }
 
+/**
+* 管理画面の求人一覧に「７日間PV」カラムを追加
+*/
+// 1_カラムの見出しを追加
+function craftjob_add_views_column( $columns ) {
+	$columns['views_7days'] = '7日間PV';
+	return $columns;
+}
 
+add_filter( 'manage_recruit_posts_columns', 'craftjob_add_views_column' );
 
+// カラムの中身を表示
+function craftjob_display_views_column( $column, $post_id ) {
+	if ( 'views_7days' === $column ) {
+		$views = (int) get_post_meta( $post_id, 'craftjob_views_7days', true );
+		echo esc_html( $views );
+	}
+}
+add_action( 'manage_recruit_posts_custom_column', 'craftjob_display_views_column', 10, 2 );
 
+// 3_ソート可能にする
+function craftjob_sortable_views_column( $columns ) {
+	$columns['views_7days'] = 'craftjob_views_7days';
+	return $columns;
+}
+add_filter( 'manage_edit-recruit_sortable_columns', 'craftjob_sortable_views_column' );
 
+// ソート時のクエリを制御
+function craftjob_views_orderby( $query ) {
+	if ( ! is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+  if ( 'views_7days' === $query->get( 'orderby' ) ) {
+	  $query->set( 'meta_key', 'craftjob_views_7days' );
+	  $query->set( 'orderby', 'meta_value_num' );
+  }
+}
+add_action( 'pre_get_posts', 'craftjob_views_orderby' );
 
 
 /**
