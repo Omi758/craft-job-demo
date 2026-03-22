@@ -47,7 +47,7 @@
           </li>
           <li class="l-header-nav-item l-header-nav-item--favorite"><a
               href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>"><span>お気に入り</span><span
-                class="l-header-nav-item-badge">6</span></a>
+                class="l-header-nav-item-badge js-favorite-badge">0</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--column"><a
               href="<?php echo esc_url( home_url( '/column/' ) ); ?>"><span>就活コラム</span></a>

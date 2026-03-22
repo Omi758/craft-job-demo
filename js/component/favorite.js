@@ -1,9 +1,5 @@
 export const initializeFavorite = () => {
   const favoriteButtons = document.querySelectorAll(".js-favorite-button");
-  if (favoriteButtons.length === 0) {
-    return;
-  }
-
   const STORAGE_KEY = "craftjob_favorites";
 
   //お気に入り一覧を取得
@@ -34,29 +30,43 @@ export const initializeFavorite = () => {
     return currentFavorites.includes(postId);
   };
 
-  favoriteButtons.forEach((button) => {
-    const postId = button.dataset.postId;
+  // お気に入り数を更新
+  const updateBadge = () => {
+    const badge = document.querySelector(".js-favorite-badge");
+    if (!badge) return;
+    const count = getFavorites().length;
+    badge.textContent = count;
+  };
 
-    // 初期状態を設定
-    if (isFavorite(postId)) {
-      button.classList.add("is-favorite");
-      button.setAttribute("aria-label", "お気に入りを解除");
-      button.setAttribute("aria-pressed", "true");
-    }
+  // ボタンがあるページのみ初期化とクリック処理
+  if (favoriteButtons.length > 0) {
+    favoriteButtons.forEach((button) => {
+      const postId = button.dataset.postId;
 
-    // クリックイベントを設定
-    button.addEventListener("click", () => {
+      // 初期状態を設定
       if (isFavorite(postId)) {
-        removeFavorite(postId);
-        button.classList.remove("is-favorite");
-        button.setAttribute("aria-label", "お気に入りに登録");
-        button.setAttribute("aria-pressed", "false");
-      } else {
-        addFavorite(postId);
         button.classList.add("is-favorite");
         button.setAttribute("aria-label", "お気に入りを解除");
         button.setAttribute("aria-pressed", "true");
       }
+
+      // クリックイベントを設定
+      button.addEventListener("click", () => {
+        if (isFavorite(postId)) {
+          removeFavorite(postId);
+          button.classList.remove("is-favorite");
+          button.setAttribute("aria-label", "お気に入りに登録");
+          button.setAttribute("aria-pressed", "false");
+        } else {
+          addFavorite(postId);
+          button.classList.add("is-favorite");
+          button.setAttribute("aria-label", "お気に入りを解除");
+          button.setAttribute("aria-pressed", "true");
+        }
+        updateBadge(); // クリックのたびにバッジを更新
+      });
     });
-  });
+  }
+  // 初期表示時にバッチを更新
+  updateBadge();
 };
