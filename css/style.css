@@ -478,6 +478,7 @@ component > pill-link
   border: 2px solid var(--favorite);
   width: 46px;
   aspect-ratio: 1/1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .c-favorite-button-icon::before {
   content: "";
@@ -493,9 +494,7 @@ component > pill-link
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
-}
-.c-favorite-button-icon {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .c-favorite-button-icon:hover {
   background-color: var(--favorite);
@@ -503,6 +502,18 @@ component > pill-link
 }
 .c-favorite-button-icon:hover::before {
   background-color: var(--white);
+}
+.c-favorite-button-icon.is-favorite {
+  background-color: var(--favorite);
+}
+.c-favorite-button-icon.is-favorite::before {
+  background-color: var(--white);
+}
+.c-favorite-button-icon.is-favorite:hover {
+  background-color: var(--white);
+}
+.c-favorite-button-icon.is-favorite:hover::before {
+  background-color: var(--favorite);
 }
 
 /*!

@@ -27,8 +27,8 @@
           $aria_label = $is_favorited ? "お気に入りを解除" : "お気に入りに登録";
           $aria_pressed = $is_favorited ? "true" : "false";
           ?>
-          <button type="button" class="c-favorite-button-icon<?php echo $is_favorited ? " is-favorite" : ""; ?>"
-            aria-label="<?php echo esc_attr( $aria_label ); ?>" aria-pressed="<?php echo esc_attr( $aria_pressed ); ?>">
+          <button type="button" class="c-favorite-button-icon js-favorite-button"
+            data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" aria-label="お気に入りに登録する" aria-pressed="false">
           </button>
         </div>
       </div>
