@@ -373,6 +373,74 @@ function craftjob_editor_styles() {
 add_action( 'after_setup_theme', 'craftjob_editor_styles' );
 
 /**
+ * 求人詳細ページの閲覧数を日別にカウント + 7日間合計を更新
+ */
+ function craftjob_count_post_views() {
+	// ガード１_求人詳細ページ以外は何もしない
+	if ( ! is_singular( 'recruit' ) ) {
+		return;
+	}
+
+	// ガード２_管理者（ログイン中）のアクセスは除外
+	if ( current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	// ガード３_bot（クローラー）のアクセスは除外
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && preg_match( '/bot|crawler|spider|slurp/i', $_SERVER['HTTP_USER_AGENT'] ) ) {
+		return;
+	}
+
+  // 現在の投稿IDを取得
+  $post_id = get_the_ID();
+
+  // 今日の日付キーを作る（例： craftjob_views_20260322）
+  $today_key = 'craftjob_views_' . current_time( 'Ymd' );
+
+  // 現在のカウントを取得
+  $current_count = (int) get_post_meta( $post_id, $today_key, true );
+
+  // +1して更新
+  update_post_meta( $post_id, $today_key, $current_count + 1 );
+
+  // 7日間合計を更新
+  craftjob_update_7days_total( $post_id );
+
+}
+
+ add_action( 'wp_head', 'craftjob_count_post_views' );
+
+
+/**
+ * 直近７日間の閲覧数合計を計算し、post_metaに保存
+ * ８日以上前の日別データを削除（掃除）
+ */
+function craftjob_update_7days_total( $post_id ) {
+	$total = 0;
+
+	// 直近７日分のキーを作って合算
+	for ( $i = 0; $i < 7; $i++ ) {
+		$date_key = 'craftjob_views_' . date( 'Ymd', strtotime( '-' . $i . ' days', current_time( 'timestamp' ) ) );
+		$total += (int) get_post_meta( $post_id, $date_key, true );
+	}
+
+	// 合計値を保存（ランキングのソートに使用）
+	update_post_meta( $post_id, 'craftjob_views_7days', $total );
+
+	// 8日以上前のデータを削除（14日前まで遡って掃除）
+	for ( $i = 8; $i <= 14; $i++ ) {
+		$old_key = 'craftjob_views_' . date( 'Ymd', strtotime( '-' . $i . ' days', current_time( 'timestamp' )  ) );
+	  delete_post_meta( $post_id, $old_key );
+	}
+}
+
+
+
+
+
+
+
+/**
  * セキュリティ対策
  * 参考記事：https://baigie.me/officialblog/2020/01/28/wordpress-security/
  */
