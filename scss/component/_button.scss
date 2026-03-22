@@ -133,6 +133,9 @@ component > pill-link
   border: 2px solid var(--favorite);
   width: 46px;
   aspect-ratio: 1 / 1;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &::before {
     content: "";
@@ -144,6 +147,31 @@ component > pill-link
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
+    transition: background-color 0.3s ease;
   }
-  @include g.hover-fill-swap(var(--favorite));
+
+  // 未登録時のhover → 登録済みの見た目にする
+  &:hover {
+    background-color: var(--favorite);
+    color: var(--white);
+
+    &::before {
+      background-color: var(--white);
+    }
+  }
+  // 登録済みの状態
+  &.is-favorite {
+    background-color: var(--favorite);
+    &::before {
+      background-color: var(--white);
+    }
+
+    // 登録済み時のhover→未登録の見た目に戻す（解除予告）
+    &:hover {
+      background-color: var(--white);
+      &::before {
+        background-color: var(--favorite);
+      }
+    }
+  }
 }

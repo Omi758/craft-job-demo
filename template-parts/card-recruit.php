@@ -77,7 +77,7 @@
       aria-label="求人に応募する">応募する</a>
     <a class="c-card-link c-card-link-view-more" href="<?php the_permalink(); ?>#recruit-single-detail"
       aria-label="求人の詳細を見る">詳しく見る</a>
-    <button class="c-card-link c-card-link-favorite" type="button"
+    <button class="c-card-link c-card-link-favorite js-favorite-button" type="button"
       data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" aria-label="求人募集記事をお気に入り登録する">お気に入り</button>
 
   </div>
