@@ -75,11 +75,17 @@
     <!-- aside _サイドバー end -->
     <!-- main _メインコンテンツ -->
     <main class="l-recruit-main">
-      <!-- 求人一覧カード_ベース -->
-      <div class="l-recruit-archive-cards">
-        <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+      <!-- 求人一覧カード -->
+      <?php $is_popular = ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular'; ?>
+
+      <div class="l-recruit-archive-cards<?php if ( $is_popular ) echo ' ranking-counter-reset'; ?>">
+        <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+        <?php if ( $is_popular ) : ?>
+        <?php get_template_part('template-parts/card-recruit-ranking'); ?>
+        <?php else : ?>
         <?php get_template_part('template-parts/card-recruit'); ?>
+        <?php endif; ?>
         <?php endwhile; ?>
         <?php else : ?>
         <p>記事が見つかりませんでした。</p>
@@ -87,7 +93,9 @@
       </div>
 
       <!-- ページネーション -->
+      <?php if ( ! $is_popular ) : ?>
       <?php craftjob_pagination(); ?>
+      <?php endif; ?>
       <!-- ページネーション end -->
     </main>
     <!-- main _メインコンテンツ end -->

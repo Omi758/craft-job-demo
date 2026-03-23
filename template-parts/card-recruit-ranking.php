@@ -1,5 +1,5 @@
 <!-- 求人カード_ランキング -->
-<article class="c-card-archive-container">
+<article class="c-card-archive-container ranking-counter-increment">
   <div class="c-card-archive-rank-view-container">
     <div class="c-card-archive-rank"></div>
     <div class="c-card-archive-views">

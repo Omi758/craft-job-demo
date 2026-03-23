@@ -179,6 +179,16 @@ function craftjob_posts_per_page( $query ) {
 
 		// 求人（検索対応）_表示件数12件
 		if ( $query->is_post_type_archive( 'recruit' ) ) {
+      // 人気ランキング
+			if ( ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular' ) {
+				$query->set( 'posts_per_page', 10 );
+				$query->set( 'meta_key', 'craftjob_views_7days' );
+				$query->set( 'orderby', 'meta_value_num' );
+				$query->set( 'order', 'DESC' );
+				return;
+			}
+
+			
 			$query->set( 'posts_per_page', 12 );
 
 	// ========= 検索ロジック =========
