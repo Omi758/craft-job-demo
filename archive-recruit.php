@@ -9,53 +9,61 @@
     <h2 class="c-archive-title">
       <?php
       // 検索パラメータが有るかチェック
-      $has_search = ! empty( $_GET['area'] ) || ! empty( $_GET['employment_type'] )  || ! empty( $_GET['job_category'] ) || ! empty( $_GET['salary_min'] ) || ! empty( $_GET['salary_max'] );
+      $has_search = ! empty($_GET['area']) || ! empty($_GET['employment_type'])  || ! empty($_GET['job_category']) || ! empty($_GET['salary_min']) || ! empty($_GET['salary_max']);
 
-      if ( $has_search ) :
-        // 検索条件からタイトルを組み立て
+      // 1_popular チェック
+      if (! empty($_GET['orderby']) && $_GET['orderby'] === 'popular') :
+        echo '人気求人ランキング';
+
+      // 2_favorite チェック
+      elseif (! empty($_GET['view']) && $_GET['view'] === 'favorite') :
+        echo 'お気に入り求人';
+
+      // 3_検索チェック
+      elseif ($has_search) :
         $title_parts = array();
 
         // 地域
-        if ( ! empty( $_GET['area'] ) ) {
-          $area_term = get_term_by( 'slug', sanitize_text_field( wp_unslash( $_GET['area'] ) ), 'area' );
-          if ( $area_term ) {
-          $title_parts[] = esc_html( $area_term->name );
-         }
+        if (! empty($_GET['area'])) {
+          $area_term = get_term_by('slug', sanitize_text_field(wp_unslash($_GET['area'])), 'area');
+          if ($area_term) {
+            $title_parts[] = esc_html($area_term->name);
+          }
         }
 
         // 雇用形態
-        if ( ! empty( $_GET['employment_type'] ) ) {
-          $emp_term =get_term_by( 'slug', sanitize_text_field( wp_unslash( $_GET['employment_type'] ) ), 'employment_type' );
-          if ( $emp_term ) {
-            $title_parts[] = esc_html( $emp_term->name );
+        if (! empty($_GET['employment_type'])) {
+          $emp_term = get_term_by('slug', sanitize_text_field(wp_unslash($_GET['employment_type'])), 'employment_type');
+          if ($emp_term) {
+            $title_parts[] = esc_html($emp_term->name);
           }
         }
 
         // 職種
-        if ( ! empty( $_GET['job_category'] ) ) {
-          $job_term = get_term_by( 'slug', sanitize_text_field( wp_unslash( $_GET['job_category'] ) ), 'job_category' );
-          if ( $job_term ) {
-            $title_parts[] = esc_html( $job_term->name );
+        if (! empty($_GET['job_category'])) {
+          $job_term = get_term_by('slug', sanitize_text_field(wp_unslash($_GET['job_category'])), 'job_category');
+          if ($job_term) {
+            $title_parts[] = esc_html($job_term->name);
           }
         }
 
         // 年収
-        $salary_min =! empty( $_GET['salary_min'] ) ? intval( $_GET['salary_min'] ) : '';
-        $salary_max =! empty( $_GET['salary_max'] ) ? intval( $_GET['salary_max'] ) : '';
-        if ( $salary_min  !== '' && $salary_max !== '' ) {
+        $salary_min = ! empty($_GET['salary_min']) ? intval($_GET['salary_min']) : '';
+        $salary_max = ! empty($_GET['salary_max']) ? intval($_GET['salary_max']) : '';
+        if ($salary_min  !== '' && $salary_max !== '') {
           $title_parts[] = '年収：' . $salary_min . '万円～' . $salary_max . '万円';
-          } elseif ( $salary_min !== '') {
-            $title_parts[] = '年収：' . $salary_min . '万円以上';
-          } elseif ( $salary_max !== '' ) {
-            $title_parts[] = '年収：' . $salary_max . '万円以下';
-          }
+        } elseif ($salary_min !== '') {
+          $title_parts[] = '年収：' . $salary_min . '万円以上';
+        } elseif ($salary_max !== '') {
+          $title_parts[] = '年収：' . $salary_max . '万円以下';
+        }
 
-          // タイトル組み立て
-          echo '『' . implode( ' / ' , $title_parts ) . '』の求人一覧';
-          else :
-            echo '求人を探す';
-          endif;
-          ?>
+        // タイトル組み立て
+        echo '『' . implode(' / ', $title_parts) . '』の求人一覧';
+      else :
+        echo '求人を探す';
+      endif;
+      ?>
     </h2>
   </div>
 
@@ -69,8 +77,8 @@
     <main class="l-recruit-main">
       <!-- 求人一覧カード_ベース -->
       <div class="l-recruit-archive-cards">
-        <?php if ( have_posts()) : ?>
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('template-parts/card-recruit'); ?>
         <?php endwhile; ?>
         <?php else : ?>
