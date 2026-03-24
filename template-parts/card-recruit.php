@@ -23,8 +23,7 @@
       <?php $tags = get_the_terms( get_the_ID(), 'job_tag' ); ?>
       <?php if( $tags ) : ?>
       <?php foreach( $tags as $tag ) : ?>
-      <li><a
-          href="<?php echo esc_url( home_url( '/recruit/?job_tag=' . $tag->slug ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+      <li><a href="<?php echo esc_url( get_term_link( $tag ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
       </li>
       <?php endforeach; ?>
       <?php endif; ?>

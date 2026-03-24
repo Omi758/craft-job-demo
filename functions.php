@@ -363,6 +363,7 @@ function craftjob_breadcrumb_category_url( $url, $type, $id ) {
 }
 add_filter( 'bcn_breadcrumb_url', 'craftjob_breadcrumb_category_url', 10, 3 );
 
+
 	/**
  * ブロックエディタ_カスタムブロックスタイル（もくじ）
  */
@@ -386,6 +387,7 @@ function craftjob_editor_styles() {
 	add_editor_style( 'editor-style.css' );
 }
 add_action( 'after_setup_theme', 'craftjob_editor_styles' );
+
 
 /**
  * 求人詳細ページの閲覧数を日別にカウント + 7日間合計を更新
@@ -449,6 +451,7 @@ function craftjob_update_7days_total( $post_id ) {
 	}
 }
 
+
 /**
 * 管理画面の求人一覧に「７日間PV」カラムを追加
 */
@@ -488,13 +491,28 @@ function craftjob_views_orderby( $query ) {
 }
 add_action( 'pre_get_posts', 'craftjob_views_orderby' );
 
+
+/**
+ * 求人を公開したときに閲覧数の初期値を設定
+ */
+function craftjob_set_initial_views( $post_id, $post ) {
+	if ( 'recruit' !== $post->post_type ) {
+			return;
+	}
+	if ( '' === get_post_meta( $post_id, 'craftjob_views_7days', true ) ) {
+			update_post_meta( $post_id, 'craftjob_views_7days', 0 );
+	}
+}
+add_action( 'wp_insert_post', 'craftjob_set_initial_views', 10, 2 );
+
+
 /**
  * お気に入り求人をAjaxで取得
  */
 function craftjob_get_favorites() {
 	// JSから贈られたIDリストを受け取る
 	$ids = isset( $_POST['ids'] ) ? array_map( 'intval', $_POST['ids'] ) : array();
-	
+
 	if ( empty( $ids ) ) {
 		wp_send_json_error( 'IDがありません' );
 	}
