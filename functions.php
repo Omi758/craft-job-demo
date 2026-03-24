@@ -67,6 +67,11 @@ wp_enqueue_script(
 		filemtime( $theme_path . '/js/main.js' ),
 		true
 	);
+
+	// お気に入り用のスクリプト
+	wp_localize_script( 'craftjob-main', 'craftjobAjax', array(
+		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'craftjob_enqueue_assets' );
 
@@ -476,12 +481,46 @@ function craftjob_views_orderby( $query ) {
 	if ( ! is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
-  if ( 'views_7days' === $query->get( 'orderby' ) ) {
+  if ( 'craftjob_views_7days' === $query->get( 'orderby' ) ) {
 	  $query->set( 'meta_key', 'craftjob_views_7days' );
 	  $query->set( 'orderby', 'meta_value_num' );
   }
 }
 add_action( 'pre_get_posts', 'craftjob_views_orderby' );
+
+/**
+ * お気に入り求人をAjaxで取得
+ */
+function craftjob_get_favorites() {
+	// JSから贈られたIDリストを受け取る
+	$ids = isset( $_POST['ids'] ) ? array_map( 'intval', $_POST['ids'] ) : array();
+	
+	if ( empty( $ids ) ) {
+		wp_send_json_error( 'IDがありません' );
+	}
+
+	// 受け取ったIDで求人を取得
+	$query =new WP_Query( array(
+		'post_type'    => 'recruit',
+		'post__in'     => $ids,
+		'posts_per_page' => -1,
+		'orderby'      => 'post__in',
+	) );
+
+	// カードのHTMLを組み立てる
+	ob_start();
+	if ( $query->have_posts() ) :
+		 while ( $query->have_posts() ) : $query->the_post();
+			  get_template_part( 'template-parts/card-recruit' );
+	   endwhile;
+	   wp_reset_postdata();
+     endif;
+     $html = ob_get_clean();
+	 wp_send_json_success( $html );
+}
+
+add_action( 'wp_ajax_get_favorites', 'craftjob_get_favorites' );
+add_action( 'wp_ajax_nopriv_get_favorites', 'craftjob_get_favorites' );
 
 
 /**
