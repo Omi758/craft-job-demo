@@ -76,8 +76,19 @@
     <!-- main _メインコンテンツ -->
     <main class="l-recruit-main">
       <!-- 求人一覧カード -->
-      <?php $is_popular = ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular'; ?>
+      <?php 
+      $is_popular = ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular';
+      $is_favorite = ! empty( $_GET['view'] ) && $_GET['view'] === 'favorite';
+      ?>
 
+      <?php if ( $is_favorite ) : ?>
+      <!-- お気に入り（Ajaxで取得） -->
+      <div class="l-recruit-archive-cards js-favorite-list">
+        <p class="js-favorite-loading">読み込み中...</p>
+      </div>
+
+      <?php else : ?>
+      <!-- 通常・検索・ランキング -->
       <div class="l-recruit-archive-cards<?php if ( $is_popular ) echo ' ranking-counter-reset'; ?>">
         <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
@@ -92,11 +103,11 @@
         <?php endif; ?>
       </div>
 
-      <!-- ページネーション -->
       <?php if ( ! $is_popular ) : ?>
       <?php craftjob_pagination(); ?>
       <?php endif; ?>
       <!-- ページネーション end -->
+      <?php endif; ?>
     </main>
     <!-- main _メインコンテンツ end -->
   </div>
