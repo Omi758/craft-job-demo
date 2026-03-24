@@ -50,12 +50,12 @@
       <div class="top-slider-container">
 
         <?php
-      // TODO: アクセス数順に変更予定（閲覧数カウント機能の実装後）
       $popular_query =new WP_Query( array(
         'post_type'     => 'recruit',
         'posts_per_page' => 10,
-        'orderby'       => 'date', // 投稿日で並び替え
-        'order'         => 'DESC', // 新しい順（降順）
+        'meta_key'      => 'craftjob_views_7days', // 7日間アクセス数
+        'orderby'       => 'meta_value_num', // 7日間アクセス数で並び替え
+        'order'         => 'DESC', // 新しい順
       ) );
       ?>
 
