@@ -45,7 +45,7 @@
     <section class="top-slider-section top-slider-popular">
       <div class="top-slider-title-container c-slider-title-container">
         <h2 class="c-slider-title">人気求人</h2>
-        <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit?orderby=popular' ) ); ?>">もっと見る</a>
+        <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/popular/' ) ); ?>">もっと見る</a>
       </div>
       <div class="top-slider-container">
 

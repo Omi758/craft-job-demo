@@ -43,10 +43,10 @@
               href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>"><span>求人を探す</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--popular"><a
-              href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>"><span>人気求人</span></a>
+              href="<?php echo esc_url( home_url( '/recruit/popular/' )  ); ?>"><span>人気求人</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--favorite"><a
-              href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>"><span>お気に入り</span><span
+              href="<?php echo esc_url( home_url( '/recruit/favorite/' ) ); ?>"><span>お気に入り</span><span
                 class="l-header-nav-item-badge js-favorite-badge">0</span></a>
           </li>
           <li class="l-header-nav-item l-header-nav-item--column"><a
