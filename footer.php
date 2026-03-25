@@ -5,11 +5,9 @@
       <ul class="l-footer-nav-list">
         <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
         <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a></li>
-        <li class="l-footer-nav-item"><a
-            href="<?php echo esc_url( add_query_arg( 'orderby', 'popular', home_url( '/recruit/' ) ) ); ?>">人気求人</a>
+        <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/recruit/popular/' ) ); ?>">人気求人</a>
         </li>
-        <li class="l-footer-nav-item"><a
-            href="<?php echo esc_url( add_query_arg( 'view', 'favorite', home_url( '/recruit/' ) ) ); ?>">お気に入り</a>
+        <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/recruit/favorite/' ) ); ?>">お気に入り</a>
         </li>
         <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a></li>
         <li class="l-footer-nav-item"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li>
