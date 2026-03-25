@@ -185,7 +185,7 @@ function craftjob_posts_per_page( $query ) {
 		// 求人（検索対応）_表示件数12件
 		if ( $query->is_post_type_archive( 'recruit' ) ) {
       // 人気ランキング
-			if ( ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular' ) {
+			if ( 'popular' === get_query_var( 'craftjob_page' ) ) {
 				$query->set( 'posts_per_page', 10 );
 				$query->set( 'meta_key', 'craftjob_views_7days' );
 				$query->set( 'orderby', 'meta_value_num' );
@@ -377,6 +377,33 @@ function craftjob_register_block_styles() {
 	);
 }
 add_action( 'init', 'craftjob_register_block_styles' );
+
+
+/**
+ * カスタムクエリ変数を登録
+ */
+function craftjob_custom_query_vars( $vars ) {
+	$vars[] ='craftjob_page';
+	return $vars;
+}
+add_filter( 'query_vars', 'craftjob_custom_query_vars' );
+
+/**
+ * リライトルールを追加(/recruit/popular/と/recruit/favorite/)
+ */
+function craftjob_custom_rewrite_rules() {
+	add_rewrite_rule(
+		'recruit/popular/?$',
+		'index.php?post_type=recruit&craftjob_page=popular',
+		'top'
+	);
+	add_rewrite_rule(
+		'recruit/favorite/?$',
+		'index.php?post_type=recruit&craftjob_page=favorite',
+		'top'
+	);
+}
+add_action( 'init', 'craftjob_custom_rewrite_rules' );
 
 
 /**

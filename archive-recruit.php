@@ -12,11 +12,11 @@
       $has_search = ! empty($_GET['area']) || ! empty($_GET['employment_type'])  || ! empty($_GET['job_category']) || ! empty($_GET['salary_min']) || ! empty($_GET['salary_max']);
 
       // 1_popular チェック
-      if (! empty($_GET['orderby']) && $_GET['orderby'] === 'popular') :
+      if ( 'popular' === get_query_var( 'craftjob_page' ) ) :
         echo '人気求人ランキング';
 
       // 2_favorite チェック
-      elseif (! empty($_GET['view']) && $_GET['view'] === 'favorite') :
+      elseif ( 'favorite' === get_query_var( 'craftjob_page' ) ) :
         echo 'お気に入り求人';
 
       // 3_検索チェック
@@ -77,8 +77,8 @@
     <main class="l-recruit-main">
       <!-- 求人一覧カード -->
       <?php 
-      $is_popular = ! empty( $_GET['orderby'] ) && $_GET['orderby'] === 'popular';
-      $is_favorite = ! empty( $_GET['view'] ) && $_GET['view'] === 'favorite';
+      $is_popular = 'popular' === get_query_var( 'craftjob_page' );
+      $is_favorite = 'favorite' === get_query_var( 'craftjob_page' );
       ?>
 
       <?php if ( $is_favorite ) : ?>
