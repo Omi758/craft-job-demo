@@ -179,3 +179,10 @@ layout > header
     right: -23px;
   }
 }
+
+/**
+* 管理バー表示時のfixedヘッダー調整
+*/
+body.admin-bar .l-header {
+  top: 32px;
+}
