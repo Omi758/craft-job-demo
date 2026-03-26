@@ -394,6 +394,16 @@ component > card
   @include g.mq() {
     font-size: 18px;
   }
+  &::before {
+    content: "#";
+    display: inline-block;
+    width: 10px;
+    height: 26px;
+    @include g.mq() {
+      width: 11px;
+      height: 29px;
+    }
+  }
 }
 
 // 下層ページ_求人カード_リスト
