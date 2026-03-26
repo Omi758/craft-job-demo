@@ -20,6 +20,12 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
+  <!-- ハッシュ付き遷移のちらつき防止(求人カード→エントリーフォームへの遷移時) -->
+  <script>
+  if (window.location.hash) {
+    document.body.classList.add("is-hash-loading");
+  }
+  </script>
   <!-- header -->
   <header class="l-header">
     <div class="l-header-inner l-container">

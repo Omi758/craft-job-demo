@@ -76,6 +76,15 @@ component > search-form
   width: 2px;
   height: 14px;
   transition: transform 0.3s ease;
+  @include g.mq() {
+    opacity: 0; // 初期設定_PC版では非表示
+  }
+}
+
+.js-accordion-initialized .c-search-form-summary-icon span:nth-child(2) {
+  @include g.mq() {
+    opacity: 1;
+  }
 }
 
 .c-search-form-details[open] .c-search-form-summary-icon span:nth-child(2) {
