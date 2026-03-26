@@ -13,11 +13,37 @@ export const initializeSearchFormAccordion = () => {
   const PC_BREAKPOINT = 1080;
   const DURATION = 300;
 
+  // トランジションを一時無効化するヘルパー関数
+  const setOpenWithoutTransition = (el, isOpen) => {
+    const icon = el.querySelector(
+      ".c-search-form-summary-icon span:nth-child(2)",
+    );
+    if (icon) {
+      icon.style.transition = "none";
+    }
+
+    if (isOpen) {
+      el.setAttribute("open", "");
+    } else {
+      el.removeAttribute("open");
+    }
+
+    // 次フレームでトランジションを復活
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (icon) {
+          icon.style.transition = "";
+        }
+      });
+    });
+  };
+
   // PC版(1080px)ではデフォルトで開いた状態
   const isPC = window.innerWidth >= PC_BREAKPOINT;
   if (isPC) {
     detailsElements.forEach((el) => {
-      el.setAttribute("open", "");
+      setOpenWithoutTransition(el, true);
+      el.classList.add("js-accordion-initialized");
     });
   }
 
@@ -28,11 +54,7 @@ export const initializeSearchFormAccordion = () => {
     if (previousIsPC === currentIsPC) return; // 変化なしなら何もしない
 
     detailsElements.forEach((el) => {
-      if (currentIsPC) {
-        el.setAttribute("open", "");
-      } else {
-        el.removeAttribute("open");
-      }
+      setOpenWithoutTransition(el, currentIsPC);
     });
     previousIsPC = currentIsPC;
   });

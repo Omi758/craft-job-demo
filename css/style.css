@@ -303,6 +303,10 @@ utility > utility
   }
 }
 
+.is-hash-loading {
+  visibility: hidden;
+}
+
 /*!
 utility > hover
 ------------------------------
@@ -1375,6 +1379,17 @@ component > search-form
   width: 2px;
   height: 14px;
   transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .c-search-form-summary-icon span:nth-child(2) {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .js-accordion-initialized .c-search-form-summary-icon span:nth-child(2) {
+    opacity: 1;
+  }
 }
 
 .c-search-form-details[open] .c-search-form-summary-icon span:nth-child(2) {
