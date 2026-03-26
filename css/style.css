@@ -1116,6 +1116,18 @@ component > card
     font-size: 18px;
   }
 }
+.c-card-archive-tags li a::before {
+  content: "#";
+  display: inline-block;
+  width: 10px;
+  height: 26px;
+}
+@media screen and (min-width: 768px) {
+  .c-card-archive-tags li a::before {
+    width: 11px;
+    height: 29px;
+  }
+}
 
 .c-card-archive-list-container {
   margin-top: 24px;
