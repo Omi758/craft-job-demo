@@ -781,6 +781,12 @@ component > card
   font-weight: 700;
   line-height: 1.5;
   margin-top: 16px;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 4.5em;
 }
 @media screen and (min-width: 768px) {
   .c-card-top-copy {
@@ -826,7 +832,6 @@ component > card
   border-radius: 6px;
   font-size: 16px;
   font-weight: 700;
-  padding-left: 0.025em;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
@@ -1039,6 +1044,7 @@ component > card
   width: 100%;
   background-color: var(--white);
   border: 1px solid var(--border-light);
+  container: archive-card/inline-size;
 }
 
 .c-card-archive-image {
@@ -1175,6 +1181,11 @@ component > card
   .c-card-link-recruit-container {
     grid-template-columns: 49% 1fr 1fr;
   }
+  @container archive-card (max-width: 668px) {
+    .c-card-link-recruit-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 /**
@@ -1304,6 +1315,12 @@ component > card
   font-weight: 700;
   margin: 4px 0 16px;
   overflow-wrap: anywhere;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.2em;
 }
 @media screen and (min-width: 768px) {
   .c-card-column-title {
@@ -1523,6 +1540,12 @@ component > search-form
 .c-search-form-salary--min,
 .c-search-form-salary--max {
   padding: 10px 12px;
+}
+.c-search-form-salary--min::-moz-placeholder, .c-search-form-salary--max::-moz-placeholder {
+  opacity: 0.54;
+}
+.c-search-form-salary--min::placeholder,
+.c-search-form-salary--max::placeholder {
   opacity: 0.54;
 }
 
