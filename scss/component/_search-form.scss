@@ -207,7 +207,9 @@ component > search-form
 .c-search-form-salary--min,
 .c-search-form-salary--max {
   padding: 10px 12px;
-  opacity: 0.54;
+  &::placeholder {
+    opacity: 0.54;
+  }
 }
 
 .c-search-form-salary-wrapper .c-search-form-label-separator {
