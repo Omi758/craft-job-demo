@@ -3173,6 +3173,12 @@ page > column > column-single
   font-size: 26px;
   line-height: 1.5;
   margin-bottom: 24px;
+  display: block;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: visible;
+  min-height: 0;
 }
 @media screen and (min-width: 768px) {
   .column-single .c-card-column-title {

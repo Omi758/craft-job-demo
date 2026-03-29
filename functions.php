@@ -442,6 +442,37 @@ add_action( 'init', 'craftjob_column_rewrite_rules' );
 
 
 /**
+ * /recruit/記事ID/のリライトルールを追加
+*/
+function craftjob_recruit_permalink( $permalink, $post ) {
+	if ( 'recruit' === $post->post_type ) {
+		$permalink = home_url( '/recruit/' . $post->ID . '/');
+	}
+	return $permalink;
+}
+add_filter('post_type_link', 'craftjob_recruit_permalink', 10,2);
+
+/**
+ * /recruit/数字/のリライトルールを追加（記事IDを直接指定）
+*/
+function craftjob_recruit_id_rewrite_rules(){
+	add_rewrite_rule(
+		'recruit/([0-9]+)/?$',
+		'index.php?post_type=recruit&p=$matches[1]',
+		'top'
+	);
+}
+add_action( 'init', 'craftjob_recruit_id_rewrite_rules' );
+
+// 求人の編集画面からスラッグ欄を非表示にする_記事IDを直接指定するため管理画面slug欄を非表示にする
+function craftjob_remove_slug_meta_box(){
+	remove_meta_box( 'slugdiv', 'recruit', 'normal' );
+}
+add_action( 'admin_menu', 'craftjob_remove_slug_meta_box' );
+
+
+
+/**
  * エディタスタイルの読み込み
  */
 function craftjob_editor_styles() {
