@@ -125,8 +125,9 @@ add_action( 'customize_register', 'craftjob_customize_register' );
 
 
 /**
- * アイキャッチ画像の設定
+ * タイトルタグ・アイキャッチ画像の設定
  */
+add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 
 /**
@@ -633,6 +634,24 @@ function craftjob_get_favorites() {
 
 add_action( 'wp_ajax_get_favorites', 'craftjob_get_favorites' );
 add_action( 'wp_ajax_nopriv_get_favorites', 'craftjob_get_favorites' );
+
+
+/**
+ * 検索結果・お気に入りページにnoindexを設定
+ */
+function craftjob_custom_noindex() {
+	if ( ! is_post_type_archive( 'recruit' ) ) {
+		return;
+	}
+
+	$is_favorite = 'favorite' === get_query_var( 'craftjob_page' );
+	$has_search = ! empty( $_GET['area'] ) || ! empty( $_GET['employment_type'] ) || ! empty( $_GET['job_category']) || ! empty( $_GET['salary_min']) || ! empty( $_GET['salary_max']);
+
+	if ( $is_favorite || $has_search ) {
+		echo '<meta name="robots" content="noindex">' . "\n";
+	}
+}
+add_action( 'wp_head', 'craftjob_custom_noindex' );
 
 
 /**
