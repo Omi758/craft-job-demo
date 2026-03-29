@@ -41,13 +41,38 @@
               $bc_title = '『' . implode( ' / ', $title_parts ) . '』の求人一覧';
             endif;
             ?>
-    <a href="<?php echo esc_url( home_url( '/' ) );  ?>">Web制作業界特化の求人サイトCraft Job</a>
-    &gt;
-    <a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
-    &gt;
-    <span><?php echo $bc_title; ?></span>
+    <span property="itemListElement">
+      <a class="home" href="<?php echo esc_url( home_url( '/' ) );  ?>">Web制作業界特化の求人サイトCraft Job</a>
+    </span>
+
+    <span property="itemListElement">
+      <a href="<?php echo esc_url( home_url( '/recruit/' ) ); ?>">求人を探す</a>
+    </span>
+
+    <span property="itemListElement">
+      <span class="current-item"><?php echo $bc_title; ?></span>
+    </span>
     <?php else : ?>
     <?php if ( function_exists( 'bcn_display' ) ) { bcn_display(); } ?>
+    <?php endif; ?>
+
+    <?php elseif ( is_home() && ! empty( $_GET['category'] ) ) : ?>
+    <?php
+        $category_slug = sanitize_text_field( wp_unslash( $_GET['category'] ) );
+        $category = get_category_by_slug( $category_slug );
+        ?>
+    <span property="itemListElement">
+      <a class="home" href="<?php echo esc_url( home_url( '/' ) );  ?>">Web制作業界特化の求人サイトCraft Job</a>
+    </span>
+
+    <span property="itemListElement">
+      <a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">就活コラム</a>
+    </span>
+
+    <?php if ( $category ) : ?>
+    <span property="itemListElement">
+      <span class="current-item"><?php echo esc_html( $category->name ); ?></span>
+    </span>
     <?php endif; ?>
 
     <?php else : ?>

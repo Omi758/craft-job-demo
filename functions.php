@@ -690,7 +690,7 @@ function craftjob_custom_description( $description ) {
 	if ( 'popular' === $craftjob_page ) {
 			return 'Web制作業界で注目の人気求人をランキング形式でご紹介。今話題の求人情報をお届けします。';
 	} elseif ( ! $craftjob_page ) {
-			return 'Web制作業界に特化した求人を新着順でご紹介。地域・職種・雇用形態・年収で絞り込み検索も可能です。';
+			return 'Web制作業界に特化した求人をご紹介。地域・職種・雇用形態・年収で絞り込み検索も可能です。';
 	}
 
 	return $description;
