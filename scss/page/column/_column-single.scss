@@ -16,6 +16,13 @@ page > column > column-single
     font-size: 26px;
     line-height: 1.5;
     margin-bottom: 24px;
+    // 一覧カード（_card.scss）の２行clampを無効化
+    display: block;
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    min-height: 0;
     @include g.mq() {
       font-size: 34px;
     }
