@@ -399,6 +399,7 @@ function craftjob_custom_query_vars( $vars ) {
 }
 add_filter( 'query_vars', 'craftjob_custom_query_vars' );
 
+
 /**
  * リライトルールを追加(/recruit/popular/と/recruit/favorite/)
  */

@@ -169,18 +169,20 @@
       <section id="recruit-single-company-info" class="recruit-single-section">
         <div class="recruit-single-section-container">
           <h2 class="recruit-single-section-title">会社概要</h2>
+          <?php $company =get_field( 'company' ); ?>
+          <?php if ( $company ) : ?>
           <dl class="recruit-single-contents">
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">会社名</dt>
               <dd class="recruit-single-content-value">
-                <?php echo esc_html( get_field('company_name') ); ?>
+                <?php echo esc_html( get_field('company_name', $company->ID) ); ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">事業内容</dt>
               <dd class="recruit-single-content-value">
                 <?php
-                $business_contents = get_field( "business_content" );
+                $business_contents = get_field( "business_content", $company->ID );
                 if ( $business_contents ) :
                   $business_contents_items = explode( "\n", $business_contents );
                 ?>
@@ -198,8 +200,8 @@
               <dt class="recruit-single-content-title">所在地</dt>
               <dd class="recruit-single-content-value">
                 <?php
-                $company_zip     = get_field( 'company_zip' );
-                $company_address = get_field( 'company_address' );
+                $company_zip     = get_field( 'company_zip', $company->ID );
+                $company_address = get_field( 'company_address', $company->ID );
                 if ( $company_zip || $company_address ) :
                   $parts = array();
                   if ( $company_zip ) {
@@ -216,26 +218,26 @@
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">設立</dt>
               <dd class="recruit-single-content-value">
-                <?php echo esc_html( get_field('established') ); ?>
+                <?php echo esc_html( get_field('established', $company->ID) ); ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">従業員数</dt>
               <dd class="recruit-single-content-value">
-                <?php echo esc_html( get_field('employee_count') ); ?>
+                <?php echo esc_html( get_field('employee_count', $company->ID) ); ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">資本金</dt>
               <dd class="recruit-single-content-value">
-                <?php echo esc_html( get_field('capital') ); ?>万円
+                <?php echo esc_html( get_field('capital', $company->ID) ); ?>万円
               </dd>
             </div>
             <div class="recruit-single-content-item">
               <dt class="recruit-single-content-title">URL</dt>
               <dd class="recruit-single-content-value">
                 <?php
-                $company_url = get_field( 'company_url' );
+                $company_url = get_field( 'company_url', $company->ID );
                 if ( $company_url ) :
                   ?>
                 <a href="<?php echo esc_url( $company_url ); ?>" target="_blank"
@@ -244,6 +246,7 @@
               </dd>
             </div>
           </dl>
+          <?php endif; ?>
         </div>
 
       </section>

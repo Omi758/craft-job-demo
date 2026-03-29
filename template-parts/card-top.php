@@ -12,9 +12,11 @@
       <div class="c-card-top-content">
         <div class="c-card-top-header">
           <?php
-          $company_name = get_field( 'company_name' );
-          $company_logo = get_field( 'company_logo' );
+          $company = get_field( 'company' );
+          $company_name = $company ? get_field( 'company_name', $company->ID ) : '';
+          $company_logo = $company ? get_field( 'company_logo', $company->ID ) : '';
           ?>
+
           <?php if ($company_logo) : ?>
           <img class='c-card-top-company-logo' src='<?php echo esc_url( $company_logo['url'] ); ?>' width='120'
             height='120' alt='<?php echo esc_attr( $company_name ); ?>ロゴ' decoding='async' />

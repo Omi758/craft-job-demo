@@ -17,12 +17,15 @@
 
   <div class="c-card-archive-content">
     <div class="c-card-archive-header">
-      <?php $company_logo = get_field( 'company_logo' ); ?>
+      <?php $company = get_field( 'company' ); ?>
+      <?php if ( $company ) : ?>
+      <?php $company_logo =get_field( 'company_logo', $company->ID ); ?>
       <?php if ( $company_logo ) : ?>
       <img class="c-card-archive-company-logo" src='<?php echo esc_url( $company_logo['url'] ); ?>' width='120'
         height='120' alt='<?php echo esc_attr( $company_logo['alt'] ); ?>' decoding='async' />
       <?php endif; ?>
-      <h3 class="c-card-archive-company"><?php the_field('company_name'); ?></h3>
+      <h3 class="c-card-archive-company"><?php echo esc_html( get_field('company_name', $company->ID) ); ?></h3>
+      <?php endif; ?>
     </div>
 
     <p class="c-card-archive-copy"><?php the_title(); ?></p>
