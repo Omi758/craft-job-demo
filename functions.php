@@ -681,36 +681,28 @@ add_filter( 'pre_get_document_title', 'craftjob_custom_title', 30 );
  * カスタムページのdescriptionを変更
  */
 function craftjob_custom_description( $description ) {
-	if ( ! is_post_type_archive( 'recruit' ) ) {
-			return $description;
-	}
-
-	$craftjob_page = get_query_var( 'craftjob_page' );
+	// 求人アーカイブ
+	if ( is_post_type_archive( 'recruit' ) ) {
+	  $craftjob_page = get_query_var( 'craftjob_page' );
 
 	if ( 'popular' === $craftjob_page ) {
 			return 'Web制作業界で注目の人気求人をランキング形式でご紹介。今話題の求人情報をお届けします。';
-	} elseif ( ! $craftjob_page ) {
-			return 'Web制作業界に特化した求人をご紹介。地域・職種・雇用形態・年収で絞り込み検索も可能です。';
-	}
+  	} elseif ( ! $craftjob_page ) {
+	  		return 'Web制作業界に特化した求人をご紹介。地域・職種・雇用形態・年収で絞り込み検索も可能です。';
+    }
+  }
 
-	return $description;
+// タクソノミーアーカイブ
+if (is_tax() && empty( $description )) {
+	$term = get_queried_object();
+	if ( $term ) {
+		return esc_html( $term->name ) . 'のWeb制作求人一覧。条件に合った求人情報を掲載しています。';
+	  }
+  }
+return $description;
 }
 add_filter( 'ssp_output_description', 'craftjob_custom_description', 30 );
 
-
-/**
- * タクソノミーアーカイブのdescriptionを自動生成
- */
-function craftjob_taxonomy_description( $description ) {
-	if ( is_tax() && empty( $description ) ) {
-		$term = get_queried_object();
-		if ($term ) {
-			$description = esc_html( $term->name ) . 'のweb制作求人一覧。条件に合った求人情報を掲載しています。';
-		}
-	}
-	return $description;
-}
-add_filter( 'ssp_output_description', 'craftjob_taxonomy_description', 30 );
 
 
 
