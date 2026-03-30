@@ -698,6 +698,21 @@ function craftjob_custom_description( $description ) {
 add_filter( 'ssp_output_description', 'craftjob_custom_description', 30 );
 
 
+/**
+ * タクソノミーアーカイブのdescriptionを自動生成
+ */
+function craftjob_taxonomy_description( $description ) {
+	if ( is_tax() && empty( $description ) ) {
+		$term = get_queried_object();
+		if ($term ) {
+			$description = esc_html( $term->name ) . 'のweb制作求人一覧。条件に合った求人情報を掲載しています。';
+		}
+	}
+	return $description;
+}
+add_filter( 'ssp_output_description', 'craftjob_taxonomy_description', 30 );
+
+
 
 
 /**
