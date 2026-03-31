@@ -1191,14 +1191,6 @@ component > card
 /**
 * 求人カード（下層ページ）_人気ランキング
 */
-.ranking-counter-reset {
-  counter-reset: ranking;
-}
-
-.ranking-counter-increment {
-  counter-increment: ranking;
-}
-
 .c-card-archive-rank-view-container {
   display: grid;
   grid-template-columns: 60px 1fr 72px;
@@ -1217,24 +1209,19 @@ component > card
   grid-row: 1/2;
   position: relative;
   z-index: 5;
-}
-.c-card-archive-rank::before {
-  content: counter(ranking) "位";
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--rank-other);
 }
 
-.c-card-archive-container:nth-child(1) .c-card-archive-rank::before {
+.c-card-archive-container:nth-child(1) .c-card-archive-rank {
   background-color: var(--rank-1);
 }
-.c-card-archive-container:nth-child(2) .c-card-archive-rank::before {
+.c-card-archive-container:nth-child(2) .c-card-archive-rank {
   background-color: var(--rank-2);
 }
-.c-card-archive-container:nth-child(3) .c-card-archive-rank::before {
+.c-card-archive-container:nth-child(3) .c-card-archive-rank {
   background-color: var(--rank-3);
 }
 

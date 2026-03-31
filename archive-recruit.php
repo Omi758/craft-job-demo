@@ -89,11 +89,18 @@
 
       <?php else : ?>
       <!-- 通常・検索・ランキング -->
-      <div class="l-recruit-archive-cards<?php if ( $is_popular ) echo ' ranking-counter-reset'; ?>">
+      <div class="l-recruit-archive-cards">
         <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
         <?php if ( $is_popular ) : ?>
-        <?php get_template_part('template-parts/card-recruit-ranking'); ?>
+        <?php
+        global $wp_query;
+        get_template_part(
+          'template-parts/card-recruit-ranking',
+          null,
+          array( 'rank' => (int) $wp_query->current_post + 1 )
+        );
+        ?>
         <?php else : ?>
         <?php get_template_part('template-parts/card-recruit'); ?>
         <?php endif; ?>
