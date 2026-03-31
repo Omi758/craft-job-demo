@@ -671,6 +671,10 @@ function craftjob_custom_title( $title ) {
 	} elseif ( 'favorite' === $craftjob_page ) {
 			return 'お気に入り求人' . $sep . $site_name;
 	} else {
+		$has_search = ! empty( $_GET['area'] ) || ! empty( $_GET['employment_type'] ) || ! empty( $_GET['job_category']) || ! empty( $_GET['salary_min']) || ! empty( $_GET['salary_max']);
+			if ( $has_search ) {
+				return '検索結果' . $sep . $site_name;
+			}
 			return '求人を探す' . $sep . $site_name;
 	}
 }
