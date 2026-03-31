@@ -114,23 +114,25 @@
   $favorite: var(--favorite),
   $include-border-color: false
 ) {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
   @if $include-border-color {
     transition:
       border-color 0.3s ease,
       background-color 0.3s ease,
       color 0.3s ease;
+  } @else {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: $favorite;
     color: var(--white);
-    &::before {
-      background-color: var(--white);
-    }
     @if $include-border-color {
       border-color: $favorite;
+    }
+    &::before {
+      background-color: var(--white);
     }
   }
 }

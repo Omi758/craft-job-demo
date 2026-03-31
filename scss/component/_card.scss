@@ -154,21 +154,18 @@ component > card
   transition: background-color 0.3s ease;
 }
 
-// カードリンク_view-more（カードホバーで色反転、親の:hoverで制御）
+// カードリンク_view-more（トップは親.c-card-top-container:hoverと併用、下層はリンク自身のhover/focus）
 .c-card-link-view-more {
   border: 1px solid var(--primary-green);
   color: var(--primary-green);
+
+  @include g.hover-fill-swap(var(--primary-green), true);
 
   &::before {
     mask-image: url("../img/common/icon-detail.svg");
     background-color: var(--primary-green);
     transition: background-color 0.3s ease;
   }
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
 }
 
 // カードリンク_apply
