@@ -1,7 +1,10 @@
 <!-- 求人カード_ランキング -->
-<article class="c-card-archive-container ranking-counter-increment">
+<?php
+$craftjob_rank = ( isset( $args ) && isset( $args['rank'] ) ) ? max( 1, (int) $args['rank'] ) : 1;
+?>
+<article class="c-card-archive-container">
   <div class="c-card-archive-rank-view-container">
-    <div class="c-card-archive-rank"></div>
+    <div class="c-card-archive-rank"><?php echo esc_html( (string) $craftjob_rank ); ?>位</div>
     <div class="c-card-archive-views">
       <span
         class="c-card-archive-views-number"><?php echo esc_html( (int) get_post_meta( get_the_ID(), 'craftjob_views_7days', true ) ); ?></span>Views
@@ -34,8 +37,7 @@
       <?php $tags = get_the_terms( get_the_ID(), 'job_tag' ); ?>
       <?php if( $tags ) : ?>
       <?php foreach( $tags as $tag ) : ?>
-      <li><a
-          href="<?php echo esc_url( home_url( '/recruit/?job_tag=' . $tag->slug ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+      <li><a href="<?php echo esc_url( get_term_link( $tag ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
       </li>
       <?php endforeach; ?>
       <?php endif; ?>
