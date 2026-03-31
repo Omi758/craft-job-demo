@@ -857,15 +857,21 @@ component > card
 .c-card-link-view-more {
   border: 1px solid var(--primary-green);
   color: var(--primary-green);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.c-card-link-view-more:hover, .c-card-link-view-more:focus-visible {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border-color: var(--primary-green);
+}
+.c-card-link-view-more:hover::before, .c-card-link-view-more:focus-visible::before {
+  background-color: var(--white);
 }
 .c-card-link-view-more::before {
   -webkit-mask-image: url("../img/common/icon-detail.svg");
           mask-image: url("../img/common/icon-detail.svg");
   background-color: var(--primary-green);
   transition: background-color 0.3s ease;
-}
-.c-card-link-view-more {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .c-card-link-apply {
@@ -898,11 +904,11 @@ component > card
 .c-card-link-favorite {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.c-card-link-favorite:hover {
+.c-card-link-favorite:hover, .c-card-link-favorite:focus-visible {
   background-color: var(--favorite);
   color: var(--white);
 }
-.c-card-link-favorite:hover::before {
+.c-card-link-favorite:hover::before, .c-card-link-favorite:focus-visible::before {
   background-color: var(--white);
 }
 
@@ -1564,17 +1570,25 @@ component > search-form
 
 .c-search-form-button {
   width: 100%;
-  padding: 16px 12px;
+  padding: 15px 11px;
   background-color: var(--accent);
   color: var(--white);
   font-size: 18px;
   font-weight: 700;
+  border: 1px solid var(--accent);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding-left: 0.025em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.c-search-form-button:hover {
+  background-color: var(--white);
+  color: var(--accent);
+}
+.c-search-form-button:hover::before {
+  background-color: var(--accent);
 }
 .c-search-form-button::before {
   content: "";
@@ -1665,12 +1679,21 @@ component > search-form
   color: var(--white);
   font-size: 18px;
   font-weight: 700;
+  border: 1px solid var(--accent);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding-left: 0.025em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.c-search-form-top-button:hover {
+  background-color: var(--white);
+  color: var(--accent);
+}
+.c-search-form-top-button:hover::before {
+  background-color: var(--accent);
 }
 .c-search-form-top-button::before {
   content: "";
