@@ -712,28 +712,36 @@ add_action( 'wp_head', 'craftjob_custom_noindex' );
  * カスタムページのタイトルタグを変更
  */
 function craftjob_custom_title( $title ) {
-	if ( ! is_post_type_archive( 'recruit' ) ) {
-			return $title;
-	}
+	// 求人アーカイブ
+	if ( is_post_type_archive( 'recruit' ) ) {
+			$craftjob_page = get_query_var( 'craftjob_page' );
+			$sep = ' | ';
+			$site_name = get_bloginfo( 'name' );
 
-	$craftjob_page = get_query_var( 'craftjob_page' );
-	$sep = ' | ';
-	$site_name = get_bloginfo( 'name' );
-
-	if ( 'popular' === $craftjob_page ) {
-			return '人気求人ランキング' . $sep . $site_name;
-	} elseif ( 'favorite' === $craftjob_page ) {
-			return 'お気に入り求人' . $sep . $site_name;
-	} else {
-		$has_search = ! empty( $_GET['area'] ) || ! empty( $_GET['employment_type'] ) || ! empty( $_GET['job_category']) || ! empty( $_GET['salary_min']) || ! empty( $_GET['salary_max']);
-			if ( $has_search ) {
-				return '検索結果' . $sep . $site_name;
+			if ( 'popular' === $craftjob_page ) {
+					return '人気求人ランキング' . $sep . $site_name;
+			} elseif ( 'favorite' === $craftjob_page ) {
+					return 'お気に入り求人' . $sep . $site_name;
+			} else {
+					$has_search = ! empty( $_GET['area'] ) || ! empty( $_GET['employment_type'] ) || ! empty( $_GET['job_category'] ) || ! empty( $_GET['salary_min'] ) || ! empty( $_GET['salary_max'] );
+					if ( $has_search ) {
+							return '検索結果' . $sep . $site_name;
+					}
+					return '求人を探す' . $sep . $site_name;
 			}
-			return '求人を探す' . $sep . $site_name;
 	}
+
+	// コラムカテゴリー
+	if ( is_home() && ! empty( $_GET['category'] ) ) {
+			$category = get_category_by_slug( sanitize_text_field( wp_unslash( $_GET['category'] ) ) );
+			if ( $category ) {
+					return esc_html( $category->name ) . ' | ' . get_bloginfo( 'name' );
+			}
+	}
+
+	return $title;
 }
 add_filter( 'pre_get_document_title', 'craftjob_custom_title', 30 );
-
 
 /**
  * カスタムページのdescriptionを変更
@@ -760,8 +768,6 @@ if (is_tax() && empty( $description )) {
 return $description;
 }
 add_filter( 'ssp_output_description', 'craftjob_custom_description', 30 );
-
-
 
 
 
