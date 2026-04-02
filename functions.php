@@ -422,13 +422,15 @@ add_action( 'init', 'craftjob_custom_rewrite_rules' );
 /**
  * 通常投稿(column)のパーマリンクに/column/プレフィクスを追加
  * */
-function craftjob_column_permalink( $permalink, $post ) {
+function craftjob_column_permalink( $permalink, $post, $leavename = false ) {
 	if ( 'post' === $post->post_type ) {
-		$permalink = home_url( '/column/' . $post->post_name . '/' );
+		$slug = $leavename ? '%postname%' : $post->post_name;
+		$permalink = home_url( '/column/' . $slug . '/' );
 	}
 	return $permalink;
 }
-add_filter( 'post_link', 'craftjob_column_permalink', 10, 2 );
+add_filter( 'post_link', 'craftjob_column_permalink', 10, 3 );
+
 
 /**
  * /column/記事名/のリライトルールを追加
