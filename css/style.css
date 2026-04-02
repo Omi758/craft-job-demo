@@ -3412,6 +3412,90 @@ page > column > column-single
   width: 27px;
   height: 27px;
 }
+.entry-content #ez-toc-container {
+  background: none;
+  border: 2px solid var(--primary-green);
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 24px;
+  box-shadow: none;
+  display: block;
+  width: 100%;
+}
+.entry-content #ez-toc-container .ez-toc-title-container {
+  background-color: var(--primary-green);
+  border-radius: 6px 6px 0 0;
+  padding: 8px 24px;
+}
+.entry-content #ez-toc-container .ez-toc-title {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .entry-content #ez-toc-container .ez-toc-title {
+    font-size: 20px;
+  }
+}
+.entry-content #ez-toc-container .ez-toc-title::before {
+  content: "";
+  display: block;
+  -webkit-mask-image: url(../img/common/icon-toc.svg);
+          mask-image: url(../img/common/icon-toc.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background-color: var(--white);
+  width: 27px;
+  height: 27px;
+}
+.entry-content #ez-toc-container nav {
+  background-color: var(--primary-light-green);
+  border-radius: 0 0 6px 6px;
+  padding: 16px 16px 16px 38px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content #ez-toc-container nav {
+    padding: 16px 20px 16px 48px;
+  }
+}
+.entry-content #ez-toc-container ul.ez-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+  list-style-position: outside;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content #ez-toc-container ul.ez-toc-list {
+    font-size: 18px;
+  }
+}
+.entry-content #ez-toc-container ul.ez-toc-list li {
+  margin-top: 0;
+}
+.entry-content #ez-toc-container ul.ez-toc-list li a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 2;
+}
+.entry-content #ez-toc-container ul.ez-toc-list li a:hover {
+  opacity: 0.7;
+}
+.entry-content #ez-toc-container ul.ez-toc-list li a::before {
+  color: var(--primary-green);
+}
 .entry-content blockquote {
   position: relative;
 }
