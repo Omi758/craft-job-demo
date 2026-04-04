@@ -3696,7 +3696,7 @@ page > column > column-single
   border: 1px solid var(--border);
   border-radius: 8px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .entry-content .smb-balloon .smb-balloon__body {
     padding: 21px 29px 18px 23px;
     margin-top: 8px;
@@ -3727,7 +3727,7 @@ page > column > column-single
   font-weight: 500;
   line-height: 1.65;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .entry-content .smb-balloon p {
     font-size: 18px;
   }
