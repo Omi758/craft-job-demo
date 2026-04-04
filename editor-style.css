@@ -242,37 +242,6 @@ strong {
 }
 
 /* --------------------------------
-  * 目次ボックスコンテナ
-  * --------------------------------
-*/
-.smb-box.is-style-toc {
-  border: 2px solid var(--primary-green);
-}
-
-.smb-box.is-style-toc h3 {
-  display: flex;
-  align-items: center;
-  padding: 8px 24px;
-  gap: 12px;
-}
-
-.smb-box.is-style-toc h3::before {
-  content: "";
-  display: block;
-  -webkit-mask-image: url(img/common/icon-toc.svg);
-  mask-image: url(img/common/icon-toc.svg);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-color: var(--white);
-  width: 27px;
-  height: 27px;
-}
-
-/* --------------------------------
   * 引用
   * --------------------------------
 */
@@ -498,6 +467,7 @@ details p {
 
 /* --------------------------------
   * 吹き出し_Snow Monkey Blocks_balloon
+  * プラグイン：SMBは640pxがブレイクポイント
   * --------------------------------
 */
 .smb-balloon {
@@ -505,38 +475,56 @@ details p {
   --smb-balloon--border-width: 1px !important;
   --smb-balloon--gap: 32px !important;
   margin-top: 24px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 32px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .smb-balloon {
-    --smb-balloon--gap: 40px !important;
+    align-items: start;
+    gap: 40px;
   }
-}
-
-.smb-balloon {
-  align-items: center !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
 }
 
 .smb-balloon .smb-balloon__person {
   flex-direction: column;
-  margin: 0 var(--smb-balloon--gap) 0 0 !important;
 }
 
-.smb-balloon .smb-balloon__person .smb-balloon__name {
-  margin: 5px 0 0;
-  display: none !important;
+@media screen and (min-width: 640px) {
+  .smb-balloon__person {
+    margin-right: 0;
+  }
 }
 
-.smb-balloon .smb-balloon__body {
+.smb-balloon__figure {
+  width: 70px;
+  height: 70px;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 640px) {
+  .smb-balloon__figure {
+    margin-top: 0;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.smb-balloon__name {
+  display: none;
+}
+
+.smb-balloon__body {
   padding: 22px 21px 21px 17px;
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 
-@media screen and (min-width: 768px) {
-  .smb-balloon .smb-balloon__body {
+@media screen and (min-width: 640px) {
+  .smb-balloon__body {
     padding: 21px 29px 18px 23px;
+    margin-top: 8px;
   }
 }
 
@@ -551,14 +539,14 @@ details p {
     calc(20px + var(--smb-balloon--border-width) * 2)
     calc(11px + var(--smb-balloon--border-width)) 0 !important;
   left: calc(-20px - var(--smb-balloon--border-width) * 2) !important;
-  top: calc(50% - 11px - var(--smb-balloon--border-width)) !important;
+  top: calc(32px - var(--smb-balloon--border-width)) !important;
 }
 
 .smb-balloon .smb-balloon__body::after {
   border-right-color: var(--smb-balloon--background-color) !important;
   border-width: 11px 20px 11px 0 !important;
   left: -20px !important;
-  top: calc(50% - 11px) !important;
+  top: 32px !important;
 }
 
 .smb-balloon img {
@@ -572,7 +560,7 @@ details p {
   line-height: 1.65;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .smb-balloon p {
     font-size: 18px;
   }
