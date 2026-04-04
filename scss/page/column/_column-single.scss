@@ -248,7 +248,7 @@ page > column > column-single
   #ez-toc-container {
     // プラグインのデフォルトをリセット
     background: none;
-    border: 2px solid var(--primary-green);
+    border: none;
     border-radius: 8px;
     padding: 0;
     margin-top: 24px;
@@ -260,7 +260,7 @@ page > column > column-single
     .ez-toc-title-container {
       background-color: var(--primary-green);
       border-radius: 6px 6px 0 0;
-      padding: 8px 24px;
+      padding: 8px 24px 5px;
     }
 
     .ez-toc-title {
@@ -293,10 +293,8 @@ page > column > column-single
     nav {
       background-color: var(--primary-light-green);
       border-radius: 0 0 6px 6px;
-      padding: 16px 16px 16px 38px;
-      @include g.mq() {
-        padding: 16px 20px 16px 48px;
-      }
+      padding: 16px 24px 20px 24px;
+      border: 3px solid var(--primary-green);
     }
 
     ul.ez-toc-list {
@@ -311,12 +309,21 @@ page > column > column-single
 
       li {
         margin-top: 0;
+        padding: 4px 0;
+        @include g.mq() {
+          padding: 4px 20px 4px 0;
+        }
 
         a {
           color: var(--black);
+          display: flex;
+          align-items: center;
+          gap: 12px;
           text-decoration: none;
           font-weight: 700;
-          line-height: 2;
+          font-size: 16px;
+          line-height: 1.6;
+          letter-spacing: 0.025em;
 
           &:hover {
             opacity: 0.7;
@@ -324,7 +331,15 @@ page > column > column-single
 
           // バレット
           &::before {
-            color: var(--primary-green);
+            content: "";
+            display: block;
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-green);
+            border-radius: 50vh;
+            margin-right: 0;
+            counter-increment: nome;
           }
         }
       }
