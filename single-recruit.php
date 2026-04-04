@@ -62,17 +62,9 @@
               <dd class="recruit-single-content-value">
                 <?php
                 $skills = get_field( "required_skills" );
-                if ($skills) :
-                  $items = explode("\n", $skills);
-                ?>
-                <ul>
-                  <?php foreach ($items as $item) : ?>
-                  <?php if (trim($item) !== "") : ?>
-                  <li><?php echo esc_html( trim($item) ); ?></li>
-                  <?php endif; ?>
-                  <?php endforeach; ?>
-                </ul>
-                <?php endif; ?>
+                if ( $skills ) :
+                  echo wp_kses_post( $skills );
+                endif; ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
@@ -81,16 +73,8 @@
                 <?php
                 $preferred_skills = get_field( "preferred_skills" );
                 if ( $preferred_skills ) :
-                  $preferred_items = explode( "\n", $preferred_skills );
-                ?>
-                <ul>
-                  <?php foreach ( $preferred_items as $preferred_item ) : ?>
-                  <?php if ( trim( $preferred_item ) !== '' ) : ?>
-                  <li><?php echo esc_html( trim( $preferred_item ) ); ?></li>
-                  <?php endif; ?>
-                  <?php endforeach; ?>
-                </ul>
-                <?php endif; ?>
+                  echo wp_kses_post( $preferred_skills );
+                endif; ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
@@ -184,16 +168,8 @@
                 <?php
                 $business_contents = get_field( "business_content", $company->ID );
                 if ( $business_contents ) :
-                  $business_contents_items = explode( "\n", $business_contents );
-                ?>
-                <ul>
-                  <?php foreach ( $business_contents_items as $business_content_item ) : ?>
-                  <?php if ( trim( $business_content_item ) !== '' ) : ?>
-                  <li><?php echo esc_html( trim( $business_content_item ) ); ?></li>
-                  <?php endif; ?>
-                  <?php endforeach; ?>
-                </ul>
-                <?php endif; ?>
+                  echo wp_kses_post( $business_contents );
+                endif; ?>
               </dd>
             </div>
             <div class="recruit-single-content-item">
