@@ -161,7 +161,7 @@ ul {
   }
 }
 
-ul li::marker {
+body:not(.mce-content-body) ul li::marker {
   color: var(--primary-green);
 }
 
@@ -179,7 +179,7 @@ ol {
   }
 }
 
-ol li::marker {
+body:not(.mce-content-body) ol li::marker {
   color: var(--primary-green);
 }
 
