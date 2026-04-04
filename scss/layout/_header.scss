@@ -6,7 +6,7 @@ layout > header
 */
 .l-header {
   background-color: var(--white);
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -178,11 +178,4 @@ layout > header
     top: -10px;
     right: -23px;
   }
-}
-
-/**
-* 管理バー表示時のfixedヘッダー調整
-*/
-body.admin-bar .l-header {
-  top: 32px;
 }
