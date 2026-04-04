@@ -219,31 +219,6 @@ page > column > column-single
     }
   }
 
-  // 目次ボックスコンテナ
-  .smb-box.is-style-toc {
-    border: 2px solid var(--primary-green);
-
-    h3 {
-      display: flex;
-      align-items: center;
-      padding: 8px 24px;
-      gap: 12px;
-    }
-
-    h3::before {
-      content: "";
-      display: block;
-      mask-image: url(../img/common/icon-toc.svg);
-      mask-size: cover;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      mask-size: contain;
-      background-color: var(--white);
-      width: 27px;
-      height: 27px;
-    }
-  }
-
   // 目次_Easy Table of Contents
   #ez-toc-container {
     // プラグインのデフォルトをリセット
@@ -339,7 +314,7 @@ page > column > column-single
             background-color: var(--primary-green);
             border-radius: 50vh;
             margin-right: 0;
-            counter-increment: nome;
+            counter-increment: none;
           }
         }
       }
@@ -533,31 +508,42 @@ page > column > column-single
   }
 
   // 吹き出し_Snow Monkey Blocks_balloon
+  // プラグイン：SMBは640pxがブレイクポイント
   .smb-balloon {
     --smb-balloon--border-color: var(--border) !important;
     --smb-balloon--border-width: 1px !important;
-    --smb-balloon--gap: 32px !important;
     margin-top: 24px;
-    @include g.mq() {
-      --smb-balloon--gap: 40px !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 32px;
+    @media screen and (min-width: 640px) {
+      align-items: start;
+      gap: 40px;
     }
-    align-items: center !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
 
     .smb-balloon__person {
       flex-direction: column;
-      margin: 0 var(--smb-balloon--gap) 0 0 !important;
-
-      .smb-balloon__name {
-        margin: 5px 0 0;
+      @media screen and (min-width: 640px) {
+        margin-right: 0;
+      }
+      .smb-balloon__figure {
+        width: 70px;
+        height: 70px;
+        margin-top: 4px;
+        @media screen and (min-width: 640px) {
+          margin-top: 0;
+          width: 90px;
+          height: 90px;
+        }
       }
     }
     .smb-balloon__body {
       padding: 22px 21px 21px 17px;
+      border: 1px solid var(--border);
       border-radius: 8px;
       @include g.mq() {
         padding: 21px 29px 18px 23px;
+        margin-top: 8px;
       }
     }
 
@@ -572,14 +558,14 @@ page > column > column-single
         calc(20px + var(--smb-balloon--border-width) * 2)
         calc(11px + var(--smb-balloon--border-width)) 0 !important;
       left: calc(-20px - var(--smb-balloon--border-width) * 2) !important;
-      top: calc(50% - 11px - var(--smb-balloon--border-width)) !important;
+      top: calc(32px - var(--smb-balloon--border-width)) !important;
     }
 
     .smb-balloon__body::after {
       border-right-color: var(--smb-balloon--background-color) !important;
       border-width: 11px 20px 11px 0 !important;
       left: -20px !important;
-      top: calc(50% - 11px) !important;
+      top: 32px !important;
     }
 
     img {
