@@ -489,8 +489,14 @@ add_action( 'after_setup_theme', 'craftjob_editor_styles' );
  */
 function craftjob_column_editor_style( $editor_settings, $block_editor_context ) {
 	if ( isset( $block_editor_context->post ) && $block_editor_context->post->post_type === 'post' ) {
+		$css = file_get_contents( get_theme_file_path( 'editor-style.css' ) );
+		$css = str_replace(
+			'url("img/',
+			'url("' . get_theme_file_uri( 'img/' ),
+			$css
+		);
 		$editor_settings['styles'][] = array(
-			'css' => file_get_contents( get_theme_file_path( 'editor-style.css' ) ),
+			'css' => $css,
 		);
 	}
 	return $editor_settings;
