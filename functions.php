@@ -481,9 +481,21 @@ add_action( 'admin_menu', 'craftjob_remove_slug_meta_box' );
  */
 function craftjob_editor_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'editor-style.css' );
 }
 add_action( 'after_setup_theme', 'craftjob_editor_styles' );
+
+/**
+ * コラム（投稿）専用エディタスタイルの読み込み
+ */
+function craftjob_column_editor_style( $editor_settings, $block_editor_context ) {
+	if ( isset( $block_editor_context->post ) && $block_editor_context->post->post_type === 'post' ) {
+		$editor_settings['styles'][] = array(
+			'css' => file_get_contents( get_theme_file_path( 'editor-style.css' ) ),
+		);
+	}
+	return $editor_settings;
+}
+add_filter( 'block_editor_settings_all', 'craftjob_column_editor_style', 10, 2 );
 
 
 /**
