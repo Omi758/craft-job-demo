@@ -6,10 +6,10 @@ page > contact
 */
 .page-contact {
   margin-top: 64px;
-  margin-bottom: 16px;
+  margin-bottom: 64px;
   @include g.mq() {
     margin-top: 80px;
-    margin-bottom: 32px;
+    margin-bottom: 80px;
   }
 }
 .page-contact-content {

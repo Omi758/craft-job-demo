@@ -3830,12 +3830,12 @@ page > contact
 */
 .page-contact {
   margin-top: 64px;
-  margin-bottom: 16px;
+  margin-bottom: 64px;
 }
 @media screen and (min-width: 768px) {
   .page-contact {
     margin-top: 80px;
-    margin-bottom: 32px;
+    margin-bottom: 80px;
   }
 }
 
