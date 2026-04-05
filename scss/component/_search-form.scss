@@ -246,7 +246,7 @@ component > search-form
   justify-content: center;
   gap: 6px;
 
-  @include g.hover-white-swap-green(var(--white), var(--accent), var(--accent));
+  @include g.hover-unfill-swap(var(--white), var(--accent), var(--accent));
 
   &::before {
     content: "";
@@ -337,7 +337,7 @@ component > search-form
   justify-content: center;
   gap: 8px;
 
-  @include g.hover-white-swap-green(var(--white), var(--accent), var(--accent));
+  @include g.hover-unfill-swap(var(--white), var(--accent), var(--accent));
 
   &::before {
     content: "";

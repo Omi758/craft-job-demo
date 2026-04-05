@@ -96,7 +96,7 @@ component > cf7-form
     @include g.mq() {
       font-size: 18px;
     }
-    @include g.hover-white-swap-green($before-selector: null);
+    @include g.hover-unfill-swap($before-selector: null);
 
     &:focus {
       box-shadow: none;

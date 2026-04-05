@@ -84,8 +84,8 @@
   }
 }
 
-// ボタンホバー_緑→白（リンクボタン・送信ボタン用）
-@mixin hover-white-swap-green(
+// ボタンホバー_塗り→抜き（リンクボタン・送信ボタン用）
+@mixin hover-unfill-swap(
   $bg: var(--white),
   $text: var(--primary-green),
   $before-bg: var(--primary-green),

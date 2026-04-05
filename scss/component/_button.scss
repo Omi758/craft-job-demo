@@ -26,7 +26,7 @@ component > button
   @include g.mq() {
     font-size: 18px;
   }
-  @include g.hover-white-swap-green();
+  @include g.hover-unfill-swap();
 }
 
 .c-button-link::before {

@@ -38,7 +38,7 @@ component > pagenation
   display: flex;
   justify-content: center;
   align-items: center;
-  @include g.hover-white-swap-green(
+  @include g.hover-unfill-swap(
     $bg: var(--primary-green),
     $text: var(--white),
     $before-selector: null
@@ -47,7 +47,7 @@ component > pagenation
 
 .c-pagination-link--prev,
 .c-pagination-link--next {
-  @include g.hover-white-swap-green(
+  @include g.hover-unfill-swap(
     $bg: var(--primary-green),
     $text: var(--white),
     $before-bg: var(--white)
