@@ -177,7 +177,7 @@ component > search-form
   font-size: 16px;
   border-radius: 4px;
   background-color: var(--gray);
-  padding: 10px 16px;
+  padding: 11px 17px;
   cursor: pointer;
   box-shadow: 0 0 0 1px var(--border);
   outline: none;
@@ -234,7 +234,7 @@ component > search-form
 }
 .c-search-form-button {
   width: 100%;
-  padding: 15px 11px;
+  padding: 15px 35px 15px 11px;
   background-color: var(--accent);
   color: var(--white);
   font-size: 18px;
@@ -275,13 +275,14 @@ component > search-form
   border-radius: 6px 6px 0 0;
   background-color: var(--primary-green);
   color: var(--white);
-  font-size: clamp(1.125rem, 1.035rem + 0.377vw, 1.375rem);
+  font-size: 18px;
   padding: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
   @include g.mq() {
     border-radius: 8px 8px 0 0;
+    font-size: 20px;
   }
 
   &::before {
@@ -324,10 +325,10 @@ component > search-form
 
 .c-search-form-top-button {
   width: 100%;
-  padding: 16px 36px 16px 12px;
+  padding: 15px 35px 15px 11px;
   background-color: var(--accent);
   color: var(--white);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -335,7 +336,6 @@ component > search-form
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding-left: 0.025em;
 
   @include g.hover-white-swap-green(var(--white), var(--accent), var(--accent));
 
@@ -352,6 +352,7 @@ component > search-form
   }
 
   @include g.mq() {
+    font-size: 18px;
     gap: 6px;
   }
 }

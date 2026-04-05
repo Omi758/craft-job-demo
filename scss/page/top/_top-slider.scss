@@ -5,7 +5,7 @@ page > top > top-slider
 ------------------------------
 */
 .top-slider-section {
-  margin-top: 64px;
+  margin-top: 0;
 
   /* スライドの高さを揃える（内容量が異なるカードでも統一） */
   .splide__list {
@@ -21,6 +21,10 @@ page > top > top-slider
     flex: 1;
     min-height: 0;
   }
+}
+
+.l-container:has(.top-slider-section) ~ .l-container > .top-slider-section {
+  margin-top: 64px;
 }
 
 .top-slider-title-container {
