@@ -4,9 +4,9 @@
 utility > hover
 ------------------------------
 */
-// ボタンホバー_緑→白_クラスが付けられる場合に使用
+// ボタンホバー_塗り→抜き_クラスが付けられる場合に使用
 .u-hover-white {
-  @include g.hover-white-swap-green();
+  @include g.hover-unfill-swap();
 }
 
 // 下線ホバー（左→右）_クラスが付けられる場合に使用
