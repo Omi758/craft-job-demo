@@ -82,13 +82,15 @@ page > top > top-search
 .top-search-area-prefectures {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px; // 行間 列間
+  gap: 12px 24px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 500;
   color: var(--font-base);
   @include g.mq() {
     font-size: 16px;
+    margin-top: 11px;
+    gap: 11px 24px;
   }
 
   li {
@@ -102,6 +104,10 @@ page > top > top-search
   font-weight: 700;
   color: var(--primary-green);
   margin-top: 24px;
+  @include g.mq() {
+    font-size: 20px;
+    margin-top: 32px;
+  }
 }
 
 .top-search-employment-tag-list {
@@ -110,6 +116,7 @@ page > top > top-search
   gap: 8px 32px;
   margin-top: 8px;
   font-size: 16px;
+  font-weight: 700;
   @include g.mq() {
     font-size: 18px;
   }
@@ -121,17 +128,16 @@ page > top > top-search
 
 .top-search-tag-list li a {
   width: 100%;
+  display: flex;
+  align-items: baseline;
 
   &::before {
     content: "#";
-    display: inline-block;
-    width: 10px;
-    height: 26px;
+    font-size: 16px;
     margin-right: 3px;
     @include g.mq() {
-      width: 11px;
-      height: 29px;
       margin-right: 4px;
+      font-size: 18px;
     }
   }
 }

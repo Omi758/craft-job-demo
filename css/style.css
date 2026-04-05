@@ -536,9 +536,16 @@ component > archive-title
 .c-archive-title,
 .c-top-taxonomy-title,
 .c-top-column-title {
-  font-size: clamp(1.5rem, 1.41rem + 0.377vw, 1.75rem);
+  font-size: 24px;
   font-weight: 700;
   color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .c-archive-title,
+  .c-top-taxonomy-title,
+  .c-top-column-title {
+    font-size: 28px;
+  }
 }
 
 /*!
@@ -575,8 +582,13 @@ component > page-title_(column/privacy/404)
 }
 
 .c-slider-title {
-  font-size: clamp(1.375rem, 1.241rem + 0.566vw, 1.75rem);
+  font-size: 22px;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .c-slider-title {
+    font-size: 26px;
+  }
 }
 
 .c-slider-link {
@@ -1502,7 +1514,7 @@ component > search-form
   font-size: 16px;
   border-radius: 4px;
   background-color: var(--gray);
-  padding: 10px 16px;
+  padding: 11px 17px;
   cursor: pointer;
   box-shadow: 0 0 0 1px var(--border);
   outline: none;
@@ -1565,7 +1577,7 @@ component > search-form
 
 .c-search-form-button {
   width: 100%;
-  padding: 15px 11px;
+  padding: 15px 35px 15px 11px;
   background-color: var(--accent);
   color: var(--white);
   font-size: 18px;
@@ -1615,7 +1627,7 @@ component > search-form
   border-radius: 6px 6px 0 0;
   background-color: var(--primary-green);
   color: var(--white);
-  font-size: clamp(1.125rem, 1.035rem + 0.377vw, 1.375rem);
+  font-size: 18px;
   padding: 12px;
   display: flex;
   align-items: center;
@@ -1624,6 +1636,7 @@ component > search-form
 @media screen and (min-width: 768px) {
   .c-search-form-top-form-title {
     border-radius: 8px 8px 0 0;
+    font-size: 20px;
   }
 }
 .c-search-form-top-form-title::before {
@@ -1669,10 +1682,10 @@ component > search-form
 
 .c-search-form-top-button {
   width: 100%;
-  padding: 16px 36px 16px 12px;
+  padding: 15px 35px 15px 11px;
   background-color: var(--accent);
   color: var(--white);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -1680,7 +1693,6 @@ component > search-form
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding-left: 0.025em;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .c-search-form-top-button:hover {
@@ -1707,6 +1719,7 @@ component > search-form
 }
 @media screen and (min-width: 768px) {
   .c-search-form-top-button {
+    font-size: 18px;
     gap: 6px;
   }
 }
@@ -2528,7 +2541,7 @@ page > top > top-kv
 
 .top-kv-emblem {
   width: 199px;
-  aspect-ratio: 199/59;
+  aspect-ratio: 200/59;
 }
 @media screen and (min-width: 768px) {
   .top-kv-emblem {
@@ -2707,7 +2720,7 @@ page > top > top-slider
 ------------------------------
 */
 .top-slider-section {
-  margin-top: 64px;
+  margin-top: 0;
   /* スライドの高さを揃える（内容量が異なるカードでも統一） */
 }
 .top-slider-section .splide__list {
@@ -2720,6 +2733,10 @@ page > top > top-slider
 .top-slider-section .splide__slide .c-card-top-container {
   flex: 1;
   min-height: 0;
+}
+
+.l-container:has(.top-slider-section) ~ .l-container > .top-slider-section {
+  margin-top: 64px;
 }
 
 .top-slider-title-container {
@@ -2852,6 +2869,8 @@ page > top > top-search
 @media screen and (min-width: 768px) {
   .top-search-area-prefectures {
     font-size: 16px;
+    margin-top: 11px;
+    gap: 11px 24px;
   }
 }
 .top-search-area-prefectures li a {
@@ -2880,6 +2899,12 @@ page > top > top-search
   color: var(--primary-green);
   margin-top: 24px;
 }
+@media screen and (min-width: 768px) {
+  .top-search-employment-tag-text {
+    font-size: 20px;
+    margin-top: 32px;
+  }
+}
 
 .top-search-employment-tag-list {
   display: flex;
@@ -2887,6 +2912,7 @@ page > top > top-search
   gap: 8px 32px;
   margin-top: 8px;
   font-size: 16px;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .top-search-employment-tag-list {
@@ -2915,19 +2941,18 @@ page > top > top-search
 
 .top-search-tag-list li a {
   width: 100%;
+  display: flex;
+  align-items: baseline;
 }
 .top-search-tag-list li a::before {
   content: "#";
-  display: inline-block;
-  width: 10px;
-  height: 26px;
+  font-size: 16px;
   margin-right: 3px;
 }
 @media screen and (min-width: 768px) {
   .top-search-tag-list li a::before {
-    width: 11px;
-    height: 29px;
     margin-right: 4px;
+    font-size: 18px;
   }
 }
 
@@ -2939,6 +2964,12 @@ page > top > top-column
   display: grid;
   gap: 24px;
   margin-top: 24px;
+}
+@media screen and (min-width: 768px) {
+  .top-column-cards-wrapper {
+    margin-top: 32px;
+    gap: 8px;
+  }
 }
 
 /*!

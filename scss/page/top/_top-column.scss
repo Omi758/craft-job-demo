@@ -8,4 +8,8 @@ page > top > top-column
   display: grid;
   gap: 24px;
   margin-top: 24px;
+  @include g.mq() {
+    margin-top: 32px;
+    gap: 8px;
+  }
 }
