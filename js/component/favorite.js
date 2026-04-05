@@ -43,7 +43,6 @@ export const initializeFavorite = () => {
 
   if (favoriteList) {
     const favoriteIds = getFavorites();
-    // const loading = document.querySelector(".js-favorite-loading");
 
     if (favoriteIds.length === 0) {
       // お気に入りが0件の場合
