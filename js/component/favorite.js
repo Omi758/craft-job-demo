@@ -43,7 +43,7 @@ export const initializeFavorite = () => {
 
   if (favoriteList) {
     const favoriteIds = getFavorites();
-    const loading = document.querySelector(".js-favorite-loading");
+    // const loading = document.querySelector(".js-favorite-loading");
 
     if (favoriteIds.length === 0) {
       // お気に入りが0件の場合
@@ -85,6 +85,9 @@ export const initializeFavorite = () => {
                 }
               });
             });
+          } else {
+            favoriteList.innerHTML =
+              "<p>読み込みに失敗しました。ページを再読み込みしてください。</p>";
           }
         })
         .catch(() => {
