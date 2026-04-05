@@ -10,11 +10,9 @@ page > top > top-kv
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  padding-top: 61px;
 
   @include g.mq() {
     background-image: url("../img/top/top-kv-bg@2x.webp");
-    padding-top: 74px;
   }
 }
 
