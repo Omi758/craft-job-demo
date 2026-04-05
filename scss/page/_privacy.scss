@@ -5,6 +5,7 @@ page > privacy
 ------------------------------
 */
 .page-privacy-content {
+  counter-reset: section-counter;
   margin-top: 48px;
   font-size: 16px;
   font-weight: 500;
@@ -15,12 +16,21 @@ page > privacy
   }
 
   h2 {
+    counter-increment: section-counter;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.5;
     margin-top: 40px;
     @include g.mq() {
       font-size: 24px;
+    }
+
+    &::before {
+      content: counter(section-counter) ".";
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.3em;
+      text-align: right;
     }
   }
 
@@ -32,6 +42,6 @@ page > privacy
     margin-top: 8px;
     list-style-position: outside;
     list-style-type: decimal;
-    padding-left: 1.8em;
+    padding-left: 1.5em;
   }
 }
