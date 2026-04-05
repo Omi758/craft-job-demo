@@ -32,7 +32,7 @@ page > top > top-kv
 // エンブレム
 .top-kv-emblem {
   width: 199px;
-  aspect-ratio: 199 / 59;
+  aspect-ratio: 200 / 59;
   @include g.mq() {
     width: 232px;
     aspect-ratio: 233 / 76;

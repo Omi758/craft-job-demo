@@ -5,9 +5,16 @@
   <section class="top-kv">
     <div class="top-kv-container l-container">
       <div class="top-kv-text-content">
-        <img class="top-kv-emblem"
-          src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem.svg' ); ?>" width="465"
-          height="151" alt="制作会社の掲載数ナンバーワン" decoding="async" />
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem-pc.svg' ); ?>"
+            width="233" height="76" />
+          <img class="top-kv-emblem"
+            src="<?php echo esc_url( get_template_directory_uri() . '/img/top/top-kv-emblem-sp.svg' ); ?>"
+            width="200" height="59"
+            alt="制作会社の掲載数ナンバーワン" decoding="async" />
+        </picture>
         <h2 class="top-kv-title">
           <strong class="u-text--green"><span class="top-kv-title-accent">Web</span>制作会社</strong>への転職<span
             class="top-kv-title-sp-hidden">を、</span>
