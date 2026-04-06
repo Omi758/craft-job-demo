@@ -790,6 +790,28 @@ return $description;
 add_filter( 'ssp_output_description', 'craftjob_custom_description', 30 );
 
 
+/** ブロックエディタ：使用可能ブロックの制限 */
+function craftjob_allowed_blocks( $allowed_blocks, $editor_context ) {
+	if ( ! empty( $editor_context->post ) && $editor_context->post->post_type === 'post' ) {
+			return array(
+					'core/paragraph',
+					'core/heading',
+					'core/image',
+					'core/list',
+					'core/list-item',
+					'core/table',
+					'core/buttons',
+					'core/button',
+					'core/quote',
+					'core/embed',
+					'core/details',
+					'snow-monkey-blocks/balloon',
+					'snow-monkey-blocks/box',
+			);
+	}
+	return $allowed_blocks;
+}
+add_filter( 'allowed_block_types_all', 'craftjob_allowed_blocks', 10, 2 );
 
 /**
  * セキュリティ対策
