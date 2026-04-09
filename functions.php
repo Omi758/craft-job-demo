@@ -813,6 +813,28 @@ function craftjob_allowed_blocks( $allowed_blocks, $editor_context ) {
 }
 add_filter( 'allowed_block_types_all', 'craftjob_allowed_blocks', 10, 2 );
 
+
+/**
+ * ACF_Wysiwyg_カスタムツールバーの設定（不要なメニューを表示しないため）
+ * functions.phpでツールバーを定義後→ACF管理画面で各フィールドに「CraftJob用」を割り当てる
+ * （該当のWysiwygフィールド設定の中に「ツールバー」欄があるので、そこで「CraftJob用」を選択）
+ */
+function craftjob_customize_acf_wysiwyg_toolbar( $toolbars ) {
+	// 「CraftJob用」という新しいツールバーを追加
+	$toolbars['CraftJob用'] = array();
+	$toolbars['CraftJob用'][1] = array(
+		'bold',
+		'bullist',
+		'numlist',
+		'link',
+		'unlink',
+		'undo',
+		'redo',
+	);
+	return $toolbars;
+}
+add_filter( 'acf/fields/wysiwyg/toolbars', 'craftjob_customize_acf_wysiwyg_toolbar' );
+
 /**
  * セキュリティ対策
  * 参考記事：https://baigie.me/officialblog/2020/01/28/wordpress-security/
