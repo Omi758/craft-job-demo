@@ -1,7 +1,5 @@
     <!-- カード（トップページ用） -->
     <article class="c-card-top-container">
-      <a class="c-card-top-link" href="<?php the_permalink(); ?>"
-        aria-label="<?php echo esc_attr( get_the_title() . 'の詳細を見る' ); ?>"></a>
       <div class="c-card-top-image">
         <?php if ( has_post_thumbnail() ): ?>
         <?php the_post_thumbnail('medium_large', array(
@@ -23,7 +21,9 @@
           <?php endif; ?>
           <h3 class="c-card-top-company"><?php echo esc_html( $company_name ); ?></h3>
         </div>
-        <p class="c-card-top-copy"><?php the_title(); ?></p>
+        <p class="c-card-top-copy">
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </p>
         <?php
         $tags = get_the_terms( get_the_ID(), 'job_tag' );
         if ( ! is_wp_error( $tags ) && ! empty( $tags ) ) :
