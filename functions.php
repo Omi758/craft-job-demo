@@ -450,7 +450,14 @@ add_filter( 'post_link', 'craftjob_column_permalink', 10, 3 );
  * /column/記事名/のリライトルールを追加
 */
 function craftjob_column_rewrite_rules(){
-// カテゴリ―別（より具体的なルールを先に）
+// カテゴリー別（ページネーションあり）
+add_rewrite_rule(
+	'column/category/([^/]+)/page/([0-9]+)/?$',
+	'index.php?column_category=$matches[1]&paged=$matches[2]',
+	'top'
+);
+
+// カテゴリ―別（１ページ目）
 add_rewrite_rule(
 	'column/category/([^/]+)/?$',
 	'index.php?column_category=$matches[1]',
