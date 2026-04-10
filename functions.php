@@ -160,17 +160,30 @@ function craftjob_validate_kana( $result, $tag ) {
  * タクソノミー条件（tax_query）の組み立て_archive-recruit.php
  * 年収条件（meta_query）の組み立て_archive-recruit.php
  */
+function craftjob_column_category_template( $template ) {
+	if ( get_query_var( 'column_category' ) ) {
+		$new_template = locate_template( 'home.php' );
+		if ( $new_template ) {
+			return $new_template;
+		}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'craftjob_column_category_template' );
+
+
 function craftjob_posts_per_page( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
 	// コラム一覧_表示件数9件
-	if ( $query->is_home() ) {
+	if ( $query->is_home() || get_query_var( 'column_category' )  ) {
 		$query->set( 'posts_per_page', 9 );
 
-		// カテゴリパラメータで記事を絞り込む
-		if ( isset( $_GET['category'] )  && '' !== $_GET['category']) {
-			$category_slug = sanitize_text_field( wp_unslash( $_GET['category'] ));
+		// カテゴリで記事を絞り込む
+		$category_slug = get_query_var('column_category');
+		if ( $category_slug ) {
+			$query->set( 'post_type', 'post' );
 			$category = get_category_by_slug($category_slug);
 			if ( $category ) {
 			    $query->set( 'category_name', $category_slug );
@@ -351,13 +364,13 @@ function craftjob_pagination() {
 
 
 	/**
- * パンくずリストのカテゴリーURLを/column/?category={slug}に変更
+ * パンくずリストのカテゴリーURLを/column/category/{slug}に変更
  */
 function craftjob_breadcrumb_category_url( $url, $type, $id ) {
 	if ($type[0] === 'taxonomy' && $type[1] === 'category') {
 		$term = get_term( $id, 'category' );
 		if ($term && ! is_wp_error( $term )) {
-			$url = home_url( '/column/?category=' . $term->slug );
+			$url = home_url( '/column/category/' . $term->slug . '/' );
 		}
 	}
 	return $url;
@@ -396,6 +409,7 @@ add_action( 'init', 'craftjob_register_block_styles' );
  */
 function craftjob_custom_query_vars( $vars ) {
 	$vars[] ='craftjob_page';
+	$vars[] ='column_category';
 	return $vars;
 }
 add_filter( 'query_vars', 'craftjob_custom_query_vars' );
@@ -436,11 +450,20 @@ add_filter( 'post_link', 'craftjob_column_permalink', 10, 3 );
  * /column/記事名/のリライトルールを追加
 */
 function craftjob_column_rewrite_rules(){
+// カテゴリ―別（より具体的なルールを先に）
+add_rewrite_rule(
+	'column/category/([^/]+)/?$',
+	'index.php?column_category=$matches[1]',
+	'top'
+);
+
+	// コラム個別記事
 	add_rewrite_rule(
 		'column/([^/]+)/?$',
 		'index.php?name=$matches[1]',
 		'top'
 	);
+	
 }
 add_action( 'init', 'craftjob_column_rewrite_rules' );
 
@@ -752,8 +775,8 @@ function craftjob_custom_title( $title ) {
 	}
 
 	// コラムカテゴリー
-	if ( is_home() && ! empty( $_GET['category'] ) ) {
-			$category = get_category_by_slug( sanitize_text_field( wp_unslash( $_GET['category'] ) ) );
+	if ( get_query_var( 'column_category' ) ) {
+			$category = get_category_by_slug( get_query_var( 'column_category' ) );
 			if ( $category ) {
 					return esc_html( $category->name ) . ' | ' . get_bloginfo( 'name' );
 			}

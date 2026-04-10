@@ -56,9 +56,9 @@
     <?php if ( function_exists( 'bcn_display' ) ) { bcn_display(); } ?>
     <?php endif; ?>
 
-    <?php elseif ( is_home() && ! empty( $_GET['category'] ) ) : ?>
+    <?php elseif ( get_query_var( 'column_category' ) ) : ?>
     <?php
-        $category_slug = sanitize_text_field( wp_unslash( $_GET['category'] ) );
+        $category_slug = get_query_var( 'column_category' );
         $category = get_category_by_slug( $category_slug );
         ?>
     <span property="itemListElement">
