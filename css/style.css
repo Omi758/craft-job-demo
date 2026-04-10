@@ -1732,64 +1732,55 @@ component > search-form
 component > pagenation
 ------------------------------
 */
-.c-pagination-container {
+.navigation.pagination {
   margin-top: 64px;
 }
 @media screen and (min-width: 768px) {
-  .c-pagination-container {
+  .navigation.pagination {
     margin-top: 80px;
   }
 }
-
-.c-pagination-list {
+.navigation.pagination .nav-links {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
 }
-
-.c-pagination-item {
+.navigation.pagination .page-numbers {
   width: 32px;
   height: 32px;
   background-color: var(--white);
   border-radius: 50vh;
-  overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  .c-pagination-item {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.c-pagination-link {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.c-pagination-link:hover {
+.navigation.pagination .page-numbers:hover {
   background-color: var(--primary-green);
   color: var(--white);
 }
-
-.c-pagination-link--prev,
-.c-pagination-link--next {
+@media screen and (min-width: 768px) {
+  .navigation.pagination .page-numbers {
+    width: 40px;
+    height: 40px;
+  }
+}
+.navigation.pagination .prev.page-numbers,
+.navigation.pagination .next.page-numbers {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.c-pagination-link--prev:hover,
-.c-pagination-link--next:hover {
+.navigation.pagination .prev.page-numbers:hover,
+.navigation.pagination .next.page-numbers:hover {
   background-color: var(--primary-green);
   color: var(--white);
 }
-.c-pagination-link--prev:hover::before,
-.c-pagination-link--next:hover::before {
+.navigation.pagination .prev.page-numbers:hover::before,
+.navigation.pagination .next.page-numbers:hover::before {
   background-color: var(--white);
 }
-.c-pagination-link--prev::before,
-.c-pagination-link--next::before {
+.navigation.pagination .prev.page-numbers::before,
+.navigation.pagination .next.page-numbers::before {
   content: "";
   display: block;
   width: 9px;
@@ -1805,30 +1796,17 @@ component > pagenation
   background-color: var(--font-base);
   transition: background-color 0.3s ease;
 }
-
-.c-pagination-link--prev::before {
+.navigation.pagination .prev.page-numbers::before {
   transform: rotate(180deg);
 }
-
-.c-pagination-link.is-active {
+.navigation.pagination .page-numbers.current {
   background-color: var(--primary-green);
   color: var(--white);
 }
-
-.c-pagination-dots {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.c-pagination-dots-icon {
-  display: block;
-  width: 18px;
-  height: 18px;
+.navigation.pagination .page-numbers.dots {
+  background-color: transparent;
   background-image: url("../img/common/icon-dots.svg");
-  background-size: contain;
+  background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center;
 }
