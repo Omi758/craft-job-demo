@@ -12,7 +12,7 @@
   </div>
   <!-- カテゴリ絞り込みボタン -->
   <?php
-   $current_category = isset($_GET['category']) ? sanitize_text_field( wp_unslash( $_GET['category'] ) ) : '';
+   $current_category = get_query_var('column_category', '');
    $categories = get_categories( array(
     'orderby' => 'menu_order',
     'order' => 'ASC',
@@ -27,7 +27,7 @@
       </li>
       <?php foreach ( $categories as $term ) : ?>
       <li class="c-pill-link<?php echo ($current_category === $term->slug ) ? ' is-active ' : '';?>">
-        <a href="<?php echo esc_url( home_url( '/column/?category=' . $term->slug ) ); ?>">
+        <a href="<?php echo esc_url( home_url( '/column/category/' . $term->slug . '/' ) ); ?>">
           <?php echo esc_html( $term->name ); ?>
         </a>
       </li>
