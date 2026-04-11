@@ -45,7 +45,7 @@
         <?php get_template_part('template-parts/card-column'); ?>
         <?php endwhile; ?>
         <?php else : ?>
-        <p>記事が見つかりませんでした。</p>
+        <p>お探しのコラムが見つかりませんでした。</p>
         <?php endif; ?>
       </div>
 

@@ -24,7 +24,7 @@
         <?php get_template_part('template-parts/card-recruit'); ?>
         <?php endwhile; ?>
         <?php else : ?>
-        <p>記事が見つかりませんでした。</p>
+        <p>お探しの求人が見つかりませんでした。</p>
         <?php endif; ?>
       </div>
 

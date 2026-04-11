@@ -106,7 +106,7 @@
         <?php endif; ?>
         <?php endwhile; ?>
         <?php else : ?>
-        <p>記事が見つかりませんでした。</p>
+        <p>お探しの求人が見つかりませんでした。</p>
         <?php endif; ?>
       </div>
 
