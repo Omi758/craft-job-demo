@@ -10,11 +10,13 @@ $craftjob_rank = ( isset( $args ) && isset( $args['rank'] ) ) ? max( 1, (int) $a
         class="c-card-archive-views-number"><?php echo esc_html( (int) get_post_meta( get_the_ID(), 'craftjob_views_7days', true ) ); ?></span>Views
     </div>
     <div class="c-card-archive-image">
-      <?php if ( has_post_thumbnail() ) : ?>
-      <?php the_post_thumbnail( 'medium_large', array(
+      <a href="<?php the_permalink(); ?>">
+        <?php if ( has_post_thumbnail() ) : ?>
+        <?php the_post_thumbnail( 'medium_large', array(
         'decoding' => 'async',
       ) ); ?>
-      <?php endif; ?>
+        <?php endif; ?>
+      </a>
     </div>
   </div>
 
@@ -31,7 +33,7 @@ $craftjob_rank = ( isset( $args ) && isset( $args['rank'] ) ) ? max( 1, (int) $a
       <?php endif; ?>
     </div>
 
-    <p class="c-card-archive-copy"><?php the_title(); ?></p>
+    <p class="c-card-archive-copy"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 
     <ul class="c-card-archive-tags">
       <?php $tags = get_the_terms( get_the_ID(), 'job_tag' ); ?>
@@ -88,8 +90,7 @@ $craftjob_rank = ( isset( $args ) && isset( $args['rank'] ) ) ? max( 1, (int) $a
   <div class="c-card-link-container c-card-link-recruit-container">
     <a class="c-card-link c-card-link-apply" href="<?php the_permalink(); ?>#recruit-single-entry-form"
       aria-label="求人に応募する">応募する</a>
-    <a class="c-card-link c-card-link-view-more" href="<?php the_permalink(); ?>#recruit-single-detail"
-      aria-label="求人の詳細を見る">詳しく見る</a>
+    <a class="c-card-link c-card-link-view-more" href="<?php the_permalink(); ?>" aria-label="求人の詳細を見る">詳しく見る</a>
     <button class="c-card-link c-card-link-favorite js-favorite-button" type="button"
       data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" aria-label="求人募集記事をお気に入り登録する">お気に入り</button>
 
