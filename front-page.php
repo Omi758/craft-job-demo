@@ -77,7 +77,7 @@
               <!-- 人気求人カード -->
               <?php while ( $popular_query->have_posts() ) : $popular_query->the_post(); ?>
               <div class="splide__slide">
-                <?php get_template_part('template-parts/card-top'); ?>
+                <?php get_template_part('template-parts/card-recruit-simple'); ?>
               </div>
               <?php endwhile; ?>
             </div>
@@ -97,7 +97,7 @@
     <section class="top-slider-section top-slider-remote">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">リモート可の求人</h2>
-        <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/remote/' ) ); ?>">もっと見る</a>
+        <a class="c-slider-link" href="<?php echo esc_url( get_term_link( 'remote', 'job_tag' ) ); ?>">もっと見る</a>
       </div>
       <div class="top-slider-container">
 
@@ -126,7 +126,7 @@
               <!-- リモート可の求人カード -->
               <?php while ( $remote_query->have_posts() ) : $remote_query->the_post(); ?>
               <div class="splide__slide">
-                <?php get_template_part( 'template-parts/card-top' ); ?>
+                <?php get_template_part( 'template-parts/card-recruit-simple' ); ?>
               </div>
               <!-- リモート可の求人カード end -->
               <?php endwhile; ?>
@@ -146,7 +146,7 @@
     <section class="top-slider-section top-slider-side-job">
       <div class="c-slider-title-container">
         <h2 class="c-slider-title">副業OKの求人</h2>
-        <a class="c-slider-link" href="<?php echo esc_url( home_url( '/recruit/job_tag/side-job/' ) ); ?>">もっと見る</a>
+        <a class="c-slider-link" href="<?php echo esc_url( get_term_link( 'side-job', 'job_tag' ) ); ?>">もっと見る</a>
       </div>
       <div class="top-slider-container">
         <?php
@@ -174,7 +174,7 @@
               <!-- 副業OKの求人カード -->
               <?php while ( $side_job_query->have_posts() ) : $side_job_query->the_post(); ?>
               <div class="splide__slide">
-                <?php get_template_part( 'template-parts/card-top' ); ?>
+                <?php get_template_part( 'template-parts/card-recruit-simple' ); ?>
               </div>
               <?php endwhile; ?>
             </div>
@@ -338,16 +338,16 @@
           <?php if ( $column_query->have_posts() ) : ?>
           <div class="top-column-cards-wrapper">
             <?php while ( $column_query->have_posts() ): $column_query->the_post(); ?>
-            <article class="c-card-top-column-container">
+            <article class="c-card-column-featured-container">
               <a href="<?php the_permalink(); ?>">
-                <div class="c-card-top-column-image">
+                <div class="c-card-column-featured-image">
                   <?php if ( has_post_thumbnail() ) : ?>
                   <?php the_post_thumbnail( 'medium_large', array(
                     'decoding' => 'async',
                   ) ); ?>
                   <?php endif; ?>
                 </div>
-                <div class="c-card-top-column-content">
+                <div class="c-card-column-featured-content">
                   <?php
                   $categories = get_the_category();
                   if ( ! empty( $categories ) ) :
@@ -356,7 +356,7 @@
                     <?php echo esc_html( $categories[0]->name ); ?>
                   </span>
                   <?php endif; ?>
-                  <h3 class="c-card-top-column-title"><?php the_title(); ?></h3>
+                  <h3 class="c-card-column-featured-title"><?php the_title(); ?></h3>
                   <div class="c-card-column-date-container">
                     <time class="c-card-column-date" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>">
                       <?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?>

@@ -5,10 +5,10 @@ component > card
 ------------------------------
 */
 /*
- * トップページ用求人カード
+ * 求人カード（簡易版）
  */
 
-.c-card-top-container {
+.c-card-recruit-simple-container {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -26,7 +26,7 @@ component > card
 
   /* カードホバー時のアニメーション */
   &:hover {
-    .c-card-top-image img {
+    .c-card-recruit-simple-image img {
       transform: scale(1.05);
     }
     .c-card-link-view-more {
@@ -40,40 +40,40 @@ component > card
   }
 }
 
-.c-card-top-image {
+.c-card-recruit-simple-image {
   width: 100%;
   aspect-ratio: 340 / 183;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
 }
 
-.c-card-top-image img {
+.c-card-recruit-simple-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.c-card-top-content {
+.c-card-recruit-simple-content {
   padding: 24px;
 }
-.c-card-top-header {
+.c-card-recruit-simple-header {
   display: flex;
   place-items: center;
   gap: 12px;
 }
 
-.c-card-top-company-logo {
+.c-card-recruit-simple-company-logo {
   width: 45px;
   aspect-ratio: 1 / 1;
   border-radius: 6px;
 }
-.c-card-top-company {
+.c-card-recruit-simple-company {
   font-size: 14px;
   font-weight: 700;
 }
 
-.c-card-top-copy {
+.c-card-recruit-simple-copy {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
@@ -91,7 +91,7 @@ component > card
 }
 
 /* aタグの疑似要素にカード全体をクリック可能にするオーバーレイリンクを設定（z-index:1;） */
-.c-card-top-copy a {
+.c-card-recruit-simple-copy a {
   color: inherit;
   text-decoration: none;
 
@@ -102,7 +102,7 @@ component > card
     z-index: 1;
   }
 }
-.c-card-top-tags {
+.c-card-recruit-simple-tags {
   margin-top: 8px;
   display: flex;
   gap: 2px 18px;
@@ -110,7 +110,7 @@ component > card
 }
 
 // タグはz-index:2;で前面に出す（カード全体のaタグの疑似要素より前面）
-.c-card-top-tags li a {
+.c-card-recruit-simple-tags li a {
   position: relative;
   z-index: 2;
   font-weight: 700;
@@ -170,7 +170,7 @@ component > card
   transition: background-color 0.3s ease;
 }
 
-// カードリンク_view-more（トップは親.c-card-top-container:hoverと併用、下層はリンク自身のhover/focus）
+// カードリンク_view-more（簡易版は親.c-card-recruit-simple-container:hoverと併用、下層はリンク自身のhover/focus）
 .c-card-link-view-more {
   border: 1px solid var(--primary-green);
   color: var(--primary-green);
@@ -275,29 +275,29 @@ component > card
 }
 
 /**
-* トップページ_コラムカード
+* 注目コラムカード
 */
-.c-card-top-column-container {
+.c-card-column-featured-container {
   background-color: var(--white);
   border-radius: 12px;
   width: 100%;
 }
 
-.c-card-top-column-container a {
+.c-card-column-featured-container a {
   display: grid;
   @include g.mq() {
     grid-template-columns: auto 1fr;
   }
 
-  &:hover .c-card-top-column-image img {
+  &:hover .c-card-column-featured-image img {
     transform: scale(1.05);
   }
-  &:hover .c-card-top-column-title {
+  &:hover .c-card-column-featured-title {
     color: var(--primary-green);
   }
 }
 
-.c-card-top-column-image {
+.c-card-column-featured-image {
   width: 100%;
   aspect-ratio: 342 / 192;
   border-radius: 12px 12px 0 12px;
@@ -310,7 +310,7 @@ component > card
   }
 }
 
-.c-card-top-column-image img {
+.c-card-column-featured-image img {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -318,13 +318,13 @@ component > card
   transition: transform 0.3s ease;
 }
 
-.c-card-top-column-content {
+.c-card-column-featured-content {
   padding: 24px 16px;
   width: 100%;
   min-width: 0;
   overflow: hidden;
 }
-.c-card-top-column-title {
+.c-card-column-featured-title {
   font-size: 18px;
   font-weight: 700;
   white-space: normal;
