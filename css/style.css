@@ -1961,14 +1961,14 @@ component > cf7-form
   border-color: var(--error-red-text);
 }
 .c-cf7-form {
-  /* バリデーションエラー(橙) */
+  /* バリデーションエラー(赤) */
 }
 .c-cf7-form .wpcf7 form.invalid .wpcf7-response-output,
 .c-cf7-form .wpcf7 form.unaccepted .wpcf7-response-output,
 .c-cf7-form .wpcf7 form.payment-required .wpcf7-response-output {
-  background: var(--warning-orange);
-  color: var(--warning-orange-text);
-  border-color: var(--warning-orange-text);
+  background: var(--error-red);
+  color: var(--error-red-text);
+  border-color: var(--error-red-text);
 }
 
 /*!
