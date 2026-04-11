@@ -1,6 +1,6 @@
 # 🧩 Craft Job – WordPress Original Theme（架空サイト）
 
-![craft job demo-site](img/craftjob_git_screenshot.webp "craft job demo-site")
+![craft job demo-site](img/craftjob_git-screenshot.webp "craft job demo-site")
 
 ## 🔗 Demo
 
