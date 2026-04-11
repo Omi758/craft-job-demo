@@ -117,6 +117,17 @@ component > card
   color: var(--primary-green);
   transition: opacity 0.3s ease;
 
+  &::before {
+    content: "#";
+    display: inline-block;
+    width: 10px;
+    height: 26px;
+    @include g.mq() {
+      width: 11px;
+      height: 29px;
+    }
+  }
+
   &:hover {
     opacity: 0.7;
   }
@@ -338,8 +349,17 @@ component > card
   background-color: var(--white);
   border: 1px solid var(--border-light);
   container: archive-card / inline-size; // CSS Container Queries_基準
-}
 
+  &:has(.c-card-archive-image a:hover),
+  &:has(.c-card-archive-copy a:hover) {
+    .c-card-archive-image img {
+      transform: scale(1.05);
+    }
+    .c-card-archive-copy a {
+      color: var(--primary-green);
+    }
+  }
+}
 .c-card-archive-image {
   width: 100%;
   aspect-ratio: 340 / 132;
@@ -347,10 +367,17 @@ component > card
   overflow: hidden;
 }
 
+.c-card-archive-image a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .c-card-archive-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .c-card-archive-content {
@@ -387,6 +414,12 @@ component > card
     font-size: 28px;
     margin-top: 8px;
   }
+  a {
+    width: 100%;
+    display: block;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
 }
 
 .c-card-archive-tags {
@@ -400,8 +433,12 @@ component > card
   font-size: 16px;
   font-weight: 700;
   color: var(--primary-green);
+  transition: opacity 0.3s ease;
   @include g.mq() {
     font-size: 18px;
+  }
+  &:hover {
+    opacity: 0.7;
   }
   &::before {
     content: "#";

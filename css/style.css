@@ -819,6 +819,18 @@ component > card
   color: var(--primary-green);
   transition: opacity 0.3s ease;
 }
+.c-card-top-tags li a::before {
+  content: "#";
+  display: inline-block;
+  width: 10px;
+  height: 26px;
+}
+@media screen and (min-width: 768px) {
+  .c-card-top-tags li a::before {
+    width: 11px;
+    height: 29px;
+  }
+}
 .c-card-top-tags li a:hover {
   opacity: 0.7;
 }
@@ -1063,6 +1075,12 @@ component > card
   border: 1px solid var(--border-light);
   container: archive-card/inline-size;
 }
+.c-card-archive-container:has(.c-card-archive-image a:hover) .c-card-archive-image img, .c-card-archive-container:has(.c-card-archive-copy a:hover) .c-card-archive-image img {
+  transform: scale(1.05);
+}
+.c-card-archive-container:has(.c-card-archive-image a:hover) .c-card-archive-copy a, .c-card-archive-container:has(.c-card-archive-copy a:hover) .c-card-archive-copy a {
+  color: var(--primary-green);
+}
 
 .c-card-archive-image {
   width: 100%;
@@ -1071,11 +1089,18 @@ component > card
   overflow: hidden;
 }
 
+.c-card-archive-image a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .c-card-archive-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .c-card-archive-content {
@@ -1121,6 +1146,12 @@ component > card
     margin-top: 8px;
   }
 }
+.c-card-archive-copy a {
+  width: 100%;
+  display: block;
+  color: inherit;
+  transition: color 0.3s ease;
+}
 
 .c-card-archive-tags {
   margin-top: 16px;
@@ -1133,11 +1164,15 @@ component > card
   font-size: 16px;
   font-weight: 700;
   color: var(--primary-green);
+  transition: opacity 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .c-card-archive-tags li a {
     font-size: 18px;
   }
+}
+.c-card-archive-tags li a:hover {
+  opacity: 0.7;
 }
 .c-card-archive-tags li a::before {
   content: "#";
