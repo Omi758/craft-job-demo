@@ -15,7 +15,11 @@ layout > footer
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
+  padding: 24px 0 86px;
+
+  @include g.mq() {
+    padding: 24px 0;
+  }
 
   @include g.mq(lg) {
     flex-direction: row;
