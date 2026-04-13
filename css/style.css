@@ -2423,7 +2423,12 @@ layout > footer
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
+  padding: 24px 0 86px;
+}
+@media screen and (min-width: 768px) {
+  .l-footer-inner {
+    padding: 24px 0;
+  }
 }
 @media screen and (min-width: 1080px) {
   .l-footer-inner {
