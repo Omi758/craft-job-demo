@@ -234,6 +234,12 @@
           <div class="c-cf7-form">
             <?php echo do_shortcode('[contact-form-7 id="a0bb085" title="エントリーフォーム"]'); ?>
           </div>
+
+          <p class="recaptcha-credit">
+            <span>このサイトはreCAPTCHAによって保護されており、</span>Googleの<a href="https://policies.google.com/privacy" target="_blank"
+              rel="noopener noreferrer">プライバシーポリシー</a>と
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">利用規約</a>が適用されます。
+          </p>
         </div>
       </section>
       <!-- エントリーフォーム end -->

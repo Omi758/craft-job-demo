@@ -62,10 +62,6 @@ page > recruit-single > recruit-single
 
 .recruit-single-section-container {
   display: grid;
-  gap: 24px;
-  @include g.mq(lg) {
-    gap: 32px;
-  }
 }
 
 .recruit-single-section-title {

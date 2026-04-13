@@ -39,3 +39,8 @@ utility > utility
 .is-hash-loading {
   visibility: hidden;
 }
+
+// reCAPTCHAバッチの非表示
+.grecaptcha-badge {
+  visibility: hidden;
+}
