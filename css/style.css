@@ -179,7 +179,8 @@ button {
   font-size: 100%;
   border-radius: 0;
   border: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   -webkit-appearance: none;
   background-color: inherit;
 }
@@ -306,6 +307,10 @@ utility > utility
   visibility: hidden;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /*!
 utility > hover
 ------------------------------
@@ -347,6 +352,7 @@ component > button
 */
 /* カードリンク_view-more */
 .c-button-link-container {
+  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
 }
@@ -386,15 +392,19 @@ component > button
   display: block;
   width: 24px;
   height: 24px;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
   transition: background-color 0.3s ease;
 }
 
 .c-button-link--home::before {
-  mask-image: url("../img/common/icon-home.svg");
+  -webkit-mask-image: url("../img/common/icon-home.svg");
+          mask-image: url("../img/common/icon-home.svg");
 }
 
 /*!
@@ -484,10 +494,14 @@ component > pill-link
   width: 23px;
   aspect-ratio: 1/1;
   background-color: var(--favorite);
-  mask-image: url("../img/common/header/icon-favorite.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/header/icon-favorite.svg");
+          mask-image: url("../img/common/header/icon-favorite.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   transition: background-color 0.3s ease;
 }
 .c-favorite-button-icon:hover {
@@ -595,10 +609,14 @@ component > page-title_(column/privacy/404)
   display: inline-block;
   width: 20px;
   height: 20px;
-  mask-image: url("../img/common/icon-arrow.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-arrow.svg");
+          mask-image: url("../img/common/icon-arrow.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--primary-green);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -677,10 +695,14 @@ component > breadcrumb
   width: 20px;
   height: 20px;
   margin-right: 3px;
-  mask-image: url("../img/common/icon-home.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-home.svg");
+          mask-image: url("../img/common/icon-home.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
 }
 
@@ -731,7 +753,8 @@ component > card
 .c-card-recruit-simple-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -849,9 +872,12 @@ component > card
   display: block;
   width: 24px;
   height: 24px;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   transition: background-color 0.3s ease;
 }
 
@@ -869,7 +895,8 @@ component > card
   background-color: var(--white);
 }
 .c-card-link-view-more::before {
-  mask-image: url("../img/common/icon-detail.svg");
+  -webkit-mask-image: url("../img/common/icon-detail.svg");
+          mask-image: url("../img/common/icon-detail.svg");
   background-color: var(--primary-green);
   transition: background-color 0.3s ease;
 }
@@ -881,7 +908,8 @@ component > card
   transition: opacity 0.3s ease;
 }
 .c-card-link-apply::before {
-  mask-image: url("../img/common/icon-apply.svg");
+  -webkit-mask-image: url("../img/common/icon-apply.svg");
+          mask-image: url("../img/common/icon-apply.svg");
   background-color: var(--white);
 }
 .c-card-link-apply:hover {
@@ -896,7 +924,8 @@ component > card
   color: var(--favorite);
 }
 .c-card-link-favorite::before {
-  mask-image: url("../img/common/header/icon-favorite.svg");
+  -webkit-mask-image: url("../img/common/header/icon-favorite.svg");
+          mask-image: url("../img/common/header/icon-favorite.svg");
   background-color: var(--favorite);
 }
 .c-card-link-favorite {
@@ -1010,7 +1039,8 @@ component > card
   width: 100%;
   height: 100%;
   overflow: hidden;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -1072,7 +1102,8 @@ component > card
 .c-card-archive-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -1311,7 +1342,8 @@ component > card
 .c-card-column-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -1380,10 +1412,14 @@ component > search-form
   display: block;
   width: 24px;
   height: 24px;
-  mask-image: url("../img/common/icon-filter.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-filter.svg");
+          mask-image: url("../img/common/icon-filter.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--primary-green);
 }
 
@@ -1462,26 +1498,33 @@ component > search-form
   display: block;
   width: 22px;
   height: 22px;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--primary-green);
 }
 
 .c-search-form-label--area::before {
-  mask-image: url("../img/common/icon-area.svg");
+  -webkit-mask-image: url("../img/common/icon-area.svg");
+          mask-image: url("../img/common/icon-area.svg");
 }
 
 .c-search-form-label--employment-type::before {
-  mask-image: url("../img/common/icon-employment.svg");
+  -webkit-mask-image: url("../img/common/icon-employment.svg");
+          mask-image: url("../img/common/icon-employment.svg");
 }
 
 .c-search-form-label--job-category::before {
-  mask-image: url("../img/common/icon-role.svg");
+  -webkit-mask-image: url("../img/common/icon-role.svg");
+          mask-image: url("../img/common/icon-role.svg");
 }
 
 .c-search-form-label--salary::before {
-  mask-image: url("../img/common/icon-salary.svg");
+  -webkit-mask-image: url("../img/common/icon-salary.svg");
+          mask-image: url("../img/common/icon-salary.svg");
 }
 
 .c-search-form-label-salary-inner {
@@ -1541,6 +1584,9 @@ component > search-form
 .c-search-form-salary--max {
   padding: 10px 12px;
 }
+.c-search-form-salary--min::-moz-placeholder, .c-search-form-salary--max::-moz-placeholder {
+  opacity: 0.54;
+}
 .c-search-form-salary--min::placeholder,
 .c-search-form-salary--max::placeholder {
   opacity: 0.54;
@@ -1553,6 +1599,10 @@ component > search-form
 .c-search-form-label-separator {
   font-size: 12px;
   font-weight: 700;
+}
+
+[class^=c-search-form-salary--]::-moz-placeholder {
+  opacity: 0.54;
 }
 
 [class^=c-search-form-salary--]::placeholder {
@@ -1595,10 +1645,14 @@ component > search-form
   display: block;
   width: 24px;
   height: 24px;
-  mask-image: url("../img/common/icon-search.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-search.svg");
+          mask-image: url("../img/common/icon-search.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
 }
 
@@ -1633,10 +1687,13 @@ component > search-form
   display: block;
   width: 24px;
   height: 24px;
-  mask-image: url("../img/common/icon-filter.svg");
+  -webkit-mask-image: url("../img/common/icon-filter.svg");
+          mask-image: url("../img/common/icon-filter.svg");
   background-color: var(--white);
-  mask-size: contain;
-  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .c-search-form-top-body {
@@ -1693,10 +1750,14 @@ component > search-form
   display: block;
   width: 24px;
   height: 24px;
-  mask-image: url("../img/common/icon-search.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-search.svg");
+          mask-image: url("../img/common/icon-search.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
 }
 @media screen and (min-width: 768px) {
@@ -1763,10 +1824,14 @@ component > pagenation
   display: block;
   width: 9px;
   height: 9px;
-  mask-image: url("../img/common/icon-arrow-right.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-arrow-right.svg");
+          mask-image: url("../img/common/icon-arrow-right.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--font-base);
   transition: background-color 0.3s ease;
 }
@@ -1834,6 +1899,10 @@ component > cf7-form
   .c-cf7-form .wpcf7-form-control {
     font-size: 18px;
   }
+}
+.c-cf7-form .wpcf7-form-control::-moz-placeholder {
+  color: var(--font-light);
+  opacity: 0.6;
 }
 .c-cf7-form .wpcf7-form-control::placeholder {
   color: var(--font-light);
@@ -1941,6 +2010,25 @@ component > cf7-form
   border-color: var(--error-red-text);
 }
 
+.recaptcha-credit {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .recaptcha-credit {
+    font-size: 14px;
+  }
+}
+.recaptcha-credit span {
+  display: block;
+}
+.recaptcha-credit a {
+  text-decoration: underline;
+  color: inherit;
+}
+
 /*!
 component > slider
 ------------------------------
@@ -1989,10 +2077,14 @@ component > slider
   display: block;
   width: 16px;
   height: 16px;
-  mask-image: url("../img/common/icon-arrow-slider.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/icon-arrow-slider.svg");
+          mask-image: url("../img/common/icon-arrow-slider.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
   transition: background-color 0.3s ease;
 }
@@ -2235,9 +2327,12 @@ layout > header
   display: block;
   width: 24px;
   height: 24px;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--white);
 }
 @media screen and (min-width: 500px) {
@@ -2260,19 +2355,23 @@ layout > header
 
 /* 各アイコンを指定（a::before に指定してリンク範囲に含める） */
 .l-header-nav-item--recruit a::before {
-  mask-image: url("../img/common/icon-search.svg");
+  -webkit-mask-image: url("../img/common/icon-search.svg");
+          mask-image: url("../img/common/icon-search.svg");
 }
 
 .l-header-nav-item--popular a::before {
-  mask-image: url("../img/common/header/icon-new.svg");
+  -webkit-mask-image: url("../img/common/header/icon-new.svg");
+          mask-image: url("../img/common/header/icon-new.svg");
 }
 
 .l-header-nav-item--favorite a::before {
-  mask-image: url("../img/common/header/icon-favorite.svg");
+  -webkit-mask-image: url("../img/common/header/icon-favorite.svg");
+          mask-image: url("../img/common/header/icon-favorite.svg");
 }
 
 .l-header-nav-item--column a::before {
-  mask-image: url("../img/common/header/icon-column.svg");
+  -webkit-mask-image: url("../img/common/header/icon-column.svg");
+          mask-image: url("../img/common/header/icon-column.svg");
 }
 
 .l-header-nav-item--favorite a {
@@ -2540,6 +2639,7 @@ page > top > top-kv
 }
 
 .top-kv-text-items {
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -2566,6 +2666,7 @@ page > top > top-kv
 @media screen and (min-width: 650px) {
   .top-kv-text-item {
     padding: 6px 18px 6px 14px;
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 18px;
   }
@@ -2639,7 +2740,8 @@ page > top > top-kv
 
 .top-kv-image img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .top-kv-search-bar {
@@ -2981,12 +3083,6 @@ page > recruit-single > recruit-single
 
 .recruit-single-section-container {
   display: grid;
-  gap: 24px;
-}
-@media screen and (min-width: 1080px) {
-  .recruit-single-section-container {
-    gap: 32px;
-  }
 }
 
 .recruit-single-section-title {
@@ -3298,7 +3394,8 @@ page > column > column-single
   width: 100%;
   height: auto;
   aspect-ratio: unset !important;
-  object-fit: unset !important;
+  -o-object-fit: unset !important;
+     object-fit: unset !important;
   margin-top: 24px;
 }
 .entry-content strong {
@@ -3374,11 +3471,16 @@ page > column > column-single
 .entry-content #ez-toc-container .ez-toc-title::before {
   content: "";
   display: block;
-  mask-image: url(../img/common/icon-toc.svg);
-  mask-size: cover;
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
+  -webkit-mask-image: url(../img/common/icon-toc.svg);
+          mask-image: url(../img/common/icon-toc.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   background-color: var(--white);
   width: 27px;
   height: 27px;
@@ -3446,10 +3548,14 @@ page > column > column-single
   right: 6px;
   width: 60px;
   height: 42px;
-  mask-image: url("../img/common/css_icon-blockquote.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  -webkit-mask-image: url("../img/common/css_icon-blockquote.svg");
+          mask-image: url("../img/common/css_icon-blockquote.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--black);
 }
 .entry-content blockquote .has-background {
@@ -3529,6 +3635,7 @@ page > column > column-single
   margin-top: 24px;
 }
 .entry-content details summary {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   font-weight: 700;
@@ -3773,4 +3880,4 @@ page > contact
   .page-contact-content {
     margin-top: 48px;
   }
-}
+}/*# sourceMappingURL=style.css.map */

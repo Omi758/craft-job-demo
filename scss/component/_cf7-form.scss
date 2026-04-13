@@ -152,3 +152,24 @@ component > cf7-form
     border-color: var(--error-red-text);
   }
 }
+
+// ------------------------------------------
+// reCAPTCHA クレジット表記
+// ------------------------------------------
+.recaptcha-credit {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  @include g.mq() {
+    font-size: 14px;
+  }
+  span {
+    display: block;
+  }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+}

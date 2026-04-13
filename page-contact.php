@@ -13,6 +13,12 @@
     <div class="page-contact-content c-cf7-form">
       <?php the_content(); ?>
     </div>
+
+    <p class="recaptcha-credit">
+      <span>このサイトはreCAPTCHAによって保護されており、</span>Googleの<a href="https://policies.google.com/privacy" target="_blank"
+        rel="noopener noreferrer">プライバシーポリシー</a>と
+      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">利用規約</a>が適用されます。
+    </p>
   </div>
 </main>
 <!-- main end -->
