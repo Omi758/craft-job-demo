@@ -504,12 +504,21 @@ component > pill-link
           mask-position: center;
   transition: background-color 0.3s ease;
 }
-.c-favorite-button-icon:hover {
+.c-favorite-button-icon:focus-visible {
   background-color: var(--favorite);
   color: var(--white);
 }
-.c-favorite-button-icon:hover::before {
+.c-favorite-button-icon:focus-visible::before {
   background-color: var(--white);
+}
+@media (any-hover: hover) {
+  .c-favorite-button-icon:hover {
+    background-color: var(--favorite);
+    color: var(--white);
+  }
+  .c-favorite-button-icon:hover::before {
+    background-color: var(--white);
+  }
 }
 .c-favorite-button-icon.is-favorite {
   background-color: var(--favorite);
@@ -517,11 +526,19 @@ component > pill-link
 .c-favorite-button-icon.is-favorite::before {
   background-color: var(--white);
 }
-.c-favorite-button-icon.is-favorite:hover {
+.c-favorite-button-icon.is-favorite:focus-visible {
   background-color: var(--white);
 }
-.c-favorite-button-icon.is-favorite:hover::before {
+.c-favorite-button-icon.is-favorite:focus-visible::before {
   background-color: var(--favorite);
+}
+@media (any-hover: hover) {
+  .c-favorite-button-icon.is-favorite:hover {
+    background-color: var(--white);
+  }
+  .c-favorite-button-icon.is-favorite:hover::before {
+    background-color: var(--favorite);
+  }
 }
 
 /*!
@@ -931,12 +948,21 @@ component > card
 .c-card-link-favorite {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.c-card-link-favorite:hover, .c-card-link-favorite:focus-visible {
+.c-card-link-favorite:focus-visible {
   background-color: var(--favorite);
   color: var(--white);
 }
-.c-card-link-favorite:hover::before, .c-card-link-favorite:focus-visible::before {
+.c-card-link-favorite:focus-visible::before {
   background-color: var(--white);
+}
+@media (any-hover: hover) {
+  .c-card-link-favorite:hover {
+    background-color: var(--favorite);
+    color: var(--white);
+  }
+  .c-card-link-favorite:hover::before {
+    background-color: var(--white);
+  }
 }
 
 .is-favorite {

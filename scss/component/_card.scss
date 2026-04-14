@@ -214,7 +214,27 @@ component > card
     background-color: var(--favorite);
   }
 
-  @include g.hover-fill-swap(var(--favorite));
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:focus-visible {
+    background-color: var(--favorite);
+    color: var(--white);
+    &::before {
+      background-color: var(--white);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--favorite);
+      color: var(--white);
+      &::before {
+        background-color: var(--white);
+      }
+    }
+  }
 }
 
 // カード_リンク_お気に入り登録_アクティブ時
