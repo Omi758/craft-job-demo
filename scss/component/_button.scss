@@ -150,8 +150,8 @@ component > pill-link
     transition: background-color 0.3s ease;
   }
 
-  // 未登録時のhover → 登録済みの見た目にする
-  &:hover {
+  // 未登録時のfocus-visible
+  &:focus-visible {
     background-color: var(--favorite);
     color: var(--white);
 
@@ -159,6 +159,18 @@ component > pill-link
       background-color: var(--white);
     }
   }
+
+  // 未登録時のhover
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--favorite);
+      color: var(--white);
+      &::before {
+        background-color: var(--white);
+      }
+    }
+  }
+
   // 登録済みの状態
   &.is-favorite {
     background-color: var(--favorite);
@@ -166,11 +178,21 @@ component > pill-link
       background-color: var(--white);
     }
 
-    // 登録済み時のhover→未登録の見た目に戻す（解除予告）
-    &:hover {
+    // 登録済み時のfocus-visible
+    &:focus-visible {
       background-color: var(--white);
       &::before {
         background-color: var(--favorite);
+      }
+    }
+
+    // 登録済み時のhover
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--white);
+        &::before {
+          background-color: var(--favorite);
+        }
       }
     }
   }
